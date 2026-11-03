@@ -14,11 +14,11 @@ const PORTAL_DATA = {
         subtitle: "Multiplication, Division, Factors & Word Problems",
         subject: "math",
         subjectLabel: "Mathematics",
-        status: "upcoming", // "active" or "upcoming"
+        status: "active", // Switched from "upcoming" to "active"
         folderUrl: "./math-t2-1/",
         description: "Practice foundational arithmetic skills, multi-digit division with remainders, factor pairs, multiples, and multi-step real-world problem solving.",
-        questionCount: "TBD",
-        maxScore: "TBD",
+        questionCount: "15 Questions",
+        maxScore: "53 Pts",
         formats: "Quiz & Paper"
       },
       {
