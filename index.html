@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Learning Portal — Primary School Hub</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Central Curriculum Manifest -->
+  <script src="./manifest.js"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-indigo-950 text-white shadow-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-400 text-indigo-950 flex items-center justify-center font-extrabold text-xl shadow-sm">
+          🎓
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Family Learning Hub</span>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white">Student Practice &amp; Exam Portal</h1>
+        </div>
+      </div>
+      <div class="text-right hidden sm:block">
+        <span class="text-xs text-indigo-200">Academic Year 2026–2027</span>
+        <p class="text-xs font-bold text-white">IPC &amp; National Curriculum</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-8 space-y-8">
+
+    <!-- Welcome Hero Banner -->
+    <div class="bg-gradient-to-r from-indigo-900 to-indigo-800 rounded-3xl p-6 sm:p-8 text-white shadow-sm space-y-3">
+      <div class="inline-flex items-center gap-2 bg-indigo-700/60 px-3 py-1 rounded-full text-xs font-bold text-amber-300 border border-indigo-500/40">
+        <span>⭐</span> Welcome to the Learning Hub
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Select Grade Level</h2>
+      <p class="text-sm text-indigo-100 max-w-2xl leading-relaxed">
+        Choose a grade level below to access interactive practice modules, pre-test exam banks, and comprehensive textbook revision notes.
+      </p>
+    </div>
+
+    <!-- Grade Selection Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- CARD 1: PRIMARY 4 (DYNAMICALLY POPULATED) -->
+      <div class="bg-white rounded-3xl border-2 border-indigo-600 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between relative group">
+        <div class="absolute -top-3 right-6 bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-3 py-0.5 rounded-full shadow-xs">
+          Active &amp; Ready
+        </div>
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center font-extrabold text-2xl group-hover:scale-105 transition-transform">
+            📘
+          </div>
+          <div>
+            <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider">Current Active Grade</span>
+            <h3 class="text-xl font-extrabold text-slate-900 mt-0.5">Primary 4 (P4)</h3>
+            <p id="p4DynamicDescription" class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Interactive worksheets and practice sets for Term 2.
+            </p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 text-xs space-y-1.5">
+            <div class="flex items-center justify-between font-semibold text-slate-700">
+              <span>Available Modules</span>
+              <span id="p4DynamicModuleCount" class="text-indigo-700 font-bold">Loading...</span>
+            </div>
+            <div class="flex items-center justify-between font-semibold text-slate-700">
+              <span>Curriculum Scope</span>
+              <span id="p4DynamicScope" class="text-slate-900">Term 2 / Semester 1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6">
+          <a href="./p4/" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-indigo-200 transition">
+            Open P4 Learning Hub <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: PRIMARY 5 (COMING SOON) -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 opacity-80 hover:opacity-100 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-500 flex items-center justify-center font-extrabold text-2xl">
+            📙
+          </div>
+          <div>
+            <span class="inline-block bg-slate-200 text-slate-700 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full mb-1">
+              Coming Soon
+            </span>
+            <h3 class="text-xl font-extrabold text-slate-800">Primary 5 (P5)</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Advanced curriculum resources reserved for Academic Year 2027–2028.
+            </p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 text-xs text-slate-500 space-y-1">
+            <p>• Primary 5 curriculum preparation</p>
+            <p>• Modules will unlock next term</p>
+          </div>
+        </div>
+        <div class="pt-6">
+          <button type="button" disabled class="w-full px-5 py-3 rounded-2xl text-sm font-semibold bg-slate-100 text-slate-400 cursor-not-allowed">
+            Not Available Yet
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 3: PRIMARY 6 (COMING SOON) -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 opacity-80 hover:opacity-100 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-500 flex items-center justify-center font-extrabold text-2xl">
+            📕
+          </div>
+          <div>
+            <span class="inline-block bg-slate-200 text-slate-700 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full mb-1">
+              Coming Soon
+            </span>
+            <h3 class="text-xl font-extrabold text-slate-800">Primary 6 (P6)</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Graduation exam preparation and secondary school transition resources.
+            </p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 text-xs text-slate-500 space-y-1">
+            <p>• Graduation Exam Prep</p>
+            <p>• Modules will unlock in Year 6</p>
+          </div>
+        </div>
+        <div class="pt-6">
+          <button type="button" disabled class="w-full px-5 py-3 rounded-2xl text-sm font-semibold bg-slate-100 text-slate-400 cursor-not-allowed">
+            Not Available Yet
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Parent Information Note -->
+    <div class="bg-amber-50 rounded-2xl p-5 border border-amber-200 flex items-start gap-3.5 text-xs text-amber-950">
+      <span class="text-xl">💡</span>
+      <div class="space-y-1">
+        <p class="font-bold text-sm">Parent Information:</p>
+        <p class="leading-relaxed text-amber-900">
+          Each interactive module features strict zero-spoiler quiz grading during active tests, an on-demand <strong>Parent Preview &amp; Answer Key</strong> modal, and a clean <strong>Printable Paper Worksheet</strong> view formatted for standard A4 printing.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+    Family Learning Portal • Designed for independent student mastery
+  </footer>
+
+  <script>
+    // Dynamically calculate and render stats from manifest.js
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof PORTAL_DATA !== 'undefined' && PORTAL_DATA.p4) {
+        const p4Data = PORTAL_DATA.p4;
+        const modules = p4Data.modules || [];
+        const activeCount = modules.filter(m => m.status === 'active').length;
+        const upcomingCount = modules.filter(m => m.status === 'upcoming').length;
+
+        // Dynamic Module Count Badge
+        const countEl = document.getElementById('p4DynamicModuleCount');
+        if (countEl) {
+          countEl.textContent = `${activeCount} Active + ${upcomingCount} Upcoming`;
+        }
+
+        // Dynamic Scope
+        const scopeEl = document.getElementById('p4DynamicScope');
+        if (scopeEl && p4Data.curriculumScope) {
+          scopeEl.textContent = p4Data.curriculumScope;
+        }
+
+        // Dynamic Subject List Description
+        const descEl = document.getElementById('p4DynamicDescription');
+        if (descEl && modules.length > 0) {
+          const uniqueSubjects = [...new Set(modules.map(m => m.subjectLabel || m.subject))];
+          descEl.textContent = `Interactive worksheets and practice sets for ${p4Data.curriculumScope} (${uniqueSubjects.join(', ')}).`;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

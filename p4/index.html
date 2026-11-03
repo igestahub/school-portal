@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primary 4 (P4) Learning Hub — Practice Modules &amp; Worksheets</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Central Curriculum Manifest (loaded from parent directory) -->
+  <script src="../manifest.js"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-indigo-950 text-white shadow-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <a href="../" class="w-10 h-10 rounded-xl bg-indigo-900 hover:bg-indigo-800 text-white flex items-center justify-center font-bold text-sm border border-indigo-700 transition" title="Back to Homepage">
+          🏠
+        </a>
+        <div>
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-1.5 text-xs text-indigo-300 font-medium">
+            <a href="../" class="hover:underline">Home</a>
+            <span>›</span>
+            <span class="text-amber-300 font-bold">Primary 4</span>
+          </nav>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white">Primary 4 Modules &amp; Worksheets</h1>
+        </div>
+      </div>
+      <a href="../" class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-900 hover:bg-indigo-800 text-indigo-100 border border-indigo-700 transition">
+        ← Switch Grade
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-8 space-y-6">
+
+    <!-- Overview Card -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span id="p4ScopeBadge" class="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
+          Class 4C • Term 2 (2026–2027)
+        </span>
+        <h2 class="text-2xl font-extrabold text-slate-900 mt-2">Practice Modules &amp; Worksheets</h2>
+        <p class="text-xs text-slate-600 mt-1">Select a subject below to launch the interactive practice quiz or open the printable paper view.</p>
+      </div>
+
+      <!-- Search Input -->
+      <div class="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+        <input id="searchInput" type="text" placeholder="Search modules..." class="px-3.5 py-2 rounded-xl text-xs border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-48 bg-white" />
+      </div>
+    </div>
+
+    <!-- Category Tabs Container -->
+    <div id="tabsContainer" class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold">
+      <!-- Generated dynamically from manifest -->
+    </div>
+
+    <!-- Cards Grid (Generated Dynamically) -->
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Generated dynamically from manifest -->
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+    Primary 4 Learning Hub • Connected directly to interactive modules
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const p4Data = (typeof PORTAL_DATA !== 'undefined' && PORTAL_DATA.p4) ? PORTAL_DATA.p4 : { modules: [] };
+      const modules = p4Data.modules || [];
+
+      // Update scope badge
+      if (p4Data.curriculumScope) {
+        document.getElementById('p4ScopeBadge').textContent = `Class 4C • ${p4Data.curriculumScope}`;
+      }
+
+      // Build Category Tabs Dynamically
+      const subjects = [...new Set(modules.map(m => m.subject))];
+      const tabsContainer = document.getElementById('tabsContainer');
+      tabsContainer.innerHTML = `
+        <button type="button" class="tab-btn px-4 py-2 rounded-xl bg-indigo-600 text-white shadow-xs transition" data-filter="all">All Modules (${modules.length})</button>
+      `;
+
+      subjects.forEach(sub => {
+        const count = modules.filter(m => m.subject === sub).length;
+        const label = modules.find(m => m.subject === sub).subjectLabel || sub;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tab-btn px-4 py-2 rounded-xl bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition';
+        btn.setAttribute('data-filter', sub);
+        btn.textContent = `${label} (${count})`;
+        tabsContainer.appendChild(btn);
+      });
+
+      // Render Module Cards Dynamically
+      const grid = document.getElementById('cardsGrid');
+      grid.innerHTML = '';
+
+      modules.forEach(mod => {
+        const isActive = mod.status === 'active';
+        const card = document.createElement('div');
+        card.className = `card-item bg-white rounded-2xl p-5 shadow-xs transition flex flex-col justify-between ${
+          isActive ? 'border-2 border-emerald-500/80 hover:shadow-md' : 'border border-slate-200 opacity-90 hover:border-slate-300'
+        }`;
+        card.setAttribute('data-category', mod.subject);
+        card.setAttribute('data-title', `${mod.title} ${mod.subtitle} ${mod.subject}`.toLowerCase());
+
+        const badgeHtml = isActive
+          ? `<span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">✓ Ready to Practice</span>`
+          : `<span class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">⏳ Coming Soon</span>`;
+
+        const actionButtonHtml = isActive
+          ? `<a href="${mod.folderUrl}" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">🚀 Launch Worksheet</a>`
+          : `<button type="button" disabled class="w-full px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-400 cursor-not-allowed">Coming Soon</button>`;
+
+        card.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              ${badgeHtml}
+              <span class="text-xs font-bold text-slate-500">${p4Data.curriculumScope || 'Term 2'}</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-extrabold ${isActive ? 'text-slate-900' : 'text-slate-800'}">${mod.title}</h3>
+              <p class="text-xs font-semibold ${isActive ? 'text-indigo-700' : 'text-slate-500'} mt-0.5">${mod.subtitle}</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">${mod.description}</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 grid grid-cols-3 gap-2 text-center text-xs">
+              <div>
+                <p class="text-[10px] text-slate-500 uppercase font-semibold">Question Pool</p>
+                <p class="font-extrabold text-slate-800">${mod.questionCount}</p>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-500 uppercase font-semibold">Max Score</p>
+                <p class="font-extrabold text-slate-800">${mod.maxScore}</p>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-500 uppercase font-semibold">Formats</p>
+                <p class="font-extrabold ${isActive ? 'text-emerald-700' : 'text-slate-600'}">${mod.formats}</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-5 flex items-center gap-2">
+            ${actionButtonHtml}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Filter and Search Logic
+      let activeFilter = 'all';
+      const searchInput = document.getElementById('searchInput');
+
+      function filterCards() {
+        const q = (searchInput.value || '').toLowerCase().trim();
+        const cards = document.querySelectorAll('.card-item');
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          const title = card.getAttribute('data-title') || '';
+          const matchCat = (activeFilter === 'all' || cat === activeFilter);
+          const matchSearch = (!q || title.includes(q));
+          card.style.display = (matchCat && matchSearch) ? 'flex' : 'none';
+        });
+      }
+
+      tabsContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.tab-btn');
+        if (!btn) return;
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.className = 'tab-btn px-4 py-2 rounded-xl bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition';
+        });
+        btn.className = 'tab-btn px-4 py-2 rounded-xl bg-indigo-600 text-white shadow-xs transition';
+        activeFilter = btn.getAttribute('data-filter');
+        filterCards();
+      });
+
+      searchInput.addEventListener('input', filterCards);
+    });
+  </script>
+
+</body>
+</html>
