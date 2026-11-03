@@ -1,45 +1,61 @@
-// School Portal Central Curriculum Manifest
-// Edit this file whenever you add or unlock a new worksheet!
+// Central Curriculum Manifest for school-portal
+// Modules are sorted alphabetically by subject, then by module number:
+// 1. Mathematics (T2 Math I, T2 Math II)
+// 2. Science (T2 Science I, T2 Science II)
+
 const PORTAL_DATA = {
   p4: {
     title: "Primary 4 (P4)",
     curriculumScope: "Term 2 / Semester 1",
     modules: [
       {
+        id: "math-t2-1",
+        title: "T2 Math I: Numbers & Operations",
+        subtitle: "Multiplication, Division, Factors & Word Problems",
+        subject: "math",
+        subjectLabel: "Mathematics",
+        status: "upcoming", // "active" or "upcoming"
+        folderUrl: "./math-t2-1/",
+        description: "Practice foundational arithmetic skills, multi-digit division with remainders, factor pairs, multiples, and multi-step real-world problem solving.",
+        questionCount: "TBD",
+        maxScore: "TBD",
+        formats: "Quiz & Paper"
+      },
+      {
+        id: "math-t2-2",
+        title: "T2 Math II: Fractions, Decimals & Geometry",
+        subtitle: "Equivalent Fractions, Angles, Area & Perimeter",
+        subject: "math",
+        subjectLabel: "Mathematics",
+        status: "upcoming",
+        folderUrl: "./math-t2-2/",
+        description: "Master mixed numbers, decimal place values, measuring angles with protractors, 2D shape properties, and calculating perimeter and area.",
+        questionCount: "TBD",
+        maxScore: "TBD",
+        formats: "Quiz & Paper"
+      },
+      {
         id: "science-t2-1",
         title: "T2 Science I: Light and Sound",
         subtitle: "Properties of Light (Unit 18) & Sound (Unit 21)",
         subject: "science",
         subjectLabel: "Science",
-        status: "active", // "active" (ready to practice) or "upcoming" (draft/placeholder)
+        status: "active", // Active ready-to-use worksheet
         folderUrl: "./science-t2-1/",
-        description: "Complete practice across 12 question variation slots (shadows, periscopes, transparent/translucent/opaque, pitch & vibrations, decibel dB scale, and ear protection) + official school pre-test mode.",
+        description: "Master light rays, periscopes, transparent/translucent/opaque materials, shadow formation, pitch vs. vibration speed, decibel dB scale, and ear protection rules.",
         questionCount: "36 Questions",
         maxScore: "36 / 20 Pts",
         formats: "Quiz & Paper"
       },
       {
         id: "science-t2-2",
-        title: "T2 Science II: Unit Module 2",
-        subtitle: "Follow-up Module from Google Drive Folder T2 Science II",
+        title: "T2 Science II: Forces & Energy Transfer",
+        subtitle: "Friction, Gravity, Magnetic Forces & Simple Circuits",
         subject: "science",
         subjectLabel: "Science",
         status: "upcoming",
         folderUrl: "./science-t2-2/",
-        description: "This practice module is reserved for upcoming learning materials from the T2 Science II folder once photos are ready.",
-        questionCount: "TBD",
-        maxScore: "TBD",
-        formats: "Quiz & Paper"
-      },
-      {
-        id: "math-t2-1",
-        title: "T2 Math I: Primary 4 Mathematics",
-        subtitle: "Operations, Factors & Multiples / Word Problems",
-        subject: "math",
-        subjectLabel: "Mathematics",
-        status: "upcoming",
-        folderUrl: "./math-t2-1/",
-        description: "Interactive mathematics practice module with isomorphic number generators and step-by-step working breakdowns.",
+        description: "Explore balanced and unbalanced forces, how friction affects moving surfaces, magnetic poles, and investigating complete electrical circuits.",
         questionCount: "TBD",
         maxScore: "TBD",
         formats: "Quiz & Paper"
