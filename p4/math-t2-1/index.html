@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primary 4 Mathematics - Practice Assessment (Term 2 Pre-Test I)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .print-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .print-avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+  <!-- Top App Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+          P4
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+            Primary 4 Mathematics — Practice Assessment
+          </h1>
+          <p class="text-xs text-slate-500">
+            Term 2 Pre-Test I • Written Multiplication &amp; Division, Factors, GCF &amp; LCM (53 pts)
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="btnHeaderHome" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          🏠 Start Screen
+        </button>
+        <button id="btnHeaderPrint" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 transition">
+          🖨️ Print / Paper Worksheet
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-6">
+
+    <!-- VIEW 1: START SCREEN -->
+    <section id="viewStart" class="space-y-6">
+      <!-- Mode Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Left Card: Practice Mode (Selected by Default) -->
+        <div id="cardPracticeMode" class="md:col-span-7 bg-white rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                ★ Selected Default
+              </span>
+              <span id="badgePracticeStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                Not Started
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 mb-1">
+              Practice Mode (Set 1 | Set 2 | Set 3)
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Full 15-concept coverage (<code class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">C1..C15</code>, 23 sub-items, 53 pts) with new numbers at the exact exam difficulty, including extra care on complete factor pairs.
+            </p>
+
+            <!-- Set Selector Pills -->
+            <div class="mb-4">
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
+                Select Practice Set
+              </label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
+                  <div class="font-bold text-sm text-indigo-950">Set 1</div>
+                  <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-0.5">Not Started</div>
+                </button>
+                <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
+                  <div class="font-bold text-sm text-slate-900">Set 2</div>
+                  <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-0.5">Not Started</div>
+                </button>
+                <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
+                  <div class="font-bold text-sm text-slate-900">Set 3</div>
+                  <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-0.5">Not Started</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fresh Random Numbers Button -->
+            <div class="p-3 rounded-xl bg-amber-50/80 border border-amber-200 flex flex-wrap items-center justify-between gap-2 mb-5">
+              <div class="text-xs text-amber-900">
+                <span class="font-semibold">Want unlimited extra drills?</span> Generate a fresh isomorphic set with clean division &amp; factor constraints.
+              </div>
+              <button id="btnFreshRandom" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 hover:bg-amber-600 text-white shadow-sm transition">
+                🎲 Fresh Random Numbers
+              </button>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
+            <button id="btnStartPractice" type="button" class="flex-1 min-w-[160px] px-4 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+              Start Practice
+            </button>
+            <button id="btnResetPractice" type="button" class="px-3.5 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 hover:bg-rose-50 hover:text-rose-700 text-slate-600 transition">
+              Clear / Reset Progress
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Card: Official Pre-Test / Source Mode -->
+        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                Source Baseline
+              </span>
+              <span id="badgeOfficialStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                Not Started
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 mb-1">
+              Official Pre-Test / Source Mode
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Practice the exact 23 sub-questions from the original Term 2 Pre-Test I paper (53 pts total), including the <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">GCF(24, 32)</code> question.
+            </p>
+
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-600 space-y-1.5 mb-5">
+              <div class="font-semibold text-slate-800">Section Breakdown (53 pts total):</div>
+              <div>• <span class="font-medium text-slate-800">Goal 2.14 (28 pts):</span> Part A Multiplication (6 pts), Part B Word Problems (8 pts), Part C Division (6 pts), Part D Word Problems (8 pts).</div>
+              <div>• <span class="font-medium text-slate-800">Goal 2.25 (25 pts):</span> No. 1 Factors (3 pts), No. 2 Common Factors (6 pts), No. 3 GCF (8 pts), No. 4 LCM (8 pts).</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
+            <button id="btnStartOfficial" type="button" class="flex-1 px-4 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+              Start Official Pre-Test
+            </button>
+            <button id="btnResetOfficial" type="button" class="px-3 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 hover:bg-rose-50 hover:text-rose-700 text-slate-600 transition">
+              Clear / Reset Progress
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Guidelines Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">
+          Assessment Guidelines &amp; Input Rules
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-600">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">1. Written Work &amp; Zero Spoilers</div>
+            Work out your column multiplication and long division on scratch paper first. Step-by-step setups (<span class="italic">Know / Ask / Do / Answer</span>) are shown only after you submit the test.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">2. Quotient &amp; Remainder Boxes</div>
+            For division with remainders, enter the whole-number quotient in the first box and the remainder in the second box. If there is no remainder, leave the remainder box blank or type <code class="font-mono">0</code>.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">3. Factor &amp; Common Factor Lists</div>
+            Separate numbers with commas (any order is accepted, e.g., <code class="font-mono">1, 2, 4, 8</code>). Check every factor pair carefully so intermediate factors (like <code class="font-mono">3</code> and <code class="font-mono">8</code> for <code class="font-mono">24</code>) are never missed!
+          </div>
+        </div>
+      </div>
+
+      <!-- Parent Inspector Drawer Toggle -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <button id="btnToggleParentInspector" type="button" class="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-slate-50 transition">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">🔒</span>
+            <div>
+              <div class="text-sm font-bold text-slate-900">
+                Parent Preview &amp; Answer Key (Concept Coverage C1..C15)
+              </div>
+              <div class="text-xs text-slate-500">
+                Inspect all 15 mapped concepts, sub-questions, point weights, and verified model answers across Set 1, Set 2, Set 3, and Official Mode.
+              </div>
+            </div>
+          </div>
+          <span id="iconParentToggle" class="text-xs font-semibold text-indigo-600 px-2.5 py-1 rounded-lg bg-indigo-50">
+            Show Inspector ▼
+          </span>
+        </button>
+
+        <div id="panelParentInspector" class="hidden border-t border-slate-200 p-5 bg-slate-50/60 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="text-xs font-semibold text-slate-600">
+              Select Set to Inspect Complete Questions &amp; Answer Key:
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" data-parent-tab="practice_set_1" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1</button>
+              <button type="button" data-parent-tab="practice_set_2" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 2</button>
+              <button type="button" data-parent-tab="practice_set_3" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 3</button>
+              <button type="button" data-parent-tab="official" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Official</button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto bg-white rounded-xl border border-slate-200">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                  <th class="py-2.5 px-3 font-bold">Q# &amp; ID</th>
+                  <th class="py-2.5 px-3 font-bold">Sub-Topic &amp; Pts</th>
+                  <th class="py-2.5 px-3 font-bold">Question / Sub-Items</th>
+                  <th class="py-2.5 px-3 font-bold">Verified Answer Key &amp; Working</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyParentInspector" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: ACTIVE QUIZ SLIDE VIEW -->
+    <section id="viewQuiz" class="hidden space-y-5">
+      <!-- Top Progress & Mode Bar -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span id="quizModeBadge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800">
+              Practice Mode • Set 1
+            </span>
+            <span id="quizGoalBadge" class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+              Goal 2.14
+            </span>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-semibold text-slate-600">
+            <span id="quizQuestionCounter">Question 1 of 15</span>
+            <span>•</span>
+            <span id="quizPointsCounter" class="text-indigo-700 font-bold">2 pts</span>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+          <div id="quizProgressBar" class="h-full bg-indigo-600 transition-all duration-300" style="width: 7%"></div>
+        </div>
+      </div>
+
+      <!-- Question Slide & Navigator Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Active Question Card -->
+        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span id="slidePartTitle" class="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                Part A: Multiplication
+              </span>
+              <span id="slideConceptBadge" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600">
+                C1
+              </span>
+            </div>
+
+            <h2 id="slidePrompt" class="text-base sm:text-lg font-bold text-slate-900 mb-4"></h2>
+
+            <!-- Dynamic Sub-Items / Inputs Container -->
+            <div id="slideInputsContainer" class="space-y-4"></div>
+          </div>
+
+          <!-- Slide Navigation Footer -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-6 mt-6 border-t border-slate-100">
+            <button id="btnPrevSlide" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+              ← Previous
+            </button>
+            <div class="flex items-center gap-2">
+              <button id="btnNextSlide" type="button" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+                Next →
+              </button>
+              <button id="btnSubmitQuiz" type="button" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+                Finish &amp; Submit Test
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Navigator Sidebar -->
+        <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Question Navigator (Answered / Unanswered)
+              </h3>
+              <span id="navAnsweredCount" class="text-xs font-semibold text-indigo-600">0 / 15</span>
+            </div>
+
+            <div id="navigatorGrid" class="grid grid-cols-5 gap-2 mb-4"></div>
+
+            <div class="flex items-center gap-4 text-xs text-slate-500 pt-3 border-t border-slate-100">
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Answered
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded bg-slate-200 inline-block"></span> Unanswered
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded ring-2 ring-indigo-600 inline-block"></span> Current
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 space-y-2">
+            <button id="btnQuickSubmitSidebar" type="button" class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition">
+              Finish &amp; Submit Test
+            </button>
+            <button id="btnSaveAndExit" type="button" class="w-full py-2 px-4 rounded-xl font-medium text-xs text-slate-600 hover:bg-slate-100 transition">
+              ← Save &amp; Return to Start Screen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: SUMMATIVE SCORECARD & POST-TEST REVIEW -->
+    <section id="viewResults" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200">
+          <div>
+            <span id="resultSetBadge" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 mb-2">
+              Practice Mode • Set 1
+            </span>
+            <h2 class="text-2xl font-extrabold text-slate-900">
+              Final Score &amp; Diagnostic Review
+            </h2>
+            <p class="text-sm text-slate-600">
+              Complete breakdown by Learning Goal with step-by-step worked calculations (<span class="italic">Know / Ask / Do / Answer</span>).
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4 bg-slate-50 px-5 py-3.5 rounded-2xl border border-slate-200">
+            <div class="text-right">
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Final Score</div>
+              <div id="resultTotalScore" class="text-3xl font-extrabold text-indigo-600">53 / 53</div>
+            </div>
+            <div class="h-10 w-px bg-slate-200"></div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Percentage</div>
+              <div id="resultPercentage" class="text-2xl font-bold text-slate-900">100%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Goal Breakdown Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+          <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold uppercase text-indigo-900">Learning Goal 2.14 (Numbers)</div>
+              <div class="text-xs text-slate-600">Written Multiplication &amp; Division (C1–C12)</div>
+            </div>
+            <div id="resultGoal214" class="text-lg font-extrabold text-indigo-700">28 / 28 pts</div>
+          </div>
+          <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold uppercase text-emerald-900">Learning Goal 2.25 (Numbers)</div>
+              <div class="text-xs text-slate-600">Factors, Common Factors, GCF &amp; LCM (C13–C15)</div>
+            </div>
+            <div id="resultGoal225" class="text-lg font-extrabold text-emerald-700">25 / 25 pts</div>
+          </div>
+        </div>
+
+        <!-- Post-Test Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button id="btnRetryIncorrect" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-amber-500 hover:bg-amber-600 text-white shadow-sm transition">
+            Retry Incorrect Only
+          </button>
+          <button id="btnRetakeCurrent" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-800 transition">
+            Retake Current Set
+          </button>
+          <button id="btnStartNextSet" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+            Start Next Practice Set (Set 2)
+          </button>
+          <button id="btnResultsBackHome" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 transition">
+            🏠 Back to Start Screen
+          </button>
+        </div>
+      </div>
+
+      <!-- Detailed Question-by-Question Review List -->
+      <div id="resultsReviewList" class="space-y-4"></div>
+    </section>
+
+    <!-- VIEW 4: PRINTABLE PAPER WORKSHEET VIEW -->
+    <section id="viewPrint" class="hidden space-y-5">
+      <!-- Print Controls Bar (Hidden when printing) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnBackFromPrint" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 transition">
+            ← Back to Interactive Quiz
+          </button>
+          <div class="h-5 w-px bg-slate-200 mx-1"></div>
+          <span class="text-xs font-semibold text-slate-600">Paper Set:</span>
+          <div class="flex flex-wrap gap-1">
+            <button type="button" data-print-set="practice_set_1" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1</button>
+            <button type="button" data-print-set="practice_set_2" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Set 2</button>
+            <button type="button" data-print-set="practice_set_3" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Set 3</button>
+            <button type="button" data-print-set="official" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Official</button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnPrintNow" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+            🖨️ Print Now
+          </button>
+          <button id="btnDownloadPrintableHtml" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+            ⬇ Download Printable HTML
+          </button>
+          <button id="btnOpenNewTabPrint" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition">
+            ↗ Open in New Tab to Print
+          </button>
+        </div>
+      </div>
+
+      <!-- Exam-Styled Paper Sheet -->
+      <div id="printableSheetContainer" class="print-sheet bg-white rounded-2xl border border-slate-300 p-6 sm:p-10 shadow-sm space-y-6"></div>
+    </section>
+
+  </main>
+
+  <!-- UNANSWERED QUESTIONS MODAL GUARD -->
+  <div id="modalUnanswered" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-200 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
+          !
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Unanswered Questions</h3>
+          <p id="modalUnansweredText" class="text-xs text-slate-600"></p>
+        </div>
+      </div>
+
+      <div id="modalUnansweredPills" class="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto p-2 rounded-xl bg-slate-50 border border-slate-200"></div>
+
+      <div class="flex flex-wrap items-center justify-end gap-2 pt-3 border-t border-slate-100">
+        <button id="btnModalGoBack" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
+          Go Back to Question 1
+        </button>
+        <button id="btnModalSubmitAnyway" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          Submit Anyway
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Banner for Feedback / Random Set Generation -->
+  <div id="toastBanner" class="fixed bottom-4 right-4 z-50 hidden bg-slate-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg no-print"></div>
+
+  <script>
+    // =========================================================================
+    // 1. HELPER UTILITIES FOR FACTORS, GCF, LCM & WORKINGS
+    // =========================================================================
+    function getFactors(n) {
+      const res = [];
+      for (let i = 1; i <= n; i++) {
+        if (n % i === 0) res.push(i);
+      }
+      return res;
+    }
+
+    function getCommonFactors(a, b) {
+      const fa = getFactors(a);
+      const fb = new Set(getFactors(b));
+      return fa.filter(x => fb.has(x));
+    }
+
+    function getGCF(a, b) {
+      const cf = getCommonFactors(a, b);
+      return cf[cf.length - 1];
+    }
+
+    function getLCM(a, b) {
+      return (a * b) / getGCF(a, b);
+    }
+
+    function getFirstMultiples(n, count) {
+      const arr = [];
+      for (let i = 1; i <= count; i++) arr.push(n * i);
+      return arr;
+    }
+
+    // Build a complete 15-concept question list from parameterized numbers
+    function buildQuestionSet(setKey, label, cfg) {
+      return [
+        // C1: 2-Digit x 1-Digit Multiplication (No Regrouping) - 2 pts
+        {
+          qNum: 1,
+          conceptId: 'C1',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part A: Multiplication (6 pts)',
+          subTopic: 'Multiplication (No Regrouping)',
+          points: 2,
+          type: 'multi_int',
+          prompt: 'Solve the following 2-digit by 1-digit multiplications using the written column method:',
+          items: [
+            {
+              id: 'a',
+              label: `1. ${cfg.c1[0][0]} × ${cfg.c1[0][1]} =`,
+              answer: cfg.c1[0][0] * cfg.c1[0][1],
+              points: 1,
+              working: `${cfg.c1[0][0]} × ${cfg.c1[0][1]} = ${cfg.c1[0][0] * cfg.c1[0][1]} (Ones: ${cfg.c1[0][0] % 10} × ${cfg.c1[0][1]} = ${(cfg.c1[0][0] % 10) * cfg.c1[0][1]}; Tens: ${Math.floor(cfg.c1[0][0] / 10)}0 × ${cfg.c1[0][1]} = ${Math.floor(cfg.c1[0][0] / 10) * 10 * cfg.c1[0][1]})`
+            },
+            {
+              id: 'b',
+              label: `2. ${cfg.c1[1][0]} × ${cfg.c1[1][1]} =`,
+              answer: cfg.c1[1][0] * cfg.c1[1][1],
+              points: 1,
+              working: `${cfg.c1[1][0]} × ${cfg.c1[1][1]} = ${cfg.c1[1][0] * cfg.c1[1][1]} (Ones: ${cfg.c1[1][0] % 10} × ${cfg.c1[1][1]} = ${(cfg.c1[1][0] % 10) * cfg.c1[1][1]}; Tens: ${Math.floor(cfg.c1[1][0] / 10)}0 × ${cfg.c1[1][1]} = ${Math.floor(cfg.c1[1][0] / 10) * 10 * cfg.c1[1][1]})`
+            }
+          ]
+        },
+        // C2: 2-Digit x 1-Digit Multiplication (With Regrouping) - 2 pts
+        {
+          qNum: 2,
+          conceptId: 'C2',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part A: Multiplication (6 pts)',
+          subTopic: 'Multiplication (With Regrouping)',
+          points: 2,
+          type: 'multi_int',
+          prompt: 'Solve the following 2-digit by 1-digit multiplications (remember to regroup/carry to the tens place):',
+          items: [
+            {
+              id: 'a',
+              label: `4. ${cfg.c2[0][0]} × ${cfg.c2[0][1]} =`,
+              answer: cfg.c2[0][0] * cfg.c2[0][1],
+              points: 1,
+              working: `${cfg.c2[0][0]} × ${cfg.c2[0][1]} = ${cfg.c2[0][0] * cfg.c2[0][1]} (Ones: ${cfg.c2[0][0] % 10} × ${cfg.c2[0][1]} = ${(cfg.c2[0][0] % 10) * cfg.c2[0][1]}, carry ${Math.floor(((cfg.c2[0][0] % 10) * cfg.c2[0][1]) / 10)})`
+            },
+            {
+              id: 'b',
+              label: `5. ${cfg.c2[1][0]} × ${cfg.c2[1][1]} =`,
+              answer: cfg.c2[1][0] * cfg.c2[1][1],
+              points: 1,
+              working: `${cfg.c2[1][0]} × ${cfg.c2[1][1]} = ${cfg.c2[1][0] * cfg.c2[1][1]} (Ones: ${cfg.c2[1][0] % 10} × ${cfg.c2[1][1]} = ${(cfg.c2[1][0] % 10) * cfg.c2[1][1]}, carry ${Math.floor(((cfg.c2[1][0] % 10) * cfg.c2[1][1]) / 10)})`
+            }
+          ]
+        },
+        // C3: 3-Digit x 1-Digit Multiplication - 1 pt
+        {
+          qNum: 3,
+          conceptId: 'C3',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part A: Multiplication (6 pts)',
+          subTopic: '3-Digit by 1-Digit Multiplication',
+          points: 1,
+          type: 'multi_int',
+          prompt: 'Solve the following 3-digit by 1-digit multiplication using vertical column multiplication:',
+          items: [
+            {
+              id: 'a',
+              label: `6. ${cfg.c3[0]} × ${cfg.c3[1]} =`,
+              answer: cfg.c3[0] * cfg.c3[1],
+              points: 1,
+              working: `${cfg.c3[0]} × ${cfg.c3[1]} = ${cfg.c3[0] * cfg.c3[1]}`
+            }
+          ]
+        },
+        // C4: 2-Digit x 2-Digit Multiplication - 1 pt
+        {
+          qNum: 4,
+          conceptId: 'C4',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part A: Multiplication (6 pts)',
+          subTopic: '2-Digit by 2-Digit Multiplication',
+          points: 1,
+          type: 'multi_int',
+          prompt: 'Solve the following 2-digit by 2-digit multiplication by adding both partial products:',
+          items: [
+            {
+              id: 'a',
+              label: `3. ${cfg.c4[0]} × ${cfg.c4[1]} =`,
+              answer: cfg.c4[0] * cfg.c4[1],
+              points: 1,
+              working: `Partial Product 1: ${cfg.c4[0]} × ${cfg.c4[1] % 10} = ${cfg.c4[0] * (cfg.c4[1] % 10)}; Partial Product 2: ${cfg.c4[0]} × ${Math.floor(cfg.c4[1] / 10) * 10} = ${cfg.c4[0] * Math.floor(cfg.c4[1] / 10) * 10}; Total = ${cfg.c4[0] * cfg.c4[1]}`
+            }
+          ]
+        },
+        // C5: Multiplication Word Problem (1-Digit Multiplier) - 4 pts
+        {
+          qNum: 5,
+          conceptId: 'C5',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part B: Multiplication Word Problem (8 pts)',
+          subTopic: 'Multiplication Word Problem (1-Digit Multiplier)',
+          points: 4,
+          type: 'multi_int',
+          prompt: cfg.c5.question,
+          items: [
+            {
+              id: 'a',
+              label: `Total amount (${cfg.c5.unit}):`,
+              answer: cfg.c5.qty * cfg.c5.price,
+              points: 4,
+              working: `Know: ${cfg.c5.know} | Ask: ${cfg.c5.ask} | Do: ${cfg.c5.price} × ${cfg.c5.qty} = ${cfg.c5.qty * cfg.c5.price} | Answer: ${cfg.c5.answerSentence}`
+            }
+          ]
+        },
+        // C6: Multiplication Word Problem (2-Digit Multiplier) - 4 pts
+        {
+          qNum: 6,
+          conceptId: 'C6',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part B: Multiplication Word Problem (8 pts)',
+          subTopic: 'Multiplication Word Problem (2-Digit Multiplier)',
+          points: 4,
+          type: 'multi_int',
+          prompt: cfg.c6.question,
+          items: [
+            {
+              id: 'a',
+              label: `Total produced (${cfg.c6.unit}):`,
+              answer: cfg.c6.rate * cfg.c6.days,
+              points: 4,
+              working: `Know: ${cfg.c6.know} | Ask: ${cfg.c6.ask} | Do: ${cfg.c6.rate} × ${cfg.c6.days} = ${cfg.c6.rate * (cfg.c6.days % 10)} + ${cfg.c6.rate * Math.floor(cfg.c6.days / 10) * 10} = ${cfg.c6.rate * cfg.c6.days} | Answer: ${cfg.c6.answerSentence}`
+            }
+          ]
+        },
+        // C7: Exact Long Division (2-Digit by 1-Digit) - 2 pts
+        {
+          qNum: 7,
+          conceptId: 'C7',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part C: Division (6 pts)',
+          subTopic: 'Exact Long Division (2-Digit by 1-Digit)',
+          points: 2,
+          type: 'multi_int',
+          prompt: 'Divide the following 2-digit numbers using long division:',
+          items: [
+            {
+              id: 'a',
+              label: `1. ${cfg.c7[0][0]} ÷ ${cfg.c7[0][1]} =`,
+              answer: cfg.c7[0][0] / cfg.c7[0][1],
+              points: 1,
+              working: `${cfg.c7[0][0]} ÷ ${cfg.c7[0][1]} = ${cfg.c7[0][0] / cfg.c7[0][1]} (Exact division, remainder 0)`
+            },
+            {
+              id: 'b',
+              label: `2. ${cfg.c7[1][0]} ÷ ${cfg.c7[1][1]} =`,
+              answer: cfg.c7[1][0] / cfg.c7[1][1],
+              points: 1,
+              working: `${cfg.c7[1][0]} ÷ ${cfg.c7[1][1]} = ${cfg.c7[1][0] / cfg.c7[1][1]} (Exact division, remainder 0)`
+            }
+          ]
+        },
+        // C8: Exact Long Division (3-Digit by 1-Digit) - 1 pt
+        {
+          qNum: 8,
+          conceptId: 'C8',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part C: Division (6 pts)',
+          subTopic: 'Exact Long Division (3-Digit by 1-Digit)',
+          points: 1,
+          type: 'multi_int',
+          prompt: 'Divide the following 3-digit number by a 1-digit divisor using long division:',
+          items: [
+            {
+              id: 'a',
+              label: `3. ${cfg.c8[0]} ÷ ${cfg.c8[1]} =`,
+              answer: cfg.c8[0] / cfg.c8[1],
+              points: 1,
+              working: `${cfg.c8[0]} ÷ ${cfg.c8[1]} = ${cfg.c8[0] / cfg.c8[1]} (Exact division, remainder 0)`
+            }
+          ]
+        },
+        // C9: Long Division with Remainder (2-Digit by 1-Digit) - 2 pts
+        {
+          qNum: 9,
+          conceptId: 'C9',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part C: Division (6 pts)',
+          subTopic: 'Long Division with Remainder (2-Digit by 1-Digit)',
+          points: 2,
+          type: 'multi_qr',
+          prompt: 'Find both the Quotient and Remainder (r) for each 2-digit division below:',
+          items: [
+            {
+              id: 'a',
+              label: `4. ${cfg.c9[0][0]} ÷ ${cfg.c9[0][1]} =`,
+              q: Math.floor(cfg.c9[0][0] / cfg.c9[0][1]),
+              r: cfg.c9[0][0] % cfg.c9[0][1],
+              points: 1,
+              working: `${cfg.c9[0][0]} ÷ ${cfg.c9[0][1]} = ${Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} r ${cfg.c9[0][0] % cfg.c9[0][1]} (since ${cfg.c9[0][1]} × ${Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} = ${cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])}, and ${cfg.c9[0][0]} − ${cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} = ${cfg.c9[0][0] % cfg.c9[0][1]})`
+            },
+            {
+              id: 'b',
+              label: `5. ${cfg.c9[1][0]} ÷ ${cfg.c9[1][1]} =`,
+              q: Math.floor(cfg.c9[1][0] / cfg.c9[1][1]),
+              r: cfg.c9[1][0] % cfg.c9[1][1],
+              points: 1,
+              working: `${cfg.c9[1][0]} ÷ ${cfg.c9[1][1]} = ${Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} r ${cfg.c9[1][0] % cfg.c9[1][1]} (since ${cfg.c9[1][1]} × ${Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} = ${cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])}, and ${cfg.c9[1][0]} − ${cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} = ${cfg.c9[1][0] % cfg.c9[1][1]})`
+            }
+          ]
+        },
+        // C10: Long Division with Remainder (3-Digit by 1-Digit) - 1 pt
+        {
+          qNum: 10,
+          conceptId: 'C10',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part C: Division (6 pts)',
+          subTopic: 'Long Division with Remainder (3-Digit by 1-Digit)',
+          points: 1,
+          type: 'multi_qr',
+          prompt: 'Find the Quotient and Remainder (r) for the 3-digit division below:',
+          items: [
+            {
+              id: 'a',
+              label: `6. ${cfg.c10[0]} ÷ ${cfg.c10[1]} =`,
+              q: Math.floor(cfg.c10[0] / cfg.c10[1]),
+              r: cfg.c10[0] % cfg.c10[1],
+              points: 1,
+              working: `${cfg.c10[0]} ÷ ${cfg.c10[1]} = ${Math.floor(cfg.c10[0] / cfg.c10[1])} r ${cfg.c10[0] % cfg.c10[1]} (since ${cfg.c10[1]} × ${Math.floor(cfg.c10[0] / cfg.c10[1])} = ${cfg.c10[1] * Math.floor(cfg.c10[0] / cfg.c10[1])}, remainder ${cfg.c10[0] % cfg.c10[1]})`
+            }
+          ]
+        },
+        // C11: Division Word Problem (Exact Grouping) - 4 pts
+        {
+          qNum: 11,
+          conceptId: 'C11',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part D: Division Word Problem (8 pts)',
+          subTopic: 'Division Word Problem (Exact Grouping)',
+          points: 4,
+          type: 'multi_int',
+          prompt: cfg.c11.question,
+          items: [
+            {
+              id: 'a',
+              label: `Number of ${cfg.c11.unit} needed:`,
+              answer: cfg.c11.total / cfg.c11.perGroup,
+              points: 4,
+              working: `Know: ${cfg.c11.know} | Ask: ${cfg.c11.ask} | Do: ${cfg.c11.total} ÷ ${cfg.c11.perGroup} = ${cfg.c11.total / cfg.c11.perGroup} | Answer: ${cfg.c11.answerSentence}`
+            }
+          ]
+        },
+        // C12: Division Word Problem (Quotient & Remainder in Context) - 4 pts
+        {
+          qNum: 12,
+          conceptId: 'C12',
+          goal: '2.14',
+          sectionTitle: 'I. 2.14 Written Multiplication & Division (28 pts)',
+          partTitle: 'Part D: Division Word Problem (8 pts)',
+          subTopic: 'Division Word Problem (Quotient & Remainder in Context)',
+          points: 4,
+          type: 'multi_qr',
+          prompt: cfg.c12.question,
+          items: [
+            {
+              id: 'a',
+              label: `Completed ${cfg.c12.groupUnit} (Quotient) & Leftover ${cfg.c12.itemUnit} (Remainder):`,
+              qLabel: `Completed ${cfg.c12.groupUnit}`,
+              rLabel: `Remaining ${cfg.c12.itemUnit}`,
+              q: Math.floor(cfg.c12.total / cfg.c12.perGroup),
+              r: cfg.c12.total % cfg.c12.perGroup,
+              points: 4,
+              working: `Know: ${cfg.c12.know} | Ask: ${cfg.c12.ask} | Do: ${cfg.c12.total} ÷ ${cfg.c12.perGroup} = ${Math.floor(cfg.c12.total / cfg.c12.perGroup)} r ${cfg.c12.total % cfg.c12.perGroup} | Answer: ${cfg.c12.answerSentence}`
+            }
+          ]
+        },
+        // C13: Finding All Whole Number Factors - 3 pts
+        {
+          qNum: 13,
+          conceptId: 'C13',
+          goal: '2.25',
+          sectionTitle: 'II. 2.25 Identify Common Factors, GCF & LCM (25 pts)',
+          partTitle: 'No. 1: Find the number factors below! (3 pts)',
+          subTopic: 'Finding All Factors of a Whole Number',
+          points: 3,
+          type: 'multi_list',
+          prompt: 'List all whole-number factors for each number below (separate numbers with commas):',
+          items: cfg.c13.map((num, idx) => ({
+            id: String.fromCharCode(97 + idx),
+            label: `${idx + 1}. Factors of ${num} =`,
+            answerList: getFactors(num),
+            points: 1,
+            working: `Factors of ${num} = ${getFactors(num).join(', ')}`
+          }))
+        },
+        // C14: Common Factors (6 pts) & Greatest Common Factor / GCF (8 pts) - 14 pts total
+        {
+          qNum: 14,
+          conceptId: 'C14',
+          goal: '2.25',
+          sectionTitle: 'II. 2.25 Identify Common Factors, GCF & LCM (25 pts)',
+          partTitle: 'No. 2: Whole Common Factors (6 pts) & No. 3: Greatest Common Factors / GCF (8 pts)',
+          subTopic: 'Common Factors & Greatest Common Factor (GCF)',
+          points: 14,
+          type: 'cf_and_gcf',
+          prompt: 'Find the whole common factors for Part 1 & 2 (3 pts each), and both the common factors and Greatest Common Factor (GCF) for Part 3 & 4 (4 pts each):',
+          items: [
+            {
+              id: 'cf1',
+              mode: 'cf_only',
+              a: cfg.c14.cf[0][0],
+              b: cfg.c14.cf[0][1],
+              label: `No. 2 (1) Common Factors of ${cfg.c14.cf[0][0]} and ${cfg.c14.cf[0][1]} (3 pts)`,
+              cfList: getCommonFactors(cfg.c14.cf[0][0], cfg.c14.cf[0][1]),
+              points: 3,
+              working: `${cfg.c14.cf[0][0]} = ${getFactors(cfg.c14.cf[0][0]).join(', ')} | ${cfg.c14.cf[0][1]} = ${getFactors(cfg.c14.cf[0][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.cf[0][0], cfg.c14.cf[0][1]).join(', ')}`
+            },
+            {
+              id: 'cf2',
+              mode: 'cf_only',
+              a: cfg.c14.cf[1][0],
+              b: cfg.c14.cf[1][1],
+              label: `No. 2 (2) Common Factors of ${cfg.c14.cf[1][0]} and ${cfg.c14.cf[1][1]} (3 pts)`,
+              cfList: getCommonFactors(cfg.c14.cf[1][0], cfg.c14.cf[1][1]),
+              points: 3,
+              working: `${cfg.c14.cf[1][0]} = ${getFactors(cfg.c14.cf[1][0]).join(', ')} | ${cfg.c14.cf[1][1]} = ${getFactors(cfg.c14.cf[1][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.cf[1][0], cfg.c14.cf[1][1]).join(', ')}`
+            },
+            {
+              id: 'gcf1',
+              mode: 'cf_and_gcf',
+              a: cfg.c14.gcf[0][0],
+              b: cfg.c14.gcf[0][1],
+              label: `No. 3 (1) Common Factors & GCF of ${cfg.c14.gcf[0][0]} and ${cfg.c14.gcf[0][1]} (4 pts)`,
+              cfList: getCommonFactors(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]),
+              gcf: getGCF(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]),
+              points: 4,
+              working: `${cfg.c14.gcf[0][0]} = ${getFactors(cfg.c14.gcf[0][0]).join(', ')} | ${cfg.c14.gcf[0][1]} = ${getFactors(cfg.c14.gcf[0][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]).join(', ')} → GCF = ${getGCF(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1])}`
+            },
+            {
+              id: 'gcf2',
+              mode: 'cf_and_gcf',
+              a: cfg.c14.gcf[1][0],
+              b: cfg.c14.gcf[1][1],
+              label: `No. 3 (2) Common Factors & GCF of ${cfg.c14.gcf[1][0]} and ${cfg.c14.gcf[1][1]} (4 pts)`,
+              cfList: getCommonFactors(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]),
+              gcf: getGCF(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]),
+              points: 4,
+              working: `${cfg.c14.gcf[1][0]} = ${getFactors(cfg.c14.gcf[1][0]).join(', ')} | ${cfg.c14.gcf[1][1]} = ${getFactors(cfg.c14.gcf[1][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]).join(', ')} → GCF = ${getGCF(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1])}`
+            }
+          ]
+        },
+        // C15: Multiples & Least Common Multiple (LCM) - 8 pts
+        {
+          qNum: 15,
+          conceptId: 'C15',
+          goal: '2.25',
+          sectionTitle: 'II. 2.25 Identify Common Factors, GCF & LCM (25 pts)',
+          partTitle: 'No. 4: Find the least common multiples! (8 pts)',
+          subTopic: 'Multiples & Least Common Multiple (LCM)',
+          points: 8,
+          type: 'multi_int',
+          prompt: 'Find the Least Common Multiple (LCM) for each pair of numbers below (4 pts each):',
+          items: [
+            {
+              id: 'a',
+              label: `1. LCM of ${cfg.c15[0][0]} and ${cfg.c15[0][1]} =`,
+              answer: getLCM(cfg.c15[0][0], cfg.c15[0][1]),
+              points: 4,
+              working: `Multiples of ${cfg.c15[0][0]} = ${getFirstMultiples(cfg.c15[0][0], 10).join(', ')}... | Multiples of ${cfg.c15[0][1]} = ${getFirstMultiples(cfg.c15[0][1], 10).join(', ')}... → LCM = ${getLCM(cfg.c15[0][0], cfg.c15[0][1])}`
+            },
+            {
+              id: 'b',
+              label: `2. LCM of ${cfg.c15[1][0]} and ${cfg.c15[1][1]} =`,
+              answer: getLCM(cfg.c15[1][0], cfg.c15[1][1]),
+              points: 4,
+              working: `Multiples of ${cfg.c15[1][0]} = ${getFirstMultiples(cfg.c15[1][0], 10).join(', ')}... | Multiples of ${cfg.c15[1][1]} = ${getFirstMultiples(cfg.c15[1][1], 10).join(', ')}... → LCM = ${getLCM(cfg.c15[1][0], cfg.c15[1][1])}`
+            }
+          ]
+        }
+      ];
+    }
+
+    // =========================================================================
+    // 2. DETERMINISTIC DATASETS (SET 1, SET 2, SET 3, AND OFFICIAL PRE-TEST)
+    // =========================================================================
+    const QUESTION_SETS = {
+      practice_set_1: {
+        id: 'practice_set_1',
+        title: 'Practice Mode • Set 1',
+        shortTitle: 'Set 1',
+        questions: buildQuestionSet('practice_set_1', 'Set 1', {
+          c1: [[32, 3], [21, 4]],
+          c2: [[35, 4], [43, 6]],
+          c3: [312, 3],
+          c4: [51, 23],
+          c5: {
+            question: 'Maya visits a bookstore to buy 3 hardbound notebooks. Each notebook costs $26. How much money does she need in total for this purchase?',
+            qty: 3,
+            price: 26,
+            unit: 'dollars',
+            know: '3 hardbound notebooks; $26 each notebook',
+            ask: 'How much money does she need in total for this purchase?',
+            answerSentence: 'She needs 78 dollars in total for her purchase of 3 notebooks.'
+          },
+          c6: {
+            question: 'A community bakery bakes 76 loaves of bread each day. How many loaves of bread will it bake in 14 days?',
+            rate: 76,
+            days: 14,
+            unit: 'loaves',
+            know: '76 loaves of bread per day; 14 days',
+            ask: 'How many loaves of bread will it bake in 14 days?',
+            answerSentence: 'It will bake 1,064 loaves of bread in 14 days.'
+          },
+          c7: [[72, 3], [95, 5]],
+          c8: [186, 6],
+          c9: [[67, 2], [75, 4]],
+          c10: [194, 3],
+          c11: {
+            question: 'Daniel has 80 marbles and wants to pack them equally into boxes. How many boxes does Daniel need, if 8 marbles go in one box?',
+            total: 80,
+            perGroup: 8,
+            unit: 'boxes',
+            know: '80 marbles; 8 marbles in one box',
+            ask: 'How many boxes does Daniel need if 8 marbles go in one box?',
+            answerSentence: 'He needs 10 boxes for 80 marbles.'
+          },
+          c12: {
+            question: 'If a fruit tart is prepared using 4 strawberries, how many fruit tarts can be prepared using 47 strawberries, and how many strawberries will remain?',
+            total: 47,
+            perGroup: 4,
+            groupUnit: 'tarts',
+            itemUnit: 'strawberries',
+            know: '1 fruit tart = 4 strawberries; 47 strawberries available',
+            ask: 'How many fruit tarts can be prepared using 47 strawberries?',
+            answerSentence: '11 fruit tarts can be prepared with 3 strawberries remaining.'
+          },
+          c13: [22, 9, 28],
+          c14: {
+            cf: [[6, 9], [12, 16]],
+            gcf: [[10, 25], [18, 27]]
+          },
+          c15: [[6, 8], [12, 15]]
+        })
+      },
+
+      practice_set_2: {
+        id: 'practice_set_2',
+        title: 'Practice Mode • Set 2',
+        shortTitle: 'Set 2',
+        questions: buildQuestionSet('practice_set_2', 'Set 2', {
+          c1: [[41, 2], [13, 3]],
+          c2: [[26, 5], [54, 7]],
+          c3: [123, 3],
+          c4: [42, 31],
+          c5: {
+            question: 'Leo visits an electronics shop to buy 4 wireless mice. Each wireless mouse costs $24. How much money does he need in total for this purchase?',
+            qty: 4,
+            price: 24,
+            unit: 'dollars',
+            know: '4 wireless mice; $24 each wireless mouse',
+            ask: 'How much money does he need in total for this purchase?',
+            answerSentence: 'He needs 96 dollars in total for his purchase of 4 wireless mice.'
+          },
+          c6: {
+            question: 'An apple orchard harvests 68 baskets of apples each day. How many baskets of apples will it harvest in 16 days?',
+            rate: 68,
+            days: 16,
+            unit: 'baskets',
+            know: '68 baskets of apples per day; 16 days',
+            ask: 'How many baskets of apples will it harvest in 16 days?',
+            answerSentence: 'It will harvest 1,088 baskets of apples in 16 days.'
+          },
+          c7: [[64, 4], [78, 3]],
+          c8: [248, 8],
+          c9: [[93, 4], [68, 5]],
+          c10: [254, 4],
+          c11: {
+            question: 'Claire has 90 cupcakes and she is looking for boxes to pack them. How many boxes does Claire need, if 6 cupcakes go in one box?',
+            total: 90,
+            perGroup: 6,
+            unit: 'boxes',
+            know: '90 cupcakes; 6 cupcakes in one box',
+            ask: 'How many boxes does Claire need if 6 cupcakes go in one box?',
+            answerSentence: 'She needs 15 boxes for 90 cupcakes.'
+          },
+          c12: {
+            question: 'If a wooden toy car is built using 4 wheels, how many toy cars can be built using 59 wheels, and how many wheels will remain?',
+            total: 59,
+            perGroup: 4,
+            groupUnit: 'toy cars',
+            itemUnit: 'wheels',
+            know: '1 toy car = 4 wheels; 59 wheels available',
+            ask: 'How many toy cars can be built using 59 wheels?',
+            answerSentence: '14 toy cars can be built with 3 wheels remaining.'
+          },
+          c13: [34, 16, 45],
+          c14: {
+            cf: [[10, 15], [9, 12]],
+            gcf: [[12, 20], [24, 36]]
+          },
+          c15: [[8, 10], [12, 18]]
+        })
+      },
+
+      practice_set_3: {
+        id: 'practice_set_3',
+        title: 'Practice Mode • Set 3',
+        shortTitle: 'Set 3',
+        questions: buildQuestionSet('practice_set_3', 'Set 3', {
+          c1: [[24, 2], [31, 3]],
+          c2: [[45, 6], [38, 4]],
+          c3: [231, 3],
+          c4: [71, 24],
+          c5: {
+            question: 'Nadia visits an art supply store to buy 3 watercolor paint sets. Each paint set costs $29. How much money does she need in total for this purchase?',
+            qty: 3,
+            price: 29,
+            unit: 'dollars',
+            know: '3 watercolor paint sets; $29 each set',
+            ask: 'How much money does she need in total for this purchase?',
+            answerSentence: 'She needs 87 dollars in total for her purchase of 3 paint sets.'
+          },
+          c6: {
+            question: 'A water filtration station purifies 94 gallons of water each day. How many gallons of water will it purify in 15 days?',
+            rate: 94,
+            days: 15,
+            unit: 'gallons',
+            know: '94 gallons of water per day; 15 days',
+            ask: 'How many gallons of water will it purify in 15 days?',
+            answerSentence: 'It will purify 1,410 gallons of water in 15 days.'
+          },
+          c7: [[84, 3], [96, 4]],
+          c8: [168, 8],
+          c9: [[79, 3], [87, 4]],
+          c10: [219, 5],
+          c11: {
+            question: 'Kevin has 96 pencils and he is putting them into equal packs. How many packs does Kevin need, if 8 pencils go in one pack?',
+            total: 96,
+            perGroup: 8,
+            unit: 'packs',
+            know: '96 pencils; 8 pencils in one pack',
+            ask: 'How many packs does Kevin need if 8 pencils go in one pack?',
+            answerSentence: 'He needs 12 packs for 96 pencils.'
+          },
+          c12: {
+            question: 'If a gift bag is prepared using 5 cookies, how many gift bags can be prepared using 63 cookies, and how many cookies will remain?',
+            total: 63,
+            perGroup: 5,
+            groupUnit: 'gift bags',
+            itemUnit: 'cookies',
+            know: '1 gift bag = 5 cookies; 63 cookies available',
+            ask: 'How many gift bags can be prepared using 63 cookies?',
+            answerSentence: '12 gift bags can be prepared with 3 cookies remaining.'
+          },
+          c13: [38, 27, 42],
+          c14: {
+            cf: [[8, 20], [14, 21]],
+            gcf: [[16, 24], [20, 30]]
+          },
+          c15: [[9, 12], [15, 20]]
+        })
+      },
+
+      official: {
+        id: 'official',
+        title: 'Official Pre-Test / Source Mode',
+        shortTitle: 'Official',
+        questions: buildQuestionSet('official', 'Official', {
+          c1: [[23, 3], [14, 2]],
+          c2: [[24, 5], [32, 7]],
+          c3: [211, 4],
+          c4: [61, 32],
+          c5: {
+            question: 'Alex visits a store to buy 2 flash drives. Each flash drive costs $28. How much money does he need in total for this purchase?',
+            qty: 2,
+            price: 28,
+            unit: 'dollars',
+            know: '2 flash drives; $28 (each flash drive)',
+            ask: 'How much money does he need in total for this purchase?',
+            answerSentence: 'He needs 56 dollars in total for his purchase of 2 flash drives.'
+          },
+          c6: {
+            question: 'A small dairy farm produces 87 gallons of milk each day. How many gallons of milk will it produce in 15 days?',
+            rate: 87,
+            days: 15,
+            unit: 'gallons',
+            know: '87 gallons per day; 15 days',
+            ask: 'How many gallons of milk will it produce in 15 days?',
+            answerSentence: 'It will produce 1,305 gallons in 15 days.'
+          },
+          c7: [[54, 2], [85, 5]],
+          c8: [147, 7],
+          c9: [[85, 2], [51, 4]],
+          c10: [158, 3],
+          c11: {
+            question: 'Allie has 60 eggs and she is looking for cartons to put them. How many cartons does Allie need, if 6 eggs go in one carton?',
+            total: 60,
+            perGroup: 6,
+            unit: 'cartons',
+            know: 'Allie has 60 eggs; 6 eggs go in one carton',
+            ask: 'How many cartons does Allie need if 6 eggs go in one carton?',
+            answerSentence: 'She needs 10 cartons for 60 eggs.'
+          },
+          c12: {
+            question: 'If a sandwich is prepared using 3 bread slices, how many sandwiches can be prepared using 35 bread slices, and how many bread slices remain?',
+            total: 35,
+            perGroup: 3,
+            groupUnit: 'sandwiches',
+            itemUnit: 'bread slices',
+            know: 'sandwich: 3 bread slices; 35 bread slices total',
+            ask: 'If a sandwich is prepared using 3 bread slices, how many sandwiches can be prepared using 35 bread slices?',
+            answerSentence: '11 sandwiches can be prepared with 2 bread slices that remain.'
+          },
+          c13: [26, 8, 50],
+          c14: {
+            cf: [[8, 12], [15, 20]],
+            gcf: [[14, 18], [24, 32]]
+          },
+          c15: [[10, 12], [16, 20]]
+        })
+      }
+    };
+
+    // =========================================================================
+    // 3. STATE & SAFE LOCALSTORAGE PERSISTENCE
+    // =========================================================================
+    const STORAGE_PREFIX = 'p4_math_t2_pretest1_';
+    let currentSetKey = 'practice_set_1';
+    let currentSlideIndex = 0;
+    let retryFilterIndices = null; // Array of question indices if retrying incorrect only
+    let activeParentTab = 'practice_set_1';
+    let activePrintSet = 'practice_set_1';
+
+    // In-memory fallback store
+    const memoryStore = {};
+
+    function loadSetState(setKey) {
+      const fullKey = STORAGE_PREFIX + setKey;
+      try {
+        const raw = localStorage.getItem(fullKey);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {
+        if (memoryStore[fullKey]) return memoryStore[fullKey];
+      }
+      return {
+        answers: {},
+        submitted: false,
+        score: null,
+        maxScore: 53,
+        lastSlide: 0
+      };
+    }
+
+    function saveSetState(setKey, stateObj) {
+      const fullKey = STORAGE_PREFIX + setKey;
+      memoryStore[fullKey] = stateObj;
+      try {
+        localStorage.setItem(fullKey, JSON.stringify(stateObj));
+      } catch (e) {
+        // Fallback to memoryStore silently
+      }
+    }
+
+    function clearSetState(setKey) {
+      const fullKey = STORAGE_PREFIX + setKey;
+      delete memoryStore[fullKey];
+      try {
+        localStorage.removeItem(fullKey);
+      } catch (e) {
+        // Ignore
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastBanner');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+
+    // =========================================================================
+    // 4. FRESH RANDOM NUMBERS GENERATOR (MATHEMATICS)
+    // =========================================================================
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function randInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateFreshRandomSet() {
+      // C1: 2-digit x 1-digit without regrouping
+      const c1Pairs = [
+        [12, 4], [13, 3], [14, 2], [21, 4], [22, 4], [23, 3], [24, 2], [31, 3], [32, 3], [33, 2], [41, 2], [42, 2]
+      ];
+      const p1 = pickRandom(c1Pairs);
+      let p2 = pickRandom(c1Pairs);
+      while (p2[0] === p1[0]) p2 = pickRandom(c1Pairs);
+
+      // C2: 2-digit x 1-digit with regrouping
+      const c2Pairs = [
+        [24, 5], [27, 4], [35, 4], [36, 5], [45, 6], [38, 4], [54, 7], [46, 3], [28, 6], [34, 8]
+      ];
+      const r1 = pickRandom(c2Pairs);
+      let r2 = pickRandom(c2Pairs);
+      while (r2[0] === r1[0]) r2 = pickRandom(c2Pairs);
+
+      // C3: 3-digit x 1-digit
+      const c3Choices = [[122, 4], [213, 3], [312, 3], [211, 4], [132, 4], [241, 2]];
+      const c3 = pickRandom(c3Choices);
+
+      // C4: 2-digit x 2-digit
+      const c4Choices = [[52, 23], [61, 32], [43, 21], [71, 24], [62, 14], [53, 31]];
+      const c4 = pickRandom(c4Choices);
+
+      // C5: 1-digit word problem
+      const qty5 = randInt(2, 5);
+      const price5 = randInt(18, 36);
+
+      // C6: 2-digit word problem
+      const rate6 = randInt(64, 95);
+      const days6 = randInt(12, 18);
+
+      // C7: Exact 2-digit division
+      const div1 = randInt(3, 5);
+      const quot1 = randInt(14, 24);
+      const div2 = randInt(4, 6);
+      const quot2 = randInt(13, 19);
+
+      // C8: Exact 3-digit division
+      const div8 = randInt(6, 8);
+      const quot8 = randInt(21, 34);
+
+      // C9: 2-digit division with remainder
+      const d9a = randInt(3, 5);
+      const q9a = randInt(15, 28);
+      const rem9a = randInt(1, d9a - 1);
+      const d9b = randInt(4, 6);
+      const q9b = randInt(12, 21);
+      const rem9b = randInt(1, d9b - 1);
+
+      // C10: 3-digit division with remainder
+      const d10 = randInt(3, 6);
+      const q10 = randInt(41, 64);
+      const rem10 = randInt(1, d10 - 1);
+
+      // C11: Exact grouping word problem
+      const per11 = pickRandom([6, 8, 9]);
+      const boxes11 = randInt(10, 16);
+      const total11 = per11 * boxes11;
+
+      // C12: Quotient + remainder word problem
+      const per12 = pickRandom([3, 4, 5]);
+      const groups12 = randInt(11, 16);
+      const rem12 = randInt(1, per12 - 1);
+      const total12 = per12 * groups12 + rem12;
+
+      // C13: Factors
+      const fPool1 = [22, 26, 34, 38];
+      const fPool2 = [8, 9, 16, 27];
+      const fPool3 = [28, 42, 45, 50];
+
+      // C14: CF & GCF
+      const cfPool = [[[8, 12], [15, 20]], [[6, 9], [12, 16]], [[10, 15], [8, 20]]];
+      const gcfPool = [[[14, 18], [24, 32]], [[12, 20], [18, 27]], [[16, 24], [24, 36]]];
+
+      // C15: LCM
+      const lcmPool = [[[10, 12], [16, 20]], [[6, 8], [12, 15]], [[8, 10], [12, 18]], [[9, 12], [15, 20]]];
+
+      QUESTION_SETS[currentSetKey].questions = buildQuestionSet(currentSetKey, QUESTION_SETS[currentSetKey].shortTitle, {
+        c1: [p1, p2],
+        c2: [r1, r2],
+        c3: c3,
+        c4: c4,
+        c5: {
+          question: `Alex visits a store to buy ${qty5} flash drives. Each flash drive costs $${price5}. How much money does he need in total for this purchase?`,
+          qty: qty5,
+          price: price5,
+          unit: 'dollars',
+          know: `${qty5} flash drives; $${price5} each flash drive`,
+          ask: 'How much money does he need in total for this purchase?',
+          answerSentence: `He needs ${qty5 * price5} dollars in total for his purchase of ${qty5} flash drives.`
+        },
+        c6: {
+          question: `A small dairy farm produces ${rate6} gallons of milk each day. How many gallons of milk will it produce in ${days6} days?`,
+          rate: rate6,
+          days: days6,
+          unit: 'gallons',
+          know: `${rate6} gallons per day; ${days6} days`,
+          ask: `How many gallons of milk will it produce in ${days6} days?`,
+          answerSentence: `It will produce ${(rate6 * days6).toLocaleString()} gallons in ${days6} days.`
+        },
+        c7: [[div1 * quot1, div1], [div2 * quot2, div2]],
+        c8: [div8 * quot8, div8],
+        c9: [[d9a * q9a + rem9a, d9a], [d9b * q9b + rem9b, d9b]],
+        c10: [d10 * q10 + rem10, d10],
+        c11: {
+          question: `Allie has ${total11} eggs and she is looking for cartons to put them. How many cartons does Allie need, if ${per11} eggs go in one carton?`,
+          total: total11,
+          perGroup: per11,
+          unit: 'cartons',
+          know: `Allie has ${total11} eggs; ${per11} eggs in one carton`,
+          ask: `How many cartons does Allie need if ${per11} eggs go in one carton?`,
+          answerSentence: `She needs ${boxes11} cartons for ${total11} eggs.`
+        },
+        c12: {
+          question: `If a sandwich is prepared using ${per12} bread slices, how many sandwiches can be prepared using ${total12} bread slices, and how many bread slices remain?`,
+          total: total12,
+          perGroup: per12,
+          groupUnit: 'sandwiches',
+          itemUnit: 'bread slices',
+          know: `1 sandwich = ${per12} bread slices; ${total12} bread slices available`,
+          ask: `How many sandwiches can be prepared using ${total12} bread slices?`,
+          answerSentence: `${groups12} sandwiches can be prepared with ${rem12} bread slices remaining.`
+        },
+        c13: [pickRandom(fPool1), pickRandom(fPool2), pickRandom(fPool3)],
+        c14: {
+          cf: pickRandom(cfPool),
+          gcf: pickRandom(gcfPool)
+        },
+        c15: pickRandom(lcmPool)
+      });
+
+      clearSetState(currentSetKey);
+      renderStartScreen();
+      renderParentInspector();
+      showToast(`🎲 Fresh numbers generated for ${QUESTION_SETS[currentSetKey].shortTitle}!`);
+    }
+
+    // =========================================================================
+    // 5. GRADING & VALIDATION ENGINE
+    // =========================================================================
+    function cleanIntInput(val) {
+      if (val === undefined || val === null) return NaN;
+      const cleaned = String(val).replace(/[,$\s]/g, '').replace(/[a-zA-Z]+/g, '');
+      if (cleaned === '') return NaN;
+      return parseInt(cleaned, 10);
+    }
+
+    function parseNumberList(val) {
+      if (!val || String(val).trim() === '') return [];
+      const parts = String(val)
+        .split(/[,;\s]+/)
+        .map(s => parseInt(s.trim(), 10))
+        .filter(n => !isNaN(n));
+      const uniqueSorted = Array.from(new Set(parts)).sort((a, b) => a - b);
+      return uniqueSorted;
+    }
+
+    function arraysEqual(a, b) {
+      if (a.length !== b.length) return false;
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) return false;
+      }
+      return true;
+    }
+
+    function isQuestionAnswered(q, ansObj) {
+      if (!ansObj) return false;
+      if (q.type === 'multi_int') {
+        return q.items.every(item => {
+          const v = ansObj[item.id];
+          return v !== undefined && String(v).trim() !== '';
+        });
+      }
+      if (q.type === 'multi_qr') {
+        return q.items.every(item => {
+          const qVal = ansObj[item.id + '_q'];
+          return qVal !== undefined && String(qVal).trim() !== '';
+        });
+      }
+      if (q.type === 'multi_list') {
+        return q.items.every(item => {
+          const v = ansObj[item.id];
+          return v !== undefined && parseNumberList(v).length > 0;
+        });
+      }
+      if (q.type === 'cf_and_gcf') {
+        return q.items.every(item => {
+          const cfVal = ansObj[item.id + '_cf'];
+          if (!cfVal || parseNumberList(cfVal).length === 0) return false;
+          if (item.mode === 'cf_and_gcf') {
+            const gcfVal = ansObj[item.id + '_gcf'];
+            return gcfVal !== undefined && String(gcfVal).trim() !== '';
+          }
+          return true;
+        });
+      }
+      return false;
+    }
+
+    function gradeQuestion(q, ansObj) {
+      const safeAns = ansObj || {};
+      let earnedPoints = 0;
+      const subResults = [];
+
+      if (q.type === 'multi_int') {
+        q.items.forEach(item => {
+          const raw = safeAns[item.id] ?? '';
+          const num = cleanIntInput(raw);
+          const ok = num === item.answer;
+          const pts = ok ? item.points : 0;
+          earnedPoints += pts;
+          subResults.push({
+            label: item.label,
+            userDisplay: String(raw).trim() === '' ? '(Blank)' : String(raw),
+            modelDisplay: String(item.answer),
+            isCorrect: ok,
+            earned: pts,
+            max: item.points,
+            working: item.working
+          });
+        });
+      } else if (q.type === 'multi_qr') {
+        q.items.forEach(item => {
+          const rawQ = safeAns[item.id + '_q'] ?? '';
+          const rawR = safeAns[item.id + '_r'] ?? '';
+          const numQ = cleanIntInput(rawQ);
+          const numR = String(rawR).trim() === '' ? 0 : cleanIntInput(rawR);
+          const ok = numQ === item.q && numR === item.r;
+          const pts = ok ? item.points : 0;
+          earnedPoints += pts;
+          subResults.push({
+            label: item.label,
+            userDisplay: String(rawQ).trim() === '' ? '(Blank)' : `${numQ} r ${isNaN(numR) ? '?' : numR}`,
+            modelDisplay: `${item.q} r ${item.r}`,
+            isCorrect: ok,
+            earned: pts,
+            max: item.points,
+            working: item.working
+          });
+        });
+      } else if (q.type === 'multi_list') {
+        q.items.forEach(item => {
+          const raw = safeAns[item.id] ?? '';
+          const userArr = parseNumberList(raw);
+          const ok = arraysEqual(userArr, item.answerList);
+          const pts = ok ? item.points : 0;
+          earnedPoints += pts;
+          subResults.push({
+            label: item.label,
+            userDisplay: userArr.length === 0 ? '(Blank)' : userArr.join(', '),
+            modelDisplay: item.answerList.join(', '),
+            isCorrect: ok,
+            earned: pts,
+            max: item.points,
+            working: item.working
+          });
+        });
+      } else if (q.type === 'cf_and_gcf') {
+        q.items.forEach(item => {
+          const rawCf = safeAns[item.id + '_cf'] ?? '';
+          const userCf = parseNumberList(rawCf);
+          const cfOk = arraysEqual(userCf, item.cfList);
+
+          if (item.mode === 'cf_only') {
+            const pts = cfOk ? item.points : 0;
+            earnedPoints += pts;
+            subResults.push({
+              label: item.label,
+              userDisplay: userCf.length === 0 ? '(Blank)' : `CF: ${userCf.join(', ')}`,
+              modelDisplay: `CF: ${item.cfList.join(', ')}`,
+              isCorrect: cfOk,
+              earned: pts,
+              max: item.points,
+              working: item.working
+            });
+          } else {
+            const rawGcf = safeAns[item.id + '_gcf'] ?? '';
+            const userGcf = cleanIntInput(rawGcf);
+            const gcfOk = userGcf === item.gcf;
+            let pts = 0;
+            if (cfOk) pts += 2;
+            if (gcfOk) pts += 2;
+            earnedPoints += pts;
+            subResults.push({
+              label: item.label,
+              userDisplay: `CF: ${userCf.length ? userCf.join(', ') : '(Blank)'} | GCF: ${String(rawGcf).trim() === '' ? '(Blank)' : rawGcf}`,
+              modelDisplay: `CF: ${item.cfList.join(', ')} | GCF: ${item.gcf}`,
+              isCorrect: cfOk && gcfOk,
+              isPartial: (cfOk || gcfOk) && !(cfOk && gcfOk),
+              earned: pts,
+              max: item.points,
+              working: item.working
+            });
+          }
+        });
+      }
+
+      const status = earnedPoints === q.points ? 'correct' : earnedPoints > 0 ? 'partial' : 'incorrect';
+      return {
+        earnedPoints,
+        maxPoints: q.points,
+        status,
+        subResults
+      };
+    }
+
+    // =========================================================================
+    // 6. VIEW NAVIGATION & START SCREEN RENDERING
+    // =========================================================================
+    function showView(viewId) {
+      ['viewStart', 'viewQuiz', 'viewResults', 'viewPrint'].forEach(id => {
+        const el = document.getElementById(id);
+        if (id === viewId) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function formatBadgeStatus(state, questions) {
+      if (state.submitted && state.score !== null) {
+        const pct = Math.round((state.score / state.maxScore) * 100);
+        return {
+          text: `✓ Completed: ${pct}% (${state.score}/${state.maxScore})`,
+          cls: 'bg-emerald-100 text-emerald-800'
+        };
+      }
+      const answeredCount = questions.filter((q, idx) => isQuestionAnswered(q, state.answers[idx])).length;
+      if (answeredCount > 0) {
+        return {
+          text: `In Progress (${answeredCount}/15)`,
+          cls: 'bg-amber-100 text-amber-800'
+        };
+      }
+      return {
+        text: 'Not Started',
+        cls: 'bg-slate-100 text-slate-700'
+      };
+    }
+
+    function renderStartScreen() {
+      // Update Practice Set Pills
+      ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
+        const num = idx + 1;
+        const pill = document.getElementById(`pillSet${num}`);
+        const badge = document.getElementById(`pillBadgeSet${num}`);
+        const st = loadSetState(sKey);
+        const info = formatBadgeStatus(st, QUESTION_SETS[sKey].questions);
+        badge.textContent = info.text;
+
+        if (currentSetKey === sKey) {
+          pill.className = 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition';
+        } else {
+          pill.className = 'p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition';
+        }
+      });
+
+      // Active Practice Set Status Badge & Button Text
+      const activePracticeKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+      const pState = loadSetState(activePracticeKey);
+      const pInfo = formatBadgeStatus(pState, QUESTION_SETS[activePracticeKey].questions);
+      const badgePractice = document.getElementById('badgePracticeStatus');
+      badgePractice.textContent = pInfo.text;
+      badgePractice.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${pInfo.cls}`;
+
+      const btnStartPractice = document.getElementById('btnStartPractice');
+      const pAnswered = QUESTION_SETS[activePracticeKey].questions.filter((q, i) => isQuestionAnswered(q, pState.answers[i])).length;
+      btnStartPractice.textContent = pAnswered > 0 && !pState.submitted
+        ? `Resume Saved Session (${QUESTION_SETS[activePracticeKey].shortTitle})`
+        : `Start Practice (${QUESTION_SETS[activePracticeKey].shortTitle})`;
+
+      // Official Mode Status Badge & Button Text
+      const oState = loadSetState('official');
+      const oInfo = formatBadgeStatus(oState, QUESTION_SETS.official.questions);
+      const badgeOfficial = document.getElementById('badgeOfficialStatus');
+      badgeOfficial.textContent = oInfo.text;
+      badgeOfficial.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${oInfo.cls}`;
+
+      const btnStartOfficial = document.getElementById('btnStartOfficial');
+      const oAnswered = QUESTION_SETS.official.questions.filter((q, i) => isQuestionAnswered(q, oState.answers[i])).length;
+      btnStartOfficial.textContent = oAnswered > 0 && !oState.submitted
+        ? 'Resume Saved Session (Official)'
+        : 'Start Official Pre-Test';
+    }
+
+    // =========================================================================
+    // 7. PARENT INSPECTOR RENDERING
+    // =========================================================================
+    function renderParentInspector() {
+      const setObj = QUESTION_SETS[activeParentTab];
+      const tbody = document.getElementById('tbodyParentInspector');
+      tbody.innerHTML = '';
+
+      setObj.questions.forEach(q => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 align-top';
+
+        const itemsHtml = q.items.map(it => `<div class="mb-1"><span class="font-medium text-slate-800">${it.label}</span></div>`).join('');
+        const workingHtml = q.items.map(it => `<div class="mb-1 text-slate-600">• ${it.working}</div>`).join('');
+
+        tr.innerHTML = `
+          <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
+            Q${q.qNum} <span class="ml-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px]">${q.conceptId}</span>
+          </td>
+          <td class="py-3 px-3">
+            <div class="font-semibold text-slate-800">${q.subTopic}</div>
+            <div class="text-slate-500">Goal ${q.goal} • ${q.points} pts</div>
+          </td>
+          <td class="py-3 px-3">
+            <div class="text-slate-700 mb-1.5 font-medium">${q.prompt}</div>
+            ${itemsHtml}
+          </td>
+          <td class="py-3 px-3 font-mono text-[11px]">
+            ${workingHtml}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.querySelectorAll('.parent-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-parent-tab') === activeParentTab) {
+          btn.className = 'parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white';
+        } else {
+          btn.className = 'parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100';
+        }
+      });
+    }
+
+    // =========================================================================
+    // 8. ACTIVE QUIZ SLIDE RENDERING & INPUT BINDING
+    // =========================================================================
+    function getActiveSlideList() {
+      const questions = QUESTION_SETS[currentSetKey].questions;
+      if (retryFilterIndices && retryFilterIndices.length > 0) {
+        return retryFilterIndices;
+      }
+      return questions.map((_, i) => i);
+    }
+
+    function startQuiz(setKey, retryIndices = null) {
+      currentSetKey = setKey;
+      retryFilterIndices = retryIndices;
+      const state = loadSetState(setKey);
+      if (state.submitted && !retryIndices) {
+        // If already submitted, show results screen directly
+        renderResultsScreen();
+        showView('viewResults');
+        return;
+      }
+      const activeList = getActiveSlideList();
+      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      renderQuizSlide();
+      showView('viewQuiz');
+    }
+
+    function renderQuizSlide() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const questions = setObj.questions;
+      const activeList = getActiveSlideList();
+      const q = questions[currentSlideIndex];
+      const posInActive = activeList.indexOf(currentSlideIndex);
+
+      state.lastSlide = currentSlideIndex;
+      saveSetState(currentSetKey, state);
+
+      // Header Badges
+      document.getElementById('quizModeBadge').textContent = retryFilterIndices
+        ? `${setObj.title} (Retry Incorrect)`
+        : setObj.title;
+      document.getElementById('quizGoalBadge').textContent = `Learning Goal ${q.goal}`;
+      document.getElementById('quizQuestionCounter').textContent = `Question ${posInActive + 1} of ${activeList.length}`;
+      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? 'pt' : 'pts'}`;
+
+      const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
+      document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
+
+      document.getElementById('slidePartTitle').textContent = q.partTitle;
+      document.getElementById('slideConceptBadge').textContent = q.conceptId;
+      document.getElementById('slidePrompt').textContent = q.prompt;
+
+      // Render Inputs (Zero-Spoiler: neutral placeholders only!)
+      const container = document.getElementById('slideInputsContainer');
+      container.innerHTML = '';
+      const qAns = state.answers[currentSlideIndex] || {};
+
+      if (q.type === 'multi_int') {
+        q.items.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-3';
+          row.innerHTML = `
+            <label class="text-sm font-bold text-slate-800">${item.label}</label>
+            <div class="flex items-center gap-2">
+              <input
+                type="text"
+                inputmode="numeric"
+                data-field="${item.id}"
+                value="${qAns[item.id] ?? ''}"
+                placeholder="Type number..."
+                class="slide-input w-44 px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              />
+              <span class="text-xs text-slate-400 font-medium">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+            </div>
+          `;
+          container.appendChild(row);
+        });
+      } else if (q.type === 'multi_qr') {
+        q.items.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3';
+          const qLabelText = item.qLabel || 'Quotient';
+          const rLabelText = item.rLabel || 'Remainder (r)';
+          row.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-800">${item.label}</span>
+              <span class="text-xs text-slate-400 font-medium">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">${qLabelText}</label>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  data-field="${item.id}_q"
+                  value="${qAns[item.id + '_q'] ?? ''}"
+                  placeholder="Type number..."
+                  class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">${rLabelText}</label>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  data-field="${item.id}_r"
+                  value="${qAns[item.id + '_r'] ?? ''}"
+                  placeholder="Type number..."
+                  class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                />
+              </div>
+            </div>
+          `;
+          container.appendChild(row);
+        });
+      } else if (q.type === 'multi_list') {
+        q.items.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2';
+          row.innerHTML = `
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-bold text-slate-800">${item.label}</label>
+              <span class="text-xs text-slate-400 font-medium">(${item.points} pt)</span>
+            </div>
+            <input
+              type="text"
+              data-field="${item.id}"
+              value="${qAns[item.id] ?? ''}"
+              placeholder="Separated by commas..."
+              class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          `;
+          container.appendChild(row);
+        });
+      } else if (q.type === 'cf_and_gcf') {
+        q.items.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3';
+          if (item.mode === 'cf_only') {
+            row.innerHTML = `
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-slate-800">${item.label}</span>
+                <span class="text-xs text-slate-400 font-medium">(3 pts)</span>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a} and ${item.b}:</label>
+                <input
+                  type="text"
+                  data-field="${item.id}_cf"
+                  value="${qAns[item.id + '_cf'] ?? ''}"
+                  placeholder="Separated by commas..."
+                  class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                />
+              </div>
+            `;
+          } else {
+            row.innerHTML = `
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-slate-800">${item.label}</span>
+                <span class="text-xs text-slate-400 font-medium">(4 pts)</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="sm:col-span-2">
+                  <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a} and ${item.b}:</label>
+                  <input
+                    type="text"
+                    data-field="${item.id}_cf"
+                    value="${qAns[item.id + '_cf'] ?? ''}"
+                    placeholder="Separated by commas..."
+                    class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-600 mb-1">GCF:</label>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    data-field="${item.id}_gcf"
+                    value="${qAns[item.id + '_gcf'] ?? ''}"
+                    placeholder="Type number..."
+                    class="slide-input w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                  />
+                </div>
+              </div>
+            `;
+          }
+          container.appendChild(row);
+        });
+      }
+
+      // Attach input listeners
+      container.querySelectorAll('.slide-input').forEach(inp => {
+        inp.addEventListener('input', e => {
+          const field = e.target.getAttribute('data-field');
+          const st = loadSetState(currentSetKey);
+          if (!st.answers[currentSlideIndex]) st.answers[currentSlideIndex] = {};
+          st.answers[currentSlideIndex][field] = e.target.value;
+          saveSetState(currentSetKey, st);
+          renderNavigatorGrid();
+        });
+      });
+
+      // Prev / Next buttons visibility
+      const btnPrev = document.getElementById('btnPrevSlide');
+      const btnNext = document.getElementById('btnNextSlide');
+      btnPrev.disabled = posInActive <= 0;
+      btnPrev.className = posInActive <= 0
+        ? 'px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 text-slate-400 cursor-not-allowed'
+        : 'px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+
+      if (posInActive >= activeList.length - 1) {
+        btnNext.classList.add('hidden');
+      } else {
+        btnNext.classList.remove('hidden');
+      }
+
+      renderNavigatorGrid();
+    }
+
+    function renderNavigatorGrid() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const activeList = getActiveSlideList();
+      const grid = document.getElementById('navigatorGrid');
+      grid.innerHTML = '';
+
+      let answeredTotal = 0;
+      activeList.forEach(qIdx => {
+        const q = setObj.questions[qIdx];
+        const answered = isQuestionAnswered(q, state.answers[qIdx]);
+        if (answered) answeredTotal++;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = q.qNum;
+        let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
+        if (answered) {
+          cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
+        } else {
+          cls += 'bg-slate-100 text-slate-700 hover:bg-slate-200 ';
+        }
+        if (qIdx === currentSlideIndex) {
+          cls += 'ring-2 ring-offset-2 ring-indigo-600 ';
+        }
+        btn.className = cls;
+        btn.addEventListener('click', () => {
+          currentSlideIndex = qIdx;
+          renderQuizSlide();
+        });
+        grid.appendChild(btn);
+      });
+
+      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+    }
+
+    // =========================================================================
+    // 9. SUBMISSION GUARD & SUMMATIVE SCORECARD
+    // =========================================================================
+    function attemptSubmitQuiz() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const activeList = getActiveSlideList();
+
+      const unansweredIndices = activeList.filter(qIdx => !isQuestionAnswered(setObj.questions[qIdx], state.answers[qIdx]));
+
+      if (unansweredIndices.length > 0) {
+        const modal = document.getElementById('modalUnanswered');
+        const text = document.getElementById('modalUnansweredText');
+        const pills = document.getElementById('modalUnansweredPills');
+        const btnGoBack = document.getElementById('btnModalGoBack');
+
+        text.textContent = `You have ${unansweredIndices.length} unanswered question(s). Would you like to complete them before submitting?`;
+        pills.innerHTML = '';
+
+        unansweredIndices.forEach(qIdx => {
+          const q = setObj.questions[qIdx];
+          const pill = document.createElement('button');
+          pill.type = 'button';
+          pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
+          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            currentSlideIndex = qIdx;
+            renderQuizSlide();
+          });
+          pills.appendChild(pill);
+        });
+
+        const firstMissingQ = setObj.questions[unansweredIndices[0]];
+        btnGoBack.textContent = `Go Back to Question ${firstMissingQ.qNum}`;
+        btnGoBack.onclick = () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          currentSlideIndex = unansweredIndices[0];
+          renderQuizSlide();
+        };
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        return;
+      }
+
+      finalizeSubmission();
+    }
+
+    function finalizeSubmission() {
+      const modal = document.getElementById('modalUnanswered');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      let totalScore = 0;
+
+      setObj.questions.forEach((q, idx) => {
+        const res = gradeQuestion(q, state.answers[idx]);
+        totalScore += res.earnedPoints;
+      });
+
+      state.submitted = true;
+      state.score = totalScore;
+      state.maxScore = 53;
+      saveSetState(currentSetKey, state);
+
+      retryFilterIndices = null;
+      renderResultsScreen();
+      showView('viewResults');
+    }
+
+    function renderResultsScreen() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+
+      let totalEarned = 0;
+      let goal214Earned = 0;
+      let goal225Earned = 0;
+      const incorrectIndices = [];
+
+      const reviewList = document.getElementById('resultsReviewList');
+      reviewList.innerHTML = '';
+
+      setObj.questions.forEach((q, idx) => {
+        const g = gradeQuestion(q, state.answers[idx]);
+        totalEarned += g.earnedPoints;
+        if (q.goal === '2.14') goal214Earned += g.earnedPoints;
+        if (q.goal === '2.25') goal225Earned += g.earnedPoints;
+
+        if (g.status !== 'correct') {
+          incorrectIndices.push(idx);
+        }
+
+        let badgeHtml = '';
+        let borderCls = 'border-slate-200';
+        if (g.status === 'correct') {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">✓ Correct (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          borderCls = 'border-emerald-200';
+        } else if (g.status === 'partial') {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">◐ Partial (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          borderCls = 'border-amber-200';
+        } else {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">✗ Incorrect (0/${g.maxPoints} pts)</span>`;
+          borderCls = 'border-rose-200';
+        }
+
+        const subRowsHtml = g.subResults.map(sr => `
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-bold text-slate-800">${sr.label}</span>
+              <span class="font-semibold ${sr.isCorrect ? 'text-emerald-700' : sr.isPartial ? 'text-amber-700' : 'text-rose-700'}">
+                ${sr.isCorrect ? '✓ Correct' : sr.isPartial ? '◐ Partial' : '✗ Incorrect'} (${sr.earned}/${sr.max} pts)
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              <div class="p-2 rounded-lg ${sr.isCorrect ? 'bg-emerald-50 text-emerald-900' : 'bg-rose-50 text-rose-900'}">
+                <span class="font-semibold">Your Answer:</span> <span class="font-mono">${sr.userDisplay}</span>
+              </div>
+              <div class="p-2 rounded-lg bg-indigo-50 text-indigo-900">
+                <span class="font-semibold">Model Answer:</span> <span class="font-mono">${sr.modelDisplay}</span>
+              </div>
+            </div>
+            <div class="pt-1 text-slate-600">
+              <span class="font-semibold text-slate-800">Explanation &amp; Keywords:</span> ${sr.working}
+            </div>
+          </div>
+        `).join('');
+
+        const card = document.createElement('div');
+        card.className = `bg-white rounded-2xl border ${borderCls} p-5 shadow-sm space-y-3`;
+        card.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-extrabold text-slate-900">Question ${q.qNum}</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">${q.conceptId}</span>
+              <span class="text-xs font-semibold text-slate-500">• ${q.subTopic}</span>
+            </div>
+            ${badgeHtml}
+          </div>
+          <p class="text-sm font-medium text-slate-800">${q.prompt}</p>
+          <div class="space-y-2">${subRowsHtml}</div>
+        `;
+        reviewList.appendChild(card);
+      });
+
+      const pct = Math.round((totalEarned / 53) * 100);
+      document.getElementById('resultSetBadge').textContent = setObj.title;
+      document.getElementById('resultTotalScore').textContent = `${totalEarned} / 53`;
+      document.getElementById('resultPercentage').textContent = `${pct}%`;
+      document.getElementById('resultGoal214').textContent = `${goal214Earned} / 28 pts`;
+      document.getElementById('resultGoal225').textContent = `${goal225Earned} / 25 pts`;
+
+      // Retry Incorrect Button
+      const btnRetry = document.getElementById('btnRetryIncorrect');
+      if (incorrectIndices.length === 0) {
+        btnRetry.classList.add('hidden');
+      } else {
+        btnRetry.classList.remove('hidden');
+        btnRetry.textContent = `Retry Incorrect Only (${incorrectIndices.length})`;
+        btnRetry.onclick = () => {
+          state.submitted = false;
+          saveSetState(currentSetKey, state);
+          startQuiz(currentSetKey, incorrectIndices);
+        };
+      }
+
+      // Next Set Button
+      const nextMap = {
+        practice_set_1: 'practice_set_2',
+        practice_set_2: 'practice_set_3',
+        practice_set_3: 'official',
+        official: 'practice_set_1'
+      };
+      const nextKey = nextMap[currentSetKey];
+      const btnNextSet = document.getElementById('btnStartNextSet');
+      btnNextSet.textContent = `Start Next Practice Set (${QUESTION_SETS[nextKey].shortTitle})`;
+      btnNextSet.onclick = () => {
+        currentSetKey = nextKey;
+        startQuiz(nextKey);
+      };
+    }
+
+    // =========================================================================
+    // 10. PRINTABLE PAPER WORKSHEET VIEW & HTML DOWNLOAD FALLBACK
+    // =========================================================================
+    function renderPrintView() {
+      const setObj = QUESTION_SETS[activePrintSet];
+      const container = document.getElementById('printableSheetContainer');
+
+      document.querySelectorAll('.print-set-btn').forEach(btn => {
+        if (btn.getAttribute('data-print-set') === activePrintSet) {
+          btn.className = 'print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white';
+        } else {
+          btn.className = 'print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200';
+        }
+      });
+
+      const qBlocksHtml = setObj.questions.map(q => {
+        let workAreaHtml = '';
+        if (q.type === 'multi_int' || q.type === 'multi_qr') {
+          if (q.items.length === 1 && q.points === 4) {
+            // 4-Box Know / Ask / Do / Answer Grid for Word Problems
+            workAreaHtml = `
+              <div class="grid grid-cols-2 border border-slate-400 rounded-lg overflow-hidden text-xs mt-2">
+                <div class="border-r border-b border-slate-400 p-2.5 h-24">
+                  <div class="font-bold underline mb-1">Know:</div>
+                </div>
+                <div class="border-b border-slate-400 p-2.5 h-24">
+                  <div class="font-bold underline mb-1">Ask:</div>
+                </div>
+                <div class="border-r border-slate-400 p-2.5 h-28">
+                  <div class="font-bold underline mb-1">Do:</div>
+                </div>
+                <div class="p-2.5 h-28">
+                  <div class="font-bold underline mb-1">Answer:</div>
+                </div>
+              </div>
+            `;
+          } else {
+            workAreaHtml = `
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                ${q.items.map(it => `
+                  <div class="border border-slate-300 rounded-lg p-3 h-28 flex flex-col justify-between">
+                    <div class="font-bold text-sm text-slate-900">${it.label} ___________</div>
+                    <div class="text-[11px] text-slate-400">Show vertical working in this box</div>
+                  </div>
+                `).join('')}
+              </div>
+            `;
+          }
+        } else if (q.type === 'multi_list') {
+          workAreaHtml = `
+            <div class="space-y-2 mt-2">
+              ${q.items.map(it => `
+                <div class="border border-slate-300 rounded-lg p-2.5 text-sm font-semibold">
+                  ${it.label} ___________________________________________________________
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else if (q.type === 'cf_and_gcf') {
+          workAreaHtml = `
+            <div class="space-y-3 mt-2">
+              ${q.items.map(it => `
+                <div class="border border-slate-300 rounded-lg p-3 text-xs space-y-1.5">
+                  <div class="font-bold text-slate-900">${it.label}</div>
+                  <div>Factors of ${it.a} = ____________________________________________________</div>
+                  <div>Factors of ${it.b} = ____________________________________________________</div>
+                  <div>Common Factors = _________________________________________________</div>
+                  ${it.mode === 'cf_and_gcf' ? '<div class="font-bold">GCF = ___________________</div>' : ''}
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        return `
+          <div class="print-avoid-break border-b border-slate-200 pb-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-slate-500">${q.partTitle} • Q${q.qNum} (${q.conceptId})</span>
+              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? 'pt' : 'pts'})</span>
+            </div>
+            <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
+            ${workAreaHtml}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <div class="border-2 border-slate-800 rounded-xl p-4 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-300 pb-3">
+            <div>
+              <h2 class="text-lg font-extrabold text-slate-900">Primary 4 Mathematics — Practice Assessment</h2>
+              <p class="text-xs text-slate-600">Year 4 / Term 2 / Written Multiplication &amp; Division, Factors, GCF &amp; LCM</p>
+            </div>
+            <div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">
+              ${setObj.title} (Total: 53 pts)
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">
+            <div>Name: _______________________</div>
+            <div>Date: _______________________</div>
+            <div>Set: <span class="underline">${setObj.shortTitle}</span></div>
+            <div>Score: ________ / 53</div>
+          </div>
+        </div>
+        <div class="text-xs italic text-slate-600">
+          Instruction: Answer all the questions given correctly. You should show all your workings on the question paper.
+        </div>
+        <div class="space-y-5">${qBlocksHtml}</div>
+      `;
+    }
+
+    function buildStandalonePrintableHtml() {
+      const sheetContent = document.getElementById('printableSheetContainer').innerHTML;
+      const setObj = QUESTION_SETS[activePrintSet];
+      return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Primary 4 Mathematics Worksheet - ${setObj.shortTitle}</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"><\/script>
+  <style>
+    body { font-family: sans-serif; padding: 24px; color: #0f172a; }
+    .print-avoid-break { break-inside: avoid; page-break-inside: avoid; }
+  </style>
+</head>
+<body>
+  <div class="max-w-4xl mx-auto space-y-6">
+    ${sheetContent}
+  </div>
+</body>
+</html>`;
+    }
+
+    // =========================================================================
+    // 11. EVENT LISTENERS INITIALIZATION
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStartScreen();
+      renderParentInspector();
+
+      // Header navigation
+      document.getElementById('btnHeaderHome').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.getElementById('btnHeaderPrint').addEventListener('click', () => {
+        activePrintSet = currentSetKey;
+        renderPrintView();
+        showView('viewPrint');
+      });
+
+      // Set selection pills
+      document.getElementById('pillSet1').addEventListener('click', () => {
+        currentSetKey = 'practice_set_1';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet2').addEventListener('click', () => {
+        currentSetKey = 'practice_set_2';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet3').addEventListener('click', () => {
+        currentSetKey = 'practice_set_3';
+        renderStartScreen();
+      });
+
+      // Fresh Random Numbers
+      document.getElementById('btnFreshRandom').addEventListener('click', () => {
+        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+        generateFreshRandomSet();
+      });
+
+      // Start & Reset buttons
+      document.getElementById('btnStartPractice').addEventListener('click', () => {
+        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+        startQuiz(currentSetKey);
+      });
+
+      document.getElementById('btnResetPractice').addEventListener('click', () => {
+        const targetKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+        clearSetState(targetKey);
+        renderStartScreen();
+        showToast(`Progress cleared for ${QUESTION_SETS[targetKey].shortTitle}.`);
+      });
+
+      document.getElementById('btnStartOfficial').addEventListener('click', () => {
+        startQuiz('official');
+      });
+
+      document.getElementById('btnResetOfficial').addEventListener('click', () => {
+        clearSetState('official');
+        renderStartScreen();
+        showToast('Progress cleared for Official Pre-Test Mode.');
+      });
+
+      // Parent Inspector Drawer Toggle & Tabs
+      document.getElementById('btnToggleParentInspector').addEventListener('click', () => {
+        const panel = document.getElementById('panelParentInspector');
+        const icon = document.getElementById('iconParentToggle');
+        const isHidden = panel.classList.contains('hidden');
+        if (isHidden) {
+          panel.classList.remove('hidden');
+          icon.textContent = 'Hide Inspector ▲';
+        } else {
+          panel.classList.add('hidden');
+          icon.textContent = 'Show Inspector ▼';
+        }
+      });
+
+      document.querySelectorAll('.parent-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeParentTab = btn.getAttribute('data-parent-tab');
+          renderParentInspector();
+        });
+      });
+
+      // Quiz Slide Controls
+      document.getElementById('btnPrevSlide').addEventListener('click', () => {
+        const activeList = getActiveSlideList();
+        const pos = activeList.indexOf(currentSlideIndex);
+        if (pos > 0) {
+          currentSlideIndex = activeList[pos - 1];
+          renderQuizSlide();
+        }
+      });
+
+      document.getElementById('btnNextSlide').addEventListener('click', () => {
+        const activeList = getActiveSlideList();
+        const pos = activeList.indexOf(currentSlideIndex);
+        if (pos < activeList.length - 1) {
+          currentSlideIndex = activeList[pos + 1];
+          renderQuizSlide();
+        }
+      });
+
+      document.getElementById('btnSubmitQuiz').addEventListener('click', attemptSubmitQuiz);
+      document.getElementById('btnQuickSubmitSidebar').addEventListener('click', attemptSubmitQuiz);
+
+      document.getElementById('btnSaveAndExit').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      // Modal Submit Anyway
+      document.getElementById('btnModalSubmitAnyway').addEventListener('click', finalizeSubmission);
+
+      // Results View Controls
+      document.getElementById('btnRetakeCurrent').addEventListener('click', () => {
+        clearSetState(currentSetKey);
+        startQuiz(currentSetKey);
+      });
+
+      document.getElementById('btnResultsBackHome').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      // Print View Controls
+      document.getElementById('btnBackFromPrint').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.querySelectorAll('.print-set-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activePrintSet = btn.getAttribute('data-print-set');
+          renderPrintView();
+        });
+      });
+
+      document.getElementById('btnPrintNow').addEventListener('click', () => {
+        try {
+          window.print();
+        } catch (e) {
+          showToast('Use Download Printable HTML if browser blocks direct printing.');
+        }
+      });
+
+      document.getElementById('btnDownloadPrintableHtml').addEventListener('click', () => {
+        const htmlStr = buildStandalonePrintableHtml();
+        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `p4-math-t2-worksheet-${activePrintSet}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Downloaded printable HTML worksheet!');
+      });
+
+      document.getElementById('btnOpenNewTabPrint').addEventListener('click', () => {
+        const htmlStr = buildStandalonePrintableHtml();
+        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
