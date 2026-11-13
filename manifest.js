@@ -1,13 +1,28 @@
 // Central Curriculum Manifest for school-portal
 // Modules are sorted alphabetically by subject, then by module number:
-// 1. Mathematics (T2 Math I, T2 Math II)
-// 2. Science (T2 Science I, T2 Science II)
+// 1. Bahasa Indonesia & Pancasila (T2 Bahasa Indonesia & Pancasila)
+// 2. Mathematics (T2 Math I, T2 Math II)
+// 3. Science (T2 Science I, T2 Science II)
+// 4. Social Science (T2 Social Science)
 
 const PORTAL_DATA = {
   p4: {
     title: "Primary 4 (P4)",
     curriculumScope: "Term 2 / Semester 1",
     modules: [
+      {
+        id: "bahasa-pancasila-t2-1",
+        title: "T2 Bahasa Indonesia & Pancasila: Tokoh, Kalimat & Hak Siswa",
+        subtitle: "Narasi Tokoh Pendidikan, Kosakata Baru, Kalimat Langsung/Tidak Langsung & Hak Siswa",
+        subject: "bahasa-pancasila",
+        subjectLabel: "Bahasa Indonesia & Pancasila",
+        status: "active",
+        folderUrl: "./bahasa-pancasila-t2-1/",
+        description: "Latihan terpadu memahami teks biografi R.A. Kartini & Ki Hajar Dewantara, 15 kosakata kontekstual, transformasi kalimat langsung dan tidak langsung sesuai PUEBI, serta klasifikasi hak dan kewajiban siswa di sekolah.",
+        questionCount: "36 Questions",
+        maxScore: "36 / 30 Pts",
+        formats: "Quiz & Paper"
+      },
       {
         id: "math-t2-1",
         title: "T2 Math I: Numbers & Operations",
@@ -49,15 +64,28 @@ const PORTAL_DATA = {
       },
       {
         id: "science-t2-2",
-        title: "T2 Science II: Forces & Energy Transfer",
-        subtitle: "Friction, Gravity, Magnetic Forces & Simple Circuits",
+        title: "T2 Science II: Forces & Types of Force",
+        subtitle: "Push/Pull, Friction, Gravity & Magnetism (Unit 16)",
         subject: "science",
         subjectLabel: "Science",
-        status: "upcoming",
+        status: "active", // Switched from "upcoming" to "active"
         folderUrl: "./science-t2-2/",
-        description: "Explore balanced and unbalanced forces, how friction affects moving surfaces, magnetic poles, and investigating complete electrical circuits.",
-        questionCount: "TBD",
-        maxScore: "TBD",
+        description: "Master push vs. pull forces, temporary vs. permanent shape changes, contact vs. non-contact forces, friction, gravity, mass/shape/force factors, magnetic materials (Iron/Steel vs. Aluminium/Copper), pole interactions, and Earth's compass.",
+        questionCount: "36 Questions",
+        maxScore: "36 / 20 Pts",
+        formats: "Quiz & Paper"
+      },
+      {
+        id: "social-science-t2-1",
+        title: "T2 Social Science: Light, Sound & Inventors",
+        subtitle: "History of Light & Sound & Biographies of Scientists and Inventors",
+        subject: "social-science",
+        subjectLabel: "Social Science",
+        status: "active",
+        folderUrl: "./social-science-t2-1/",
+        description: "Explore the historical timelines of light and sound, the 1879 electric bulb, 2014 blue LED, traditional Indonesian kentongan, biographies of Ibn al-Haytham, Edison, Bell, Marconi, Hertz, and Cooper, plus modern community applications.",
+        questionCount: "36 Questions",
+        maxScore: "36 / 20 Pts",
         formats: "Quiz & Paper"
       }
     ]

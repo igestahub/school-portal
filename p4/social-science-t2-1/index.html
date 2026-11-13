@@ -1,0 +1,4354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primary 4 Social Science - Practice Assessment (History of Light, Sound & Inventors)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .print-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .print-avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+  <!-- Top App Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+          P4
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+            Primary 4 Social Science — Practice Assessment
+          </h1>
+          <p class="text-xs text-slate-500">
+            Term 2 • History of Light & Sound & Biographies of Scientists and Inventors (C1..C20 Mastery)
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="../" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          ← P4 Hub
+        </a>
+        <button id="btnHeaderHome" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          🏠 Start Screen
+        </button>
+        <button id="btnHeaderPrint" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 transition">
+          🖨️ Print / Paper Worksheet
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-6">
+
+    <!-- VIEW 1: START SCREEN -->
+    <section id="viewStart" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Left Card: Practice Mode (Selected by Default) -->
+        <div id="cardPracticeMode" class="md:col-span-7 bg-white rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                ★ Selected Default
+              </span>
+              <span id="badgePracticeStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                Not Started
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 mb-1">
+              Practice Mode (Set 1 | Set 2 | Set 3)
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Full 20-concept coverage (<code class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">C1..C20</code> packed into 12 questions per set, 36 pts per set, 36-question total practice bank) across 3 cognitive angles:
+            </p>
+
+            <!-- Set Selector Pills -->
+            <div class="mb-4">
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
+                Select Practice Set (12 Questions • 36 Pts Each)
+              </label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
+                  <div class="font-bold text-sm text-indigo-950">Set 1</div>
+                  <div class="text-[11px] text-indigo-700 font-medium">Direct & Concepts</div>
+                  <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-1">Not Started</div>
+                </button>
+                <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
+                  <div class="font-bold text-sm text-slate-900">Set 2</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Real-Life Scenarios</div>
+                  <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-1">Not Started</div>
+                </button>
+                <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
+                  <div class="font-bold text-sm text-slate-900">Set 3</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Inversion & Errors</div>
+                  <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-1">Not Started</div>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 space-y-1 mb-4">
+              <div class="font-bold">6 Multi-Fact Packing Clusters Tested in Every Set:</div>
+              <div>• <span class="font-semibold">Cluster A (C1–C3):</span> Three Big Inquiry Questions (Before/Who & When/After) & Science of Light and Sound</div>
+              <div>• <span class="font-semibold">Cluster B (C4–C7):</span> Light Long Ago, Light Timeline, 1879 Electric Bulb (Edison & Swan) & 2014 Blue LED / Solar Lamps</div>
+              <div>• <span class="font-semibold">Cluster C (C8–C10):</span> Sound Long Ago (Drums, Kentongan, Horns, Messengers), Sound Timeline & 4 Sound Inventors</div>
+              <div>• <span class="font-semibold">Cluster D (C11–C14):</span> Biographies: Ibn al-Haytham (c. 1020), Thomas Edison, Alexander Graham Bell & Heinrich Hertz</div>
+              <div>• <span class="font-semibold">Cluster E (C15–C17):</span> 1877 Phonograph Mechanism, Microphone vs. Speaker & Radio Waves vs. Sound Waves</div>
+              <div>• <span class="font-semibold">Cluster F (C18–C20):</span> Multi-Century Timeline of Ideas, Problem-Invention-Impact Chains & Fibre-Optic / Medical Uses</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
+            <button id="btnStartPractice" type="button" class="flex-1 min-w-[160px] px-4 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+              Start Practice
+            </button>
+            <button id="btnResetPractice" type="button" class="px-3.5 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 hover:bg-rose-50 hover:text-rose-700 text-slate-600 transition">
+              Clear / Reset Progress
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Card: Official Pre-Test / Source Mode -->
+        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                Source Baseline (20 Pts)
+              </span>
+              <span id="badgeOfficialStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                Not Started
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 mb-1">
+              Official Pre-Test / Source Mode
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Complete all 6 structured source & inquiry tasks (20 pts total) from Part 1 (The History of Light and Sound) and Part 2 (Biographies of Scientists & Inventors).
+            </p>
+
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-600 space-y-1.5 mb-5">
+              <div class="font-semibold text-slate-800">Official Question Breakdown (20 pts):</div>
+              <div>• <span class="font-medium text-slate-800">Q1 (3 pts):</span> Slide 2 — Three Big Questions for Scientists (Before, Who & When, After).</div>
+              <div>• <span class="font-medium text-slate-800">Q2 (4 pts):</span> Slides 4–6 — Light Timeline, 1879 Bulb (Edison & Swan), and 2014 Blue LED.</div>
+              <div>• <span class="font-medium text-slate-800">Q3 (4 pts):</span> Slides 7–9 — Kentongan & Sound Timeline + 4 Sound Inventors (1876–1973).</div>
+              <div>• <span class="font-medium text-slate-800">Q4 (4 pts):</span> SS07–SS09 — Biographies of Ibn al-Haytham, Edison, Bell & Hertz.</div>
+              <div>• <span class="font-medium text-slate-800">Q5 (3 pts):</span> SS08–SS09 — Phonograph stylus, Microphone vs. Speaker & Radio wave rules.</div>
+              <div>• <span class="font-medium text-slate-800">Q6 (2 pts):</span> SS10 — Multi-Century Timeline of Ideas & Community Impact synthesis.</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
+            <button id="btnStartOfficial" type="button" class="flex-1 px-4 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+              Start Official Pre-Test
+            </button>
+            <button id="btnResetOfficial" type="button" class="px-3 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 hover:bg-rose-50 hover:text-rose-700 text-slate-600 transition">
+              Clear / Reset Progress
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Guidelines Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">
+          Assessment Guidelines & Grading Rules
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-600">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">1. Zero-Spoiler Active Test</div>
+            Inputs use neutral placeholders with no hints or right/wrong badges during the test. Full model answers and keyword explanations unlock on the final review screen.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">2. Smart Keyword & Typo Forgiveness</div>
+            Short written explanations are graded using scientific keywords and synonyms (allowing minor 1-letter spelling typos on words of 6+ letters) and distinguish ordered sequences from unordered lists.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="font-semibold text-slate-800 mb-1">3. Interactive Tables & Printable View</div>
+            Classification tables award proportional credit per row. Switch to 🖨️ Print / Paper Worksheet anytime for an exam-styled A4 sheet.
+          </div>
+        </div>
+      </div>
+
+      <!-- Parent Inspector Drawer Toggle (Password-Protected: "nopeeking") -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <button id="btnToggleParentInspector" type="button" class="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-slate-50 transition">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">🔒</span>
+            <div>
+              <div class="text-sm font-bold text-slate-900">
+                Parent Preview & Answer Key (Concept Coverage C1..C20)
+              </div>
+              <div class="text-xs text-slate-500">
+                Password-protected ('nopeeking') inspector for all questions, mapped concepts (C1..C20), model answers, and automated QA self-test.
+              </div>
+            </div>
+          </div>
+          <span id="iconParentToggle" class="text-xs font-semibold text-indigo-600 px-2.5 py-1 rounded-lg bg-indigo-50">
+            Show Inspector ▼
+          </span>
+        </button>
+
+        <div id="panelParentInspector" class="hidden border-t border-slate-200 p-5 bg-slate-50/60 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="text-xs font-semibold text-slate-600">
+              Select Set to Inspect Questions, Mapped Concepts & Answer Key:
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button type="button" data-parent-tab="practice_set_1" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1</button>
+              <button type="button" data-parent-tab="practice_set_2" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 2</button>
+              <button type="button" data-parent-tab="practice_set_3" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 3</button>
+              <button type="button" data-parent-tab="official" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Official (20 Pts)</button>
+              <button id="btnRunQaSelfTest" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xs transition">
+                🧪 Run QA Self-Test
+              </button>
+            </div>
+          </div>
+
+          <div id="qaSelfTestBanner" class="hidden p-3.5 rounded-xl border text-xs font-semibold"></div>
+
+          <div class="overflow-x-auto bg-white rounded-xl border border-slate-200">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                  <th class="py-2.5 px-3 font-bold">Q# & Concepts</th>
+                  <th class="py-2.5 px-3 font-bold">Sub-Topic & Pts</th>
+                  <th class="py-2.5 px-3 font-bold">Question & Sub-Items</th>
+                  <th class="py-2.5 px-3 font-bold">Model Answer & Grading Keywords</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyParentInspector" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: ACTIVE QUIZ SLIDE VIEW -->
+    <section id="viewQuiz" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span id="quizModeBadge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800">
+              Set 1
+            </span>
+            <span id="quizClusterBadge" class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+              Cluster A
+            </span>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-semibold text-slate-600">
+            <span id="quizQuestionCounter">Question 1 of 12</span>
+            <span>•</span>
+            <span id="quizPointsCounter" class="text-indigo-700 font-bold">3 pts</span>
+          </div>
+        </div>
+
+        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+          <div id="quizProgressBar" class="h-full bg-indigo-600 transition-all duration-300" style="width: 8%"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Active Question Card -->
+        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Optional Reading Passage Box -->
+            <div id="slidePassageWrapper" class="hidden mb-4 rounded-xl border border-amber-200 bg-amber-50/60 overflow-hidden">
+              <button id="btnTogglePassage" type="button" class="w-full px-4 py-2.5 flex items-center justify-between text-left text-xs font-bold text-amber-950 bg-amber-100/70 hover:bg-amber-100 transition">
+                <span id="slidePassageTitle">📖 Read Source Passage</span>
+                <span id="slidePassageIcon">▼</span>
+              </button>
+              <div id="slidePassageBody" class="p-4 text-xs sm:text-sm text-slate-800 leading-relaxed space-y-2.5 max-h-64 overflow-y-auto border-t border-amber-200"></div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span id="slideSubTopic" class="text-xs font-bold uppercase tracking-wider text-indigo-600"></span>
+              <span id="slideConceptBadge" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600"></span>
+            </div>
+
+            <h2 id="slidePrompt" class="text-base sm:text-lg font-bold text-slate-900 mb-4"></h2>
+
+            <!-- Optional Word Bank Banner -->
+            <div id="slideWordBank" class="hidden mb-4 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200">
+              <div class="text-xs font-bold uppercase tracking-wider text-indigo-900 mb-1.5">Word Bank (Click or type a word):</div>
+              <div id="slideWordBankPills" class="flex flex-wrap gap-1.5"></div>
+            </div>
+
+            <!-- Dynamic Sub-Items / Inputs Container -->
+            <div id="slideInputsContainer" class="space-y-4"></div>
+          </div>
+
+          <!-- Slide Navigation Footer -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-6 mt-6 border-t border-slate-100">
+            <button id="btnPrevSlide" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+              ← Previous
+            </button>
+            <div class="flex items-center gap-2">
+              <button id="btnNextSlide" type="button" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+                Next →
+              </button>
+              <button id="btnSubmitQuiz" type="button" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+                Finish & Submit Test
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Navigator Sidebar -->
+        <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Question Navigator (Answered / Unanswered)
+              </h3>
+              <span id="navAnsweredCount" class="text-xs font-semibold text-indigo-600">0 / 12</span>
+            </div>
+
+            <div id="navigatorGrid" class="grid grid-cols-4 gap-2 mb-4"></div>
+
+            <div class="flex items-center gap-4 text-xs text-slate-500 pt-3 border-t border-slate-100">
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Answered
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded bg-slate-200 inline-block"></span> Unanswered
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded ring-2 ring-indigo-600 inline-block"></span> Current
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 space-y-2">
+            <button id="btnQuickSubmitSidebar" type="button" class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition">
+              Finish & Submit Test
+            </button>
+            <button id="btnSaveAndExit" type="button" class="w-full py-2 px-4 rounded-xl font-medium text-xs text-slate-600 hover:bg-slate-100 transition">
+              ← Save & Return to Start Screen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: SUMMATIVE SCORECARD & POST-TEST REVIEW -->
+    <section id="viewResults" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200">
+          <div>
+            <span id="resultSetBadge" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 mb-2">
+              Set 1
+            </span>
+            <h2 class="text-2xl font-extrabold text-slate-900">
+              Final Score & Concept Mastery Review
+            </h2>
+            <p class="text-sm text-slate-600">
+              Detailed answer comparison with explanations and accepted grading keywords.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4 bg-slate-50 px-5 py-3.5 rounded-2xl border border-slate-200">
+            <div class="text-right">
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Final Score</div>
+              <div id="resultTotalScore" class="text-3xl font-extrabold text-indigo-600">36 / 36</div>
+            </div>
+            <div class="h-10 w-px bg-slate-200"></div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Percentage</div>
+              <div id="resultPercentage" class="text-2xl font-bold text-slate-900">100%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+          <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold uppercase text-indigo-900">Part 1: History of Light & Sound</div>
+              <div class="text-xs text-slate-600">Big Questions, Light & Sound Timelines, Electric Bulb, LEDs, Kentongan & 4 Sound Inventors (C1, C4–C10)</div>
+            </div>
+            <div id="resultUnit1Score" class="text-lg font-extrabold text-indigo-700">--</div>
+          </div>
+          <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold uppercase text-emerald-900">Part 2: Biographies & Wave Mechanisms</div>
+              <div class="text-xs text-slate-600">Ibn al-Haytham, Edison, Bell, Hertz, Phonograph, Mic/Speaker, Radio Waves & Community Impact (C2–C3, C11–C20)</div>
+            </div>
+            <div id="resultUnit2Score" class="text-lg font-extrabold text-emerald-700">--</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button id="btnRetryIncorrect" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-amber-500 hover:bg-amber-600 text-white shadow-sm transition">
+            Retry Incorrect Only
+          </button>
+          <button id="btnRetakeCurrent" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-800 transition">
+            Retake Current Set
+          </button>
+          <button id="btnStartNextSet" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+            Start Next Practice Set (Set 2)
+          </button>
+          <button id="btnResultsBackHome" type="button" class="px-4 py-2.5 rounded-xl font-semibold text-sm bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 transition">
+            🏠 Back to Start Screen
+          </button>
+        </div>
+      </div>
+
+      <div id="resultsReviewList" class="space-y-4"></div>
+    </section>
+
+    <!-- VIEW 4: PRINTABLE PAPER WORKSHEET VIEW -->
+    <section id="viewPrint" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnBackFromPrint" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 transition">
+            ← Back to Interactive Quiz
+          </button>
+          <div class="h-5 w-px bg-slate-200 mx-1"></div>
+          <span class="text-xs font-semibold text-slate-600">Paper Set:</span>
+          <div class="flex flex-wrap gap-1">
+            <button type="button" data-print-set="practice_set_1" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1</button>
+            <button type="button" data-print-set="practice_set_2" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Set 2</button>
+            <button type="button" data-print-set="practice_set_3" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Set 3</button>
+            <button type="button" data-print-set="official" class="print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">Official (20 Pts)</button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnPrintNow" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition">
+            🖨️ Print Now
+          </button>
+          <button id="btnDownloadPrintableHtml" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+            ⬇ Download Printable HTML
+          </button>
+          <button id="btnOpenNewTabPrint" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition">
+            ↗ Open in New Tab to Print
+          </button>
+        </div>
+      </div>
+
+      <div id="printableSheetContainer" class="print-sheet bg-white rounded-2xl border border-slate-300 p-6 sm:p-10 shadow-sm space-y-6"></div>
+    </section>
+
+  </main>
+
+  <!-- PASSWORD MODAL FOR PARENT INSPECTOR ("nopeeking") -->
+  <div id="modalParentPassword" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-200 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg">
+          🔒
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Enter Parent Password</h3>
+          <p class="text-xs text-slate-600">The Parent Preview & Answer Key is password-protected so students complete their practice independently.</p>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <input id="inputParentPassword" type="password" placeholder="Enter password..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+        <p id="errorParentPassword" class="hidden text-xs font-semibold text-rose-600">Incorrect password — no peeking! 🙈</p>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+        <button id="btnCancelParentPassword" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          Cancel
+        </button>
+        <button id="btnConfirmParentPassword" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
+          Unlock Inspector
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNANSWERED QUESTIONS MODAL GUARD -->
+  <div id="modalUnanswered" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-200 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
+          !
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Unanswered Questions</h3>
+          <p id="modalUnansweredText" class="text-xs text-slate-600"></p>
+        </div>
+      </div>
+
+      <div id="modalUnansweredPills" class="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto p-2 rounded-xl bg-slate-50 border border-slate-200"></div>
+
+      <div class="flex flex-wrap items-center justify-end gap-2 pt-3 border-t border-slate-100">
+        <button id="btnModalGoBack" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
+          Go Back
+        </button>
+        <button id="btnModalSubmitAnyway" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          Submit Anyway
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toastBanner" class="fixed bottom-4 right-4 z-50 hidden bg-slate-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg no-print"></div>
+
+  <script>
+    // =========================================================================
+    // 1. UI DICTIONARY & RESILIENT GRADING ENGINE
+    // =========================================================================
+    const UI = {"lang_attr": "en", "grade_badge": "P4", "hub_btn": "← P4 Hub", "home_btn": "🏠 Start Screen", "print_btn": "🖨️ Print / Paper Worksheet", "selected_default": "★ Selected Default", "not_started": "Not Started", "in_progress": "In Progress", "completed_prefix": "✓ Completed", "practice_mode_title": "Practice Mode (Set 1 | Set 2 | Set 3)", "select_set_label": "Select Practice Set (12 Questions • 36 Pts Each)", "set1_sub": "Direct & Concepts", "set2_sub": "Real-Life Scenarios", "set3_sub": "Inversion & Errors", "start_practice": "Start Practice", "resume_practice": "Resume Saved Session", "reset_btn": "Clear / Reset Progress", "official_badge": "Source Baseline (20 Pts)", "official_title": "Official Pre-Test / Source Mode", "start_official": "Start Official Pre-Test", "guidelines_title": "Assessment Guidelines & Grading Rules", "g1_title": "1. Zero-Spoiler Active Test", "g1_desc": "Inputs use neutral placeholders with no hints or right/wrong badges during the test. Full model answers and keyword explanations unlock on the final review screen.", "g2_title": "2. Smart Keyword & Typo Forgiveness", "g2_desc": "Short written explanations are graded using scientific keywords and synonyms (allowing minor 1-letter spelling typos on words of 6+ letters) and distinguish ordered sequences from unordered lists.", "g3_title": "3. Interactive Tables & Printable View", "g3_desc": "Classification tables award proportional credit per row. Switch to 🖨️ Print / Paper Worksheet anytime for an exam-styled A4 sheet.", "parent_title": "Parent Preview & Answer Key (Concept Coverage C1..C20)", "parent_desc": "Password-protected ('nopeeking') inspector for all questions, mapped concepts (C1..C20), model answers, and automated QA self-test.", "show_inspector": "Show Inspector ▼", "hide_inspector": "Hide Inspector ▲", "parent_select_label": "Select Set to Inspect Questions, Mapped Concepts & Answer Key:", "qa_btn": "🧪 Run QA Self-Test", "th_q": "Q# & Concepts", "th_sub": "Sub-Topic & Pts", "th_prompt": "Question & Sub-Items", "th_ans": "Model Answer & Grading Keywords", "word_bank_label": "Word Bank (Click or type a word):", "passage_toggle": "📖 Read Source Passage", "prev_btn": "← Previous", "next_btn": "Next →", "submit_btn": "Finish & Submit Test", "nav_title": "Question Navigator (Answered / Unanswered)", "answered_label": "Answered", "unanswered_label": "Unanswered", "current_label": "Current", "save_exit_btn": "← Save & Return to Start Screen", "results_title": "Final Score & Concept Mastery Review", "results_sub": "Detailed answer comparison with explanations and accepted grading keywords.", "final_score_label": "Final Score", "pct_label": "Percentage", "retry_incorrect_btn": "Retry Incorrect Only", "retake_btn": "Retake Current Set", "next_set_prefix": "Start Next Practice Set", "back_home_btn": "🏠 Back to Start Screen", "back_quiz_btn": "← Back to Interactive Quiz", "paper_set_label": "Paper Set:", "print_now_btn": "🖨️ Print Now", "download_html_btn": "⬇ Download Printable HTML", "open_tab_btn": "↗ Open in New Tab to Print", "unanswered_modal_title": "Unanswered Questions", "submit_anyway_btn": "Submit Anyway", "pw_modal_title": "Enter Parent Password", "pw_modal_desc": "The Parent Preview & Answer Key is password-protected so students complete their practice independently.", "pw_placeholder": "Enter password...", "pw_unlock_btn": "Unlock Inspector", "pw_cancel_btn": "Cancel", "pw_error_msg": "Incorrect password — no peeking! 🙈", "select_placeholder": "Select option...", "text_placeholder": "Write your answer...", "list_placeholder": "Separated by commas...", "q_word": "Question", "of_word": "of", "pt_singular": "pt", "pt_plural": "pts", "correct_badge": "✓ Correct", "partial_badge": "◐ Partial", "incorrect_badge": "✗ Incorrect", "your_ans_label": "Your Answer:", "model_ans_label": "Model Answer:", "expl_label": "Explanation & Keywords:", "no_answer_text": "(No answer)", "paper_name": "Name: _______________________", "paper_date": "Date: _______________________", "paper_set": "Set:", "paper_score": "Score:", "paper_instruction": "Instruction: Answer all questions carefully and completely according to the given instructions."};
+    const ALL_CONCEPTS = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20"];
+    const STORAGE_PREFIX = "p4_socsci_t2_1_light_sound_v1";
+
+    function levenshtein(a, b) {
+      const m = a.length, n = b.length;
+      const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+      for (let i = 0; i <= m; i++) dp[i][0] = i;
+      for (let j = 0; j <= n; j++) dp[0][j] = j;
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+          dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+        }
+      }
+      return dp[m][n];
+    }
+
+    function normalizeText(str) {
+      return String(str || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function matchesKeyword(userNorm, kw) {
+      const kwNorm = normalizeText(kw);
+      if (!kwNorm) return false;
+      if (userNorm.includes(kwNorm)) return true;
+      const userWords = userNorm.split(' ').filter(Boolean);
+      const kwWords = kwNorm.split(' ').filter(Boolean);
+      if (kwWords.length === 1) {
+        const target = kwWords[0];
+        if (target.length >= 6) {
+          return userWords.some(w => Math.abs(w.length - target.length) <= 1 && levenshtein(w, target) <= 1);
+        }
+        return userWords.includes(target);
+      }
+      return kwWords.every(kwWord => {
+        if (kwWord.length >= 6) {
+          return userWords.some(w => Math.abs(w.length - kwWord.length) <= 1 && levenshtein(w, kwWord) <= 1);
+        }
+        return userWords.includes(kwWord);
+      });
+    }
+
+    function evaluateItem(userRaw, itemSpec) {
+      const userNorm = normalizeText(userRaw);
+      if (!userNorm) {
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
+      if (itemSpec.mode === 'select' || itemSpec.mode === 'exact') {
+        const accepted = (itemSpec.accepted || [itemSpec.modelAnswer]).map(normalizeText);
+        const ok = accepted.some(ans => ans === userNorm || (ans.length >= 6 && levenshtein(ans, userNorm) <= 1));
+        return {
+          earned: ok ? itemSpec.points : 0,
+          max: itemSpec.points,
+          status: ok ? 'correct' : 'incorrect'
+        };
+      }
+
+      if (itemSpec.mode === 'unordered_list') {
+        const userParts = String(userRaw || '').split(/[,;/]+/).map(normalizeText).filter(Boolean);
+        const targetGroups = itemSpec.listGroups || (itemSpec.accepted || [itemSpec.modelAnswer]).map(x => [x]);
+        let hit = 0;
+        targetGroups.forEach(grp => {
+          if (grp.some(syn => userParts.some(up => matchesKeyword(up, syn)))) {
+            hit++;
+          }
+        });
+        if (hit === targetGroups.length) {
+          return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+        }
+        if (hit > 0 && itemSpec.points > 1) {
+          return { earned: Math.max(1, Math.round((hit / targetGroups.length) * itemSpec.points)), max: itemSpec.points, status: 'partial' };
+        }
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
+      if (itemSpec.mode === 'ordered_sequence') {
+        const userParts = String(userRaw || '').split(/(?:->|→|,|;|\/)+/).map(normalizeText).filter(Boolean);
+        const seqGroups = itemSpec.sequenceGroups || [];
+        if (seqGroups.length > 0 && userParts.length === seqGroups.length) {
+          const allInOrder = seqGroups.every((grp, idx) => grp.some(syn => matchesKeyword(userParts[idx], syn)));
+          if (allInOrder) {
+            return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+          }
+        }
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
+      // Default: keyword_groups
+      if (itemSpec.forbidWords && itemSpec.forbidWords.some(fw => { const fNorm = normalizeText(fw); return fNorm && userNorm.includes(fNorm); })) {
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
+      const groups = itemSpec.keywordGroups || [];
+      if (groups.length === 0) {
+        return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+      }
+
+      let matchedCount = 0;
+      groups.forEach(grp => {
+        if (grp.some(syn => matchesKeyword(userNorm, syn))) {
+          matchedCount++;
+        }
+      });
+
+      if (matchedCount === groups.length) {
+        return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+      }
+      if (matchedCount > 0 && itemSpec.points > 1) {
+        const partialPts = Math.max(1, Math.round((matchedCount / groups.length) * itemSpec.points));
+        return { earned: partialPts, max: itemSpec.points, status: 'partial' };
+      }
+      return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+    }
+
+    // =========================================================================
+    // 2. QUESTION BANK (SET 1, SET 2, SET 3 + OFFICIAL MODE)
+    // =========================================================================
+    const QUESTION_SETS = {
+  "practice_set_1": {
+    "id": "practice_set_1",
+    "title": "Practice Mode • Set 1 (Concept & Direct Identification)",
+    "shortTitle": "Set 1",
+    "maxScore": 36,
+    "questions": [
+      {
+        "qNum": 1,
+        "conceptId": "C1",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit1",
+        "subTopic": "Three Big Questions for Scientists & Inventions",
+        "points": 3,
+        "prompt": "Scientists solve problems. Identify the three big inquiry questions we ask about every invention (Slide 2 / SS01):",
+        "items": [
+          {
+            "id": "a",
+            "label": "1a. Stage 1 (Before) — What question do we ask about life before the invention? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "What was life like before the invention?",
+            "keywordGroups": [
+              [
+                "before",
+                "life like"
+              ]
+            ],
+            "explanation": "Slide 2 (Before): What was life like before the invention?"
+          },
+          {
+            "id": "b",
+            "label": "1b. Stage 2 (Who and when) — Which two facts does this stage ask for? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Who invented it, and in which year?",
+            "keywordGroups": [
+              [
+                "who",
+                "inventor"
+              ],
+              [
+                "year",
+                "when"
+              ]
+            ],
+            "explanation": "Slide 2 (Who and when): Who invented it, and in which year?"
+          },
+          {
+            "id": "c",
+            "label": "1c. Stage 3 (After) — What question do we ask about the impact of the invention? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "How did it make life better for people?",
+            "keywordGroups": [
+              [
+                "better",
+                "help",
+                "helped",
+                "after"
+              ]
+            ],
+            "explanation": "Slide 2 (After): How did it make life better for people?"
+          }
+        ]
+      },
+      {
+        "qNum": 2,
+        "conceptId": "C2, C3",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit2",
+        "subTopic": "Physical Properties & Human Uses of Light and Sound",
+        "points": 3,
+        "prompt": "Identify how light and sound work and why scientists study them (Panel SS07 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "2a. Light helps us see objects. What are the THREE ways light behaves when it hits materials? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Light can be reflected, absorbed, or pass through materials.",
+            "keywordGroups": [
+              [
+                "reflect",
+                "reflected"
+              ],
+              [
+                "absorb",
+                "absorbed"
+              ],
+              [
+                "pass through",
+                "passes through"
+              ]
+            ],
+            "explanation": "SS07 Upper: Light can be reflected, absorbed, or pass through materials."
+          },
+          {
+            "id": "b",
+            "label": "2b. How is sound made, and how does it travel through materials? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound is made by vibrations and travels through materials as waves.",
+            "keywordGroups": [
+              [
+                "vibration",
+                "vibrations"
+              ],
+              [
+                "wave",
+                "waves"
+              ]
+            ],
+            "explanation": "SS07 Upper: Sound is made by vibrations and travels through materials as waves."
+          },
+          {
+            "id": "c",
+            "label": "2c. Match the human applications studied by scientists for LIGHT vs. SOUND. (1 pt)",
+            "mode": "select",
+            "options": [
+              "Light: vision, photography, communication & energy | Sound: communicate, listen to music, measure distances & protect hearing",
+              "Light: measure distances & protect hearing | Sound: photography & solar energy"
+            ],
+            "points": 1,
+            "modelAnswer": "Light: vision, photography, communication & energy | Sound: communicate, listen to music, measure distances & protect hearing",
+            "explanation": "SS07 Upper: Light improves vision, photography, communication, and energy; Sound helps people communicate, listen to music, measure distances, and protect hearing."
+          }
+        ]
+      },
+      {
+        "qNum": 3,
+        "conceptId": "C4, C5",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "Light Long Ago & Chronological Light Timeline",
+        "points": 3,
+        "prompt": "Describe pre-electric light sources and order the five historical stages of lighting (Slides 3–4 / SS02):",
+        "items": [
+          {
+            "id": "a",
+            "label": "3a. Why were fire and torches difficult to use indoors long ago, and how did wax candles compare? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Fire and torches were smoky and risky, while a wax candle gave only a small, dim light.",
+            "keywordGroups": [
+              [
+                "smoky",
+                "risky",
+                "fire"
+              ],
+              [
+                "small",
+                "dim"
+              ]
+            ],
+            "explanation": "Slide 3: Fire and torches gave light and warmth but were smoky and risky; a wax candle gave a small, dim light."
+          },
+          {
+            "id": "b",
+            "label": "3b. What was an oil lamp, and when were gas street lamps introduced? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Oil lamp: small bowl of oil with a flame (used for thousands of years) | Gas street lamps: Early 1800s",
+              "Oil lamp: electric bulb from 1879 | Gas street lamps: 1960s to today"
+            ],
+            "points": 1,
+            "modelAnswer": "Oil lamp: small bowl of oil with a flame (used for thousands of years) | Gas street lamps: Early 1800s",
+            "explanation": "Slides 3–4: Oil lamps were used for thousands of years; gas street lamps appeared in the early 1800s."
+          },
+          {
+            "id": "c",
+            "label": "3c. Order all 5 stages of the Light Timeline from oldest ('Very long ago') to newest ('1960s to today'), separated by commas: (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Fire and torches, Oil lamps and candles, Gas street lamps, Electric light bulb, LED lights",
+            "sequenceGroups": [
+              [
+                "fire",
+                "torches"
+              ],
+              [
+                "oil",
+                "candles"
+              ],
+              [
+                "gas"
+              ],
+              [
+                "electric",
+                "bulb"
+              ],
+              [
+                "led"
+              ]
+            ],
+            "explanation": "Slide 4 Timeline: (1) Fire and torches -> (2) Oil lamps and candles -> (3) Gas street lamps (Early 1800s) -> (4) Electric light bulb (1879) -> (5) LED lights (1960s to today)."
+          }
+        ]
+      },
+      {
+        "qNum": 4,
+        "conceptId": "C6, C7",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "The 1879 Electric Light Bulb & Modern LED Lights",
+        "points": 3,
+        "prompt": "Identify the inventors and impacts of the electric light bulb and modern LED lights (Slides 5–6 / SS03):",
+        "items": [
+          {
+            "id": "a",
+            "label": "4a. Which two inventors in the USA and England built practical electric light bulbs, and in what year could Edison's bulb glow for many hours? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison (USA) and Joseph Swan (England); 1879.",
+            "keywordGroups": [
+              [
+                "edison"
+              ],
+              [
+                "swan"
+              ],
+              [
+                "1879"
+              ]
+            ],
+            "explanation": "Slide 5: Thomas Alva Edison (USA) and Joseph Swan (England) built practical electric light bulbs; Edison's 1879 bulb glowed for many hours."
+          },
+          {
+            "id": "b",
+            "label": "4b. State the three 'After the Bulb' benefits that replaced dark evenings, fire risks, and indoor smoke. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Light at the flip of a switch, safer light inside homes, and people could study and work at night.",
+            "keywordGroups": [
+              [
+                "switch",
+                "safer",
+                "safe"
+              ],
+              [
+                "study",
+                "work",
+                "night"
+              ]
+            ],
+            "explanation": "Slide 5: After the bulb — (1) Light at the flip of a switch, (2) Safer light inside homes, (3) People could study and work at night."
+          },
+          {
+            "id": "c",
+            "label": "4c. State two advantages of LED lights over old bulbs, what won the 2014 Nobel Prize, and how solar lamps use LEDs. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "LEDs use much less electricity and last many times longer; 3 scientists won the 2014 Nobel Prize for the blue LED; solar lamps use LEDs to bring light to places without electricity.",
+            "keywordGroups": [
+              [
+                "less electricity",
+                "longer"
+              ],
+              [
+                "blue led",
+                "nobel",
+                "2014",
+                "solar"
+              ]
+            ],
+            "explanation": "Slide 6: LEDs use much less electricity, last many times longer, won the 2014 Nobel Prize (blue LED), and power solar lamps for places without electricity."
+          }
+        ]
+      },
+      {
+        "qNum": 5,
+        "conceptId": "C8, C9",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Sound Long Ago & Chronological Sound Timeline",
+        "points": 3,
+        "prompt": "Identify early sound messaging methods and order the five stages of the Sound Timeline (Slides 7–8 / SS04):",
+        "items": [
+          {
+            "id": "a",
+            "label": "5a. What is a 'kentongan', where is it used, and what was its purpose long ago? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "A hollow wooden drum used in Indonesia to warn people.",
+            "keywordGroups": [
+              [
+                "wooden",
+                "drum",
+                "hollow"
+              ],
+              [
+                "indonesia"
+              ],
+              [
+                "warn"
+              ]
+            ],
+            "explanation": "Slide 7: Kentongan is a hollow wooden drum used in Indonesia to warn people."
+          },
+          {
+            "id": "b",
+            "label": "5b. Match the other three early sound methods (Talking drums, Horns and bells, Messengers) to their functions. (1 pt)",
+            "mode": "select",
+            "options": [
+              "Talking drums: sent signals across villages | Horns & bells: called people together | Messengers: runners carried spoken messages on foot",
+              "Talking drums: recorded music | Horns & bells: sent wires underground | Messengers: used radio waves"
+            ],
+            "points": 1,
+            "modelAnswer": "Talking drums: sent signals across villages | Horns & bells: called people together | Messengers: runners carried spoken messages on foot",
+            "explanation": "Slide 7: Talking drums sent signals across villages; horns and bells called people together; messengers (runners) carried spoken messages on foot."
+          },
+          {
+            "id": "c",
+            "label": "5c. Order all 5 stages of the Sound Timeline from oldest ('Long ago') to 1973, separated by commas: (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Drums and horns, Telephone, Phonograph, Radio signals, Mobile phone",
+            "sequenceGroups": [
+              [
+                "drums",
+                "horns"
+              ],
+              [
+                "telephone"
+              ],
+              [
+                "phonograph"
+              ],
+              [
+                "radio"
+              ],
+              [
+                "mobile"
+              ]
+            ],
+            "explanation": "Slide 8 Timeline: (1) Drums and horns (Long ago) -> (2) Telephone (1876) -> (3) Phonograph (1877) -> (4) Radio signals (1895) -> (5) Mobile phone (1973)."
+          }
+        ]
+      },
+      {
+        "qNum": 6,
+        "conceptId": "C10",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Four Sound Inventors & Their Breakthroughs (1876–1973)",
+        "points": 3,
+        "prompt": "Match the four sound inventors on Slide 9 (SS05 Upper) to their invention, year, and achievement:",
+        "items": [
+          {
+            "id": "a",
+            "label": "6a. Who invented the Telephone in 1876, and how did it send voices? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Alexander Graham Bell (1876); voices travel along wires to someone far away.",
+            "keywordGroups": [
+              [
+                "bell"
+              ],
+              [
+                "wire",
+                "wires",
+                "1876"
+              ]
+            ],
+            "explanation": "Slide 9: Alexander Graham Bell (Telephone, 1876) — voices travel along wires to someone far away."
+          },
+          {
+            "id": "b",
+            "label": "6b. Who built the Phonograph in 1877, and what was it the first machine to do? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison (1877); the first machine to record and play back sound.",
+            "keywordGroups": [
+              [
+                "edison"
+              ],
+              [
+                "record",
+                "play back",
+                "replay"
+              ]
+            ],
+            "explanation": "Slide 9: Thomas Alva Edison (Phonograph, 1877) — the first machine to record and play back sound."
+          },
+          {
+            "id": "c",
+            "label": "6c. Match Guglielmo Marconi (1895) and Martin Cooper (1973) to their sound breakthroughs. (1 pt)",
+            "mode": "select",
+            "options": [
+              "Guglielmo Marconi (Radio signals, 1895: messages travel through the air without wires) | Martin Cooper (Mobile phone, 1973: made the first handheld mobile phone call)",
+              "Guglielmo Marconi (Mobile phone, 1973) | Martin Cooper (Radio signals, 1895)"
+            ],
+            "points": 1,
+            "modelAnswer": "Guglielmo Marconi (Radio signals, 1895: messages travel through the air without wires) | Martin Cooper (Mobile phone, 1973: made the first handheld mobile phone call)",
+            "explanation": "Slide 9: Marconi (Radio signals, 1895) sent wireless messages through the air; Martin Cooper (Mobile phone, 1973) made the first handheld mobile phone call."
+          }
+        ]
+      },
+      {
+        "qNum": 7,
+        "conceptId": "C11, C12",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Biographies 1 & 2: Ibn al-Haytham & Thomas Alva Edison",
+        "points": 3,
+        "prompt": "Answer the biographical questions about Ibn al-Haytham (c. 965–1040) and Thomas Alva Edison (1847–1931) (SS07 Lower & SS08 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "7a. Where was Ibn al-Haytham born, where did he work, and what device did he use to study optics (light and vision)? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Born in Basra (present-day Iraq) and worked in Cairo; he used a camera obscura (a dark room with a small hole).",
+            "keywordGroups": [
+              [
+                "basra",
+                "iraq",
+                "cairo"
+              ],
+              [
+                "camera obscura",
+                "dark room",
+                "small hole"
+              ]
+            ],
+            "explanation": "SS07 Lower: Born in Basra (Iraq), worked in Cairo, used a dark room with a small hole (camera obscura), and wrote his book on optics c. 1020."
+          },
+          {
+            "id": "b",
+            "label": "7b. Order the three-step scientific habit highlighted on Ibn al-Haytham's biography card (separated by commas or ->): (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Observe, Test, Explain",
+            "sequenceGroups": [
+              [
+                "observe"
+              ],
+              [
+                "test"
+              ],
+              [
+                "explain"
+              ]
+            ],
+            "explanation": "SS07 Lower: Ibn al-Haytham's scientific habit is 'Observe • Test • Explain'."
+          },
+          {
+            "id": "c",
+            "label": "7c. Where was Thomas Alva Edison born, and why is it inaccurate to say he invented the electric light bulb completely by himself? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Born in Ohio, United States; many inventors contributed, and Edison worked with teams to improve the incandescent light bulb and lighting systems.",
+            "keywordGroups": [
+              [
+                "ohio",
+                "united states"
+              ],
+              [
+                "team",
+                "teams",
+                "many inventors",
+                "improvements",
+                "improve"
+              ]
+            ],
+            "explanation": "SS08 Upper: Born in Ohio, USA; Edison did not invent the bulb all by himself—many inventors contributed and Edison worked with teams."
+          }
+        ]
+      },
+      {
+        "qNum": 8,
+        "conceptId": "C13, C14",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Biographies 3 & 4: Alexander Graham Bell & Heinrich Hertz",
+        "points": 3,
+        "prompt": "Answer the biographical questions about Alexander Graham Bell (1847–1922) and Heinrich Hertz (1857–1894) (SS09 Upper & Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "8a. Where was Alexander Graham Bell born, where did he later live, and what did he study before patenting the telephone in 1876? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Born in Scotland and later lived in Canada and the United States; he studied speech and hearing.",
+            "keywordGroups": [
+              [
+                "scotland",
+                "canada",
+                "united states"
+              ],
+              [
+                "speech",
+                "hearing"
+              ]
+            ],
+            "explanation": "SS09 Upper: Born in Scotland, lived in Canada and the USA, studied speech and hearing, and received a US telephone patent in 1876."
+          },
+          {
+            "id": "b",
+            "label": "8b. Where was physicist Heinrich Hertz born, and what did his experiments in the late 1880s (1887–1888) prove? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Born in Hamburg, Germany; he proved that electromagnetic waves could be produced and detected.",
+            "keywordGroups": [
+              [
+                "hamburg",
+                "germany"
+              ],
+              [
+                "electromagnetic",
+                "waves"
+              ]
+            ],
+            "explanation": "SS09 Lower: Born in Hamburg, Germany; in 1887–1888 he demonstrated electromagnetic waves, laying the foundation for radio communication."
+          },
+          {
+            "id": "c",
+            "label": "8c. Why is Heinrich Hertz's biography card labeled with BOTH 'LIGHT + SOUND'? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Because radio waves are electromagnetic waves (like visible light), and his work laid the foundation for radio sound communication",
+              "Because he invented both the wax candle and the wooden kentongan"
+            ],
+            "points": 1,
+            "modelAnswer": "Because radio waves are electromagnetic waves (like visible light), and his work laid the foundation for radio sound communication",
+            "explanation": "SS09 Lower: Radio waves are electromagnetic waves like visible light, and radio systems use them to carry information that a speaker turns into sound."
+          }
+        ]
+      },
+      {
+        "qNum": 9,
+        "conceptId": "C15",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "Edison's 1877 Phonograph Mechanism & Cultural Impact",
+        "points": 3,
+        "prompt": "Explain how Thomas Edison's 1877 phonograph recorded and replayed sound and how it changed society (SS08 Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "9a. In the 1877 phonograph, what did sound vibrations make the recording stylus do? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound vibrations made a recording stylus create patterns on a moving surface.",
+            "keywordGroups": [
+              [
+                "stylus",
+                "pattern",
+                "patterns"
+              ],
+              [
+                "moving surface",
+                "surface"
+              ]
+            ],
+            "explanation": "SS08 Lower: Sound vibrations made a recording stylus create patterns on a moving surface."
+          },
+          {
+            "id": "b",
+            "label": "9b. Order the 3 steps of the phonograph process from first to last (separated by commas): (1) Reproduce sound, (2) Sound vibrations enter, (3) Stylus creates patterns on moving surface. (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Sound vibrations enter, Stylus creates patterns on moving surface, Reproduce sound",
+            "sequenceGroups": [
+              [
+                "vibration",
+                "vibrations",
+                "sound vibrations enter"
+              ],
+              [
+                "stylus",
+                "pattern",
+                "patterns",
+                "moving surface"
+              ],
+              [
+                "reproduce",
+                "play",
+                "replay"
+              ]
+            ],
+            "explanation": "SS08 Lower: (1) Sound vibrations -> (2) Stylus creates patterns on a moving surface -> (3) Recorded pattern reproduces sound."
+          },
+          {
+            "id": "c",
+            "label": "9c. Name the FOUR areas of human life changed by sound recording (SS08 Lower). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Music, storytelling, education, and communication.",
+            "keywordGroups": [
+              [
+                "music",
+                "storytelling"
+              ],
+              [
+                "education",
+                "communication"
+              ]
+            ],
+            "explanation": "SS08 Lower: Sound recording changed music, storytelling, education, and communication."
+          }
+        ]
+      },
+      {
+        "qNum": 10,
+        "conceptId": "C16, C17",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "Microphone vs. Speaker & Radio Waves vs. Sound Waves",
+        "points": 3,
+        "prompt": "Distinguish between microphones and speakers, and between radio waves and sound waves (SS09 Upper & Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "10a. Compare the exact energy conversion in a MICROPHONE versus a SPEAKER. (1 pt)",
+            "mode": "select",
+            "options": [
+              "Microphone: converts sound vibrations into changing electrical signals | Speaker: converts electrical signals back into sound",
+              "Microphone: converts electrical signals into sound | Speaker: converts sound vibrations into electricity"
+            ],
+            "points": 1,
+            "modelAnswer": "Microphone: converts sound vibrations into changing electrical signals | Speaker: converts electrical signals back into sound",
+            "explanation": "SS09 Upper: A microphone converts sound vibrations into changing electrical signals; a speaker converts electrical signals back into sound."
+          },
+          {
+            "id": "b",
+            "label": "10b. How do radio waves compare to visible light in type of wave and wavelength? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Radio waves are electromagnetic waves like visible light, but with much longer wavelengths.",
+            "keywordGroups": [
+              [
+                "electromagnetic"
+              ],
+              [
+                "longer wavelength",
+                "longer wavelengths",
+                "longer"
+              ]
+            ],
+            "explanation": "SS09 Lower: Radio waves are electromagnetic waves, like visible light, but with much longer wavelengths."
+          },
+          {
+            "id": "c",
+            "label": "10c. Complete the 'Remember' rule on SS09 Lower: Are radio waves sound waves, and how does a radio produce sound? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Radio waves are NOT sound waves; a radio uses electromagnetic waves to carry information, and a speaker turns the signal into sound.",
+            "keywordGroups": [
+              [
+                "not sound",
+                "electromagnetic"
+              ],
+              [
+                "speaker"
+              ]
+            ],
+            "explanation": "SS09 Lower: Radio waves are not sound waves. A radio system uses electromagnetic waves to carry information; a speaker then turns the signal into sound."
+          }
+        ]
+      },
+      {
+        "qNum": 11,
+        "conceptId": "C18, C19",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Timeline of Scientific Ideas & Problem-Invention-Impact Chains",
+        "points": 3,
+        "prompt": "Order the multi-century Timeline of Ideas and complete the Problem-Invention-Impact chains (Slide 10 & SS10 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "11a. Order the 4 milestones from 'A Timeline of Ideas' (SS10 Upper) chronologically from c. 1020 to 1887–1888, separated by commas: (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Ibn al-Haytham writes work on optics, Bell receives telephone patent, Edison demonstrates phonograph, Hertz demonstrates electromagnetic waves",
+            "sequenceGroups": [
+              [
+                "haytham",
+                "optics",
+                "1020"
+              ],
+              [
+                "bell",
+                "telephone",
+                "1876"
+              ],
+              [
+                "edison",
+                "phonograph",
+                "1877"
+              ],
+              [
+                "hertz",
+                "electromagnetic",
+                "1887",
+                "1888"
+              ]
+            ],
+            "explanation": "SS10 Upper: c. 1020 (Ibn al-Haytham optics) -> 1876 (Bell telephone patent) -> 1877 (Edison phonograph) -> 1887–1888 (Hertz electromagnetic waves)."
+          },
+          {
+            "id": "b",
+            "label": "11b. Why does chronology matter when studying scientific history (SS10 Upper)? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Chronology helps us understand how scientific ideas develop over time.",
+            "keywordGroups": [
+              [
+                "scientific ideas",
+                "ideas",
+                "develop",
+                "over time"
+              ]
+            ],
+            "explanation": "SS10 Upper: Chronology helps us understand how scientific ideas develop over time."
+          },
+          {
+            "id": "c",
+            "label": "11c. Match the two Problem -> Invention -> Positive Impact chains from Slide 10 (SS05 Lower). (1 pt)",
+            "mode": "select",
+            "options": [
+              "Dark evenings & risky fires -> Electric light bulb -> Safe light for study and work | Far-away people could not talk fast -> Telephone -> Talk instantly across distance",
+              "Dark evenings -> Phonograph -> Talk instantly | Far-away people -> Gas lamp -> Safe light"
+            ],
+            "points": 1,
+            "modelAnswer": "Dark evenings & risky fires -> Electric light bulb -> Safe light for study and work | Far-away people could not talk fast -> Telephone -> Talk instantly across distance",
+            "explanation": "Slide 10: Electric light bulb solved dark evenings/risky fires for safe study & work; Telephone solved slow long-distance communication to talk instantly."
+          }
+        ]
+      },
+      {
+        "qNum": 12,
+        "conceptId": "C20",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "How Light & Sound Science Help Communities Today",
+        "points": 3,
+        "prompt": "Classify how light and sound discoveries help communities today (SS10 Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "12a. Name the three LIGHT contributions to communities listed on SS10 Lower. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Safer electric lighting, better cameras and understanding of vision, and technologies that use electromagnetic waves.",
+            "keywordGroups": [
+              [
+                "lighting",
+                "electric"
+              ],
+              [
+                "camera",
+                "cameras",
+                "vision"
+              ],
+              [
+                "electromagnetic"
+              ]
+            ],
+            "explanation": "SS10 Lower (Light): Safer/more useful electric lighting, better cameras and understanding of vision, and technologies using electromagnetic waves."
+          },
+          {
+            "id": "b",
+            "label": "12b. Name the three SOUND contributions to communities listed on SS10 Lower. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Talking to people far away, recording and replaying music or speech, and supporting learning and entertainment.",
+            "keywordGroups": [
+              [
+                "far away",
+                "talking"
+              ],
+              [
+                "recording",
+                "replaying"
+              ],
+              [
+                "learning",
+                "entertainment"
+              ]
+            ],
+            "explanation": "SS10 Lower (Sound): Talking to people far away, recording and replaying music/speech, and supporting learning and entertainment."
+          },
+          {
+            "id": "c",
+            "label": "12c. In the 'Applications Today' column, match Fibre-optic communication, Microphones/speakers, and Medical tools to the science they use. (1 pt)",
+            "mode": "select",
+            "options": [
+              "Fibre-optic communication uses LIGHT; Microphones & speakers use SOUND; Medical tools use BOTH light and sound in different ways",
+              "Fibre-optic communication uses SOUND; Microphones use LIGHT; Medical tools use neither"
+            ],
+            "points": 1,
+            "modelAnswer": "Fibre-optic communication uses LIGHT; Microphones & speakers use SOUND; Medical tools use BOTH light and sound in different ways",
+            "explanation": "SS10 Lower (Today): Fibre-optic communication uses light; microphones and speakers use sound-related science; medical tools use light and sound in different ways."
+          }
+        ]
+      }
+    ]
+  },
+  "practice_set_2": {
+    "id": "practice_set_2",
+    "title": "Practice Mode • Set 2 (Real-Life Scenarios & Historical Cases)",
+    "shortTitle": "Set 2",
+    "maxScore": 36,
+    "questions": [
+      {
+        "qNum": 1,
+        "conceptId": "C1",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit1",
+        "subTopic": "Applying the Three Big Questions to a New Invention",
+        "points": 3,
+        "prompt": "A Grade 4 student is preparing a presentation on solar-powered LED lamps using the 'Big Questions for Scientists' framework (Slide 2):",
+        "items": [
+          {
+            "id": "a",
+            "label": "1a. The student writes: 'Without electricity, villagers had to stop studying at sunset or burn smoky oil lamps.' Which inquiry stage does this answer? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Before (What was life like before the invention?)",
+              "Who and when (Who invented it, and in which year?)",
+              "After (How did it make life better?)"
+            ],
+            "points": 1,
+            "modelAnswer": "Before (What was life like before the invention?)",
+            "explanation": "Slide 2: Describing life and problems prior to the device answers 'Before'."
+          },
+          {
+            "id": "b",
+            "label": "1b. Next, the student notes: 'Three scientists won the Nobel Prize in 2014 for inventing the blue LED.' Which inquiry stage does this answer? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Who and when (Who invented it, and in which year?)",
+              "Before (What was life like before?)",
+              "After (How did it make life better?)"
+            ],
+            "points": 1,
+            "modelAnswer": "Who and when (Who invented it, and in which year?)",
+            "explanation": "Slide 2: Naming the inventors and year answers 'Who and when'."
+          },
+          {
+            "id": "c",
+            "label": "1c. Finally, what should the student explain in the 'After' stage of the presentation? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "How the invention made life better for people (bringing safe, clean light to places without electricity).",
+            "keywordGroups": [
+              [
+                "better",
+                "helped",
+                "safe",
+                "without electricity"
+              ]
+            ],
+            "explanation": "Slide 2: The 'After' stage explains how the invention made life better for people."
+          }
+        ]
+      },
+      {
+        "qNum": 2,
+        "conceptId": "C2, C3",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit2",
+        "subTopic": "Real-Life Scenarios of Light and Sound Science",
+        "points": 3,
+        "prompt": "Match each real-life classroom or engineering scenario to the properties of light and sound (SS07 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "2a. An optician designs eyeglasses and a photographer adjusts a camera lens. Which three behaviors of light allow lenses and mirrors to work? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Light can be reflected, absorbed, or pass through materials.",
+            "keywordGroups": [
+              [
+                "reflected",
+                "reflect"
+              ],
+              [
+                "absorbed",
+                "absorb"
+              ],
+              [
+                "pass through"
+              ]
+            ],
+            "explanation": "SS07 Upper: Light can be reflected, absorbed, or pass through materials."
+          },
+          {
+            "id": "b",
+            "label": "2b. A ship uses sonar to find the depth of the ocean floor, and airport workers wear ear defenders. Which branch of science helps both, and why? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound science, because scientists study sound waves to measure distances and protect hearing.",
+            "keywordGroups": [
+              [
+                "sound"
+              ],
+              [
+                "measure distance",
+                "distances",
+                "protect hearing",
+                "hearing"
+              ]
+            ],
+            "explanation": "SS07 Upper: Scientists study sound to help people communicate, listen to music, measure distances, and protect hearing."
+          },
+          {
+            "id": "c",
+            "label": "2c. When a guitar string is plucked in music class, what physical process creates the sound and carries it to students' ears? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The string's vibrations create sound, which travels through the air (material) as waves.",
+            "keywordGroups": [
+              [
+                "vibration",
+                "vibrations"
+              ],
+              [
+                "wave",
+                "waves"
+              ]
+            ],
+            "explanation": "SS07 Upper: Sound is made by vibrations and travels through materials as waves."
+          }
+        ]
+      },
+      {
+        "qNum": 3,
+        "conceptId": "C4, C5",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "Historical Scenarios Across the Light Timeline",
+        "points": 3,
+        "prompt": "Analyze how people lived across different eras of the Light Timeline (Slides 3–4 / SS02):",
+        "items": [
+          {
+            "id": "a",
+            "label": "3a. Why did outdoor farmers and builders long ago have to stop working as soon as the sun went down? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Because they relied on sunlight, so days ended at sunset and work stopped when it got dark.",
+            "keywordGroups": [
+              [
+                "sunlight",
+                "sunset"
+              ],
+              [
+                "dark",
+                "work stopped"
+              ]
+            ],
+            "explanation": "Slide 3: With only sunlight, days ended at sunset, so work stopped when it got dark."
+          },
+          {
+            "id": "b",
+            "label": "3b. A historian finds a small clay bowl that held oil and a wick from 2,500 years ago, and a city street lamp from 1815. Identify both light sources. (1 pt)",
+            "mode": "select",
+            "options": [
+              "2,500 years ago = Oil lamp; 1815 (Early 1800s) = Gas street lamp",
+              "2,500 years ago = Gas street lamp; 1815 = LED lamp"
+            ],
+            "points": 1,
+            "modelAnswer": "2,500 years ago = Oil lamp; 1815 (Early 1800s) = Gas street lamp",
+            "explanation": "Slides 3–4: Oil lamps were small bowls of oil with a flame used for thousands of years; gas street lamps were used in the early 1800s."
+          },
+          {
+            "id": "c",
+            "label": "3c. What overall improvement did each new step in the Light Timeline give to communities? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Each step gave people brighter and safer light.",
+            "keywordGroups": [
+              [
+                "brighter"
+              ],
+              [
+                "safer"
+              ]
+            ],
+            "explanation": "Slide 4 Takeaway: Each step gave people brighter and safer light."
+          }
+        ]
+      },
+      {
+        "qNum": 4,
+        "conceptId": "C6, C7",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "Comparing 1879 Incandescent Bulbs & Modern Solar LED Lamps",
+        "points": 3,
+        "prompt": "Compare how electric lighting helped homes in 1879 and how LED solar lamps help remote villages today (Slides 5–6 / SS03):",
+        "items": [
+          {
+            "id": "a",
+            "label": "4a. How did the 1879 electric light bulb built by Thomas Alva Edison (USA) and Joseph Swan (England) solve the indoor hazards of candles and oil lamps? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "It provided safer light inside homes at the flip of a switch without smoke or open flames that could start fires.",
+            "keywordGroups": [
+              [
+                "safer",
+                "safe",
+                "switch"
+              ],
+              [
+                "fire",
+                "fires",
+                "smoke"
+              ]
+            ],
+            "explanation": "Slide 5: Before the bulb, candles/lamps could start fires and smoke filled the room; after the bulb, homes had safer light at the flip of a switch."
+          },
+          {
+            "id": "b",
+            "label": "4b. A school replaces its old incandescent bulbs with modern LED lights. How will the school's electricity use and bulb replacement schedule change? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The school will use much less electricity, and the LED bulbs will last many times longer so they are replaced less often.",
+            "keywordGroups": [
+              [
+                "less electricity"
+              ],
+              [
+                "longer",
+                "replaced less"
+              ]
+            ],
+            "explanation": "Slide 6: LED lights use much less electricity and last many times longer."
+          },
+          {
+            "id": "c",
+            "label": "4c. Why are LEDs ideal for solar lamps in remote islands or mountain villages that have no power lines? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Because LEDs use very little electricity, allowing solar lamps to bring light to places without electricity.",
+            "keywordGroups": [
+              [
+                "solar"
+              ],
+              [
+                "without electricity",
+                "less electricity"
+              ]
+            ],
+            "explanation": "Slide 6: Solar lamps use energy-saving LEDs to bring light to places without electricity."
+          }
+        ]
+      },
+      {
+        "qNum": 5,
+        "conceptId": "C8, C9",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Traditional Indonesian Kentongan vs. Modern Sound Timeline",
+        "points": 3,
+        "prompt": "Compare traditional sound messaging in Indonesia and other villages with the inventions on the Sound Timeline (Slides 7–8 / SS04):",
+        "items": [
+          {
+            "id": "a",
+            "label": "5a. In an Indonesian village, residents hear rhythmic beats from a hollow wooden instrument to alert them of a flood or night patrol. Name this instrument and its purpose. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Kentongan; used in Indonesia to warn people.",
+            "keywordGroups": [
+              [
+                "kentongan"
+              ],
+              [
+                "warn"
+              ]
+            ],
+            "explanation": "Slide 7: A kentongan is a hollow wooden drum used in Indonesia to warn people."
+          },
+          {
+            "id": "b",
+            "label": "5b. Before 1876, if a king wanted to send an exact spoken sentence to a town 50 km away beyond the reach of drums or horns, how was it sent? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Messengers (runners) carried spoken messages on foot.",
+            "keywordGroups": [
+              [
+                "messenger",
+                "messengers",
+                "runner",
+                "runners",
+                "on foot"
+              ]
+            ],
+            "explanation": "Slide 7: Messengers (runners) carried spoken messages on foot."
+          },
+          {
+            "id": "c",
+            "label": "5c. Look at the Sound Timeline (1876 Telephone, 1877 Phonograph, 1895 Radio signals, 1973 Mobile phone). What two main improvements did this timeline achieve? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Each step let sound travel farther or be saved (recorded) for later.",
+            "keywordGroups": [
+              [
+                "travel farther",
+                "farther",
+                "further"
+              ],
+              [
+                "saved",
+                "recorded",
+                "later"
+              ]
+            ],
+            "explanation": "Slide 8 Takeaway: Each step let sound travel farther or be saved for later."
+          }
+        ]
+      },
+      {
+        "qNum": 6,
+        "conceptId": "C10",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Comparing How the Four Sound Inventors Transmitted or Saved Sound",
+        "points": 3,
+        "prompt": "Compare the technologies of Bell (1876), Edison (1877), Marconi (1895), and Cooper (1973) (Slide 9 / SS05 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "6a. How did Guglielmo Marconi's 1895 radio signals differ from Alexander Graham Bell's 1876 telephone in how messages traveled? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Bell's telephone sent voices along wires, whereas Marconi's radio signals sent messages through the air without wires.",
+            "keywordGroups": [
+              [
+                "wire",
+                "wires"
+              ],
+              [
+                "air",
+                "without wires",
+                "wireless"
+              ]
+            ],
+            "explanation": "Slide 9: Bell's 1876 telephone used wires; Marconi's 1895 radio signals traveled through the air without wires."
+          },
+          {
+            "id": "b",
+            "label": "6b. Which inventor allowed a person in 1877 to hear a song or speech played back days after it was spoken, and what was the machine called? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison with the phonograph.",
+            "keywordGroups": [
+              [
+                "edison"
+              ],
+              [
+                "phonograph"
+              ]
+            ],
+            "explanation": "Slide 9: Thomas Alva Edison invented the phonograph in 1877, the first machine to record and play back sound."
+          },
+          {
+            "id": "c",
+            "label": "6c. In 1973, an engineer walked down a city street and made the first call on a portable phone held in his hand. Name the inventor and year. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Martin Cooper in 1973.",
+            "keywordGroups": [
+              [
+                "martin cooper",
+                "cooper"
+              ],
+              [
+                "1973"
+              ]
+            ],
+            "explanation": "Slide 9: Martin Cooper (Mobile phone, 1973) made the first handheld mobile phone call."
+          }
+        ]
+      },
+      {
+        "qNum": 7,
+        "conceptId": "C11, C12",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Applying Ibn al-Haytham's Optics & Edison's Teamwork",
+        "points": 3,
+        "prompt": "Examine these two classroom scenarios inspired by Ibn al-Haytham and Thomas Alva Edison (SS07 Lower & SS08 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "7a. A student enters a dark room with a tiny pinhole in the window shade and observes how light travels to form an image, then tests and explains it. Which scientist pioneered this method around c. 1020? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Ibn al-Haytham",
+            "keywordGroups": [
+              [
+                "ibn al-haytham",
+                "haytham"
+              ]
+            ],
+            "explanation": "SS07 Lower: Ibn al-Haytham (c. 965–1040) used a dark room with a small hole (camera obscura) and wrote his influential book on optics c. 1020."
+          },
+          {
+            "id": "b",
+            "label": "7b. How did Ibn al-Haytham's experiments in Basra and Cairo help modern science today? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "They built the foundations of modern optics and our understanding of vision and cameras.",
+            "keywordGroups": [
+              [
+                "optics",
+                "vision",
+                "camera",
+                "cameras"
+              ]
+            ],
+            "explanation": "SS07 Lower (Why it matters): His careful experiments helped build the foundations of modern optics and our understanding of vision and cameras."
+          },
+          {
+            "id": "c",
+            "label": "7c. A classmate makes a poster saying: 'Thomas Edison invented the very first light bulb completely alone without anyone else.' Explain why this is historically inaccurate. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Edison did not invent the light bulb all by himself; many inventors (like Joseph Swan) contributed, and Edison worked with teams to make important improvements.",
+            "keywordGroups": [
+              [
+                "not",
+                "many inventors",
+                "swan",
+                "team",
+                "teams",
+                "improvements",
+                "improve"
+              ]
+            ],
+            "explanation": "SS08 Upper (Important detail): Edison did not invent the light bulb all by himself. Many inventors contributed; Edison and his team made important improvements."
+          }
+        ]
+      },
+      {
+        "qNum": 8,
+        "conceptId": "C13, C14",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Tracing Bell's Speech Research & Hertz's Wave Experiments",
+        "points": 3,
+        "prompt": "Trace how Alexander Graham Bell and Heinrich Hertz connected human communication and physics (SS09 Upper & Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "8a. How did Alexander Graham Bell's studies of human speech and hearing lead to his 1876 US patent? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He designed and patented a telephone that transmitted speech electrically across long distances.",
+            "keywordGroups": [
+              [
+                "telephone"
+              ],
+              [
+                "speech",
+                "electrically",
+                "electrical",
+                "long distances"
+              ]
+            ],
+            "explanation": "SS09 Upper: Studying speech and hearing led Bell to his 1876 US patent for a telephone design that transmitted speech electrically."
+          },
+          {
+            "id": "b",
+            "label": "8b. In Hamburg, Germany, what did physicist Heinrich Hertz demonstrate in 1887–1888 that made later wireless radio possible? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He carried out experiments proving that electromagnetic waves could be produced and detected.",
+            "keywordGroups": [
+              [
+                "electromagnetic",
+                "waves"
+              ],
+              [
+                "produced",
+                "detected",
+                "radio"
+              ]
+            ],
+            "explanation": "SS09 Lower: Hertz proved that electromagnetic waves could be produced and detected, laying the foundation for radio communication."
+          },
+          {
+            "id": "c",
+            "label": "8c. Match the birthplaces of the four scientists in Part 2 (Ibn al-Haytham, Edison, Bell, Hertz). (1 pt)",
+            "mode": "select",
+            "options": [
+              "Ibn al-Haytham: Basra (Iraq) | Edison: Ohio (USA) | Bell: Scotland | Hertz: Hamburg (Germany)",
+              "Ibn al-Haytham: Scotland | Edison: Hamburg (Germany) | Bell: Ohio (USA) | Hertz: Basra (Iraq)"
+            ],
+            "points": 1,
+            "modelAnswer": "Ibn al-Haytham: Basra (Iraq) | Edison: Ohio (USA) | Bell: Scotland | Hertz: Hamburg (Germany)",
+            "explanation": "SS07–SS09: Ibn al-Haytham (Basra, Iraq), Edison (Ohio, USA), Bell (Scotland), Hertz (Hamburg, Germany)."
+          }
+        ]
+      },
+      {
+        "qNum": 9,
+        "conceptId": "C15",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "How a Singer's Voice Was Recorded in 1877",
+        "points": 3,
+        "prompt": "A singer speaks and sings into Thomas Edison's horn phonograph in 1877 (SS08 Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "9a. How are the singer's sound vibrations physically stored on the phonograph's moving surface? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The sound vibrations make a recording stylus create physical patterns on the moving surface.",
+            "keywordGroups": [
+              [
+                "stylus"
+              ],
+              [
+                "pattern",
+                "patterns"
+              ],
+              [
+                "moving surface",
+                "surface"
+              ]
+            ],
+            "explanation": "SS08 Lower: Sound vibrations made a recording stylus create patterns on a moving surface."
+          },
+          {
+            "id": "b",
+            "label": "9b. How does the phonograph play the singer's voice back the next day? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The recorded pattern on the surface is used to reproduce the sound vibrations.",
+            "keywordGroups": [
+              [
+                "recorded pattern",
+                "pattern",
+                "patterns"
+              ],
+              [
+                "reproduce",
+                "play",
+                "sound"
+              ]
+            ],
+            "explanation": "SS08 Lower: The recorded pattern could later be used to reproduce sound."
+          },
+          {
+            "id": "c",
+            "label": "9c. How did the ability to record and replay sound transform communities? (1 pt)",
+            "mode": "select",
+            "options": [
+              "It changed music, storytelling, education, and communication",
+              "It replaced street lighting with gas lamps",
+              "It allowed cameras to take colour photographs"
+            ],
+            "points": 1,
+            "modelAnswer": "It changed music, storytelling, education, and communication",
+            "explanation": "SS08 Lower: Sound recording changed music, storytelling, education, and communication."
+          }
+        ]
+      },
+      {
+        "qNum": 10,
+        "conceptId": "C16, C17",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "Tracing a Phone Call & Car Radio Broadcast",
+        "points": 3,
+        "prompt": "Trace the signal conversions during a phone call and a radio broadcast (SS09 Upper & Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "10a. When you speak into a telephone in Jakarta, which component converts your voice's sound vibrations into changing electrical signals? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The microphone",
+            "keywordGroups": [
+              [
+                "microphone"
+              ]
+            ],
+            "explanation": "SS09 Upper: A microphone converts sound vibrations into changing electrical signals."
+          },
+          {
+            "id": "b",
+            "label": "10b. At the other end of the line, which component converts the electrical signals back into sound so your friend can hear you? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The speaker",
+            "keywordGroups": [
+              [
+                "speaker"
+              ]
+            ],
+            "explanation": "SS09 Upper: A speaker converts electrical signals back into sound."
+          },
+          {
+            "id": "c",
+            "label": "10c. While riding in a car, you listen to music from a radio station tower kilometers away. What kind of waves travel from the tower to the car antenna, and what turns that signal into sound? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Electromagnetic waves (radio waves) carry the information through the air, and the car's speaker turns the signal into sound.",
+            "keywordGroups": [
+              [
+                "electromagnetic",
+                "radio waves"
+              ],
+              [
+                "speaker"
+              ]
+            ],
+            "explanation": "SS09 Lower: A radio system uses electromagnetic waves to carry information; a speaker then turns the signal into sound."
+          }
+        ]
+      },
+      {
+        "qNum": 11,
+        "conceptId": "C18, C19",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Calculating Time Spans & Building Invention Chains",
+        "points": 3,
+        "prompt": "Analyze the dates across the timelines (c. 1020, 1876, 1877, 1879, 1887–1888, 1895, 1973) and problem-solution chains (Slides 4, 8, 10 & SS10):",
+        "items": [
+          {
+            "id": "a",
+            "label": "11a. In the 1870s, three famous milestones occurred within four years: 1876, 1877, and 1879. Match each year to its exact invention. (1 pt)",
+            "mode": "select",
+            "options": [
+              "1876 = Bell's Telephone | 1877 = Edison's Phonograph | 1879 = Edison's Electric Light Bulb",
+              "1876 = Phonograph | 1877 = Electric Light Bulb | 1879 = Telephone"
+            ],
+            "points": 1,
+            "modelAnswer": "1876 = Bell's Telephone | 1877 = Edison's Phonograph | 1879 = Edison's Electric Light Bulb",
+            "explanation": "Slides 4, 8, 9 & SS10: 1876 = Telephone, 1877 = Phonograph, 1879 = Practical electric light bulb."
+          },
+          {
+            "id": "b",
+            "label": "11b. Complete this Problem -> Invention -> Positive Impact chain: Problem: 'Spoken words and music disappeared as soon as they were made.' -> Invention & Positive Impact? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Invention: Phonograph (1877) -> Positive Impact: People could record and play back sound for music, storytelling, and education.",
+            "keywordGroups": [
+              [
+                "phonograph"
+              ],
+              [
+                "record",
+                "play back",
+                "replay",
+                "music",
+                "education"
+              ]
+            ],
+            "explanation": "Slide 9 & SS08 Lower: The phonograph solved the problem of saving sound by recording and playing it back."
+          },
+          {
+            "id": "c",
+            "label": "11c. How did Heinrich Hertz's 1887–1888 physics experiments in Germany lead directly to Guglielmo Marconi's 1895 breakthrough? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Hertz proved electromagnetic waves could be produced and detected, which laid the foundation for Marconi to send wireless radio signals through the air in 1895.",
+            "keywordGroups": [
+              [
+                "electromagnetic"
+              ],
+              [
+                "radio",
+                "wireless",
+                "without wires"
+              ]
+            ],
+            "explanation": "SS09 Lower & Slide 9: Hertz demonstrated electromagnetic waves in 1887–1888, laying the foundation for Marconi's 1895 radio signals."
+          }
+        ]
+      },
+      {
+        "qNum": 12,
+        "conceptId": "C20",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Classifying Modern Community Technologies",
+        "points": 3,
+        "prompt": "A modern hospital and school use high-speed fibre-optic internet cables, classroom microphones/speakers, and medical imaging/therapy tools (SS10 Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "12a. What does high-speed fibre-optic communication use to send data across cities and oceans? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Light",
+            "keywordGroups": [
+              [
+                "light"
+              ]
+            ],
+            "forbidWords": [
+              "sound vibrations"
+            ],
+            "explanation": "SS10 Lower: Fibre-optic communication uses light."
+          },
+          {
+            "id": "b",
+            "label": "12b. What branch of science do classroom microphones and speakers rely on? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound-related science (converting sound vibrations and electrical signals).",
+            "keywordGroups": [
+              [
+                "sound"
+              ]
+            ],
+            "explanation": "SS10 Lower: Microphones and speakers use sound-related science."
+          },
+          {
+            "id": "c",
+            "label": "12c. Do modern medical tools in hospitals use light, sound, or both? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Both — medical tools use light and sound in different ways",
+              "Only light, never sound",
+              "Only sound, never light"
+            ],
+            "points": 1,
+            "modelAnswer": "Both — medical tools use light and sound in different ways",
+            "explanation": "SS10 Lower: Medical tools use light and sound in different ways."
+          }
+        ]
+      }
+    ]
+  },
+  "practice_set_3": {
+    "id": "practice_set_3",
+    "title": "Practice Mode • Set 3 (Inversion, Comparison & Error Spotting)",
+    "shortTitle": "Set 3",
+    "maxScore": 36,
+    "questions": [
+      {
+        "qNum": 1,
+        "conceptId": "C1",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit1",
+        "subTopic": "Error Spotting: Misplaced Inquiry Questions",
+        "points": 3,
+        "prompt": "A student mixed up the three 'Big Questions for Scientists' on their worksheet. Fix each error (Slide 2 / SS01):",
+        "items": [
+          {
+            "id": "a",
+            "label": "1a. The student put 'Who patented the telephone in 1876?' under the 'After' box. Which box should it actually go in? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Who and when",
+              "Before",
+              "After"
+            ],
+            "points": 1,
+            "modelAnswer": "Who and when",
+            "explanation": "Slide 2: 'Who invented it, and in which year?' belongs to the 'Who and when' stage."
+          },
+          {
+            "id": "b",
+            "label": "1b. The student put 'People could study and work safely at night' under the 'Before' box. Why is that wrong, and where does it belong? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "It belongs in the 'After' box because it explains how the invention made life better after it was created.",
+            "keywordGroups": [
+              [
+                "after"
+              ],
+              [
+                "better",
+                "impact"
+              ]
+            ],
+            "explanation": "Slide 2 & Slide 5: Safe night study is the positive impact ('After') of the electric bulb; 'Before' was dark and smoky."
+          },
+          {
+            "id": "c",
+            "label": "1c. Order the three inquiry stages from left to right as shown in the Slide 2 diagram (separated by commas): (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Before, Who and when, After",
+            "sequenceGroups": [
+              [
+                "before"
+              ],
+              [
+                "who",
+                "when"
+              ],
+              [
+                "after"
+              ]
+            ],
+            "explanation": "Slide 2: Before -> Who and when -> After."
+          }
+        ]
+      },
+      {
+        "qNum": 2,
+        "conceptId": "C2, C3",
+        "cluster": "Cluster A: Inquiry & Science of Light/Sound",
+        "unit": "unit2",
+        "subTopic": "Correcting Misconceptions About Light & Sound Properties",
+        "points": 3,
+        "prompt": "Spot and correct the scientific errors in these statements about light and sound (SS07 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "2a. Student Error: 'Sound is made when materials reflect or absorb darkness without any movement.' Correct this statement. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound is made by vibrations and travels through materials as waves.",
+            "keywordGroups": [
+              [
+                "vibration",
+                "vibrations"
+              ],
+              [
+                "wave",
+                "waves"
+              ]
+            ],
+            "explanation": "SS07 Upper: Sound is made by vibrations and travels through materials as waves."
+          },
+          {
+            "id": "b",
+            "label": "2b. Which of the following is a behavior of LIGHT (not sound) listed on SS07 Upper? (1 pt)",
+            "mode": "select",
+            "options": [
+              "It helps us see objects and can be reflected, absorbed, or pass through materials",
+              "It is made by plucking a vibrating wooden kentongan",
+              "It is studied only to protect human eardrums from loud noise"
+            ],
+            "points": 1,
+            "modelAnswer": "It helps us see objects and can be reflected, absorbed, or pass through materials",
+            "explanation": "SS07 Upper: Light helps us see objects and can be reflected, absorbed, or pass through materials."
+          },
+          {
+            "id": "c",
+            "label": "2c. Name two reasons scientists study LIGHT and two reasons scientists study SOUND (SS07 Upper). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Light: improve vision, photography, communication, and energy. Sound: communicate, listen to music, measure distances, and protect hearing.",
+            "keywordGroups": [
+              [
+                "vision",
+                "photography",
+                "energy"
+              ],
+              [
+                "music",
+                "distances",
+                "hearing",
+                "communicate"
+              ]
+            ],
+            "explanation": "SS07 Upper lists 4 applications for light and 4 applications for sound."
+          }
+        ]
+      },
+      {
+        "qNum": 3,
+        "conceptId": "C4, C5",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "Fixing a Scrambled Light Timeline",
+        "points": 3,
+        "prompt": "A student wrote this scrambled Light Timeline: 'Fire and torches -> Electric light bulb -> Gas street lamps -> Oil lamps and candles -> LED lights.' (Slides 3–4):",
+        "items": [
+          {
+            "id": "a",
+            "label": "3a. Which two inventions did the student place BEFORE 'Oil lamps and candles' that actually belong much later in history? (1 pt)",
+            "mode": "unordered_list",
+            "points": 1,
+            "modelAnswer": "Electric light bulb, Gas street lamps",
+            "listGroups": [
+              [
+                "electric",
+                "bulb"
+              ],
+              [
+                "gas"
+              ]
+            ],
+            "explanation": "Slide 4: Oil lamps and candles were used thousands of years ago, long before gas street lamps (early 1800s) and the electric light bulb (1879)."
+          },
+          {
+            "id": "b",
+            "label": "3b. Did gas street lamps (Early 1800s) come BEFORE or AFTER the electric light bulb (1879)? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Gas street lamps (Early 1800s) came BEFORE the electric light bulb (1879)",
+              "Gas street lamps came AFTER the electric light bulb"
+            ],
+            "points": 1,
+            "modelAnswer": "Gas street lamps (Early 1800s) came BEFORE the electric light bulb (1879)",
+            "explanation": "Slide 4: Early 1800s (Gas street lamps) -> 1879 (Electric light bulb)."
+          },
+          {
+            "id": "c",
+            "label": "3c. Distinguish an oil lamp from a wax candle based on Slide 3 ('Light Long Ago'). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "An oil lamp is a small bowl of oil with a flame used for thousands of years, while a candle is made of wax and gives a small, dim light.",
+            "keywordGroups": [
+              [
+                "bowl of oil",
+                "oil"
+              ],
+              [
+                "wax",
+                "dim"
+              ]
+            ],
+            "explanation": "Slide 3: Oil lamp = small bowl of oil with a flame; Candle = wax candle giving a small, dim light."
+          }
+        ]
+      },
+      {
+        "qNum": 4,
+        "conceptId": "C6, C7",
+        "cluster": "Cluster B: Evolution of Light & Lighting Technology",
+        "unit": "unit1",
+        "subTopic": "Error Spotting: Light Bulb Inventors & LED Facts",
+        "points": 3,
+        "prompt": "Spot and correct the factual errors in these statements about electric bulbs and LEDs (Slides 5–6 / SS03):",
+        "items": [
+          {
+            "id": "a",
+            "label": "4a. Error 1: 'Thomas Alva Edison (England) and Joseph Swan (Germany) built the first gas street lamps in 1879.' Correct the countries and invention. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison was from the USA and Joseph Swan was from England, and they built practical electric light bulbs (1879).",
+            "keywordGroups": [
+              [
+                "usa",
+                "united states"
+              ],
+              [
+                "england"
+              ],
+              [
+                "electric",
+                "bulb"
+              ]
+            ],
+            "explanation": "Slide 5: Thomas Alva Edison (USA) and Joseph Swan (England) built practical electric light bulbs."
+          },
+          {
+            "id": "b",
+            "label": "4b. Error 2: 'LED lights use much more electricity than old bulbs and burn out faster.' Correct both comparisons. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "LED lights use much less electricity than old bulbs and last many times longer.",
+            "keywordGroups": [
+              [
+                "less electricity",
+                "less"
+              ],
+              [
+                "longer"
+              ]
+            ],
+            "forbidWords": [
+              "use much more electricity"
+            ],
+            "explanation": "Slide 6: LEDs use much less electricity and last many times longer."
+          },
+          {
+            "id": "c",
+            "label": "4c. Error 3: 'In 2014, three scientists won the Nobel Prize for inventing the wax candle.' What did they actually win the 2014 Nobel Prize for? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "For inventing the blue LED.",
+            "keywordGroups": [
+              [
+                "blue led",
+                "led"
+              ]
+            ],
+            "explanation": "Slide 6: In 2014, three scientists won the Nobel Prize for inventing the blue LED."
+          }
+        ]
+      },
+      {
+        "qNum": 5,
+        "conceptId": "C8, C9",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Fixing a Scrambled Sound Timeline & Early Sound Instruments",
+        "points": 3,
+        "prompt": "Check this student's Sound Timeline and early messaging table (Slides 7–8 / SS04):",
+        "items": [
+          {
+            "id": "a",
+            "label": "5a. A student claims: 'The Phonograph (1877) was invented BEFORE the Telephone (1876).' Is this true or false? Explain with the exact years. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "False — the Telephone was invented in 1876, one year before the Phonograph in 1877.",
+            "keywordGroups": [
+              [
+                "1876"
+              ],
+              [
+                "1877"
+              ]
+            ],
+            "explanation": "Slide 8: 1876 Telephone -> 1877 Phonograph."
+          },
+          {
+            "id": "b",
+            "label": "5b. What is the difference in purpose between 'Horns and bells' and the Indonesian 'Kentongan' on Slide 7? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Horns and bells called people together, while the kentongan (a hollow wooden drum in Indonesia) was used to warn people.",
+            "keywordGroups": [
+              [
+                "together",
+                "called"
+              ],
+              [
+                "warn",
+                "wooden"
+              ]
+            ],
+            "explanation": "Slide 7: Kentongan = hollow wooden drum in Indonesia to warn people; Horns and bells = called people together."
+          },
+          {
+            "id": "c",
+            "label": "5c. Which two sound inventions on the timeline occurred in 1895 and 1973? (1 pt)",
+            "mode": "select",
+            "options": [
+              "1895 = Radio signals | 1973 = Mobile phone",
+              "1895 = Phonograph | 1973 = Radio signals"
+            ],
+            "points": 1,
+            "modelAnswer": "1895 = Radio signals | 1973 = Mobile phone",
+            "explanation": "Slide 8: 1895 = Radio signals; 1973 = Mobile phone."
+          }
+        ]
+      },
+      {
+        "qNum": 6,
+        "conceptId": "C10",
+        "cluster": "Cluster C: Evolution of Sound & Inventors",
+        "unit": "unit1",
+        "subTopic": "Correcting Mix-Ups Between Sound Inventors",
+        "points": 3,
+        "prompt": "Correct the following mix-ups between the four sound inventors (Slide 9 / SS05 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "6a. Mix-Up 1: 'Alexander Graham Bell invented the first machine to record and play back sound in 1877.' Who actually built it, and what did Bell invent in 1876? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison built the phonograph (1877) to record and play back sound, while Alexander Graham Bell invented the telephone (1876).",
+            "keywordGroups": [
+              [
+                "edison",
+                "phonograph"
+              ],
+              [
+                "bell",
+                "telephone"
+              ]
+            ],
+            "explanation": "Slide 9: Bell = Telephone (1876); Edison = Phonograph (1877)."
+          },
+          {
+            "id": "b",
+            "label": "6b. Mix-Up 2: 'Guglielmo Marconi made the first handheld mobile phone call in 1973.' Correct both Marconi's 1895 achievement and the 1973 inventor. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Guglielmo Marconi sent radio signals through the air without wires in 1895, while Martin Cooper made the first handheld mobile phone call in 1973.",
+            "keywordGroups": [
+              [
+                "marconi",
+                "radio",
+                "1895"
+              ],
+              [
+                "cooper",
+                "mobile",
+                "1973"
+              ]
+            ],
+            "explanation": "Slide 9: Marconi = Radio signals (1895); Martin Cooper = Mobile phone (1973)."
+          },
+          {
+            "id": "c",
+            "label": "6c. Order the four sound inventors chronologically by the year of their breakthrough (1876, 1877, 1895, 1973), separated by commas: (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Alexander Graham Bell, Thomas Alva Edison, Guglielmo Marconi, Martin Cooper",
+            "sequenceGroups": [
+              [
+                "bell"
+              ],
+              [
+                "edison"
+              ],
+              [
+                "marconi"
+              ],
+              [
+                "cooper"
+              ]
+            ],
+            "explanation": "Slide 9: Bell (1876) -> Edison (1877) -> Marconi (1895) -> Cooper (1973)."
+          }
+        ]
+      },
+      {
+        "qNum": 7,
+        "conceptId": "C11, C12",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Correcting Biographical Errors: Ibn al-Haytham & Edison",
+        "points": 3,
+        "prompt": "Identify and fix the errors in these student biography notes (SS07 Lower & SS08 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "7a. Student Note: 'Ibn al-Haytham (c. 965–1040) was a pioneer of sound recording who guessed ideas without doing experiments.' Correct both errors. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Ibn al-Haytham was a pioneer of optics (science of light and vision) who used careful observations and experiments (including the camera obscura).",
+            "keywordGroups": [
+              [
+                "optics",
+                "light",
+                "vision"
+              ],
+              [
+                "experiment",
+                "experiments",
+                "observation",
+                "observations",
+                "camera obscura"
+              ]
+            ],
+            "explanation": "SS07 Lower: Ibn al-Haytham was a pioneer of optics who used observations and experiments (Observe • Test • Explain)."
+          },
+          {
+            "id": "b",
+            "label": "7b. In what approximate year did Ibn al-Haytham write his influential book on optics? (1 pt)",
+            "mode": "select",
+            "options": [
+              "c. 1020",
+              "1876",
+              "1973"
+            ],
+            "points": 1,
+            "modelAnswer": "c. 1020",
+            "explanation": "SS07 Lower & SS10 Upper: Ibn al-Haytham wrote his influential book on optics around c. 1020."
+          },
+          {
+            "id": "c",
+            "label": "7c. Besides improving the incandescent electric light bulb with his teams, what major SOUND technology did Thomas Alva Edison also develop? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound-recording technology, including the phonograph (1877).",
+            "keywordGroups": [
+              [
+                "phonograph",
+                "sound recording",
+                "record"
+              ]
+            ],
+            "explanation": "SS08 Upper & Lower: Edison also developed sound-recording technology, including the phonograph."
+          }
+        ]
+      },
+      {
+        "qNum": 8,
+        "conceptId": "C13, C14",
+        "cluster": "Cluster D: Biographies of Scientists & Inventors",
+        "unit": "unit2",
+        "subTopic": "Distinguishing Bell (1876), Hertz (1887–1888) & Marconi (1895)",
+        "points": 3,
+        "prompt": "Students often confuse Alexander Graham Bell, Heinrich Hertz, and Guglielmo Marconi. Clarify their distinct contributions (Slide 9 & SS09):",
+        "items": [
+          {
+            "id": "a",
+            "label": "8a. Did Alexander Graham Bell's 1876 telephone transmit speech wirelessly through radio waves or electrically along wires? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "It transmitted speech electrically along wires.",
+            "keywordGroups": [
+              [
+                "electrically",
+                "electrical",
+                "wire",
+                "wires"
+              ]
+            ],
+            "forbidWords": [
+              "wirelessly through radio"
+            ],
+            "explanation": "Slide 9 & SS09 Upper: Bell's 1876 telephone transmitted speech electrically along wires."
+          },
+          {
+            "id": "b",
+            "label": "8b. What was the difference between Heinrich Hertz's work in 1887–1888 and Guglielmo Marconi's work in 1895? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Hertz carried out physics experiments proving electromagnetic waves could be produced and detected (1887–1888), laying the foundation for Marconi to send wireless radio signals (1895).",
+            "keywordGroups": [
+              [
+                "hertz",
+                "electromagnetic"
+              ],
+              [
+                "marconi",
+                "radio",
+                "1895"
+              ]
+            ],
+            "explanation": "SS09 Lower & Slide 9: Hertz (1887–1888) proved electromagnetic waves existed; Marconi (1895) used radio signals for wireless messaging."
+          },
+          {
+            "id": "c",
+            "label": "8c. Which scientist was born in Scotland and lived in Canada and the USA, and which physicist was born in Hamburg, Germany? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Scotland/Canada/USA = Alexander Graham Bell | Hamburg, Germany = Heinrich Hertz",
+              "Scotland/Canada/USA = Heinrich Hertz | Hamburg, Germany = Alexander Graham Bell"
+            ],
+            "points": 1,
+            "modelAnswer": "Scotland/Canada/USA = Alexander Graham Bell | Hamburg, Germany = Heinrich Hertz",
+            "explanation": "SS09 Upper & Lower: Bell was born in Scotland and lived in Canada and the USA; Hertz was born in Hamburg, Germany."
+          }
+        ]
+      },
+      {
+        "qNum": 9,
+        "conceptId": "C15",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "Error Spotting: How the 1877 Phonograph Worked",
+        "points": 3,
+        "prompt": "Evaluate this student claim: 'Edison's 1877 phonograph used a computer microchip and internet radio waves to save music.' (SS08 Lower):",
+        "items": [
+          {
+            "id": "a",
+            "label": "9a. Explain why the student's claim is wrong by describing how the 1877 phonograph actually recorded sound. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound vibrations made a recording stylus create physical patterns on a moving surface (not a microchip or radio waves).",
+            "keywordGroups": [
+              [
+                "vibration",
+                "vibrations"
+              ],
+              [
+                "stylus",
+                "pattern",
+                "patterns",
+                "moving surface"
+              ]
+            ],
+            "explanation": "SS08 Lower: Sound vibrations made a recording stylus create patterns on a moving surface."
+          },
+          {
+            "id": "b",
+            "label": "9b. What happened when the phonograph traced those recorded patterns later? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The recorded pattern was used to reproduce (play back) the sound.",
+            "keywordGroups": [
+              [
+                "reproduce",
+                "play back",
+                "replay",
+                "sound"
+              ]
+            ],
+            "explanation": "SS08 Lower: The recorded pattern could later be used to reproduce sound."
+          },
+          {
+            "id": "c",
+            "label": "9c. Which of the following was NOT an impact of the 1877 phonograph? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Lighting dark streets at night with gas flames",
+              "Changing how people experienced music and storytelling",
+              "Supporting education and communication through recorded sound"
+            ],
+            "points": 1,
+            "modelAnswer": "Lighting dark streets at night with gas flames",
+            "explanation": "SS08 Lower: The phonograph changed music, storytelling, education, and communication."
+          }
+        ]
+      },
+      {
+        "qNum": 10,
+        "conceptId": "C16, C17",
+        "cluster": "Cluster E: Technical Mechanisms & Wave Distinctions",
+        "unit": "unit2",
+        "subTopic": "Error Spotting: Reversed Microphone/Speaker & 'Radio Waves Are Sound Waves'",
+        "points": 3,
+        "prompt": "Fix two common science misconceptions from SS09 Upper and Lower:",
+        "items": [
+          {
+            "id": "a",
+            "label": "10a. Misconception 1: A student draws a diagram where 'Speaker' converts sound vibrations into electrical signals, and 'Microphone' converts electrical signals into sound. How do you fix this? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Swap them: a microphone converts sound vibrations into changing electrical signals, while a speaker converts electrical signals back into sound.",
+            "keywordGroups": [
+              [
+                "microphone"
+              ],
+              [
+                "speaker"
+              ],
+              [
+                "electrical"
+              ]
+            ],
+            "explanation": "SS09 Upper: Microphone = sound vibrations -> electrical signals; Speaker = electrical signals -> sound."
+          },
+          {
+            "id": "b",
+            "label": "10b. Misconception 2: 'Radio waves are just loud sound waves flying through the air from the radio station to our ears.' State the two scientific errors in this claim. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Radio waves are NOT sound waves—they are electromagnetic waves (like visible light with longer wavelengths) that carry information, and a speaker turns the signal into sound.",
+            "keywordGroups": [
+              [
+                "not sound",
+                "electromagnetic"
+              ],
+              [
+                "speaker"
+              ]
+            ],
+            "explanation": "SS09 Lower (Remember): Radio waves are not sound waves. A radio system uses electromagnetic waves to carry information; a speaker then turns the signal into sound."
+          },
+          {
+            "id": "c",
+            "label": "10c. How does the wavelength of radio waves compare to the wavelength of visible light? (1 pt)",
+            "mode": "select",
+            "options": [
+              "Radio waves have much longer wavelengths than visible light",
+              "Radio waves have much shorter wavelengths than visible light",
+              "Radio waves are mechanical water waves, not electromagnetic waves"
+            ],
+            "points": 1,
+            "modelAnswer": "Radio waves have much longer wavelengths than visible light",
+            "explanation": "SS09 Lower: Radio waves are electromagnetic waves, like visible light, but with much longer wavelengths."
+          }
+        ]
+      },
+      {
+        "qNum": 11,
+        "conceptId": "C18, C19",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Error Spotting: Mismatched Problem-Invention Chains & Dates",
+        "points": 3,
+        "prompt": "Spot the mismatches in this table of dates and Problem-Invention-Impact chains (Slide 10 & SS10 Upper):",
+        "items": [
+          {
+            "id": "a",
+            "label": "11a. A student pairs Problem: 'Far-away people could not talk fast' -> Invention: 'Phonograph (1877)' -> Impact: 'Talk instantly across distance'. Which invention should replace 'Phonograph'? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The Telephone (1876).",
+            "keywordGroups": [
+              [
+                "telephone"
+              ]
+            ],
+            "explanation": "Slide 10: Far-away people could not talk fast -> Telephone -> Talk instantly across distance."
+          },
+          {
+            "id": "b",
+            "label": "11b. What was the specific problem solved by the Electric Light Bulb, and what was its positive impact on Slide 10? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Problem: Evenings were dark and fires were risky -> Positive impact: Safe light for study and work.",
+            "keywordGroups": [
+              [
+                "dark",
+                "fire",
+                "fires",
+                "risky"
+              ],
+              [
+                "safe",
+                "study",
+                "work"
+              ]
+            ],
+            "explanation": "Slide 10: Evenings were dark and fires were risky -> Electric light bulb -> Safe light for study and work."
+          },
+          {
+            "id": "c",
+            "label": "11c. Match all four dates on 'A Timeline of Ideas' (SS10 Upper) to their exact scientific milestone. (1 pt)",
+            "mode": "select",
+            "options": [
+              "c. 1020: Ibn al-Haytham (optics) | 1876: Bell (telephone patent) | 1877: Edison (phonograph) | 1887–1888: Hertz (electromagnetic waves)",
+              "c. 1020: Hertz (electromagnetic waves) | 1876: Edison (phonograph) | 1877: Bell (telephone) | 1887–1888: Ibn al-Haytham (optics)"
+            ],
+            "points": 1,
+            "modelAnswer": "c. 1020: Ibn al-Haytham (optics) | 1876: Bell (telephone patent) | 1877: Edison (phonograph) | 1887–1888: Hertz (electromagnetic waves)",
+            "explanation": "SS10 Upper shows the 4 chronological milestones from c. 1020 to 1887–1888."
+          }
+        ]
+      },
+      {
+        "qNum": 12,
+        "conceptId": "C20",
+        "cluster": "Cluster F: Cross-Century Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Error Spotting: Fibre-Optic Cables & Community Applications",
+        "points": 3,
+        "prompt": "Evaluate this student statement about modern community technology (SS10 Lower): 'Fibre-optic cables send loud sound vibrations through glass tubes, while microphones use light rays.'",
+        "items": [
+          {
+            "id": "a",
+            "label": "12a. Correct both errors in the student's statement about fibre-optic communication and microphones/speakers. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Fibre-optic communication uses light, while microphones and speakers use sound-related science.",
+            "keywordGroups": [
+              [
+                "light"
+              ],
+              [
+                "sound"
+              ]
+            ],
+            "explanation": "SS10 Lower: Fibre-optic communication uses light; microphones and speakers use sound-related science."
+          },
+          {
+            "id": "b",
+            "label": "12b. How do medical tools in hospitals use light and sound science today? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Medical tools use both light and sound in different ways.",
+            "keywordGroups": [
+              [
+                "light"
+              ],
+              [
+                "sound"
+              ]
+            ],
+            "explanation": "SS10 Lower: Medical tools use light and sound in different ways."
+          },
+          {
+            "id": "c",
+            "label": "12c. Which invention from the unit made the biggest difference for safe evening study and work, and which invention allowed people to talk instantly across long distances? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "The electric light bulb (or LED light) for safe evening study and work, and the telephone (or mobile phone) for talking instantly across distances.",
+            "keywordGroups": [
+              [
+                "bulb",
+                "light",
+                "led"
+              ],
+              [
+                "telephone",
+                "phone"
+              ]
+            ],
+            "explanation": "Slide 10 & SS10 Lower: The electric light bulb enabled safe evening study/work; the telephone enabled instant long-distance communication."
+          }
+        ]
+      }
+    ]
+  },
+  "official": {
+    "id": "official",
+    "title": "Official Pre-Test / Source Mode (Slide Deck Inquiry & Learning Outcomes)",
+    "shortTitle": "Official (20 Pts)",
+    "maxScore": 20,
+    "questions": [
+      {
+        "qNum": 1,
+        "conceptId": "C1",
+        "cluster": "SS01 Slide 2: Big Questions for Scientists",
+        "unit": "unit1",
+        "subTopic": "Three Big Questions About Every Invention",
+        "points": 3,
+        "prompt": "SS01 Slide 2 ('Big Questions for Scientists — Scientists solve problems. Ask these three questions about every invention'):",
+        "items": [
+          {
+            "id": "a",
+            "label": "1a. Before — State the exact inquiry question for 'Before'. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "What was life like before the invention?",
+            "keywordGroups": [
+              [
+                "before",
+                "life like"
+              ]
+            ],
+            "explanation": "Slide 2: Before — What was life like before the invention?"
+          },
+          {
+            "id": "b",
+            "label": "1b. Who and when — State the exact inquiry question for 'Who and when'. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Who invented it, and in which year?",
+            "keywordGroups": [
+              [
+                "who"
+              ],
+              [
+                "year",
+                "when"
+              ]
+            ],
+            "explanation": "Slide 2: Who and when — Who invented it, and in which year?"
+          },
+          {
+            "id": "c",
+            "label": "1c. After — State the exact inquiry question for 'After'. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "How did it make life better for people?",
+            "keywordGroups": [
+              [
+                "better",
+                "after",
+                "people"
+              ]
+            ],
+            "explanation": "Slide 2: After — How did it make life better for people?"
+          }
+        ]
+      },
+      {
+        "qNum": 2,
+        "conceptId": "C5, C6, C7",
+        "cluster": "SS02–SS03: Light Timeline, Electric Bulb & LEDs",
+        "unit": "unit1",
+        "subTopic": "Evolution of Lighting Technology",
+        "points": 4,
+        "prompt": "Complete the key facts from Part 1 on the History of Light (Slides 4–6):",
+        "items": [
+          {
+            "id": "a",
+            "label": "2a. Order the 5 Light Timeline stages from oldest to newest (separated by commas): (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Fire and torches, Oil lamps and candles, Gas street lamps, Electric light bulb, LED lights",
+            "sequenceGroups": [
+              [
+                "fire",
+                "torches"
+              ],
+              [
+                "oil",
+                "candles"
+              ],
+              [
+                "gas"
+              ],
+              [
+                "electric",
+                "bulb"
+              ],
+              [
+                "led"
+              ]
+            ],
+            "explanation": "Slide 4: Fire and torches -> Oil lamps and candles -> Gas street lamps -> Electric light bulb -> LED lights."
+          },
+          {
+            "id": "b",
+            "label": "2b. Name the two inventors (in the USA and England) who built practical electric light bulbs, and the year of Edison's long-glowing bulb. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Thomas Alva Edison (USA) and Joseph Swan (England) in 1879.",
+            "keywordGroups": [
+              [
+                "edison"
+              ],
+              [
+                "swan"
+              ],
+              [
+                "1879"
+              ]
+            ],
+            "explanation": "Slide 5: Thomas Alva Edison (USA) and Joseph Swan (England); 1879."
+          },
+          {
+            "id": "c",
+            "label": "2c. Contrast life 'Before the Bulb' with life 'After the Bulb' (Slide 5). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Before: dark evenings, fire risks, and smoke. After: light at the flip of a switch, safer light inside homes, and studying/working at night.",
+            "keywordGroups": [
+              [
+                "dark",
+                "fire",
+                "smoke"
+              ],
+              [
+                "switch",
+                "safer",
+                "study",
+                "work",
+                "night"
+              ]
+            ],
+            "explanation": "Slide 5 lists 3 Before points and 3 After points."
+          },
+          {
+            "id": "d",
+            "label": "2d. Why are modern LED lights and solar lamps better than old bulbs (Slide 6)? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "LEDs use much less electricity, last many times longer, won the 2014 Nobel Prize (blue LED), and power solar lamps in places without electricity.",
+            "keywordGroups": [
+              [
+                "less electricity",
+                "longer"
+              ],
+              [
+                "solar",
+                "without electricity",
+                "2014",
+                "nobel"
+              ]
+            ],
+            "explanation": "Slide 6: Less electricity, longer lifespan, 2014 Nobel Prize for blue LED, and solar lamps."
+          }
+        ]
+      },
+      {
+        "qNum": 3,
+        "conceptId": "C8, C9, C10",
+        "cluster": "SS04–SS05: Sound Timeline & Four Sound Inventors",
+        "unit": "unit1",
+        "subTopic": "Evolution of Sound & Key Inventors (1876–1973)",
+        "points": 4,
+        "prompt": "Complete the key facts from Part 1 on the History of Sound (Slides 7–9):",
+        "items": [
+          {
+            "id": "a",
+            "label": "3a. Name the four pre-electrical sound messaging methods from Slide 7 (including the traditional Indonesian wooden drum). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Talking drums, kentongan (Indonesian wooden drum to warn people), horns and bells, and foot messengers (runners).",
+            "keywordGroups": [
+              [
+                "drums"
+              ],
+              [
+                "kentongan"
+              ],
+              [
+                "horns"
+              ],
+              [
+                "messengers",
+                "runners"
+              ]
+            ],
+            "explanation": "Slide 7: Drums, Kentongan, Horns, and Messengers."
+          },
+          {
+            "id": "b",
+            "label": "3b. Order the 5 Sound Timeline stages from oldest to newest (separated by commas): (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Drums and horns, Telephone, Phonograph, Radio signals, Mobile phone",
+            "sequenceGroups": [
+              [
+                "drums",
+                "horns"
+              ],
+              [
+                "telephone"
+              ],
+              [
+                "phonograph"
+              ],
+              [
+                "radio"
+              ],
+              [
+                "mobile"
+              ]
+            ],
+            "explanation": "Slide 8: Long ago (Drums and horns) -> 1876 (Telephone) -> 1877 (Phonograph) -> 1895 (Radio signals) -> 1973 (Mobile phone)."
+          },
+          {
+            "id": "c",
+            "label": "3c. Match Alexander Graham Bell (1876) and Thomas Alva Edison (1877) to their sound inventions and functions. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Bell invented the telephone (1876, voices travel along wires); Edison invented the phonograph (1877, first machine to record and play back sound).",
+            "keywordGroups": [
+              [
+                "bell",
+                "telephone",
+                "wires"
+              ],
+              [
+                "edison",
+                "phonograph",
+                "record"
+              ]
+            ],
+            "explanation": "Slide 9: Bell = Telephone (1876); Edison = Phonograph (1877)."
+          },
+          {
+            "id": "d",
+            "label": "3d. Match Guglielmo Marconi (1895) and Martin Cooper (1973) to their sound breakthroughs. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Marconi sent radio signals through the air without wires (1895); Martin Cooper made the first handheld mobile phone call (1973).",
+            "keywordGroups": [
+              [
+                "marconi",
+                "radio",
+                "without wires"
+              ],
+              [
+                "cooper",
+                "mobile",
+                "1973"
+              ]
+            ],
+            "explanation": "Slide 9: Marconi = Radio signals (1895); Cooper = Mobile phone (1973)."
+          }
+        ]
+      },
+      {
+        "qNum": 4,
+        "conceptId": "C11, C12, C13, C14",
+        "cluster": "SS06–SS09: Learning Outcomes & Four Scientist Biographies",
+        "unit": "unit2",
+        "subTopic": "Scientists & Inventors Behind Light and Sound",
+        "points": 4,
+        "prompt": "SS06 Learning Outcomes 1 & 2: Name each scientist, their invention/discovery, and how their work helped people (SS07–SS09):",
+        "items": [
+          {
+            "id": "a",
+            "label": "4a. Ibn al-Haytham (c. 965–1040) — What did he study using the camera obscura, and what was his 3-step scientific habit? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He studied optics (how light travels and how we see) in Basra and Cairo; his habit was Observe, Test, Explain.",
+            "keywordGroups": [
+              [
+                "optics",
+                "light",
+                "vision",
+                "camera obscura"
+              ],
+              [
+                "observe"
+              ],
+              [
+                "test"
+              ],
+              [
+                "explain"
+              ]
+            ],
+            "explanation": "SS07 Lower: Pioneer of optics (book c. 1020); Observe • Test • Explain."
+          },
+          {
+            "id": "b",
+            "label": "4b. Thomas Alva Edison (1847–1931) — How did he work to make electric lighting practical, and what sound device did he demonstrate in 1877? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He worked with teams (building on many inventors' contributions) to improve the incandescent light bulb and lighting systems, and demonstrated the phonograph in 1877.",
+            "keywordGroups": [
+              [
+                "team",
+                "teams",
+                "light bulb"
+              ],
+              [
+                "phonograph"
+              ]
+            ],
+            "explanation": "SS08 Upper & Lower: Worked with teams on electric lighting and demonstrated the phonograph in 1877."
+          },
+          {
+            "id": "c",
+            "label": "4c. Alexander Graham Bell (1847–1922) — What patent did he receive in 1876, and how did it help people? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He received a US patent in 1876 for a telephone that transmitted speech electrically, helping people communicate across long distances.",
+            "keywordGroups": [
+              [
+                "telephone",
+                "1876"
+              ],
+              [
+                "communicate",
+                "long distances",
+                "speech"
+              ]
+            ],
+            "explanation": "SS09 Upper: 1876 US patent for the electrical telephone."
+          },
+          {
+            "id": "d",
+            "label": "4d. Heinrich Hertz (1857–1894) — What did he demonstrate in Hamburg, Germany in the late 1880s, and what foundation did it lay? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "He demonstrated that electromagnetic waves could be produced and detected, laying the foundation for radio communication.",
+            "keywordGroups": [
+              [
+                "electromagnetic",
+                "waves"
+              ],
+              [
+                "radio"
+              ]
+            ],
+            "explanation": "SS09 Lower: Demonstrated electromagnetic waves in 1887–1888, laying the foundation for radio communication."
+          }
+        ]
+      },
+      {
+        "qNum": 5,
+        "conceptId": "C15, C16, C17",
+        "cluster": "SS08–SS09: Technical Mechanisms & Wave Rules",
+        "unit": "unit2",
+        "subTopic": "Phonograph, Microphone vs. Speaker, and Radio Waves",
+        "points": 3,
+        "prompt": "Explain the technical mechanisms highlighted in the 'Sound Connection' and 'Remember' boxes (SS08–SS09):",
+        "items": [
+          {
+            "id": "a",
+            "label": "5a. How did Edison's 1877 phonograph record and reproduce sound vibrations? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Sound vibrations made a recording stylus create patterns on a moving surface, and the recorded pattern was later used to reproduce sound.",
+            "keywordGroups": [
+              [
+                "stylus",
+                "pattern",
+                "patterns"
+              ],
+              [
+                "moving surface",
+                "reproduce"
+              ]
+            ],
+            "explanation": "SS08 Lower: Vibrations -> stylus creates patterns on moving surface -> reproduces sound."
+          },
+          {
+            "id": "b",
+            "label": "5b. State the exact difference between a microphone and a speaker (SS09 Upper). (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "A microphone converts sound vibrations into changing electrical signals; a speaker converts electrical signals back into sound.",
+            "keywordGroups": [
+              [
+                "microphone",
+                "electrical"
+              ],
+              [
+                "speaker",
+                "sound"
+              ]
+            ],
+            "explanation": "SS09 Upper: Microphone converts sound vibrations into electrical signals; speaker converts electrical signals back into sound."
+          },
+          {
+            "id": "c",
+            "label": "5c. Why are radio waves NOT sound waves, and how does a radio receiver let us hear sound (SS09 Lower)? (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "Radio waves are electromagnetic waves (like visible light with longer wavelengths) that carry information; a speaker turns the signal into sound.",
+            "keywordGroups": [
+              [
+                "electromagnetic"
+              ],
+              [
+                "speaker"
+              ]
+            ],
+            "explanation": "SS09 Lower: Radio waves are electromagnetic waves; a speaker turns the signal into sound."
+          }
+        ]
+      },
+      {
+        "qNum": 6,
+        "conceptId": "C18, C19, C20",
+        "cluster": "SS10 Upper & Lower: Chronology & Community Impact",
+        "unit": "unit2",
+        "subTopic": "Timeline of Ideas & Impact Question",
+        "points": 2,
+        "prompt": "Answer the final synthesis questions from Panel SS10 ('A Timeline of Ideas' & 'How Did Their Work Help Communities?'):",
+        "items": [
+          {
+            "id": "a",
+            "label": "6a. Order the 4 milestones from 'A Timeline of Ideas' (c. 1020, 1876, 1877, 1887–1888), separated by commas: (1 pt)",
+            "mode": "ordered_sequence",
+            "points": 1,
+            "modelAnswer": "Ibn al-Haytham optics, Bell telephone patent, Edison phonograph, Hertz electromagnetic waves",
+            "sequenceGroups": [
+              [
+                "haytham",
+                "optics",
+                "1020"
+              ],
+              [
+                "bell",
+                "telephone",
+                "1876"
+              ],
+              [
+                "edison",
+                "phonograph",
+                "1877"
+              ],
+              [
+                "hertz",
+                "electromagnetic",
+                "1887",
+                "1888"
+              ]
+            ],
+            "explanation": "SS10 Upper: c. 1020 -> 1876 -> 1877 -> 1887–1888."
+          },
+          {
+            "id": "b",
+            "label": "6b. Impact Question (SS10 Lower): Explain how light and sound inventions (such as electric/LED lighting, telephones, fibre-optics, microphones/speakers, or medical tools) help our community today. (1 pt)",
+            "mode": "keyword",
+            "points": 1,
+            "modelAnswer": "They provide safe electric lighting for study and work, instant long-distance communication via telephones and fibre-optic light cables, recorded music/education via microphones and speakers, and medical tools using light and sound.",
+            "keywordGroups": [
+              [
+                "light",
+                "lighting",
+                "fibre-optic",
+                "camera",
+                "bulb"
+              ],
+              [
+                "sound",
+                "telephone",
+                "communicate",
+                "speaker",
+                "medical"
+              ]
+            ],
+            "explanation": "SS10 Lower summarizes community impacts across Light, Sound, and Applications Today."
+          }
+        ]
+      }
+    ]
+  }
+};
+
+    // =========================================================================
+    // 3. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE
+    // =========================================================================
+    let currentSetKey = 'practice_set_1';
+    let currentSlideIndex = 0;
+    let retryFilterIndices = null;
+    let activeParentTab = 'practice_set_1';
+    let activePrintSet = 'practice_set_1';
+    let parentUnlocked = false;
+    let lastFocusedInput = null;
+
+    function getStorageKey(setKey) {
+      return `${STORAGE_PREFIX}_${setKey}`;
+    }
+
+    function loadSetState(setKey) {
+      try {
+        const raw = localStorage.getItem(getStorageKey(setKey));
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') return parsed;
+        }
+      } catch (e) {}
+      return { answers: {}, submitted: false, score: 0, maxScore: QUESTION_SETS[setKey].maxScore, lastSlide: 0 };
+    }
+
+    function saveSetState(setKey, state) {
+      try {
+        localStorage.setItem(getStorageKey(setKey), JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function clearSetState(setKey) {
+      try {
+        localStorage.removeItem(getStorageKey(setKey));
+      } catch (e) {}
+    }
+
+    function isQuestionAnswered(q, qAns) {
+      if (!qAns || typeof qAns !== 'object') return false;
+      return q.items.every(it => String(qAns[it.id] || '').trim().length > 0);
+    }
+
+    function gradeQuestion(q, qAns) {
+      const ansObj = qAns || {};
+      let earnedPoints = 0;
+      const subResults = q.items.map(it => {
+        const userRaw = ansObj[it.id] || '';
+        const res = evaluateItem(userRaw, it);
+        earnedPoints += res.earned;
+        return {
+          id: it.id,
+          label: it.label,
+          userDisplay: String(userRaw).trim() || UI.no_answer_text,
+          modelDisplay: it.modelAnswer,
+          explanation: it.explanation,
+          earned: res.earned,
+          max: it.points,
+          status: res.status
+        };
+      });
+      let status = 'incorrect';
+      if (earnedPoints === q.points) status = 'correct';
+      else if (earnedPoints > 0) status = 'partial';
+      return { earnedPoints, maxPoints: q.points, status, subResults };
+    }
+
+    function showView(viewId) {
+      ['viewStart', 'viewQuiz', 'viewResults', 'viewPrint'].forEach(id => {
+        const el = document.getElementById(id);
+        if (id === viewId) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showToast(msg) {
+      const el = document.getElementById('toastBanner');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      setTimeout(() => el.classList.add('hidden'), 3200);
+    }
+
+    // =========================================================================
+    // 4. START SCREEN & PASSWORD-PROTECTED PARENT INSPECTOR ("nopeeking")
+    // =========================================================================
+    function formatBadgeStatus(state, questions, maxScore) {
+      if (state.submitted) {
+        const pct = Math.round((state.score / maxScore) * 100);
+        return { text: `${UI.completed_prefix}: ${state.score}/${maxScore} (${pct}%)`, cls: 'bg-emerald-100 text-emerald-800' };
+      }
+      const answered = questions.filter((q, i) => isQuestionAnswered(q, state.answers[i])).length;
+      if (answered > 0) {
+        return { text: `${UI.in_progress} (${answered}/${questions.length})`, cls: 'bg-amber-100 text-amber-800' };
+      }
+      return { text: UI.not_started, cls: 'bg-slate-100 text-slate-700' };
+    }
+
+    function renderStartScreen() {
+      ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
+        const num = idx + 1;
+        const pill = document.getElementById(`pillSet${num}`);
+        const badge = document.getElementById(`pillBadgeSet${num}`);
+        const st = loadSetState(sKey);
+        const info = formatBadgeStatus(st, QUESTION_SETS[sKey].questions, QUESTION_SETS[sKey].maxScore);
+        badge.textContent = info.text;
+
+        if (currentSetKey === sKey) {
+          pill.className = 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition';
+        } else {
+          pill.className = 'p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition';
+        }
+      });
+
+      const pKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+      const pSet = QUESTION_SETS[pKey];
+      const pState = loadSetState(pKey);
+      const pInfo = formatBadgeStatus(pState, pSet.questions, pSet.maxScore);
+      const badgePractice = document.getElementById('badgePracticeStatus');
+      badgePractice.textContent = pInfo.text;
+      badgePractice.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${pInfo.cls}`;
+
+      const btnStartPractice = document.getElementById('btnStartPractice');
+      const pAnswered = pSet.questions.filter((q, i) => isQuestionAnswered(q, pState.answers[i])).length;
+      btnStartPractice.textContent = pAnswered > 0 && !pState.submitted
+        ? `${UI.resume_practice} (${pSet.shortTitle})`
+        : `${UI.start_practice} (${pSet.shortTitle})`;
+
+      const oSet = QUESTION_SETS.official;
+      const oState = loadSetState('official');
+      const oInfo = formatBadgeStatus(oState, oSet.questions, oSet.maxScore);
+      const badgeOfficial = document.getElementById('badgeOfficialStatus');
+      badgeOfficial.textContent = oInfo.text;
+      badgeOfficial.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${oInfo.cls}`;
+
+      const btnStartOfficial = document.getElementById('btnStartOfficial');
+      const oAnswered = oSet.questions.filter((q, i) => isQuestionAnswered(q, oState.answers[i])).length;
+      btnStartOfficial.textContent = oAnswered > 0 && !oState.submitted
+        ? `${UI.resume_practice} (${oSet.shortTitle})`
+        : UI.start_official;
+    }
+
+    function renderParentInspector() {
+      const tbody = document.getElementById('tbodyParentInspector');
+      if (!parentUnlocked) {
+        tbody.innerHTML = '';
+        return;
+      }
+      const setObj = QUESTION_SETS[activeParentTab];
+      tbody.innerHTML = '';
+
+      setObj.questions.forEach(q => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 align-top';
+
+        const subItemsHtml = q.items.map(it => `<div class="mb-1 text-slate-700">• ${it.label}</div>`).join('');
+        const ansHtml = q.items.map(it => `
+          <div class="mb-1.5">
+            <span class="font-bold text-indigo-900">${it.modelAnswer}</span>
+            <div class="text-[11px] text-slate-500">${it.explanation}</div>
+          </div>
+        `).join('');
+
+        tr.innerHTML = `
+          <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
+            Q${q.qNum}
+            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] inline-block">${q.conceptId}</div>
+          </td>
+          <td class="py-3 px-3">
+            <div class="font-semibold text-slate-800">${q.subTopic}</div>
+            <div class="text-slate-500">${q.cluster} • ${q.points} ${UI.pt_plural}</div>
+          </td>
+          <td class="py-3 px-3">
+            <div class="font-semibold text-slate-900 mb-1">${q.prompt}</div>
+            ${subItemsHtml}
+          </td>
+          <td class="py-3 px-3">
+            ${ansHtml}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.querySelectorAll('.parent-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-parent-tab') === activeParentTab) {
+          btn.className = 'parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white';
+        } else {
+          btn.className = 'parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100';
+        }
+      });
+    }
+
+    function runQaSelfTest() {
+      const banner = document.getElementById('qaSelfTestBanner');
+      const setKeys = ['practice_set_1', 'practice_set_2', 'practice_set_3', 'official'];
+      const reportLines = [];
+      let allPassed = true;
+
+      setKeys.forEach(sKey => {
+        const setObj = QUESTION_SETS[sKey];
+        let modelTotal = 0;
+        let blankTotal = 0;
+        const coveredConcepts = new Set();
+
+        setObj.questions.forEach(q => {
+          q.conceptId.split(',').map(s => s.trim()).filter(Boolean).forEach(cid => coveredConcepts.add(cid));
+          const modelAns = {};
+          q.items.forEach(it => { modelAns[it.id] = it.modelAnswer; });
+          const resModel = gradeQuestion(q, modelAns);
+          const resBlank = gradeQuestion(q, {});
+          modelTotal += resModel.earnedPoints;
+          blankTotal += resBlank.earnedPoints;
+        });
+
+        const isPractice = sKey.startsWith('practice_');
+        const missingConcepts = isPractice ? ALL_CONCEPTS.filter(c => !coveredConcepts.has(c)) : [];
+        const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missingConcepts.length === 0);
+        if (!passSet) allPassed = false;
+
+        reportLines.push(
+          `${setObj.shortTitle}: Model=${modelTotal}/${setObj.maxScore} | Blank=${blankTotal}/${setObj.maxScore}${isPractice ? ` | Concepts=${coveredConcepts.size}/${ALL_CONCEPTS.length}` : ''} ${passSet ? '✓ PASS' : '✗ FAIL'}`
+        );
+      });
+
+      banner.classList.remove('hidden');
+      if (allPassed) {
+        banner.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1';
+        banner.innerHTML = `<div class="font-extrabold">✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% Concept Coverage)</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+      } else {
+        banner.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
+        banner.innerHTML = `<div class="font-extrabold">✗ QA SELF-TEST FAILED</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+      }
+    }
+
+    // =========================================================================
+    // 5. ACTIVE QUIZ SLIDE RENDERING
+    // =========================================================================
+    function getActiveSlideList() {
+      const questions = QUESTION_SETS[currentSetKey].questions;
+      if (retryFilterIndices && retryFilterIndices.length > 0) {
+        return retryFilterIndices;
+      }
+      return questions.map((_, i) => i);
+    }
+
+    function startQuiz(setKey, retryIndices = null) {
+      currentSetKey = setKey;
+      retryFilterIndices = retryIndices;
+      const state = loadSetState(setKey);
+      if (state.submitted && !retryIndices) {
+        renderResultsScreen();
+        showView('viewResults');
+        return;
+      }
+      const activeList = getActiveSlideList();
+      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      renderQuizSlide();
+      showView('viewQuiz');
+    }
+
+    function renderQuizSlide() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const questions = setObj.questions;
+      const activeList = getActiveSlideList();
+      const q = questions[currentSlideIndex];
+      const posInActive = activeList.indexOf(currentSlideIndex);
+
+      state.lastSlide = currentSlideIndex;
+      saveSetState(currentSetKey, state);
+
+      document.getElementById('quizModeBadge').textContent = retryFilterIndices
+        ? `${setObj.shortTitle} (${UI.retry_incorrect_btn})`
+        : setObj.title;
+      document.getElementById('quizClusterBadge').textContent = q.cluster;
+      document.getElementById('quizQuestionCounter').textContent = `${UI.q_word} ${posInActive + 1} ${UI.of_word} ${activeList.length}`;
+      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? UI.pt_singular : UI.pt_plural}`;
+
+      const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
+      document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
+
+      // Optional Reading Passage
+      const passageWrap = document.getElementById('slidePassageWrapper');
+      const passageTitle = document.getElementById('slidePassageTitle');
+      const passageBody = document.getElementById('slidePassageBody');
+      const activePassage = q.passage || setObj.passage;
+      if (activePassage && activePassage.paragraphs) {
+        passageWrap.classList.remove('hidden');
+        passageTitle.textContent = `📖 ${activePassage.title}`;
+        passageBody.innerHTML = activePassage.paragraphs.map(p => `<p>${p}</p>`).join('');
+      } else {
+        passageWrap.classList.add('hidden');
+      }
+
+      document.getElementById('slideSubTopic').textContent = q.subTopic;
+      document.getElementById('slideConceptBadge').textContent = q.conceptId;
+      document.getElementById('slidePrompt').textContent = q.prompt;
+
+      // Word Bank handling
+      const wbBanner = document.getElementById('slideWordBank');
+      const wbPills = document.getElementById('slideWordBankPills');
+      wbPills.innerHTML = '';
+      if (q.wordBank && q.wordBank.length > 0) {
+        wbBanner.classList.remove('hidden');
+        q.wordBank.forEach(word => {
+          const pill = document.createElement('button');
+          pill.type = 'button';
+          pill.className = 'px-3 py-1 rounded-lg bg-white border border-indigo-200 text-xs font-bold text-indigo-800 hover:bg-indigo-600 hover:text-white transition shadow-2xs';
+          pill.textContent = word;
+          pill.addEventListener('click', () => {
+            if (lastFocusedInput && document.body.contains(lastFocusedInput)) {
+              lastFocusedInput.value = word;
+              lastFocusedInput.dispatchEvent(new Event('input'));
+            } else {
+              const emptyInp = Array.from(document.querySelectorAll('#slideInputsContainer input[type="text"]')).find(inp => !inp.value.trim())
+                || document.querySelector('#slideInputsContainer input[type="text"]');
+              if (emptyInp) {
+                emptyInp.value = word;
+                emptyInp.dispatchEvent(new Event('input'));
+              }
+            }
+          });
+          wbPills.appendChild(pill);
+        });
+      } else {
+        wbBanner.classList.add('hidden');
+      }
+
+      const container = document.getElementById('slideInputsContainer');
+      container.innerHTML = '';
+      const qAns = state.answers[currentSlideIndex] || {};
+      lastFocusedInput = null;
+
+      q.items.forEach(item => {
+        const block = document.createElement('div');
+        block.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5';
+
+        if (item.mode === 'select') {
+          const optsHtml = item.options.map(opt => {
+            const selected = qAns[item.id] === opt ? 'selected' : '';
+            return `<option value="${opt.replace(/"/g, '&quot;')}" ${selected}>${opt}</option>`;
+          }).join('');
+
+          block.innerHTML = `
+            <div class="flex items-center justify-between gap-2">
+              <label class="text-sm font-bold text-slate-800">${item.label}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
+            </div>
+            <select
+              data-field="${item.id}"
+              class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            >
+              <option value="">${UI.select_placeholder}</option>
+              ${optsHtml}
+            </select>
+          `;
+        } else {
+          const ph = item.mode === 'unordered_list' || item.mode === 'ordered_sequence' ? UI.list_placeholder : UI.text_placeholder;
+          block.innerHTML = `
+            <div class="flex items-center justify-between gap-2">
+              <label class="text-sm font-bold text-slate-800">${item.label}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
+            </div>
+            <input
+              type="text"
+              data-field="${item.id}"
+              value="${(qAns[item.id] ?? '').replace(/"/g, '&quot;')}"
+              placeholder="${ph}"
+              class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          `;
+        }
+        container.appendChild(block);
+      });
+
+      container.querySelectorAll('.slide-input').forEach(inp => {
+        inp.addEventListener('focus', e => {
+          if (e.target.tagName === 'INPUT') lastFocusedInput = e.target;
+        });
+        const saveHandler = e => {
+          const field = e.target.getAttribute('data-field');
+          const st = loadSetState(currentSetKey);
+          if (!st.answers[currentSlideIndex]) st.answers[currentSlideIndex] = {};
+          st.answers[currentSlideIndex][field] = e.target.value;
+          saveSetState(currentSetKey, st);
+          renderNavigatorGrid();
+        };
+        inp.addEventListener('input', saveHandler);
+        inp.addEventListener('change', saveHandler);
+      });
+
+      const btnPrev = document.getElementById('btnPrevSlide');
+      const btnNext = document.getElementById('btnNextSlide');
+      btnPrev.disabled = posInActive <= 0;
+      btnPrev.className = posInActive <= 0
+        ? 'px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 text-slate-400 cursor-not-allowed'
+        : 'px-4 py-2.5 rounded-xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+
+      if (posInActive >= activeList.length - 1) {
+        btnNext.classList.add('hidden');
+      } else {
+        btnNext.classList.remove('hidden');
+      }
+
+      renderNavigatorGrid();
+    }
+
+    function renderNavigatorGrid() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const activeList = getActiveSlideList();
+      const grid = document.getElementById('navigatorGrid');
+      grid.innerHTML = '';
+
+      let answeredTotal = 0;
+      activeList.forEach(qIdx => {
+        const q = setObj.questions[qIdx];
+        const answered = isQuestionAnswered(q, state.answers[qIdx]);
+        if (answered) answeredTotal++;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = q.qNum;
+        let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
+        if (answered) cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
+        else cls += 'bg-slate-100 text-slate-700 hover:bg-slate-200 ';
+        if (qIdx === currentSlideIndex) cls += 'ring-2 ring-offset-2 ring-indigo-600 ';
+        btn.className = cls;
+        btn.addEventListener('click', () => {
+          currentSlideIndex = qIdx;
+          renderQuizSlide();
+        });
+        grid.appendChild(btn);
+      });
+
+      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+    }
+
+    // =========================================================================
+    // 6. SUBMISSION GUARD & SUMMATIVE SCORECARD
+    // =========================================================================
+    function attemptSubmitQuiz() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      const activeList = getActiveSlideList();
+
+      const unansweredIndices = activeList.filter(qIdx => !isQuestionAnswered(setObj.questions[qIdx], state.answers[qIdx]));
+
+      if (unansweredIndices.length > 0) {
+        const modal = document.getElementById('modalUnanswered');
+        const text = document.getElementById('modalUnansweredText');
+        const pills = document.getElementById('modalUnansweredPills');
+        const btnGoBack = document.getElementById('btnModalGoBack');
+
+        text.textContent = UI.lang_attr === 'id'
+          ? `Masih ada ${unansweredIndices.length} soal yang belum selesai dijawab. Apakah kamu ingin melengkapinya terlebih dahulu?`
+          : `You have ${unansweredIndices.length} unanswered question(s). Would you like to complete them before submitting?`;
+        pills.innerHTML = '';
+
+        unansweredIndices.forEach(qIdx => {
+          const q = setObj.questions[qIdx];
+          const pill = document.createElement('button');
+          pill.type = 'button';
+          pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
+          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            currentSlideIndex = qIdx;
+            renderQuizSlide();
+          });
+          pills.appendChild(pill);
+        });
+
+        const firstMissingQ = setObj.questions[unansweredIndices[0]];
+        btnGoBack.textContent = UI.lang_attr === 'id'
+          ? `Kembali ke Soal ${firstMissingQ.qNum}`
+          : `Go Back to Question ${firstMissingQ.qNum}`;
+        btnGoBack.onclick = () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          currentSlideIndex = unansweredIndices[0];
+          renderQuizSlide();
+        };
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        return;
+      }
+
+      finalizeSubmission();
+    }
+
+    function finalizeSubmission() {
+      const modal = document.getElementById('modalUnanswered');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+      let totalScore = 0;
+
+      setObj.questions.forEach((q, idx) => {
+        const res = gradeQuestion(q, state.answers[idx]);
+        totalScore += res.earnedPoints;
+      });
+
+      state.submitted = true;
+      state.score = totalScore;
+      state.maxScore = setObj.maxScore;
+      saveSetState(currentSetKey, state);
+
+      retryFilterIndices = null;
+      renderResultsScreen();
+      showView('viewResults');
+    }
+
+    function renderResultsScreen() {
+      const setObj = QUESTION_SETS[currentSetKey];
+      const state = loadSetState(currentSetKey);
+
+      let totalEarned = 0;
+      let u1Earned = 0, u1Max = 0;
+      let u2Earned = 0, u2Max = 0;
+      const incorrectIndices = [];
+
+      const reviewList = document.getElementById('resultsReviewList');
+      reviewList.innerHTML = '';
+
+      setObj.questions.forEach((q, idx) => {
+        const g = gradeQuestion(q, state.answers[idx]);
+        totalEarned += g.earnedPoints;
+        if (q.unit === 'unit1') {
+          u1Earned += g.earnedPoints;
+          u1Max += q.points;
+        } else {
+          u2Earned += g.earnedPoints;
+          u2Max += q.points;
+        }
+
+        if (g.status !== 'correct') incorrectIndices.push(idx);
+
+        let badgeHtml = '';
+        let borderCls = 'border-slate-200';
+        if (g.status === 'correct') {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">${UI.correct_badge} (${g.earnedPoints}/${g.maxPoints} ${UI.pt_plural})</span>`;
+          borderCls = 'border-emerald-200';
+        } else if (g.status === 'partial') {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">${UI.partial_badge} (${g.earnedPoints}/${g.maxPoints} ${UI.pt_plural})</span>`;
+          borderCls = 'border-amber-200';
+        } else {
+          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">${UI.incorrect_badge} (0/${g.maxPoints} ${UI.pt_plural})</span>`;
+          borderCls = 'border-rose-200';
+        }
+
+        const subRowsHtml = g.subResults.map(sr => `
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-bold text-slate-800">${sr.label}</span>
+              <span class="font-semibold ${sr.status === 'correct' ? 'text-emerald-700' : sr.status === 'partial' ? 'text-amber-700' : 'text-rose-700'}">
+                ${sr.status === 'correct' ? UI.correct_badge : sr.status === 'partial' ? UI.partial_badge : UI.incorrect_badge} (${sr.earned}/${sr.max} ${UI.pt_plural})
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              <div class="p-2 rounded-lg ${sr.status === 'correct' ? 'bg-emerald-50 text-emerald-900' : sr.status === 'partial' ? 'bg-amber-50 text-amber-900' : 'bg-rose-50 text-rose-900'}">
+                <span class="font-semibold">${UI.your_ans_label}</span> ${sr.userDisplay}
+              </div>
+              <div class="p-2 rounded-lg bg-indigo-50 text-indigo-900">
+                <span class="font-semibold">${UI.model_ans_label}</span> ${sr.modelDisplay}
+              </div>
+            </div>
+            <div class="pt-1 text-slate-600">
+              <span class="font-semibold text-slate-800">${UI.expl_label}</span> ${sr.explanation}
+            </div>
+          </div>
+        `).join('');
+
+        const card = document.createElement('div');
+        card.className = `bg-white rounded-2xl border ${borderCls} p-5 shadow-sm space-y-3`;
+        card.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-extrabold text-slate-900">${UI.q_word} ${q.qNum}</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">${q.conceptId}</span>
+              <span class="text-xs font-semibold text-slate-500">• ${q.subTopic}</span>
+            </div>
+            ${badgeHtml}
+          </div>
+          <p class="text-sm font-medium text-slate-800">${q.prompt}</p>
+          <div class="space-y-2">${subRowsHtml}</div>
+        `;
+        reviewList.appendChild(card);
+      });
+
+      const pct = Math.round((totalEarned / setObj.maxScore) * 100);
+      document.getElementById('resultSetBadge').textContent = setObj.title;
+      document.getElementById('resultTotalScore').textContent = `${totalEarned} / ${setObj.maxScore}`;
+      document.getElementById('resultPercentage').textContent = `${pct}%`;
+      document.getElementById('resultUnit1Score').textContent = `${u1Earned} / ${u1Max} ${UI.pt_plural}`;
+      document.getElementById('resultUnit2Score').textContent = `${u2Earned} / ${u2Max} ${UI.pt_plural}`;
+
+      const btnRetry = document.getElementById('btnRetryIncorrect');
+      if (incorrectIndices.length === 0) {
+        btnRetry.classList.add('hidden');
+      } else {
+        btnRetry.classList.remove('hidden');
+        btnRetry.textContent = `${UI.retry_incorrect_btn} (${incorrectIndices.length})`;
+        btnRetry.onclick = () => {
+          state.submitted = false;
+          saveSetState(currentSetKey, state);
+          startQuiz(currentSetKey, incorrectIndices);
+        };
+      }
+
+      const nextMap = {
+        practice_set_1: 'practice_set_2',
+        practice_set_2: 'practice_set_3',
+        practice_set_3: 'official',
+        official: 'practice_set_1'
+      };
+      const nextKey = nextMap[currentSetKey];
+      const btnNextSet = document.getElementById('btnStartNextSet');
+      btnNextSet.textContent = `${UI.next_set_prefix} (${QUESTION_SETS[nextKey].shortTitle})`;
+      btnNextSet.onclick = () => {
+        currentSetKey = nextKey;
+        startQuiz(nextKey);
+      };
+    }
+
+    // =========================================================================
+    // 7. PRINTABLE PAPER WORKSHEET VIEW
+    // =========================================================================
+    function renderPrintView() {
+      const setObj = QUESTION_SETS[activePrintSet];
+      const container = document.getElementById('printableSheetContainer');
+
+      document.querySelectorAll('.print-set-btn').forEach(btn => {
+        if (btn.getAttribute('data-print-set') === activePrintSet) {
+          btn.className = 'print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white';
+        } else {
+          btn.className = 'print-set-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200';
+        }
+      });
+
+      const setPassageHtml = setObj.passage && setObj.passage.paragraphs
+        ? `<div class="p-4 rounded-xl border border-slate-300 bg-slate-50 space-y-2 text-xs leading-relaxed">
+             <div class="font-bold text-sm text-slate-900">${setObj.passage.title}</div>
+             ${setObj.passage.paragraphs.map(p => `<p>${p}</p>`).join('')}
+           </div>`
+        : '';
+
+      const qBlocksHtml = setObj.questions.map(q => {
+        const itemsPrintHtml = `
+          <div class="space-y-2.5 mt-2">
+            ${q.items.map(it => {
+              if (it.mode === 'select' && it.options) {
+                return `
+                  <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">
+                    <div class="font-semibold text-slate-900">${it.label}</div>
+                    <div class="flex flex-wrap gap-3 pt-1 text-slate-700">
+                      ${it.options.map(o => `<span>[ &nbsp; ] ${o}</span>`).join('')}
+                    </div>
+                  </div>
+                `;
+              }
+              return `
+                <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-2">
+                  <div class="font-semibold text-slate-900">${it.label}</div>
+                  <div class="border-b border-dotted border-slate-400 h-5"></div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+
+        const wbPrint = q.wordBank
+          ? `<div class="mt-1.5 inline-block px-3 py-1 rounded border border-slate-300 bg-slate-50 text-xs font-semibold">${UI.word_bank_label} ${q.wordBank.join('  |  ')}</div>`
+          : '';
+
+        return `
+          <div class="print-avoid-break border-b border-slate-200 pb-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic} • Q${q.qNum} (${q.conceptId})</span>
+              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
+            </div>
+            <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
+            ${wbPrint}
+            ${itemsPrintHtml}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <div class="border-2 border-slate-800 rounded-xl p-4 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-300 pb-3">
+            <div>
+              <h2 class="text-lg font-extrabold text-slate-900">Primary 4 Social Science — Practice Assessment</h2>
+              <p class="text-xs text-slate-600">Term 2 • History of Light & Sound & Biographies of Scientists and Inventors (C1..C20 Mastery)</p>
+            </div>
+            <div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">
+              ${setObj.title} (Total: ${setObj.maxScore} ${UI.pt_plural})
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">
+            <div>${UI.paper_name}</div>
+            <div>${UI.paper_date}</div>
+            <div>${UI.paper_set} <span class="underline">${setObj.shortTitle}</span></div>
+            <div>${UI.paper_score} ________ / ${setObj.maxScore}</div>
+          </div>
+        </div>
+        <div class="text-xs italic text-slate-600">
+          ${UI.paper_instruction}
+        </div>
+        ${setPassageHtml}
+        <div class="space-y-5">${qBlocksHtml}</div>
+      `;
+    }
+
+    function buildStandalonePrintableHtml() {
+      const sheetContent = document.getElementById('printableSheetContainer').innerHTML;
+      const setObj = QUESTION_SETS[activePrintSet];
+      return `<!DOCTYPE html>
+<html lang="${UI.lang_attr}">
+<head>
+  <meta charset="UTF-8" />
+  <title>Primary 4 Social Science — Practice Assessment - ${setObj.shortTitle}</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"><\/script>
+  <style>
+    body { font-family: sans-serif; padding: 24px; color: #0f172a; }
+    .print-avoid-break { break-inside: avoid; page-break-inside: avoid; }
+  </style>
+</head>
+<body>
+  <div class="max-w-4xl mx-auto space-y-6">
+    ${sheetContent}
+  </div>
+</body>
+</html>`;
+    }
+
+    // =========================================================================
+    // 8. EVENT LISTENERS INITIALIZATION
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStartScreen();
+      renderParentInspector();
+
+      document.getElementById('btnHeaderHome').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.getElementById('btnHeaderPrint').addEventListener('click', () => {
+        activePrintSet = currentSetKey;
+        renderPrintView();
+        showView('viewPrint');
+      });
+
+      document.getElementById('pillSet1').addEventListener('click', () => {
+        currentSetKey = 'practice_set_1';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet2').addEventListener('click', () => {
+        currentSetKey = 'practice_set_2';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet3').addEventListener('click', () => {
+        currentSetKey = 'practice_set_3';
+        renderStartScreen();
+      });
+
+      document.getElementById('btnStartPractice').addEventListener('click', () => {
+        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+        startQuiz(currentSetKey);
+      });
+
+      document.getElementById('btnResetPractice').addEventListener('click', () => {
+        const targetKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+        clearSetState(targetKey);
+        renderStartScreen();
+        showToast(`${UI.reset_btn}: ${QUESTION_SETS[targetKey].shortTitle}`);
+      });
+
+      document.getElementById('btnStartOfficial').addEventListener('click', () => {
+        startQuiz('official');
+      });
+
+      document.getElementById('btnResetOfficial').addEventListener('click', () => {
+        clearSetState('official');
+        renderStartScreen();
+        showToast(`${UI.reset_btn}: ${QUESTION_SETS.official.shortTitle}`);
+      });
+
+      // Password-Protected Parent Inspector ("nopeeking")
+      document.getElementById('btnToggleParentInspector').addEventListener('click', () => {
+        const panel = document.getElementById('panelParentInspector');
+        const icon = document.getElementById('iconParentToggle');
+        const isHidden = panel.classList.contains('hidden');
+        if (!isHidden) {
+          panel.classList.add('hidden');
+          parentUnlocked = false;
+          document.getElementById('tbodyParentInspector').innerHTML = '';
+          document.getElementById('qaSelfTestBanner').classList.add('hidden');
+          icon.textContent = UI.show_inspector;
+          return;
+        }
+        const pwModal = document.getElementById('modalParentPassword');
+        const pwInput = document.getElementById('inputParentPassword');
+        const pwErr = document.getElementById('errorParentPassword');
+        pwInput.value = '';
+        pwErr.classList.add('hidden');
+        pwModal.classList.remove('hidden');
+        pwModal.classList.add('flex');
+        setTimeout(() => pwInput.focus(), 50);
+      });
+
+      function verifyParentPassword() {
+        const pwInput = document.getElementById('inputParentPassword');
+        const pwErr = document.getElementById('errorParentPassword');
+        if (pwInput.value.trim().toLowerCase() === 'nopeeking') {
+          parentUnlocked = true;
+          const pwModal = document.getElementById('modalParentPassword');
+          pwModal.classList.add('hidden');
+          pwModal.classList.remove('flex');
+          document.getElementById('panelParentInspector').classList.remove('hidden');
+          document.getElementById('iconParentToggle').textContent = UI.hide_inspector;
+          renderParentInspector();
+        } else {
+          pwErr.classList.remove('hidden');
+        }
+      }
+
+      document.getElementById('btnConfirmParentPassword').addEventListener('click', verifyParentPassword);
+      document.getElementById('inputParentPassword').addEventListener('keydown', e => {
+        if (e.key === 'Enter') verifyParentPassword();
+      });
+      document.getElementById('btnCancelParentPassword').addEventListener('click', () => {
+        const pwModal = document.getElementById('modalParentPassword');
+        pwModal.classList.add('hidden');
+        pwModal.classList.remove('flex');
+      });
+
+      document.getElementById('btnRunQaSelfTest').addEventListener('click', runQaSelfTest);
+
+      document.querySelectorAll('.parent-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeParentTab = btn.getAttribute('data-parent-tab');
+          renderParentInspector();
+        });
+      });
+
+      document.getElementById('btnTogglePassage').addEventListener('click', () => {
+        const body = document.getElementById('slidePassageBody');
+        const icon = document.getElementById('slidePassageIcon');
+        if (body.classList.contains('hidden')) {
+          body.classList.remove('hidden');
+          icon.textContent = '▼';
+        } else {
+          body.classList.add('hidden');
+          icon.textContent = '▲';
+        }
+      });
+
+      document.getElementById('btnPrevSlide').addEventListener('click', () => {
+        const activeList = getActiveSlideList();
+        const pos = activeList.indexOf(currentSlideIndex);
+        if (pos > 0) {
+          currentSlideIndex = activeList[pos - 1];
+          renderQuizSlide();
+        }
+      });
+
+      document.getElementById('btnNextSlide').addEventListener('click', () => {
+        const activeList = getActiveSlideList();
+        const pos = activeList.indexOf(currentSlideIndex);
+        if (pos < activeList.length - 1) {
+          currentSlideIndex = activeList[pos + 1];
+          renderQuizSlide();
+        }
+      });
+
+      document.getElementById('btnSubmitQuiz').addEventListener('click', attemptSubmitQuiz);
+      document.getElementById('btnQuickSubmitSidebar').addEventListener('click', attemptSubmitQuiz);
+
+      document.getElementById('btnSaveAndExit').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.getElementById('btnModalSubmitAnyway').addEventListener('click', finalizeSubmission);
+
+      document.getElementById('btnRetakeCurrent').addEventListener('click', () => {
+        clearSetState(currentSetKey);
+        startQuiz(currentSetKey);
+      });
+
+      document.getElementById('btnResultsBackHome').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.getElementById('btnBackFromPrint').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
+      document.querySelectorAll('.print-set-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activePrintSet = btn.getAttribute('data-print-set');
+          renderPrintView();
+        });
+      });
+
+      document.getElementById('btnPrintNow').addEventListener('click', () => {
+        try {
+          window.print();
+        } catch (e) {
+          showToast(UI.download_html_btn);
+        }
+      });
+
+      document.getElementById('btnDownloadPrintableHtml').addEventListener('click', () => {
+        const htmlStr = buildStandalonePrintableHtml();
+        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `p4-social-science-t2-1-light-sound-${activePrintSet}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById('btnOpenNewTabPrint').addEventListener('click', () => {
+        const htmlStr = buildStandalonePrintableHtml();
+        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
