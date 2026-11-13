@@ -54,6 +54,7 @@
       </div>
 
       <div class="flex items-center gap-2">
+        <a href="../" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">← P4 Hub</a>
         <button id="btnHeaderHome" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
           🏠 Start Screen
         </button>
@@ -223,8 +224,11 @@
               <button type="button" data-parent-tab="practice_set_2" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 2 (Scenario)</button>
               <button type="button" data-parent-tab="practice_set_3" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Set 3 (Inversion)</button>
               <button type="button" data-parent-tab="official" class="parent-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700">Official (20 Pts)</button>
+              <button id="btnRunQaSelfTest" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xs transition">🧪 Run QA Self-Test</button>
             </div>
           </div>
+
+          <div id="qaSelfTestBanner" class="hidden p-3.5 rounded-xl border text-xs font-semibold"></div>
 
           <div class="overflow-x-auto bg-white rounded-xl border border-slate-200">
             <table class="w-full text-left border-collapse text-xs">
@@ -444,6 +448,34 @@
     </section>
 
   </main>
+
+
+  <!-- PASSWORD MODAL FOR PARENT INSPECTOR ("nopeeking") -->
+  <div id="modalParentPassword" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-200 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg">
+          🔒
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Enter Parent Password</h3>
+          <p class="text-xs text-slate-600">The Parent Preview &amp; Answer Key is password-protected so students complete their practice independently.</p>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <input id="inputParentPassword" type="password" placeholder="Enter password..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+        <p id="errorParentPassword" class="hidden text-xs font-semibold text-rose-600">Incorrect password — no peeking! 🙈</p>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+        <button id="btnCancelParentPassword" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          Cancel
+        </button>
+        <button id="btnConfirmParentPassword" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
+          Unlock Inspector
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- UNANSWERED QUESTIONS MODAL GUARD -->
   <div id="modalUnanswered" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
@@ -2569,9 +2601,50 @@
         : 'Start Official Pre-Test';
     }
 
+    let parentUnlocked = false;
+
+    function runQaSelfTest() {
+      const banner = document.getElementById('qaSelfTestBanner');
+      const allConcepts = Array.from({ length: 20 }, (_, i) => `C${i + 1}`);
+      const setKeys = ['practice_set_1', 'practice_set_2', 'practice_set_3', 'official'];
+      const reportLines = [];
+      let allPassed = true;
+
+      setKeys.forEach(sKey => {
+        const setObj = QUESTION_SETS[sKey];
+        let modelTotal = 0;
+        let blankTotal = 0;
+        const covered = new Set();
+
+        setObj.questions.forEach(q => {
+          q.conceptId.split(',').map(s => s.trim()).filter(Boolean).forEach(c => covered.add(c));
+          const modelAns = {};
+          q.items.forEach(it => { modelAns[it.id] = it.modelAnswer; });
+          modelTotal += gradeQuestion(q, modelAns).earnedPoints;
+          blankTotal += gradeQuestion(q, {}).earnedPoints;
+        });
+
+        const isPractice = sKey.startsWith('practice_');
+        const missing = isPractice ? allConcepts.filter(c => !covered.has(c)) : [];
+        const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missing.length === 0);
+        if (!passSet) allPassed = false;
+        reportLines.push(`${setObj.shortTitle}: Model=${modelTotal}/${setObj.maxScore} | Blank=${blankTotal}/${setObj.maxScore}${isPractice ? ` | Concepts=${covered.size}/20` : ''} ${passSet ? '✓ PASS' : '✗ FAIL'}`);
+      });
+
+      banner.classList.remove('hidden');
+      banner.className = allPassed
+        ? 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1'
+        : 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
+      banner.innerHTML = `<div class="font-extrabold">${allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C20 Coverage)' : '✗ QA SELF-TEST FAILED'}</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+    }
+
     function renderParentInspector() {
-      const setObj = QUESTION_SETS[activeParentTab];
       const tbody = document.getElementById('tbodyParentInspector');
+      if (!parentUnlocked) {
+        tbody.innerHTML = '';
+        return;
+      }
+      const setObj = QUESTION_SETS[activeParentTab];
       tbody.innerHTML = '';
 
       setObj.questions.forEach(q => {
@@ -3176,14 +3249,50 @@
         const panel = document.getElementById('panelParentInspector');
         const icon = document.getElementById('iconParentToggle');
         const isHidden = panel.classList.contains('hidden');
-        if (isHidden) {
-          panel.classList.remove('hidden');
-          icon.textContent = 'Hide Inspector ▲';
-        } else {
+        if (!isHidden) {
           panel.classList.add('hidden');
+          parentUnlocked = false;
+          document.getElementById('tbodyParentInspector').innerHTML = '';
+          document.getElementById('qaSelfTestBanner').classList.add('hidden');
           icon.textContent = 'Show Inspector ▼';
+          return;
         }
+        const pwModal = document.getElementById('modalParentPassword');
+        const pwInput = document.getElementById('inputParentPassword');
+        const pwErr = document.getElementById('errorParentPassword');
+        pwInput.value = '';
+        pwErr.classList.add('hidden');
+        pwModal.classList.remove('hidden');
+        pwModal.classList.add('flex');
+        setTimeout(() => pwInput.focus(), 50);
       });
+
+      function verifyParentPassword() {
+        const pwInput = document.getElementById('inputParentPassword');
+        const pwErr = document.getElementById('errorParentPassword');
+        if (pwInput.value.trim().toLowerCase() === 'nopeeking') {
+          parentUnlocked = true;
+          const pwModal = document.getElementById('modalParentPassword');
+          pwModal.classList.add('hidden');
+          pwModal.classList.remove('flex');
+          document.getElementById('panelParentInspector').classList.remove('hidden');
+          document.getElementById('iconParentToggle').textContent = 'Hide Inspector ▲';
+          renderParentInspector();
+        } else {
+          pwErr.classList.remove('hidden');
+        }
+      }
+
+      document.getElementById('btnConfirmParentPassword').addEventListener('click', verifyParentPassword);
+      document.getElementById('inputParentPassword').addEventListener('keydown', e => {
+        if (e.key === 'Enter') verifyParentPassword();
+      });
+      document.getElementById('btnCancelParentPassword').addEventListener('click', () => {
+        const pwModal = document.getElementById('modalParentPassword');
+        pwModal.classList.add('hidden');
+        pwModal.classList.remove('flex');
+      });
+      document.getElementById('btnRunQaSelfTest').addEventListener('click', runQaSelfTest);
 
       document.querySelectorAll('.parent-tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
