@@ -55,9 +55,6 @@
 
       <div class="flex items-center gap-2">
         <a href="../" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">← P4 Hub</a>
-        <button id="btnHeaderHome" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-          🏠 Start Screen
-        </button>
         <button id="btnHeaderPrint" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 transition">
           🖨️ Print / Paper Worksheet
         </button>
@@ -3264,11 +3261,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       renderStartScreen();
       renderParentInspector();
-
-      document.getElementById('btnHeaderHome').addEventListener('click', () => {
-        renderStartScreen();
-        showView('viewStart');
-      });
 
       document.getElementById('btnHeaderPrint').addEventListener('click', () => {
         activePrintSet = currentSetKey;
