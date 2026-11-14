@@ -72,11 +72,11 @@
     <section id="viewStart" class="space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
         <!-- Left Card: Practice Mode (Selected by Default) -->
-        <div id="cardPracticeMode" class="md:col-span-7 bg-white rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardPracticeMode" class="md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
-                ★ Selected Default
+              <span id="badgeModeSelectPractice" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                ★ Selected Mode
               </span>
               <span id="badgePracticeStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Not Started
@@ -135,11 +135,11 @@
         </div>
 
         <!-- Right Card: Official Pre-Test / Source Mode -->
-        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                Source Baseline (20 Pts)
+              <span id="badgeModeSelectOfficial" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600">
+                Click to Select • Source Baseline (20 Pts)
               </span>
               <span id="badgeOfficialStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Not Started
@@ -574,6 +574,36 @@
         };
       }
 
+      if (itemSpec.mode === 'unordered_list') {
+        const userParts = String(userRaw || '').split(/[,;/]+/).map(normalizeText).filter(Boolean);
+        const targetGroups = itemSpec.listGroups || (itemSpec.accepted || [itemSpec.modelAnswer]).map(x => [x]);
+        let hit = 0;
+        targetGroups.forEach(grp => {
+          if (grp.some(syn => userParts.some(up => matchesKeyword(up, syn)))) {
+            hit++;
+          }
+        });
+        if (hit === targetGroups.length) {
+          return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+        }
+        if (hit > 0 && itemSpec.points > 1) {
+          return { earned: Math.max(1, Math.round((hit / targetGroups.length) * itemSpec.points)), max: itemSpec.points, status: 'partial' };
+        }
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
+      if (itemSpec.mode === 'ordered_sequence') {
+        const userParts = String(userRaw || '').split(/(?:->|→|>|,|;|\/)+/).map(normalizeText).filter(Boolean);
+        const seqGroups = itemSpec.sequenceGroups || [];
+        if (seqGroups.length > 0 && userParts.length === seqGroups.length) {
+          const allInOrder = seqGroups.every((grp, idx) => grp.some(syn => matchesKeyword(userParts[idx], syn)));
+          if (allInOrder) {
+            return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
+          }
+        }
+        return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+
       // Keyword groups grading
       const groups = itemSpec.keywordGroups || [];
       if (groups.length === 0) {
@@ -581,7 +611,7 @@
       }
 
       // Check forbid words (e.g. writing "smaller" when answer is "bigger")
-      if (itemSpec.forbidWords && itemSpec.forbidWords.some(fw => matchesKeyword(userNorm, fw))) {
+      if (itemSpec.forbidWords && itemSpec.forbidWords.some(fw => { const fNorm = normalizeText(fw); return fNorm && userNorm.includes(fNorm); })) {
         return { earned: 0, max: itemSpec.points, status: 'incorrect' };
       }
 
@@ -1051,7 +1081,7 @@
                 id: 'a',
                 label: '11a. What unit of measurement (full name or symbol) do we use to measure the loudness/intensity of a sound? (1 pt)',
                 mode: 'exact',
-                accepted: ['decibel', 'decibels', 'db'],
+                accepted: ['decibel', 'decibels', 'db', 'decibel db', 'decibels db'],
                 points: 1,
                 modelAnswer: 'decibel (dB)',
                 explanation: 'The loudness or intensity of a sound is measured in a unit called decibel or dB (p. 116).'
@@ -2424,6 +2454,7 @@
     // =========================================================================
     const STORAGE_PREFIX = 'p4_science_t2_1_';
     let currentSetKey = 'practice_set_1';
+    let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
     let retryFilterIndices = null;
     let activeParentTab = 'practice_set_1';
@@ -2557,6 +2588,41 @@
     }
 
     function renderStartScreen() {
+      if (currentSetKey !== 'official') {
+        lastPracticeSetKey = currentSetKey;
+      }
+      const activePracticeKey = currentSetKey === 'official' ? lastPracticeSetKey : currentSetKey;
+      const isOfficialActive = currentSetKey === 'official';
+
+      const cardPractice = document.getElementById('cardPracticeMode');
+      const cardOfficial = document.getElementById('cardOfficialMode');
+      const badgeSelectPractice = document.getElementById('badgeModeSelectPractice');
+      const badgeSelectOfficial = document.getElementById('badgeModeSelectOfficial');
+
+      if (!isOfficialActive) {
+        cardPractice.className = 'md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800';
+          badgeSelectPractice.textContent = '★ Selected Mode';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectOfficial.textContent = 'Click to Select • Source Baseline (20 Pts)';
+        }
+      } else {
+        cardPractice.className = 'md:col-span-7 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-emerald-50/20 rounded-2xl border-2 border-emerald-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectPractice.textContent = 'Click to Select';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800';
+          badgeSelectOfficial.textContent = '● Active Mode • Source Baseline (20 Pts)';
+        }
+      }
+
       ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
         const num = idx + 1;
         const pill = document.getElementById(`pillSet${num}`);
@@ -2566,14 +2632,14 @@
         const info = formatBadgeStatus(st, setObj.questions, setObj.maxScore);
         badge.textContent = info.text;
 
-        if (currentSetKey === sKey) {
+        if (activePracticeKey === sKey && !isOfficialActive) {
           pill.className = 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition';
+        } else if (activePracticeKey === sKey && isOfficialActive) {
+          pill.className = 'p-3 rounded-xl border-2 border-indigo-300 bg-indigo-50/30 text-left transition';
         } else {
           pill.className = 'p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition';
         }
       });
-
-      const activePracticeKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
       const pSet = QUESTION_SETS[activePracticeKey];
       const pState = loadSetState(activePracticeKey);
       const pInfo = formatBadgeStatus(pState, pSet.questions, pSet.maxScore);
@@ -3210,36 +3276,56 @@
         showView('viewPrint');
       });
 
-      document.getElementById('pillSet1').addEventListener('click', () => {
-        currentSetKey = 'practice_set_1';
+      document.getElementById('cardPracticeMode').addEventListener('click', () => {
+        currentSetKey = lastPracticeSetKey || 'practice_set_1';
         renderStartScreen();
       });
-      document.getElementById('pillSet2').addEventListener('click', () => {
-        currentSetKey = 'practice_set_2';
-        renderStartScreen();
-      });
-      document.getElementById('pillSet3').addEventListener('click', () => {
-        currentSetKey = 'practice_set_3';
+      document.getElementById('cardOfficialMode').addEventListener('click', () => {
+        currentSetKey = 'official';
         renderStartScreen();
       });
 
-      document.getElementById('btnStartPractice').addEventListener('click', () => {
-        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+      document.getElementById('pillSet1').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_1';
+        lastPracticeSetKey = 'practice_set_1';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet2').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_2';
+        lastPracticeSetKey = 'practice_set_2';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet3').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_3';
+        lastPracticeSetKey = 'practice_set_3';
+        renderStartScreen();
+      });
+
+      document.getElementById('btnStartPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentSetKey === 'official') currentSetKey = lastPracticeSetKey || 'practice_set_1';
         startQuiz(currentSetKey);
       });
 
-      document.getElementById('btnResetPractice').addEventListener('click', () => {
-        const targetKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+      document.getElementById('btnResetPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
         clearSetState(targetKey);
         renderStartScreen();
         showToast(`Progress cleared for ${QUESTION_SETS[targetKey].shortTitle}.`);
       });
 
-      document.getElementById('btnStartOfficial').addEventListener('click', () => {
+      document.getElementById('btnStartOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'official';
         startQuiz('official');
       });
 
-      document.getElementById('btnResetOfficial').addEventListener('click', () => {
+      document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
         clearSetState('official');
         renderStartScreen();
         showToast('Progress cleared for Official Pre-Test Mode.');

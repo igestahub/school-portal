@@ -55,7 +55,7 @@
 
       <div class="flex items-center gap-2">
         <a href="../" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-          ← Portal Kelas 4
+          ← Hub K4
         </a>
         <button id="btnHeaderHome" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
           🏠 Layar Awal
@@ -74,11 +74,11 @@
     <section id="viewStart" class="space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
         <!-- Left Card: Practice Mode (Selected by Default) -->
-        <div id="cardPracticeMode" class="md:col-span-7 bg-white rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardPracticeMode" class="md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
-                ★ Pilihan Utama
+              <span id="badgeModeSelectPractice" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                ★ Mode Terpilih
               </span>
               <span id="badgePracticeStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Belum Mulai
@@ -138,11 +138,11 @@
         </div>
 
         <!-- Right Card: Official Pre-Test / Source Mode -->
-        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                Soal Asli Prates (30 Poin)
+              <span id="badgeModeSelectOfficial" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600">
+                Klik untuk Memilih • Soal Asli (30 Poin)
               </span>
               <span id="badgeOfficialStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Belum Mulai
@@ -168,7 +168,7 @@
 
           <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
             <button id="btnStartOfficial" type="button" class="flex-1 px-4 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
-              Mulai Soal Asli
+              Mulai Pra-Ujian Asli
             </button>
             <button id="btnResetOfficial" type="button" class="px-3 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 hover:bg-rose-50 hover:text-rose-700 text-slate-600 transition">
               Hapus / Ulangi Progres
@@ -213,7 +213,7 @@
             </div>
           </div>
           <span id="iconParentToggle" class="text-xs font-semibold text-indigo-600 px-2.5 py-1 rounded-lg bg-indigo-50">
-            Buka Kunci Jawaban ▼
+            Tampilkan Kunci ▼
           </span>
         </button>
 
@@ -503,7 +503,7 @@
 
       <div class="flex flex-wrap items-center justify-end gap-2 pt-3 border-t border-slate-100">
         <button id="btnModalGoBack" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
-          Go Back
+          Kembali ke Soal 1
         </button>
         <button id="btnModalSubmitAnyway" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
           Tetap Kumpulkan
@@ -519,7 +519,7 @@
     // =========================================================================
     // 1. UI DICTIONARY & RESILIENT GRADING ENGINE
     // =========================================================================
-    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Portal Kelas 4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Soal Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Buka Kunci Jawaban ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian."};
+    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Hub K4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Pra-Ujian Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Tampilkan Kunci ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian."};
     const ALL_CONCEPTS = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16"];
     const STORAGE_PREFIX = "p4_bahasa_pancasila_t2_1_v1";
 
@@ -3714,6 +3714,7 @@
     // 3. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE
     // =========================================================================
     let currentSetKey = 'practice_set_1';
+    let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
     let retryFilterIndices = null;
     let activeParentTab = 'practice_set_1';
@@ -3809,6 +3810,41 @@
     }
 
     function renderStartScreen() {
+      if (currentSetKey !== 'official') {
+        lastPracticeSetKey = currentSetKey;
+      }
+      const pKey = currentSetKey === 'official' ? lastPracticeSetKey : currentSetKey;
+      const isOfficialActive = currentSetKey === 'official';
+
+      const cardPractice = document.getElementById('cardPracticeMode');
+      const cardOfficial = document.getElementById('cardOfficialMode');
+      const badgeSelectPractice = document.getElementById('badgeModeSelectPractice');
+      const badgeSelectOfficial = document.getElementById('badgeModeSelectOfficial');
+
+      if (!isOfficialActive) {
+        cardPractice.className = 'md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800';
+          badgeSelectPractice.textContent = '★ Mode Terpilih';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectOfficial.textContent = 'Klik untuk Memilih • Soal Asli (30 Poin)';
+        }
+      } else {
+        cardPractice.className = 'md:col-span-7 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-emerald-50/20 rounded-2xl border-2 border-emerald-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectPractice.textContent = 'Klik untuk Memilih';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800';
+          badgeSelectOfficial.textContent = '● Mode Aktif • Soal Asli (30 Poin)';
+        }
+      }
+
       ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
         const num = idx + 1;
         const pill = document.getElementById(`pillSet${num}`);
@@ -3817,14 +3853,14 @@
         const info = formatBadgeStatus(st, QUESTION_SETS[sKey].questions, QUESTION_SETS[sKey].maxScore);
         badge.textContent = info.text;
 
-        if (currentSetKey === sKey) {
+        if (pKey === sKey && !isOfficialActive) {
           pill.className = 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition';
+        } else if (pKey === sKey && isOfficialActive) {
+          pill.className = 'p-3 rounded-xl border-2 border-indigo-300 bg-indigo-50/30 text-left transition';
         } else {
           pill.className = 'p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition';
         }
       });
-
-      const pKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
       const pSet = QUESTION_SETS[pKey];
       const pState = loadSetState(pKey);
       const pInfo = formatBadgeStatus(pState, pSet.questions, pSet.maxScore);
@@ -4468,36 +4504,56 @@
         showView('viewPrint');
       });
 
-      document.getElementById('pillSet1').addEventListener('click', () => {
-        currentSetKey = 'practice_set_1';
+      document.getElementById('cardPracticeMode').addEventListener('click', () => {
+        currentSetKey = lastPracticeSetKey || 'practice_set_1';
         renderStartScreen();
       });
-      document.getElementById('pillSet2').addEventListener('click', () => {
-        currentSetKey = 'practice_set_2';
-        renderStartScreen();
-      });
-      document.getElementById('pillSet3').addEventListener('click', () => {
-        currentSetKey = 'practice_set_3';
+      document.getElementById('cardOfficialMode').addEventListener('click', () => {
+        currentSetKey = 'official';
         renderStartScreen();
       });
 
-      document.getElementById('btnStartPractice').addEventListener('click', () => {
-        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+      document.getElementById('pillSet1').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_1';
+        lastPracticeSetKey = 'practice_set_1';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet2').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_2';
+        lastPracticeSetKey = 'practice_set_2';
+        renderStartScreen();
+      });
+      document.getElementById('pillSet3').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'practice_set_3';
+        lastPracticeSetKey = 'practice_set_3';
+        renderStartScreen();
+      });
+
+      document.getElementById('btnStartPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentSetKey === 'official') currentSetKey = lastPracticeSetKey || 'practice_set_1';
         startQuiz(currentSetKey);
       });
 
-      document.getElementById('btnResetPractice').addEventListener('click', () => {
-        const targetKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+      document.getElementById('btnResetPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
         clearSetState(targetKey);
         renderStartScreen();
         showToast(`${UI.reset_btn}: ${QUESTION_SETS[targetKey].shortTitle}`);
       });
 
-      document.getElementById('btnStartOfficial').addEventListener('click', () => {
+      document.getElementById('btnStartOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'official';
         startQuiz('official');
       });
 
-      document.getElementById('btnResetOfficial').addEventListener('click', () => {
+      document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
         clearSetState('official');
         renderStartScreen();
         showToast(`${UI.reset_btn}: ${QUESTION_SETS.official.shortTitle}`);

@@ -73,11 +73,11 @@
       <!-- Mode Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
         <!-- Left Card: Practice Mode (Selected by Default) -->
-        <div id="cardPracticeMode" class="md:col-span-7 bg-white rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardPracticeMode" class="md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
-                ★ Selected Default
+              <span id="badgeModeSelectPractice" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                ★ Selected Mode
               </span>
               <span id="badgePracticeStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Not Started
@@ -134,11 +134,11 @@
         </div>
 
         <!-- Right Card: Official Pre-Test / Source Mode -->
-        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition">
+        <div id="cardOfficialMode" class="md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer">
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                Source Baseline
+              <span id="badgeModeSelectOfficial" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600">
+                Click to Select • Source Baseline
               </span>
               <span id="badgeOfficialStatus" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
                 Not Started
@@ -284,6 +284,12 @@
             </div>
 
             <h2 id="slidePrompt" class="text-base sm:text-lg font-bold text-slate-900 mb-4"></h2>
+
+            <!-- Optional Word Bank Banner -->
+            <div id="slideWordBank" class="hidden mb-4 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200">
+              <div class="text-xs font-bold uppercase tracking-wider text-indigo-900 mb-1.5">Word Bank:</div>
+              <div id="slideWordBankPills" class="flex flex-wrap gap-1.5"></div>
+            </div>
 
             <!-- Dynamic Sub-Items / Inputs Container -->
             <div id="slideInputsContainer" class="space-y-4"></div>
@@ -1178,6 +1184,7 @@
     // =========================================================================
     const STORAGE_PREFIX = 'p4_math_t2_pretest1_';
     let currentSetKey = 'practice_set_1';
+    let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
     let retryFilterIndices = null; // Array of question indices if retrying incorrect only
     let activeParentTab = 'practice_set_1';
@@ -1589,6 +1596,41 @@
     }
 
     function renderStartScreen() {
+      if (currentSetKey !== 'official') {
+        lastPracticeSetKey = currentSetKey;
+      }
+      const activePracticeKey = currentSetKey === 'official' ? lastPracticeSetKey : currentSetKey;
+      const isOfficialActive = currentSetKey === 'official';
+
+      const cardPractice = document.getElementById('cardPracticeMode');
+      const cardOfficial = document.getElementById('cardOfficialMode');
+      const badgeSelectPractice = document.getElementById('badgeModeSelectPractice');
+      const badgeSelectOfficial = document.getElementById('badgeModeSelectOfficial');
+
+      if (!isOfficialActive) {
+        cardPractice.className = 'md:col-span-7 bg-indigo-50/20 rounded-2xl border-2 border-indigo-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800';
+          badgeSelectPractice.textContent = '★ Selected Mode';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectOfficial.textContent = 'Click to Select • Source Baseline';
+        }
+      } else {
+        cardPractice.className = 'md:col-span-7 bg-white rounded-2xl border-2 border-slate-200 hover:border-slate-300 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        cardOfficial.className = 'md:col-span-5 bg-emerald-50/20 rounded-2xl border-2 border-emerald-600 shadow-sm p-5 sm:p-6 flex flex-col justify-between transition cursor-pointer';
+        if (badgeSelectPractice) {
+          badgeSelectPractice.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600';
+          badgeSelectPractice.textContent = 'Click to Select';
+        }
+        if (badgeSelectOfficial) {
+          badgeSelectOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800';
+          badgeSelectOfficial.textContent = '● Active Mode • Source Baseline';
+        }
+      }
+
       // Update Practice Set Pills
       ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
         const num = idx + 1;
@@ -1598,15 +1640,14 @@
         const info = formatBadgeStatus(st, QUESTION_SETS[sKey].questions);
         badge.textContent = info.text;
 
-        if (currentSetKey === sKey) {
+        if (activePracticeKey === sKey && !isOfficialActive) {
           pill.className = 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition';
+        } else if (activePracticeKey === sKey && isOfficialActive) {
+          pill.className = 'p-3 rounded-xl border-2 border-indigo-300 bg-indigo-50/30 text-left transition';
         } else {
           pill.className = 'p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition';
         }
       });
-
-      // Active Practice Set Status Badge & Button Text
-      const activePracticeKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
       const pState = loadSetState(activePracticeKey);
       const pInfo = formatBadgeStatus(pState, QUESTION_SETS[activePracticeKey].questions);
       const badgePractice = document.getElementById('badgePracticeStatus');
@@ -2322,43 +2363,64 @@
       });
 
       // Set selection pills
-      document.getElementById('pillSet1').addEventListener('click', () => {
+      document.getElementById('cardPracticeMode').addEventListener('click', () => {
+        currentSetKey = lastPracticeSetKey || 'practice_set_1';
+        renderStartScreen();
+      });
+      document.getElementById('cardOfficialMode').addEventListener('click', () => {
+        currentSetKey = 'official';
+        renderStartScreen();
+      });
+
+      document.getElementById('pillSet1').addEventListener('click', (e) => {
+        e.stopPropagation();
         currentSetKey = 'practice_set_1';
+        lastPracticeSetKey = 'practice_set_1';
         renderStartScreen();
       });
-      document.getElementById('pillSet2').addEventListener('click', () => {
+      document.getElementById('pillSet2').addEventListener('click', (e) => {
+        e.stopPropagation();
         currentSetKey = 'practice_set_2';
+        lastPracticeSetKey = 'practice_set_2';
         renderStartScreen();
       });
-      document.getElementById('pillSet3').addEventListener('click', () => {
+      document.getElementById('pillSet3').addEventListener('click', (e) => {
+        e.stopPropagation();
         currentSetKey = 'practice_set_3';
+        lastPracticeSetKey = 'practice_set_3';
         renderStartScreen();
       });
 
       // Fresh Random Numbers
-      document.getElementById('btnFreshRandom').addEventListener('click', () => {
-        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+      document.getElementById('btnFreshRandom').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentSetKey === 'official') currentSetKey = lastPracticeSetKey || 'practice_set_1';
         generateFreshRandomSet();
       });
 
       // Start & Reset buttons
-      document.getElementById('btnStartPractice').addEventListener('click', () => {
-        if (currentSetKey === 'official') currentSetKey = 'practice_set_1';
+      document.getElementById('btnStartPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentSetKey === 'official') currentSetKey = lastPracticeSetKey || 'practice_set_1';
         startQuiz(currentSetKey);
       });
 
-      document.getElementById('btnResetPractice').addEventListener('click', () => {
-        const targetKey = currentSetKey === 'official' ? 'practice_set_1' : currentSetKey;
+      document.getElementById('btnResetPractice').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
         clearSetState(targetKey);
         renderStartScreen();
         showToast(`Progress cleared for ${QUESTION_SETS[targetKey].shortTitle}.`);
       });
 
-      document.getElementById('btnStartOfficial').addEventListener('click', () => {
+      document.getElementById('btnStartOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSetKey = 'official';
         startQuiz('official');
       });
 
-      document.getElementById('btnResetOfficial').addEventListener('click', () => {
+      document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
+        e.stopPropagation();
         clearSetState('official');
         renderStartScreen();
         showToast('Progress cleared for Official Pre-Test Mode.');
