@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primary 4 Mathematics - Practice Assessment (3D Shapes, Nets, Angles &amp; Fractions)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .print-break-avoid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Sticky White Top Header (Strictly 2 Navigation Controls on Right; No #btnHeaderHome) -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">P4</div>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Primary 4 Mathematics - Practice Assessment</h1>
+          <p class="text-xs text-slate-500">Term 2 Math II: 3D Shapes, Nets, Angles &amp; Fractions (Concepts C1–C30)</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="../" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">← P4 Hub</a>
+        <button id="btnHeaderPrint" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 transition">🖨️ Print / Paper Worksheet</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace Container -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 flex-1">
+
+    <!-- ==================== VIEW 1: START SCREEN ==================== -->
+    <section id="viewStart" class="space-y-6">
+
+      <!-- Top 12-Column Mode Selection Grid (Clickable Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+        <!-- Left Card: Practice Mode (Selected by Default, md:col-span-7) -->
+        <div id="cardPracticeMode" class="md:col-span-7 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-indigo-600 bg-indigo-50/20 shadow-sm flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span id="badgeModePractice" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white">★ Selected Mode</span>
+              <span class="text-xs font-semibold text-indigo-700 bg-indigo-100/80 px-2.5 py-1 rounded-lg">15 Questions • 100 pts • 100% C1–C30</span>
+            </div>
+
+            <div>
+              <h2 class="text-lg sm:text-xl font-bold text-slate-900">Practice Mode (Set 1 | Set 2 | Set 3)</h2>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Three full-coverage isomorphic sets testing all 30 concepts across 3D Shapes, Nets, Angles, and Fractions with self-contained CSS Grid nets and geometric diagrams.</p>
+            </div>
+
+            <!-- 3-Column Set Selector Pills -->
+            <div class="grid grid-cols-3 gap-2.5">
+              <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-bold text-slate-900">Set 1</span>
+                  <span class="text-[11px] font-semibold text-indigo-600">Core</span>
+                </div>
+                <span id="badgeSet1" class="mt-2 inline-block text-[11px] font-medium text-slate-500">Not Started</span>
+              </button>
+
+              <button id="pillSet2" type="button" class="p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-bold text-slate-900">Set 2</span>
+                  <span class="text-[11px] font-semibold text-indigo-600">Applied</span>
+                </div>
+                <span id="badgeSet2" class="mt-2 inline-block text-[11px] font-medium text-slate-500">Not Started</span>
+              </button>
+
+              <button id="pillSet3" type="button" class="p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-bold text-slate-900">Set 3</span>
+                  <span class="text-[11px] font-semibold text-indigo-600">Challenge</span>
+                </div>
+                <span id="badgeSet3" class="mt-2 inline-block text-[11px] font-medium text-slate-500">Not Started</span>
+              </button>
+            </div>
+
+            <!-- Math Randomizer Feature Box -->
+            <div class="p-3.5 rounded-xl bg-white border border-indigo-100 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div class="text-xs font-bold text-slate-800">Dynamic Number &amp; Angle Generator</div>
+                <div class="text-[11px] text-slate-500">Generate fresh valid dimensions, angle measures, and fractions for the selected practice set.</div>
+              </div>
+              <button id="btnRandomizeMath" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition">🎲 Fresh Random Numbers</button>
+            </div>
+          </div>
+
+          <!-- Per-Card Action Footer -->
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-200/80">
+            <button id="btnStartPractice" type="button" class="flex-1 min-w-[180px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition">Start Practice (Set 1)</button>
+            <button id="btnResetPractice" type="button" class="px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 bg-white hover:bg-rose-50 hover:text-rose-700 border border-slate-200 transition">Clear / Reset Progress</button>
+          </div>
+        </div>
+
+        <!-- Right Card: Official Pre-Test / Source Mode (md:col-span-5) -->
+        <div id="cardOfficialMode" class="md:col-span-5 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-slate-200 bg-white hover:border-slate-300 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span id="badgeModeOfficial" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">Click to Select</span>
+              <span id="badgeOfficial" class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">Not Started</span>
+            </div>
+
+            <div>
+              <h2 class="text-lg sm:text-xl font-bold text-slate-900">Official Pre-Test / Source Mode</h2>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Exact baseline figures from the 48-item study packet packed into 15 structured assessment questions (100 pts total).</p>
+            </div>
+
+            <!-- Section Breakdown -->
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
+              <div class="font-bold text-slate-800 uppercase tracking-wider text-[11px]">Section Breakdown</div>
+              <div class="flex justify-between text-slate-600"><span>Sec A: 3D Shapes &amp; Prisms (Q1–Q3)</span><span class="font-semibold text-slate-800">22 pts</span></div>
+              <div class="flex justify-between text-slate-600"><span>Sec B: 3D Nets &amp; Net N (Q4–Q5)</span><span class="font-semibold text-slate-800">14 pts</span></div>
+              <div class="flex justify-between text-slate-600"><span>Sec C: Angles, Lines &amp; Clock (Q6–Q11)</span><span class="font-semibold text-slate-800">42 pts</span></div>
+              <div class="flex justify-between text-slate-600"><span>Sec D: Fractions &amp; Models (Q12–Q13)</span><span class="font-semibold text-slate-800">12 pts</span></div>
+              <div class="flex justify-between text-slate-600"><span>Sec E: Combined Synthesis (Q14–Q15)</span><span class="font-semibold text-slate-800">10 pts</span></div>
+            </div>
+          </div>
+
+          <!-- Per-Card Action Footer -->
+          <div class="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100">
+            <button id="btnStartOfficial" type="button" class="flex-1 min-w-[160px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm transition">Start Official Pre-Test</button>
+            <button id="btnResetOfficial" type="button" class="px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-50 hover:bg-rose-50 hover:text-rose-700 border border-slate-200 transition">Clear / Reset Progress</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Assessment Guidelines Card (3-Column) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+        <h3 class="text-sm font-bold text-slate-900 mb-3">Assessment Guidelines &amp; Visual Rules</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-600">
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="font-bold text-slate-800">1. 3D Nets &amp; Spatial Folding</div>
+            <p>Inspect the CSS Grid net layouts carefully. Opposite faces on a cube never share an edge or corner when folded.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="font-bold text-slate-800">2. Angle Rules &amp; Diagrams</div>
+            <p>Angle diagrams are not drawn to physical protractor scale unless on the Protractor Reading slide. Use geometric angle rules (90°, 180°, 360°) to calculate exact answers.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="font-bold text-slate-800">3. Fractions &amp; Simplest Form</div>
+            <p>Write fractions using a slash like <code class="px-1 py-0.5 bg-slate-200 rounded text-slate-800">3/8</code> and mixed numbers with a space like <code class="px-1 py-0.5 bg-slate-200 rounded text-slate-800">2 1/4</code>. Zero hints are shown during the test.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parent Preview & Answer Key Card (VERY BOTTOM of #viewStart, Toggle at Bottom-Right) -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div id="btnToggleParentInspector" class="p-4 sm:p-5 flex flex-wrap items-center justify-between gap-3 cursor-pointer hover:bg-slate-50 transition">
+          <div class="flex items-start sm:items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-base">🔒</div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">🔒 Parent Preview &amp; Answer Key (Concept Coverage C1..C30)</h3>
+              <p class="text-xs text-slate-500">Password-protected answer key, grading rubrics, and automated QA self-test across Set 1, Set 2, Set 3, and Official Mode.</p>
+            </div>
+          </div>
+          <span id="iconParentToggle" class="text-xs font-semibold text-indigo-600 px-2.5 py-1 rounded-lg bg-indigo-50">Show Inspector ▼</span>
+        </div>
+
+        <!-- Expanded Inspector Panel (Hidden & Empty DOM while locked) -->
+        <div id="panelParentInspector" class="hidden border-t border-slate-200 p-4 sm:p-6 bg-slate-50/60 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button type="button" data-insp-tab="practice_set_1" class="insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white">Set 1</button>
+              <button type="button" data-insp-tab="practice_set_2" class="insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200">Set 2</button>
+              <button type="button" data-insp-tab="practice_set_3" class="insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200">Set 3</button>
+              <button type="button" data-insp-tab="official" class="insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200">Official</button>
+            </div>
+            <button id="btnRunQaSelfTest" type="button" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition">🧪 Run QA Self-Test</button>
+          </div>
+
+          <div id="qaSelfTestBanner" class="hidden p-3.5 rounded-xl border text-xs font-medium"></div>
+
+          <div class="overflow-x-auto bg-white rounded-xl border border-slate-200">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                  <th class="py-2.5 px-3 font-bold">Q#</th>
+                  <th class="py-2.5 px-3 font-bold">Concepts</th>
+                  <th class="py-2.5 px-3 font-bold">Topic &amp; Sub-Items</th>
+                  <th class="py-2.5 px-3 font-bold">Model Answer &amp; Accepted Keywords</th>
+                  <th class="py-2.5 px-3 font-bold">Pts</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyParentInspector" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== VIEW 2: ACTIVE QUIZ (2-COLUMN LAYOUT) ==================== -->
+    <section id="viewQuiz" class="hidden space-y-5 no-print">
+
+      <!-- Top Progress Bar Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-2.5">
+        <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2">
+            <span id="quizModeBadge" class="px-2.5 py-1 rounded-lg font-bold bg-indigo-100 text-indigo-800">Practice Set 1</span>
+            <span id="quizSlideTitleTop" class="font-semibold text-slate-600">Question 1 of 15</span>
+          </div>
+          <span id="quizProgressPercent" class="font-bold text-indigo-600">0% Answered</span>
+        </div>
+        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+          <div id="quizProgressBar" class="h-full bg-indigo-600 transition-all duration-300" style="width: 6.6%"></div>
+        </div>
+      </div>
+
+      <!-- 12-Column Split: lg:col-span-8 Active Question + lg:col-span-4 Navigator Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+        <!-- Left Column (lg:col-span-8): Active Question Card -->
+        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+              <span id="slideNumberBadge" class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-slate-900 text-white">Question 1 of 15</span>
+              <span id="slideConceptBadge" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">C1, C2</span>
+            </div>
+            <span id="slidePointsBadge" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200">8 pts</span>
+          </div>
+
+          <div id="slidePrompt" class="space-y-4 text-sm text-slate-800 leading-relaxed"></div>
+
+          <div id="slideWordBank" class="hidden"></div>
+
+          <div id="slideInputsContainer" class="space-y-4 pt-1"></div>
+
+          <!-- Slide Bottom Navigation Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200">
+            <button id="btnPrevSlide" type="button" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 transition">← Previous</button>
+            <div class="flex items-center gap-2.5">
+              <button id="btnNextSlide" type="button" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition">Next →</button>
+              <button id="btnSubmitQuiz" type="button" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm transition">Finish &amp; Submit Test</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column (lg:col-span-4): Question Navigator Sidebar -->
+        <aside class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900">Question Navigator (Answered / Unanswered)</h3>
+            <span id="navAnsweredCount" class="text-xs font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-700">0 / 15</span>
+          </div>
+
+          <div id="navigatorGrid" class="grid grid-cols-5 gap-2"></div>
+
+          <!-- 3-Color Legend -->
+          <div class="flex flex-wrap items-center gap-3 text-[11px] text-slate-500 pt-2 border-t border-slate-100">
+            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Answered</span>
+            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-200 inline-block"></span> Unanswered</span>
+            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-indigo-600 inline-block"></span> Current</span>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <button id="btnQuickSubmitSidebar" type="button" class="w-full px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm transition">Finish &amp; Submit Test</button>
+            <button id="btnSaveAndExit" type="button" class="w-full px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">← Save &amp; Return to Start Screen</button>
+          </div>
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== VIEW 3: SUMMATIVE SCORECARD & REVIEW ==================== -->
+    <section id="viewResults" class="hidden space-y-6 no-print">
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span id="resultModeLabel" class="text-xs font-bold uppercase tracking-wider text-indigo-600">Practice Set 1</span>
+            <h2 class="text-2xl font-extrabold text-slate-900 mt-0.5">Final Score</h2>
+            <p id="resultSummarySub" class="text-xs sm:text-sm text-slate-500 mt-1">Complete review of all 15 questions and 30 concepts (C1–C30).</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-right">
+              <div id="resultScoreBig" class="text-3xl sm:text-4xl font-extrabold text-indigo-600">0 / 100</div>
+              <div id="resultPercentBadge" class="text-xs font-bold text-slate-500">0% Accuracy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post-Test Action Bar -->
+        <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t border-slate-100">
+          <button id="btnRetryIncorrect" type="button" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 transition">Retry Incorrect Only</button>
+          <button id="btnRetakeCurrent" type="button" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 transition">Retake Current Set</button>
+          <button id="btnNextPracticeSet" type="button" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition">Start Next Practice Set (Set 2)</button>
+          <button id="btnResultsToStart" type="button" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">← Save &amp; Return to Start Screen</button>
+        </div>
+      </div>
+
+      <!-- Detailed Item-by-Item Review Container -->
+      <div id="resultsReviewList" class="space-y-4"></div>
+
+    </section>
+
+    <!-- ==================== VIEW 4: ON-SCREEN PRINTABLE PAPER VIEW ==================== -->
+    <section id="viewPrint" class="hidden space-y-6">
+
+      <!-- Print Controls Bar (Hidden when printing) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnPrintBackToQuiz" type="button" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">← Back to Interactive Quiz</button>
+          <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+            <button type="button" data-print-set="practice_set_1" class="print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm">Set 1</button>
+            <button type="button" data-print-set="practice_set_2" class="print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600">Set 2</button>
+            <button type="button" data-print-set="practice_set_3" class="print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600">Set 3</button>
+            <button type="button" data-print-set="official" class="print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600">Official</button>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnExecutePrint" type="button" class="px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition">🖨️ Print Now</button>
+          <button id="btnDownloadPrintable" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">⬇ Download Printable HTML</button>
+          <button id="btnOpenPrintNewTab" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">↗ Open in New Tab to Print</button>
+        </div>
+      </div>
+
+      <!-- Exam Paper Sheet -->
+      <div id="printablePaperSheet" class="bg-white rounded-2xl border border-slate-300 p-6 sm:p-8 shadow-sm space-y-6">
+        <div class="border-b-2 border-slate-800 pb-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-extrabold text-slate-900">Primary 4 Mathematics - Practice Assessment</h2>
+            <span id="printSetLabel" class="text-xs font-bold px-2.5 py-1 border border-slate-800 rounded">Set 1</span>
+          </div>
+          <p class="text-xs text-slate-600">Topic: 3D Shapes, 3D Nets, Angles &amp; Fractions (15 Questions • 100 Points Total)</p>
+          <div class="pt-2 text-xs sm:text-sm font-semibold text-slate-800 tracking-wide">
+            Name: ___________________________ &nbsp;&nbsp; Date: _______________ &nbsp;&nbsp; Set: _________ &nbsp;&nbsp; Score: _________ / 100
+          </div>
+        </div>
+
+        <div id="printQuestionsContainer" class="space-y-6"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================== MODAL 1: UNANSWERED QUESTIONS GUARD ==================== -->
+  <div id="modalUnanswered" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl space-y-4 border border-slate-200">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">!</div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Unanswered Questions</h3>
+          <p class="text-xs text-slate-500">Some questions or sub-items are still blank. Click a pill below to jump directly to that question:</p>
+        </div>
+      </div>
+      <div id="modalUnansweredPills" class="flex flex-wrap gap-2 max-h-44 overflow-y-auto p-1"></div>
+      <div class="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-100">
+        <button id="btnModalGoBack" type="button" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">Go Back to Question 1</button>
+        <button id="btnModalSubmitAnyway" type="button" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition">Submit Anyway</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: PARENT PASSWORD ("nopeeking") ==================== -->
+  <div id="modalParentPassword" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl space-y-4 border border-slate-200">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg">🔒</div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Enter Parent Password</h3>
+          <p class="text-xs text-slate-500">Unlock Concept Coverage (C1–C30) &amp; Answer Key Inspector</p>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <input id="inputParentPassword" type="password" placeholder="Type password..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <p id="msgParentPasswordError" class="hidden text-xs font-semibold text-rose-600">Incorrect password — no peeking! 🙈</p>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button id="btnCancelPassword" type="button" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">Cancel</button>
+        <button id="btnUnlockInspector" type="button" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition">Unlock Inspector</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION BANNER ==================== -->
+  <div id="toastBanner" class="fixed bottom-4 right-4 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-lg no-print"></div>
+
+  <!-- ==================== APPLICATION LOGIC ==================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_PREFIX = 'p4_math_t2_2_v1_';
+      var ALL_CONCEPT_IDS = [];
+      for (var cIdx = 1; cIdx <= 30; cIdx++) {
+        ALL_CONCEPT_IDS.push('C' + cIdx);
+      }
+
+      // -------------------- VISUAL DIAGRAM HELPERS (CSS GRID & PARAMETRIC SVG) --------------------
+
+      function renderNetNGrid(highlightFace) {
+        var cellStyle = function (letter) {
+          var isHi = highlightFace === letter;
+          var bg = isHi ? 'bg-rose-100 border-rose-600 text-rose-900' : 'bg-indigo-50 border-slate-800 text-slate-900';
+          return '<div class="w-11 h-11 sm:w-12 sm:h-12 border-2 ' + bg + ' font-extrabold text-sm flex items-center justify-center shadow-2xs">' + letter + '</div>';
+        };
+        var emptyCell = '<div class="w-11 h-11 sm:w-12 sm:h-12"></div>';
+        return (
+          '<div class="inline-block p-3.5 rounded-xl bg-slate-50 border border-slate-200 my-1">' +
+            '<div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 text-center">Model Net N (6 Congruent Squares: A–F)</div>' +
+            '<div class="grid grid-cols-4 gap-0.5 mx-auto w-fit">' +
+              emptyCell + cellStyle('E') + emptyCell + emptyCell +
+              cellStyle('A') + cellStyle('B') + cellStyle('C') + cellStyle('D') +
+              emptyCell + cellStyle('F') + emptyCell + emptyCell +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderSixInARowAndPyramidVisual(sideCm, slantCm) {
+        var rowCells = '';
+        for (var i = 1; i <= 6; i++) {
+          rowCells += '<div class="w-9 h-9 sm:w-10 sm:h-10 border-2 border-slate-800 bg-amber-50 font-bold text-xs flex items-center justify-center">' + i + '</div>';
+        }
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-1">' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center">' +
+              '<div class="text-[11px] font-bold text-slate-600 mb-2">Arrangement X: 6 Squares in 1 Straight Row</div>' +
+              '<div class="grid grid-cols-6 gap-0.5">' + rowCells + '</div>' +
+            '</div>' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center">' +
+              '<div class="text-[11px] font-bold text-slate-600 mb-1">Square-Based Pyramid Net (Base ' + sideCm + ' cm, Slant ' + slantCm + ' cm)</div>' +
+              '<svg viewBox="0 0 140 140" class="w-28 h-28">' +
+                '<rect x="45" y="45" width="50" height="50" fill="#eef2ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="45,45 95,45 70,10" fill="#e0e7ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="45,95 95,95 70,130" fill="#e0e7ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="45,45 45,95 10,70" fill="#e0e7ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="95,45 95,95 130,70" fill="#e0e7ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="70" y="74" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e293b">' + sideCm + ' cm</text>' +
+              '</svg>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderPolyhedraGallerySvg() {
+        return (
+          '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-2">' +
+            // Cube (Isometric with dashed hidden edges)
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Cube</div>' +
+              '<svg viewBox="0 0 120 105" class="w-24 h-22 mx-auto">' +
+                '<polygon points="25,35 75,35 75,85 25,85" fill="#e0e7ff" fill-opacity="0.55" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="25,35 45,18 95,18 75,35" fill="#c7d2fe" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="75,35 95,18 95,68 75,85" fill="#a5b4fc" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="45" y1="18" x2="45" y2="68" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="45" y1="68" x2="25" y2="85" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="45" y1="68" x2="95" y2="68" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">All 6 square faces equal</div>' +
+            '</div>' +
+            // Cuboid
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Cuboid</div>' +
+              '<svg viewBox="0 0 130 105" class="w-26 h-22 mx-auto">' +
+                '<polygon points="15,40 85,40 85,85 15,85" fill="#e0e7ff" fill-opacity="0.55" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="15,40 38,22 108,22 85,40" fill="#c7d2fe" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="85,40 108,22 108,67 85,85" fill="#a5b4fc" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="38" y1="22" x2="38" y2="67" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="38" y1="67" x2="15" y2="85" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="38" y1="67" x2="108" y2="67" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">Rectangular faces</div>' +
+            '</div>' +
+            // Triangular Prism
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Triangular Prism</div>' +
+              '<svg viewBox="0 0 130 105" class="w-26 h-22 mx-auto">' +
+                '<polygon points="48,25 82,20 112,72 72,85" fill="#c7d2fe" fill-opacity="0.6" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="18,85 72,85 48,25" fill="#e0e7ff" fill-opacity="0.7" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="82" y1="20" x2="54" y2="72" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="18" y1="85" x2="54" y2="72" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="54" y1="72" x2="112" y2="72" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">2 triangles + 3 rectangles</div>' +
+            '</div>' +
+            // Square-Based Pyramid
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Square-Based Pyramid</div>' +
+              '<svg viewBox="0 0 120 105" class="w-24 h-22 mx-auto">' +
+                '<polygon points="60,14 20,82 78,82" fill="#e0e7ff" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<polygon points="60,14 78,82 102,64" fill="#a5b4fc" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="20" y1="82" x2="44" y2="64" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="44" y1="64" x2="102" y2="64" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<line x1="60" y1="14" x2="44" y2="64" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<circle cx="60" cy="14" r="2.5" fill="#4f46e5"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">1 square base + 4 triangles</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderCurvedSolidsGallerySvg() {
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2">' +
+            // Cylinder
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Cylinder</div>' +
+              '<svg viewBox="0 0 120 105" class="w-24 h-22 mx-auto">' +
+                '<path d="M 30 28 L 30 76 A 30 11 0 0 0 90 76 L 90 28 Z" fill="#e0e7ff" fill-opacity="0.6" stroke="#1e293b" stroke-width="2"/>' +
+                '<ellipse cx="60" cy="28" rx="30" ry="11" fill="#c7d2fe" stroke="#1e293b" stroke-width="2"/>' +
+                '<path d="M 30 76 A 30 11 0 0 1 90 76" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">2 circular faces + 1 curved surface</div>' +
+            '</div>' +
+            // Cone
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Cone</div>' +
+              '<svg viewBox="0 0 120 105" class="w-24 h-22 mx-auto">' +
+                '<path d="M 60 15 L 28 76 A 32 11 0 0 0 92 76 Z" fill="#e0e7ff" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<path d="M 28 76 A 32 11 0 0 1 92 76" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+                '<circle cx="60" cy="15" r="2.5" fill="#4f46e5"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">1 circular base + 1 curved + 1 apex</div>' +
+            '</div>' +
+            // Sphere
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-800 mb-1">Sphere</div>' +
+              '<svg viewBox="0 0 120 105" class="w-24 h-22 mx-auto">' +
+                '<circle cx="60" cy="52" r="34" fill="#e0e7ff" fill-opacity="0.65" stroke="#1e293b" stroke-width="2"/>' +
+                '<path d="M 26 52 A 34 11 0 0 0 94 52" fill="none" stroke="#4f46e5" stroke-width="1.5"/>' +
+                '<path d="M 26 52 A 34 11 0 0 1 94 52" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+              '</svg>' +
+              '<div class="text-[10px] text-slate-500">1 curved surface • 0 edges • 0 vertices</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+      function renderCompositeCubesVisual(numCubes, nGonName, nSides) {
+        var w = 32;
+        var h = 32;
+        var dx = 14;
+        var dy = -12;
+        var startX = 18;
+        var startY = 38;
+        var totalW = startX + numCubes * w + dx + 18;
+        var svgCubes = '<svg viewBox="0 0 ' + totalW + ' 85" class="h-22 mx-auto">';
+        for (var i = 0; i < numCubes; i++) {
+          var x = startX + i * w;
+          var y = startY;
+          // Front square
+          svgCubes += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#e0e7ff" stroke="#1e293b" stroke-width="2"/>';
+          // Top parallelogram
+          svgCubes += '<polygon points="' + x + ',' + y + ' ' + (x + dx) + ',' + (y + dy) + ' ' + (x + w + dx) + ',' + (y + dy) + ' ' + (x + w) + ',' + y + '" fill="#c7d2fe" stroke="#1e293b" stroke-width="2"/>';
+          if (i === numCubes - 1) {
+            // Right face on last cube
+            svgCubes += '<polygon points="' + (x + w) + ',' + y + ' ' + (x + w + dx) + ',' + (y + dy) + ' ' + (x + w + dx) + ',' + (y + h + dy) + ' ' + (x + w) + ',' + (y + h) + '" fill="#a5b4fc" stroke="#1e293b" stroke-width="2"/>';
+          }
+        }
+        svgCubes += '</svg>';
+
+        // Parametric 3D N-Gon Prism with exact 3D outward-normal visibility (Solid Visible vs. Dashed Hidden Edges)
+        var cx1 = 50, cy1 = 52, r = 25;
+        var shiftX = 42, shiftY = -18;
+        var cx2 = cx1 + shiftX, cy2 = cy1 + shiftY;
+        var frontPts = [], backPts = [];
+        var rotOffset = -Math.PI / 2 + (nSides === 8 ? Math.PI / 8 : 0.18);
+        for (var k = 0; k < nSides; k++) {
+          var ang = rotOffset + (2 * Math.PI * k) / nSides;
+          frontPts.push([ Number((cx1 + r * Math.cos(ang)).toFixed(1)), Number((cy1 + r * Math.sin(ang)).toFixed(1)) ]);
+          backPts.push([ Number((cx2 + r * Math.cos(ang)).toFixed(1)), Number((cy2 + r * Math.sin(ang)).toFixed(1)) ]);
+        }
+        // Outward normal for clockwise screen polygon (y down) is (ey, -ex); face is visible iff dot(normal, shift) > 0
+        var faceVisible = [];
+        for (var m = 0; m < nSides; m++) {
+          var nxt = (m + 1) % nSides;
+          var ex = frontPts[nxt][0] - frontPts[m][0];
+          var ey = frontPts[nxt][1] - frontPts[m][1];
+          var dot = ey * shiftX + (-ex) * shiftY;
+          faceVisible.push(dot > 0);
+        }
+        var hiddenLines = '';
+        var visibleFacesAndLines = '';
+        for (var b = 0; b < nSides; b++) {
+          var bn = (b + 1) % nSides;
+          if (!faceVisible[b]) {
+            hiddenLines += '<line x1="' + backPts[b][0] + '" y1="' + backPts[b][1] + '" x2="' + backPts[bn][0] + '" y2="' + backPts[bn][1] + '" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>';
+          }
+        }
+        for (var v = 0; v < nSides; v++) {
+          var prevFace = (v - 1 + nSides) % nSides;
+          var isVertVis = faceVisible[v] || faceVisible[prevFace];
+          if (!isVertVis) {
+            hiddenLines += '<line x1="' + frontPts[v][0] + '" y1="' + frontPts[v][1] + '" x2="' + backPts[v][0] + '" y2="' + backPts[v][1] + '" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>';
+          }
+        }
+        for (var f = 0; f < nSides; f++) {
+          if (faceVisible[f]) {
+            var fn = (f + 1) % nSides;
+            var quadPts = frontPts[f].join(',') + ' ' + frontPts[fn].join(',') + ' ' + backPts[fn].join(',') + ' ' + backPts[f].join(',');
+            visibleFacesAndLines += '<polygon points="' + quadPts + '" fill="#c7d2fe" fill-opacity="0.6" stroke="#1e293b" stroke-width="2" stroke-linejoin="round"/>';
+          }
+        }
+        var frontPoly = frontPts.map(function(p){ return p.join(','); }).join(' ');
+        var prismSvg =
+          '<svg viewBox="0 0 145 88" class="h-24 mx-auto">' +
+            '<polygon points="' + frontPoly + '" fill="#e0e7ff" fill-opacity="0.82" stroke="none"/>' +
+            hiddenLines +
+            visibleFacesAndLines +
+            '<polygon points="' + frontPoly + '" fill="none" stroke="#1e293b" stroke-width="2" stroke-linejoin="round"/>' +
+          '</svg>';
+
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700 mb-1">' + numCubes + ' Identical Cubes Glued Face-to-Face (3D View)</div>' +
+              svgCubes +
+              '<div class="text-[10px] text-slate-500">Glued interior faces are hidden inside</div>' +
+            '</div>' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700 mb-1">3D ' + nGonName + ' Prism (' + nSides + '-Sided Bases)</div>' +
+              prismSvg +
+              '<div class="text-[10px] text-slate-500">2 congruent ' + nSides + '-gon bases + ' + nSides + ' rectangular side faces</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderProtractorAnglesSvg(a1, a2, a3) {
+        var makeAngleBox = function (label, deg) {
+          var rad = (deg * Math.PI) / 180;
+          var x2 = (70 + 50 * Math.cos(rad)).toFixed(1);
+          var y2 = (75 - 50 * Math.sin(rad)).toFixed(1);
+          return (
+            '<div class="p-2.5 rounded-xl bg-white border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700 mb-1">' + label + '</div>' +
+              '<svg viewBox="0 0 140 90" class="w-32 h-20 mx-auto">' +
+                '<path d="M 20 75 A 50 50 0 0 1 120 75" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,2"/>' +
+                '<line x1="70" y1="75" x2="120" y2="75" stroke="#1e293b" stroke-width="2.5"/>' +
+                '<line x1="70" y1="75" x2="' + x2 + '" y2="' + y2 + '" stroke="#4f46e5" stroke-width="2.5"/>' +
+                '<circle cx="70" cy="75" r="3" fill="#1e293b"/>' +
+                '<text x="123" y="78" font-size="8" fill="#64748b">0°</text>' +
+              '</svg>' +
+              '<div class="text-[11px] text-slate-500">Aligned at 0° right ray</div>' +
+            '</div>'
+          );
+        };
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-1">' +
+            makeAngleBox('Protractor Angle P', a1) +
+            makeAngleBox('Protractor Angle Q', a2) +
+            makeAngleBox('Protractor Angle R', a3) +
+          '</div>'
+        );
+      }
+
+      function renderCompassSvg() {
+        return (
+          '<div class="inline-flex items-center gap-4 p-3 rounded-xl bg-slate-50 border border-slate-200 my-1">' +
+            '<svg viewBox="0 0 100 100" class="w-20 h-20">' +
+              '<circle cx="50" cy="50" r="38" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>' +
+              '<line x1="50" y1="14" x2="50" y2="86" stroke="#94a3b8" stroke-width="1.5"/>' +
+              '<line x1="14" y1="50" x2="86" y2="50" stroke="#94a3b8" stroke-width="1.5"/>' +
+              '<polygon points="50,14 45,26 55,26" fill="#4f46e5"/>' +
+              '<text x="50" y="10" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e293b">N (0°)</text>' +
+              '<text x="92" y="53" text-anchor="middle" font-size="8" font-weight="bold" fill="#1e293b">E</text>' +
+              '<text x="50" y="97" text-anchor="middle" font-size="8" font-weight="bold" fill="#1e293b">S</text>' +
+              '<text x="8" y="53" text-anchor="middle" font-size="8" font-weight="bold" fill="#1e293b">W</text>' +
+            '</svg>' +
+            '<div class="text-xs text-slate-600 space-y-1">' +
+              '<div class="font-bold text-slate-800">Compass Turn Reference</div>' +
+              '<div>Clockwise (CW): <strong>North → East → South → West → North</strong></div>' +
+              '<div>Each quarter (1/4) turn between cardinal points is <strong>90°</strong>.</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderLineSplitSvg(compGiven, suppGiven, algMult, algConst) {
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-1">' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Right Angle (90°)</div>' +
+              '<svg viewBox="0 0 120 80" class="w-28 h-20 mx-auto">' +
+                '<line x1="25" y1="65" x2="25" y2="15" stroke="#1e293b" stroke-width="2.5"/>' +
+                '<line x1="25" y1="65" x2="95" y2="65" stroke="#1e293b" stroke-width="2.5"/>' +
+                '<rect x="25" y="53" width="12" height="12" fill="none" stroke="#64748b" stroke-width="1.5"/>' +
+                '<line x1="25" y1="65" x2="80" y2="30" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="58" y="58" font-size="9" font-weight="bold" fill="#1e293b">' + compGiven + '°</text>' +
+                '<text x="40" y="34" font-size="9" font-weight="bold" fill="#4f46e5">a°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Straight Line (180°)</div>' +
+              '<svg viewBox="0 0 140 80" class="w-32 h-20 mx-auto">' +
+                '<line x1="15" y1="65" x2="125" y2="65" stroke="#1e293b" stroke-width="2.5"/>' +
+                '<line x1="70" y1="65" x2="40" y2="20" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="32" y="55" font-size="9" font-weight="bold" fill="#4f46e5">b°</text>' +
+                '<text x="78" y="52" font-size="9" font-weight="bold" fill="#1e293b">' + suppGiven + '°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">3 Angles on a Straight Line</div>' +
+              '<svg viewBox="0 0 140 80" class="w-32 h-20 mx-auto">' +
+                '<line x1="15" y1="65" x2="125" y2="65" stroke="#1e293b" stroke-width="2.5"/>' +
+                '<line x1="70" y1="65" x2="45" y2="22" stroke="#4f46e5" stroke-width="2"/>' +
+                '<line x1="70" y1="65" x2="100" y2="30" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="34" y="56" font-size="9" font-weight="bold" fill="#4f46e5">x</text>' +
+                '<text x="64" y="38" font-size="9" font-weight="bold" fill="#4f46e5">' + algMult + 'x</text>' +
+                '<text x="95" y="58" font-size="9" font-weight="bold" fill="#1e293b">' + algConst + '°</text>' +
+              '</svg>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderPointAndIntersectingSvg(p1, p2, reflexDeg, intGiven) {
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-1">' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Full Turn at a Point (360°)</div>' +
+              '<svg viewBox="0 0 130 90" class="w-28 h-20 mx-auto">' +
+                '<line x1="65" y1="45" x2="65" y2="10" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="65" y1="45" x2="110" y2="45" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="65" y1="45" x2="30" y2="78" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="74" y="36" font-size="8.5" font-weight="bold" fill="#1e293b">' + p1 + '°</text>' +
+                '<text x="68" y="68" font-size="8.5" font-weight="bold" fill="#1e293b">' + p2 + '°</text>' +
+                '<text x="32" y="42" font-size="9" font-weight="bold" fill="#4f46e5">x°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Reflex Angle (' + reflexDeg + '°)</div>' +
+              '<svg viewBox="0 0 130 90" class="w-28 h-20 mx-auto">' +
+                '<line x1="65" y1="45" x2="110" y2="45" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="65" y1="45" x2="85" y2="14" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="84" y="38" font-size="8.5" font-weight="bold" fill="#4f46e5">y°</text>' +
+                '<text x="26" y="62" font-size="8.5" font-weight="bold" fill="#1e293b">' + reflexDeg + '°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Intersecting Straight Lines</div>' +
+              '<svg viewBox="0 0 130 90" class="w-28 h-20 mx-auto">' +
+                '<line x1="20" y1="70" x2="110" y2="20" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="20" y1="20" x2="110" y2="70" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="88" y="48" font-size="8.5" font-weight="bold" fill="#1e293b">' + intGiven + '°</text>' +
+                '<text x="28" y="48" font-size="8.5" font-weight="bold" fill="#4f46e5">opp°</text>' +
+                '<text x="60" y="28" font-size="8.5" font-weight="bold" fill="#059669">adj°</text>' +
+              '</svg>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderTrianglesSvg(t1, t2, isoApex) {
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-1">' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Triangle Angle Sum (180°)</div>' +
+              '<svg viewBox="0 0 160 95" class="w-36 h-22 mx-auto">' +
+                '<polygon points="25,80 135,80 75,18" fill="#eef2ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="42" y="74" font-size="9" font-weight="bold" fill="#1e293b">' + t1 + '°</text>' +
+                '<text x="104" y="74" font-size="9" font-weight="bold" fill="#1e293b">' + t2 + '°</text>' +
+                '<text x="73" y="38" text-anchor="middle" font-size="9" font-weight="bold" fill="#4f46e5">?</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Isosceles Triangle &amp; Exterior Angle</div>' +
+              '<svg viewBox="0 0 180 95" class="w-40 h-22 mx-auto">' +
+                '<polygon points="35,80 115,80 75,16" fill="#eef2ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="115" y1="80" x2="165" y2="80" stroke="#4f46e5" stroke-width="2" stroke-dasharray="3,2"/>' +
+                '<line x1="50" y1="48" x2="58" y2="51" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="100" y1="48" x2="92" y2="51" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="75" y="36" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1e293b">' + isoApex + '°</text>' +
+                '<text x="98" y="75" font-size="8.5" font-weight="bold" fill="#4f46e5">b°</text>' +
+                '<text x="128" y="73" font-size="8.5" font-weight="bold" fill="#059669">ext°</text>' +
+              '</svg>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderQuadParallelClockSvg(q1, q2, q3, parGiven, clockHour) {
+        var hourAngleDeg = (clockHour + 0.5) * 30;
+        var hourRad = ((hourAngleDeg - 90) * Math.PI) / 180;
+        var hx = (50 + 20 * Math.cos(hourRad)).toFixed(1);
+        var hy = (50 + 20 * Math.sin(hourRad)).toFixed(1);
+        return (
+          '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-1">' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Quadrilateral (Sum = 360°)</div>' +
+              '<svg viewBox="0 0 140 95" class="w-32 h-22 mx-auto">' +
+                '<polygon points="25,80 120,80 105,20 35,25" fill="#eef2ff" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="34" y="74" font-size="8.5" font-weight="bold" fill="#1e293b">' + q1 + '°</text>' +
+                '<text x="42" y="38" font-size="8.5" font-weight="bold" fill="#1e293b">' + q2 + '°</text>' +
+                '<text x="86" y="34" font-size="8.5" font-weight="bold" fill="#1e293b">' + q3 + '°</text>' +
+                '<text x="100" y="74" font-size="9" font-weight="bold" fill="#4f46e5">x°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Parallel Lines &amp; Transversal</div>' +
+              '<svg viewBox="0 0 140 95" class="w-32 h-22 mx-auto">' +
+                '<line x1="15" y1="30" x2="125" y2="30" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="15" y1="70" x2="125" y2="70" stroke="#1e293b" stroke-width="2"/>' +
+                '<line x1="45" y1="12" x2="95" y2="88" stroke="#4f46e5" stroke-width="2"/>' +
+                '<text x="67" y="42" font-size="8.5" font-weight="bold" fill="#1e293b">' + parGiven + '°</text>' +
+                '<text x="56" y="66" font-size="8.5" font-weight="bold" fill="#4f46e5">alt°</text>' +
+                '<text x="82" y="66" font-size="8.5" font-weight="bold" fill="#059669">co°</text>' +
+              '</svg>' +
+            '</div>' +
+            '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">' +
+              '<div class="text-[11px] font-bold text-slate-700">Clock Hands at ' + clockHour + ':30</div>' +
+              '<svg viewBox="0 0 100 100" class="w-22 h-22 mx-auto">' +
+                '<circle cx="50" cy="50" r="38" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>' +
+                '<text x="50" y="21" text-anchor="middle" font-size="8" font-weight="bold" fill="#475569">12</text>' +
+                '<text x="81" y="53" text-anchor="middle" font-size="8" font-weight="bold" fill="#475569">3</text>' +
+                '<text x="50" y="85" text-anchor="middle" font-size="8" font-weight="bold" fill="#475569">6</text>' +
+                '<text x="19" y="53" text-anchor="middle" font-size="8" font-weight="bold" fill="#475569">9</text>' +
+                '<line x1="50" y1="50" x2="50" y2="78" stroke="#4f46e5" stroke-width="2"/>' +
+                '<line x1="50" y1="50" x2="' + hx + '" y2="' + hy + '" stroke="#1e293b" stroke-width="3"/>' +
+                '<circle cx="50" cy="50" r="2.5" fill="#1e293b"/>' +
+              '</svg>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderFractionBarGrid(shaded, total) {
+        var cells = '';
+        for (var i = 1; i <= total; i++) {
+          var cls = i <= shaded
+            ? 'bg-indigo-600 text-white print:bg-slate-400'
+            : 'bg-white text-slate-500';
+          cells += '<div class="h-10 border border-slate-800 flex items-center justify-center text-xs font-bold ' + cls + '">' + i + '</div>';
+        }
+        return (
+          '<div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 my-1">' +
+            '<div class="text-[11px] font-bold text-slate-600 mb-2">Rectangle Divided into ' + total + ' Equal Parts (' + shaded + ' Shaded)</div>' +
+            '<div class="grid gap-0 border border-slate-800 max-w-md" style="grid-template-columns: repeat(' + total + ', minmax(0, 1fr));">' +
+              cells +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      // -------------------- QUESTION SET FACTORY (100% C1..C30 COVERAGE PER SET) --------------------
+
+      function buildQuestionSet(cfg) {
+        var cubA1 = cfg.cubL * cfg.cubW;
+        var cubA2 = cfg.cubL * cfg.cubH;
+        var cubA3 = cfg.cubW * cfg.cubH;
+
+        var compAns = 90 - cfg.compGiven;
+        var suppAns = 180 - cfg.suppGiven;
+        var algX = (180 - cfg.algConst) / (1 + cfg.algMult);
+        var algKX = algX * cfg.algMult;
+
+        var ptX = 360 - cfg.pt1 - cfg.pt2;
+        var reflexSmall = 360 - cfg.reflexDeg;
+        var intOpp = cfg.intGiven;
+        var intAdj = 180 - cfg.intGiven;
+
+        var triThird = 180 - cfg.tri1 - cfg.tri2;
+        var isoBase = (180 - cfg.isoApex) / 2;
+        var isoExt = 180 - isoBase;
+        var algTriX = (180 - cfg.algTriDiff) / 4;
+        var algTriA1 = algTriX;
+        var algTriA2 = algTriX + cfg.algTriDiff;
+        var algTriA3 = 2 * algTriX;
+
+        var quadX = 360 - cfg.q1 - cfg.q2 - cfg.q3;
+        var parAlt = cfg.parGiven;
+        var parCo = 180 - cfg.parGiven;
+        var clockHourDeg = Math.round((cfg.clockHour + 0.5) * 30);
+        var clockAngle = Math.abs(180 - clockHourDeg);
+
+        return [
+          // Q1: Cluster 1 (C1, C2) - 8 pts
+          {
+            id: 'q1',
+            number: 1,
+            concepts: ['C1', 'C2'],
+            points: 8,
+            title: '3D Polyhedra Properties (Cube, Cuboid, Prism & Pyramid)',
+            promptHtml:
+              '<p><strong>A1 &amp; A2:</strong> Identify the 3D solid with 6 equal square faces and complete the geometric properties table for the flat-faced solids below:</p>' +
+              renderPolyhedraGallerySvg(),
+            subItems: [
+              { id: 'q1_a', label: '(a) Which 3D shape has 6 equal square faces, 12 straight edges, and 8 vertices?', type: 'text', placeholder: 'Write your answer...', answer: 'cube', accept: ['cube', 'a cube'] },
+              { id: 'q1_b1', label: '(b1) Cuboid — Number of flat faces:', type: 'number', placeholder: 'Type number...', answer: '6', accept: ['6'] },
+              { id: 'q1_b2', label: '(b2) Cuboid — Number of straight edges:', type: 'number', placeholder: 'Type number...', answer: '12', accept: ['12'] },
+              { id: 'q1_b3', label: '(b3) Cuboid — Number of vertices:', type: 'number', placeholder: 'Type number...', answer: '8', accept: ['8'] },
+              { id: 'q1_c1', label: '(c1) Triangular Prism (2 congruent triangles + 3 rectangles) — Number of flat faces:', type: 'number', placeholder: 'Type number...', answer: '5', accept: ['5'] },
+              { id: 'q1_c2', label: '(c2) Triangular Prism — Number of straight edges:', type: 'number', placeholder: 'Type number...', answer: '9', accept: ['9'] },
+              { id: 'q1_c3', label: '(c3) Triangular Prism — Number of vertices:', type: 'number', placeholder: 'Type number...', answer: '6', accept: ['6'] },
+              { id: 'q1_d1', label: '(d1) Square-Based Pyramid (1 square base + 4 triangles) — Number of flat faces:', type: 'number', placeholder: 'Type number...', answer: '5', accept: ['5'] },
+              { id: 'q1_d2', label: '(d2) Square-Based Pyramid — Number of straight edges:', type: 'number', placeholder: 'Type number...', answer: '8', accept: ['8'] },
+              { id: 'q1_d3', label: '(d3) Square-Based Pyramid — Number of vertices (including apex):', type: 'number', placeholder: 'Type number...', answer: '5', accept: ['5'] }
+            ],
+            explanation: 'A cube has 6 square faces, 12 edges, and 8 vertices. A cuboid has 6 faces, 12 edges, 8 vertices. A triangular prism has 5 faces, 9 edges, 6 vertices. A square-based pyramid has 5 faces, 8 edges, 5 vertices.'
+          },
+
+          // Q2: Cluster 2 (C3, C4) - 8 pts
+          {
+            id: 'q2',
+            number: 2,
+            concepts: ['C3', 'C4'],
+            points: 8,
+            title: 'Curved Solids, Real-World Objects & Shape Classification',
+            promptHtml:
+              '<p><strong>A3, A4 &amp; A5:</strong> Compare the curved 3D solids (Cylinder, Cone, Sphere) shown below, match each everyday object to its geometric solid, and evaluate the classification statements:</p>' +
+              renderCurvedSolidsGallerySvg(),
+            subItems: [
+              { id: 'q2_a1', label: '(a1) Cylinder — Number of flat circular faces:', type: 'number', placeholder: 'Type number...', answer: '2', accept: ['2'] },
+              { id: 'q2_a2', label: '(a2) Cylinder — Number of curved surfaces:', type: 'number', placeholder: 'Type number...', answer: '1', accept: ['1'] },
+              { id: 'q2_a3', label: '(a3) Cylinder — Number of pointed apexes / vertices:', type: 'number', placeholder: 'Type number...', answer: '0', accept: ['0'] },
+              { id: 'q2_b1', label: '(b1) Cone — Number of flat circular faces:', type: 'number', placeholder: 'Type number...', answer: '1', accept: ['1'] },
+              { id: 'q2_b2', label: '(b2) Cone — Number of curved surfaces:', type: 'number', placeholder: 'Type number...', answer: '1', accept: ['1'] },
+              { id: 'q2_b3', label: '(b3) Cone — Number of pointed apexes:', type: 'number', placeholder: 'Type number...', answer: '1', accept: ['1'] },
+              { id: 'q2_c1', label: '(c1) Everyday object: Tennis ball / Basketball models a:', type: 'select', options: ['sphere', 'cylinder', 'cuboid', 'cube', 'cone'], answer: 'sphere', accept: ['sphere'] },
+              { id: 'q2_c2', label: '(c2) Everyday object: Closed drink can models a:', type: 'select', options: ['sphere', 'cylinder', 'cuboid', 'cube', 'cone'], answer: 'cylinder', accept: ['cylinder'] },
+              { id: 'q2_c3', label: '(c3) Everyday object: Closed shoebox models a:', type: 'select', options: ['sphere', 'cylinder', 'cuboid', 'cube', 'cone'], answer: 'cuboid', accept: ['cuboid'] },
+              { id: 'q2_c4', label: '(c4) Everyday object: Standard 6-sided number die models a:', type: 'select', options: ['sphere', 'cylinder', 'cuboid', 'cube', 'cone'], answer: 'cube', accept: ['cube'] },
+              { id: 'q2_d1', label: '(d1) True or False: Every cube is also a cuboid (special rectangular prism).', type: 'select', options: ['True', 'False'], answer: 'True', accept: ['true'] },
+              { id: 'q2_d2', label: '(d2) True or False: Every cuboid is a cube, and a sphere has 1 vertex.', type: 'select', options: ['True', 'False'], answer: 'False', accept: ['false'] }
+            ],
+            explanation: 'Cylinder: 2 flat circular faces, 1 curved surface, 0 apexes. Cone: 1 flat circular face, 1 curved surface, 1 apex. Tennis ball = sphere, drink can = cylinder, shoebox = cuboid, die = cube. Every cube is a cuboid (True), but not every cuboid is a cube and a sphere has 0 vertices (False).'
+          },
+
+          // Q3: Cluster 3 (C5) - 6 pts
+          {
+            id: 'q3',
+            number: 3,
+            concepts: ['C5'],
+            points: 6,
+            title: 'Composite Cubes & N-Gon Prism Patterns',
+            promptHtml:
+              '<p><strong>A7 &amp; A8 [Challenge]:</strong> Study the composite cuboid formed by joining identical cubes in a straight line and the prism pattern below:</p>' +
+              renderCompositeCubesVisual(cfg.numJoinedCubes, cfg.prismName, cfg.prismN),
+            subItems: [
+              { id: 'q3_a', label: '(a) When ' + cfg.numJoinedCubes + ' identical cubes are glued face-to-face in a straight row to form a long cuboid, how many geometric flat faces does the resulting cuboid have?', type: 'number', placeholder: 'Type number...', answer: '6', accept: ['6'] },
+              { id: 'q3_b', label: '(b) How many small unit square faces are visible on the outside surface of that ' + cfg.numJoinedCubes + '-cube cuboid?', type: 'number', placeholder: 'Type number...', answer: String(4 * cfg.numJoinedCubes + 2), accept: [String(4 * cfg.numJoinedCubes + 2)] },
+              { id: 'q3_c', label: '(c) A ' + cfg.prismName.toLowerCase() + ' prism has two ' + cfg.prismN + '-sided polygon bases. How many total flat faces does it have? (2 + ' + cfg.prismN + ')', type: 'number', placeholder: 'Type number...', answer: String(cfg.prismN + 2), accept: [String(cfg.prismN + 2)] },
+              { id: 'q3_d', label: '(d) How many straight edges does a ' + cfg.prismName.toLowerCase() + ' prism have? (3 × ' + cfg.prismN + ')', type: 'number', placeholder: 'Type number...', answer: String(cfg.prismN * 3), accept: [String(cfg.prismN * 3)] },
+              { id: 'q3_e', label: '(e) How many vertices does a ' + cfg.prismName.toLowerCase() + ' prism have? (2 × ' + cfg.prismN + ')', type: 'number', placeholder: 'Type number...', answer: String(cfg.prismN * 2), accept: [String(cfg.prismN * 2)] }
+            ],
+            explanation: 'Any cuboid has 6 geometric flat faces. Joining ' + cfg.numJoinedCubes + ' cubes hides ' + (2 * (cfg.numJoinedCubes - 1)) + ' glued square faces, leaving ' + (4 * cfg.numJoinedCubes + 2) + ' outer unit squares. An n-sided prism (n=' + cfg.prismN + ') has n+2=' + (cfg.prismN + 2) + ' faces, 3n=' + (cfg.prismN * 3) + ' edges, and 2n=' + (cfg.prismN * 2) + ' vertices.'
+          },
+
+          // Q4: Cluster 4 (C6, C7) - 6 pts
+          {
+            id: 'q4',
+            number: 4,
+            concepts: ['C6', 'C7'],
+            points: 6,
+            title: 'Matching 2D Face Sets to 3D Solids & Net Folding Validity',
+            promptHtml:
+              '<p><strong>B1, B2, B7 &amp; B8:</strong> Identify which 3D shape each set of 2D faces folds into, and analyze the two nets shown below:</p>' +
+              renderSixInARowAndPyramidVisual(cfg.pyrBase, cfg.pyrSlant),
+            subItems: [
+              { id: 'q4_a', label: '(a) 1 square + 4 congruent triangles fold into a:', type: 'select', options: ['square-based pyramid', 'triangular prism', 'cylinder', 'cube', 'cuboid'], answer: 'square-based pyramid', accept: ['square-based pyramid'] },
+              { id: 'q4_b', label: '(b) 2 congruent triangles + 3 rectangles fold into a:', type: 'select', options: ['square-based pyramid', 'triangular prism', 'cylinder', 'cube', 'cuboid'], answer: 'triangular prism', accept: ['triangular prism'] },
+              { id: 'q4_c', label: '(c) 2 congruent circles + 1 rectangle fold into a:', type: 'select', options: ['square-based pyramid', 'triangular prism', 'cylinder', 'cube', 'cone'], answer: 'cylinder', accept: ['cylinder'] },
+              { id: 'q4_d', label: '(d) Can 6 congruent squares in 1 straight row (Arrangement X) fold into a closed cube without overlapping?', type: 'select', options: ['No', 'Yes'], answer: 'No', accept: ['no', 'false'] },
+              { id: 'q4_e', label: '(e) True or False: Every connected arrangement of 6 squares is guaranteed to be a valid net of a cube.', type: 'select', options: ['True', 'False'], answer: 'False', accept: ['false'] },
+              { id: 'q4_f', label: '(f) When the Square-Based Pyramid net is folded up, how many triangles meet at the top apex?', type: 'number', placeholder: 'Type number...', answer: '4', accept: ['4'] }
+            ],
+            explanation: '1 square + 4 triangles = square-based pyramid; 2 triangles + 3 rectangles = triangular prism; 2 circles + 1 rectangle = cylinder. Six squares in one straight row overlap and leave two open ends (No / False). All 4 triangles meet at the pyramid apex.'
+          },
+
+          // Q5: Cluster 5 (C8, C9) - 8 pts
+          {
+            id: 'q5',
+            number: 5,
+            concepts: ['C8', 'C9'],
+            points: 8,
+            title: 'Folding Cube Net N & Cuboid Net Rectangle Dimensions',
+            promptHtml:
+              '<p><strong>B3, B4, B5 &amp; B6:</strong> Examine Cube <strong>Net N</strong> below (where square <strong>' + cfg.netColored + '</strong> is highlighted) and a cuboid of length <strong>' + cfg.cubL + ' cm</strong>, width <strong>' + cfg.cubW + ' cm</strong>, and height <strong>' + cfg.cubH + ' cm</strong>:</p>' +
+              renderNetNGrid(cfg.netColored),
+            subItems: [
+              { id: 'q5_a', label: '(a) On Net N, which face is opposite to face A when folded into a cube? (Type letter A–F)', type: 'text', placeholder: 'Write your answer...', answer: 'C', accept: ['c'] },
+              { id: 'q5_b', label: '(b) On Net N, which face is opposite to face B when folded into a cube? (Type letter A–F)', type: 'text', placeholder: 'Write your answer...', answer: 'D', accept: ['d'] },
+              { id: 'q5_c', label: '(c) On Net N, which face is opposite to face E when folded into a cube? (Type letter A–F)', type: 'text', placeholder: 'Write your answer...', answer: 'F', accept: ['f'] },
+              { id: 'q5_d', label: '(d) If square ' + cfg.netBase + ' is placed flat as the bottom base of the cube, which letter becomes the top lid?', type: 'text', placeholder: 'Write your answer...', answer: cfg.netLid, accept: [cfg.netLid.toLowerCase()] },
+              { id: 'q5_e', label: '(e) Face ' + cfg.netColored + ' is colored red. Which single face definitely does NOT share any edge with ' + cfg.netColored + ' after folding?', type: 'text', placeholder: 'Write your answer...', answer: cfg.netColoredOpp, accept: [cfg.netColoredOpp.toLowerCase()] },
+              { id: 'q5_f1', label: '(f1) Cuboid Net (' + cfg.cubL + ' cm × ' + cfg.cubW + ' cm × ' + cfg.cubH + ' cm) — Area of 1 rectangle in the largest pair (' + cfg.cubL + ' × ' + cfg.cubW + ') in cm²:', type: 'number', placeholder: 'Type number...', answer: String(cubA1), accept: [String(cubA1)] },
+              { id: 'q5_f2', label: '(f2) Cuboid Net — Area of 1 rectangle in the middle pair (' + cfg.cubL + ' × ' + cfg.cubH + ') in cm²:', type: 'number', placeholder: 'Type number...', answer: String(cubA2), accept: [String(cubA2)] },
+              { id: 'q5_f3', label: '(f3) Cuboid Net — Area of 1 rectangle in the smallest pair (' + cfg.cubW + ' × ' + cfg.cubH + ') in cm²:', type: 'number', placeholder: 'Type number...', answer: String(cubA3), accept: [String(cubA3)] }
+            ],
+            explanation: 'In Net N, opposite pairs are (A, C), (B, D), and (E, F). When ' + cfg.netBase + ' is the base, ' + cfg.netLid + ' is the top lid. Opposite face ' + cfg.netColoredOpp + ' never shares an edge with ' + cfg.netColored + '. The 3 rectangle pairs of the cuboid have areas ' + cubA1 + ' cm², ' + cubA2 + ' cm², and ' + cubA3 + ' cm².'
+          },
+
+          // Q6: Cluster 6 (C10, C11) - 8 pts
+          {
+            id: 'q6',
+            number: 6,
+            concepts: ['C10', 'C11'],
+            points: 8,
+            title: 'Classifying Angles, Ordering Angles & Protractor Reading',
+            promptHtml:
+              '<p><strong>C1, C2, C5 &amp; C6:</strong> Classify each given angle, order the 5 angles from smallest to largest, and read the 3 protractor diagrams below:</p>' +
+              renderProtractorAnglesSvg(cfg.protP, cfg.protQ, cfg.protR),
+            subItems: [
+              { id: 'q6_a1', label: '(a1) Classify ' + cfg.angAcute + '°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'acute', accept: ['acute'] },
+              { id: 'q6_a2', label: '(a2) Classify 90°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'right', accept: ['right'] },
+              { id: 'q6_a3', label: '(a3) Classify ' + cfg.angObtuse + '°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'obtuse', accept: ['obtuse'] },
+              { id: 'q6_a4', label: '(a4) Classify 180°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'straight', accept: ['straight'] },
+              { id: 'q6_a5', label: '(a5) Classify ' + cfg.angReflex + '°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'reflex', accept: ['reflex'] },
+              { id: 'q6_a6', label: '(a6) Classify 360°:', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex', 'full turn'], answer: 'full turn', accept: ['full turn'] },
+              { id: 'q6_b', label: '(b) Order from SMALLEST to LARGEST (comma-separated numbers only): ' + cfg.orderScrambled.join('°, ') + '°', type: 'ordered_list', placeholder: 'Separated by commas...', answer: cfg.orderSorted.join(', '), accept: [cfg.orderSorted.join(', ')] },
+              { id: 'q6_c1', label: '(c1) Protractor Angle P opens less than a square corner and aligns with ' + cfg.protP + '° (inner scale) and ' + (180 - cfg.protP) + '° (outer scale). What is its true measure in degrees?', type: 'number', placeholder: 'Type number...', answer: String(cfg.protP), accept: [String(cfg.protP)] },
+              { id: 'q6_c2', label: '(c2) Protractor Angle Q opens wider than 90° and aligns with ' + (180 - cfg.protQ) + '° and ' + cfg.protQ + '°. What is its true obtuse measure in degrees?', type: 'number', placeholder: 'Type number...', answer: String(cfg.protQ), accept: [String(cfg.protQ)] },
+              { id: 'q6_c3', label: '(c3) Protractor Angle R opens wide and aligns with ' + (180 - cfg.protR) + '° and ' + cfg.protR + '°. What is its true obtuse measure in degrees?', type: 'number', placeholder: 'Type number...', answer: String(cfg.protR), accept: [String(cfg.protR)] }
+            ],
+            explanation: 'Acute (<90°), Right (90°), Obtuse (90°–180°), Straight (180°), Reflex (180°–360°), Full turn (360°). Ascending order: ' + cfg.orderSorted.join(', ') + '. Protractor sanity check: acute P = ' + cfg.protP + '°, obtuse Q = ' + cfg.protQ + '°, obtuse R = ' + cfg.protR + '°.'
+          },
+
+          // Q7: Cluster 7 (C12) - 6 pts
+          {
+            id: 'q7',
+            number: 7,
+            concepts: ['C12'],
+            points: 6,
+            title: 'Fractional Turns & Compass Direction Navigation',
+            promptHtml:
+              '<p><strong>C3 &amp; C4:</strong> Convert each fractional turn into degrees and solve the compass rotation problem:</p>' +
+              renderCompassSvg(),
+            subItems: [
+              { id: 'q7_a', label: '(a) How many degrees are in 1/4 of a full turn?', type: 'number', placeholder: 'Type number...', answer: '90', accept: ['90'] },
+              { id: 'q7_b', label: '(b) How many degrees are in 1/2 of a full turn?', type: 'number', placeholder: 'Type number...', answer: '180', accept: ['180'] },
+              { id: 'q7_c', label: '(c) How many degrees are in 3/4 of a full turn?', type: 'number', placeholder: 'Type number...', answer: '270', accept: ['270'] },
+              { id: 'q7_d', label: '(d) You start facing ' + cfg.compassStart + '. You turn ' + cfg.compassStepText + '. Which compass direction are you facing now?', type: 'select', options: ['North', 'East', 'South', 'West'], answer: cfg.compassEnd, accept: [cfg.compassEnd.toLowerCase()] }
+            ],
+            explanation: '1/4 turn = 90°, 1/2 turn = 180°, 3/4 turn = 270°. Starting from ' + cfg.compassStart + ' and turning ' + cfg.compassStepText + ' lands on ' + cfg.compassEnd + '.'
+          },
+
+          // Q8: Cluster 8 (C13, C14) - 6 pts
+          {
+            id: 'q8',
+            number: 8,
+            concepts: ['C13', 'C14'],
+            points: 6,
+            title: 'Right Angle Split, Straight Line Split & Algebraic Angles',
+            promptHtml:
+              '<p><strong>C7, C8 &amp; C15:</strong> Calculate the unknown angles using the right-angle (90°) and straight-line (180°) rules:</p>' +
+              renderLineSplitSvg(cfg.compGiven, cfg.suppGiven, cfg.algMult, cfg.algConst),
+            subItems: [
+              { id: 'q8_a', label: '(a) Two adjacent angles form a right angle (90°). One angle is ' + cfg.compGiven + '°. Find angle a (in degrees):', type: 'number', placeholder: 'Type number...', answer: String(compAns), accept: [String(compAns)] },
+              { id: 'q8_b', label: '(b) Two adjacent angles form a straight line (180°). One angle is ' + cfg.suppGiven + '°. Find angle b (in degrees):', type: 'number', placeholder: 'Type number...', answer: String(suppAns), accept: [String(suppAns)] },
+              { id: 'q8_c1', label: '(c1) Three adjacent angles on a straight line are x, ' + cfg.algMult + 'x, and ' + cfg.algConst + '°. Find the value of x (in degrees):', type: 'number', placeholder: 'Type number...', answer: String(algX), accept: [String(algX)] },
+              { id: 'q8_c2', label: '(c2) In that same straight-line diagram, what is the measure of the middle angle ' + cfg.algMult + 'x (in degrees)?', type: 'number', placeholder: 'Type number...', answer: String(algKX), accept: [String(algKX)] }
+            ],
+            explanation: '(a) 90° − ' + cfg.compGiven + '° = ' + compAns + '°. (b) 180° − ' + cfg.suppGiven + '° = ' + suppAns + '°. (c) x + ' + cfg.algMult + 'x + ' + cfg.algConst + '° = 180° → ' + (1 + cfg.algMult) + 'x = ' + (180 - cfg.algConst) + '° → x = ' + algX + '° and ' + cfg.algMult + 'x = ' + algKX + '°.'
+          },
+
+          // Q9: Cluster 9 (C15, C16) - 6 pts
+          {
+            id: 'q9',
+            number: 9,
+            concepts: ['C15', 'C16'],
+            points: 6,
+            title: 'Angles Around a Point, Reflex Split & Intersecting Straight Lines',
+            promptHtml:
+              '<p><strong>C9, C10 &amp; C19:</strong> Use the full-turn (360°) and intersecting-line properties to find each unknown angle:</p>' +
+              renderPointAndIntersectingSvg(cfg.pt1, cfg.pt2, cfg.reflexDeg, cfg.intGiven),
+            subItems: [
+              { id: 'q9_a', label: '(a) Three angles meet at a point to form 1 full turn (360°): ' + cfg.pt1 + '°, ' + cfg.pt2 + '°, and x°. Find x:', type: 'number', placeholder: 'Type number...', answer: String(ptX), accept: [String(ptX)] },
+              { id: 'q9_b', label: '(b) A reflex angle measures ' + cfg.reflexDeg + '°. What is the smaller interior angle y° between the same two rays?', type: 'number', placeholder: 'Type number...', answer: String(reflexSmall), accept: [String(reflexSmall)] },
+              { id: 'q9_c1', label: '(c1) Two straight lines intersect forming a ' + cfg.intGiven + '° angle. What is the vertically opposite angle (opp°)?', type: 'number', placeholder: 'Type number...', answer: String(intOpp), accept: [String(intOpp)] },
+              { id: 'q9_c2', label: '(c2) What is the measure of each adjacent angle (adj°) on the straight line next to ' + cfg.intGiven + '°?', type: 'number', placeholder: 'Type number...', answer: String(intAdj), accept: [String(intAdj)] }
+            ],
+            explanation: '(a) 360° − ' + cfg.pt1 + '° − ' + cfg.pt2 + '° = ' + ptX + '°. (b) 360° − ' + cfg.reflexDeg + '° = ' + reflexSmall + '°. (c) Vertically opposite angle = ' + intOpp + '°; adjacent supplementary angle = 180° − ' + cfg.intGiven + '° = ' + intAdj + '°.'
+          },
+
+          // Q10: Cluster 10 (C17, C18) - 8 pts
+          {
+            id: 'q10',
+            number: 10,
+            concepts: ['C17', 'C18'],
+            points: 8,
+            title: 'Triangle Interior Sum, Isosceles Exterior Angle & Two-Obtuse Fallacy',
+            promptHtml:
+              '<p><strong>C11, C12, C13, C18 &amp; C20:</strong> Use the triangle angle sum rule (180°) to solve the problems below:</p>' +
+              renderTrianglesSvg(cfg.tri1, cfg.tri2, cfg.isoApex),
+            subItems: [
+              { id: 'q10_a', label: '(a) Two interior angles of a triangle are ' + cfg.tri1 + '° and ' + cfg.tri2 + '°. Find the third angle:', type: 'number', placeholder: 'Type number...', answer: String(triThird), accept: [String(triThird)] },
+              { id: 'q10_b1', label: '(b1) An isosceles triangle has a top apex angle of ' + cfg.isoApex + '°. Find each equal base angle b°:', type: 'number', placeholder: 'Type number...', answer: String(isoBase), accept: [String(isoBase)] },
+              { id: 'q10_b2', label: '(b2) The base of that isosceles triangle is extended in a straight line. Find the adjacent exterior angle ext°:', type: 'number', placeholder: 'Type number...', answer: String(isoExt), accept: [String(isoExt)] },
+              { id: 'q10_c1', label: '(c1) [Challenge] A triangle has angles x, x + ' + cfg.algTriDiff + '°, and 2x. Find the smallest angle x (in degrees):', type: 'number', placeholder: 'Type number...', answer: String(algTriA1), accept: [String(algTriA1)] },
+              { id: 'q10_c2', label: '(c2) Find the middle angle (x + ' + cfg.algTriDiff + '°) of that triangle:', type: 'number', placeholder: 'Type number...', answer: String(algTriA2), accept: [String(algTriA2)] },
+              { id: 'q10_c3', label: '(c3) Find the largest angle (2x) of that triangle:', type: 'number', placeholder: 'Type number...', answer: String(algTriA3), accept: [String(algTriA3)] },
+              { id: 'q10_d', label: '(d) [Error Analysis] Rani claims: "A single triangle can have TWO obtuse angles." Is Rani correct?', type: 'select', options: ['No (False — two obtuse angles already exceed 180°)', 'Yes (True — if the third angle is very small)'], answer: 'No (False — two obtuse angles already exceed 180°)', accept: ['no (false — two obtuse angles already exceed 180°)', 'no', 'false'] }
+            ],
+            explanation: '(a) 180° − ' + cfg.tri1 + '° − ' + cfg.tri2 + '° = ' + triThird + '°. (b) Base angle = (180° − ' + cfg.isoApex + '°) ÷ 2 = ' + isoBase + '°; exterior angle = 180° − ' + isoBase + '° = ' + isoExt + '°. (c) 4x + ' + cfg.algTriDiff + '° = 180° → x = ' + algTriA1 + '°, middle = ' + algTriA2 + '°, largest = ' + algTriA3 + '°. (d) False: two obtuse angles (>90° each) sum to more than 180°.'
+          },
+
+          // Q11: Cluster 11 (C19, C20, C21) - 8 pts
+          {
+            id: 'q11',
+            number: 11,
+            concepts: ['C19', 'C20', 'C21'],
+            points: 8,
+            title: 'Quadrilateral Sum, Parallel Lines with Transversal & Clock Angle',
+            promptHtml:
+              '<p><strong>C14, C16 &amp; C17 [Challenge]:</strong> Solve for the missing quadrilateral angle, parallel-line transversal angles, and the clock hand angle at <strong>' + cfg.clockHour + ':30</strong> (remember: each hour mark is 30°):</p>' +
+              renderQuadParallelClockSvg(cfg.q1, cfg.q2, cfg.q3, cfg.parGiven, cfg.clockHour),
+            subItems: [
+              { id: 'q11_a', label: '(a) A quadrilateral has interior angles of ' + cfg.q1 + '°, ' + cfg.q2 + '°, ' + cfg.q3 + '°, and x°. Find x:', type: 'number', placeholder: 'Type number...', answer: String(quadX), accept: [String(quadX)] },
+              { id: 'q11_b1', label: '(b1) Two parallel lines are cut by a transversal with interior angle ' + cfg.parGiven + '°. Find the alternate interior angle (alt°):', type: 'number', placeholder: 'Type number...', answer: String(parAlt), accept: [String(parAlt)] },
+              { id: 'q11_b2', label: '(b2) Find the co-interior (consecutive interior) angle (co°) on the same side of the transversal:', type: 'number', placeholder: 'Type number...', answer: String(parCo), accept: [String(parCo)] },
+              { id: 'q11_c1', label: '(c1) At ' + cfg.clockHour + ':30, the minute hand points to 6 (180° clockwise from 12). How many degrees clockwise from 12 has the hour hand turned? (' + cfg.clockHour + '.5 × 30°)', type: 'number', placeholder: 'Type number...', answer: String(clockHourDeg), accept: [String(clockHourDeg)] },
+              { id: 'q11_c2', label: '(c2) What is the smaller angle (in degrees) between the hour hand and minute hand at ' + cfg.clockHour + ':30?', type: 'number', placeholder: 'Type number...', answer: String(clockAngle), accept: [String(clockAngle)] }
+            ],
+            explanation: '(a) 360° − (' + cfg.q1 + '° + ' + cfg.q2 + '° + ' + cfg.q3 + '°) = ' + quadX + '°. (b) Alternate interior = ' + parAlt + '°; co-interior = 180° − ' + cfg.parGiven + '° = ' + parCo + '°. (c) At ' + cfg.clockHour + ':30, hour hand = ' + clockHourDeg + '° and minute hand = 180°, so difference = |180° − ' + clockHourDeg + '°| = ' + clockAngle + '°.'
+          },
+
+          // Q12: Cluster 12 (C22, C23, C24) - 6 pts
+          {
+            id: 'q12',
+            number: 12,
+            concepts: ['C22', 'C23', 'C24'],
+            points: 6,
+            title: 'Visual Fraction Bar, Equivalent Fractions & Comparing Fractions',
+            promptHtml:
+              '<p><strong>D1, D2 &amp; D3:</strong> Write the shaded and unshaded fractions from the bar model, complete the equivalent fractions, and compare each pair using <strong>&lt;</strong>, <strong>&gt;</strong>, or <strong>=</strong>:</p>' +
+              renderFractionBarGrid(cfg.barShaded, cfg.barTotal),
+            subItems: [
+              { id: 'q12_a1', label: '(a1) Fraction of the rectangle that is SHADED (format a/b):', type: 'text', placeholder: 'Write your answer...', answer: cfg.barShaded + '/' + cfg.barTotal, accept: [cfg.barShaded + '/' + cfg.barTotal] },
+              { id: 'q12_a2', label: '(a2) Fraction of the rectangle that is UNSHADED (format a/b):', type: 'text', placeholder: 'Write your answer...', answer: (cfg.barTotal - cfg.barShaded) + '/' + cfg.barTotal, accept: [(cfg.barTotal - cfg.barShaded) + '/' + cfg.barTotal] },
+              { id: 'q12_b1', label: '(b1) Complete the missing numerator: ' + cfg.eq1Left + ' = ? / ' + cfg.eq1Den, type: 'number', placeholder: 'Type number...', answer: String(cfg.eq1Num), accept: [String(cfg.eq1Num)] },
+              { id: 'q12_b2', label: '(b2) Complete the missing numerator: ' + cfg.eq2Left + ' = ? / ' + cfg.eq2Den, type: 'number', placeholder: 'Type number...', answer: String(cfg.eq2Num), accept: [String(cfg.eq2Num)] },
+              { id: 'q12_b3', label: '(b3) Simplify to find the missing numerator: ' + cfg.eq3Left + ' = ? / ' + cfg.eq3Den, type: 'number', placeholder: 'Type number...', answer: String(cfg.eq3Num), accept: [String(cfg.eq3Num)] },
+              { id: 'q12_c1', label: '(c1) Compare: ' + cfg.cmp1Text, type: 'select', options: ['<', '>', '='], answer: cfg.cmp1Ans, accept: [cfg.cmp1Ans] },
+              { id: 'q12_c2', label: '(c2) Compare: ' + cfg.cmp2Text, type: 'select', options: ['<', '>', '='], answer: cfg.cmp2Ans, accept: [cfg.cmp2Ans] },
+              { id: 'q12_c3', label: '(c3) Compare: ' + cfg.cmp3Text, type: 'select', options: ['<', '>', '='], answer: cfg.cmp3Ans, accept: [cfg.cmp3Ans] }
+            ],
+            explanation: 'Shaded = ' + cfg.barShaded + '/' + cfg.barTotal + ', unshaded = ' + (cfg.barTotal - cfg.barShaded) + '/' + cfg.barTotal + '. Equivalent numerators: ' + cfg.eq1Num + ', ' + cfg.eq2Num + ', ' + cfg.eq3Num + '. Comparisons: ' + cfg.cmp1Ans + ', ' + cfg.cmp2Ans + ', ' + cfg.cmp3Ans + '.'
+          },
+
+          // Q13: Cluster 13 (C25, C26, C27) - 6 pts
+          {
+            id: 'q13',
+            number: 13,
+            concepts: ['C25', 'C26', 'C27'],
+            points: 6,
+            title: 'Fraction Arithmetic, Fraction of a Quantity, Mixed Numbers & Ribbon Problem',
+            promptHtml:
+              '<p><strong>D4, D5, D6, D7 &amp; D8:</strong> Solve the fraction calculations below (write fractions as <code>a/b</code> and mixed numbers with a space as <code>w a/b</code>):</p>',
+            subItems: [
+              { id: 'q13_a1', label: '(a1) Like-denominator addition: ' + cfg.addLikeText + ' =', type: 'text', placeholder: 'Write your answer...', answer: cfg.addLikeAns, accept: [cfg.addLikeAns] },
+              { id: 'q13_a2', label: '(a2) Like-denominator subtraction (in simplest form): ' + cfg.subLikeText + ' =', type: 'text', placeholder: 'Write your answer...', answer: cfg.subLikeAns, accept: cfg.subLikeAccept },
+              { id: 'q13_b', label: '(b) Fraction of a set: What is ' + cfg.fracSetFrac + ' of ' + cfg.fracSetTotal + ' pencils?', type: 'number', placeholder: 'Type number...', answer: String(cfg.fracSetAns), accept: [String(cfg.fracSetAns)] },
+              { id: 'q13_c1', label: '(c1) Convert improper fraction ' + cfg.impText + ' into a mixed number (e.g. w a/b):', type: 'text', placeholder: 'Write your answer...', answer: cfg.impAns, accept: [cfg.impAns] },
+              { id: 'q13_c2', label: '(c2) Convert mixed number ' + cfg.mixText + ' into an improper fraction (e.g. a/b):', type: 'text', placeholder: 'Write your answer...', answer: cfg.mixAns, accept: [cfg.mixAns] },
+              { id: 'q13_d1', label: '(d1) [Challenge] Unlike denominators: Calculate ' + cfg.unlikeAddText + ' =', type: 'text', placeholder: 'Write your answer...', answer: cfg.unlikeAddAns, accept: [cfg.unlikeAddAns] },
+              { id: 'q13_d2', label: '(d2) [Challenge] A ribbon is ' + cfg.ribbonWhole + ' m long. A piece of length ' + cfg.ribbonCut + ' m is cut off. How many meters of ribbon are left? (Write as a mixed number w a/b):', type: 'text', placeholder: 'Write your answer...', answer: cfg.ribbonAns, accept: cfg.ribbonAccept }
+            ],
+            explanation: '(a1) ' + cfg.addLikeAns + '; (a2) ' + cfg.subLikeAns + '; (b) ' + cfg.fracSetAns + '; (c1) ' + cfg.impAns + '; (c2) ' + cfg.mixAns + '; (d1) ' + cfg.unlikeAddAns + '; (d2) ' + cfg.ribbonAns + ' m.'
+          },
+
+          // Q14: Cluster 14 (C28) - 4 pts
+          {
+            id: 'q14',
+            number: 14,
+            concepts: ['C28'],
+            points: 4,
+            title: 'Combined Synthesis: Fractions of 3D Cube Faces & Straight Edges',
+            promptHtml:
+              '<p><strong>E1 &amp; E3:</strong> Connect your knowledge of 3D cube properties with simplified fractions:</p>',
+            subItems: [
+              { id: 'q14_a1', label: '(a1) On Cube Net N, ' + cfg.coloredFaces + ' out of the 6 square faces are colored. What SIMPLIFIED fraction of the total number of faces is colored? (format a/b)', type: 'text', placeholder: 'Write your answer...', answer: cfg.coloredFacesSimp, accept: [cfg.coloredFacesSimp, cfg.coloredFaces + '/6'] },
+              { id: 'q14_a2', label: '(a2) Does coloring ' + cfg.coloredFacesSimp + ' of the outer square faces also tell you what fraction of the cube\'s 3D interior VOLUME is colored?', type: 'select', options: ['No (Faces measure surface area, not interior 3D volume)', 'Yes (Surface fraction always equals volume fraction)'], answer: 'No (Faces measure surface area, not interior 3D volume)', accept: ['no (faces measure surface area, not interior 3d volume)', 'no', 'false'] },
+              { id: 'q14_b', label: '(b) Out of the 12 straight edges of a cube, ' + cfg.paintedEdges + ' edges are painted. What SIMPLIFIED fraction of the total number of edges is painted? (format a/b)', type: 'text', placeholder: 'Write your answer...', answer: cfg.paintedEdgesSimp, accept: [cfg.paintedEdgesSimp, cfg.paintedEdges + '/12'] }
+            ],
+            explanation: cfg.coloredFaces + '/6 simplifies to ' + cfg.coloredFacesSimp + ' of the faces, which measures surface count and does NOT tell interior volume (No). ' + cfg.paintedEdges + '/12 simplifies to ' + cfg.paintedEdgesSimp + ' of the edges.'
+          },
+
+          // Q15: Cluster 15 (C29, C30) - 6 pts
+          {
+            id: 'q15',
+            number: 15,
+            concepts: ['C29', 'C30'],
+            points: 6,
+            title: 'Combined Synthesis: Fractional Robot Turns & Smallest Angle Between Directions',
+            promptHtml:
+              '<p><strong>E2 &amp; E4 [Challenge]:</strong> Calculate the degrees and angle classifications for a robot performing fractional clockwise turns (1 full turn = 360°):</p>',
+            subItems: [
+              { id: 'q15_a1', label: '(a1) A robot rotates ' + cfg.robotFrac + ' of a full turn clockwise. How many degrees did it rotate? (' + cfg.robotFrac + ' × 360°)', type: 'number', placeholder: 'Type number...', answer: String(cfg.robotDeg), accept: [String(cfg.robotDeg)] },
+              { id: 'q15_a2', label: '(a2) What type of angle is a rotation of ' + cfg.robotDeg + '°?', type: 'select', options: ['acute', 'right', 'obtuse', 'straight', 'reflex'], answer: cfg.robotType, accept: [cfg.robotType] },
+              { id: 'q15_b1', label: '(b1) Next, the robot starts fresh and turns ' + cfg.multiTurn1 + ' turn clockwise, followed by ' + cfg.multiTurn2 + ' turn clockwise. What is the TOTAL clockwise rotation in degrees?', type: 'number', placeholder: 'Type number...', answer: String(cfg.multiTotalDeg), accept: [String(cfg.multiTotalDeg)] },
+              { id: 'q15_b2', label: '(b2) What is the SMALLEST angle (in degrees, ≤ 180°) between the robot\'s starting direction and final direction?', type: 'number', placeholder: 'Type number...', answer: String(cfg.multiSmallestDeg), accept: [String(cfg.multiSmallestDeg)] }
+            ],
+            explanation: '(a) ' + cfg.robotFrac + ' × 360° = ' + cfg.robotDeg + '° (' + cfg.robotType + '). (b) Total rotation = ' + cfg.multiTotalDeg + '°; smallest angle between start and finish = ' + cfg.multiSmallestDeg + '°.'
+          }
+        ];
+      }
+
+      // -------------------- SEEDED CONFIGURATIONS FOR SET 1, SET 2, SET 3 & OFFICIAL --------------------
+
+      var BASE_CONFIGS = {
+        official: {
+          numJoinedCubes: 2, prismName: 'Pentagonal', prismN: 5,
+          pyrBase: 4, pyrSlant: 5,
+          netBase: 'B', netLid: 'D', netColored: 'E', netColoredOpp: 'F',
+          cubL: 6, cubW: 4, cubH: 2,
+          angAcute: 35, angObtuse: 125, angReflex: 245,
+          orderScrambled: [110, 25, 90, 175, 60], orderSorted: [25, 60, 90, 110, 175],
+          protP: 55, protQ: 105, protR: 150,
+          compassStart: 'North', compassStepText: '1/4 turn clockwise, then another 1/2 turn clockwise', compassEnd: 'West',
+          compGiven: 28, suppGiven: 125, algMult: 2, algConst: 30,
+          pt1: 90, pt2: 145, reflexDeg: 285, intGiven: 68,
+          tri1: 45, tri2: 65, isoApex: 40, algTriDiff: 20,
+          q1: 80, q2: 100, q3: 95, parGiven: 65, clockHour: 3,
+          barShaded: 3, barTotal: 8,
+          eq1Left: '1/2', eq1Den: 8, eq1Num: 4,
+          eq2Left: '3/4', eq2Den: 12, eq2Num: 9,
+          eq3Left: '6/10', eq3Den: 5, eq3Num: 3,
+          cmp1Text: '3/8  ___  5/8', cmp1Ans: '<',
+          cmp2Text: '1/2  ___  2/4', cmp2Ans: '=',
+          cmp3Text: '1/3  ___  1/6', cmp3Ans: '>',
+          addLikeText: '2/7 + 3/7', addLikeAns: '5/7',
+          subLikeText: '7/9 − 4/9', subLikeAns: '1/3', subLikeAccept: ['1/3', '3/9'],
+          fracSetFrac: '3/4', fracSetTotal: 24, fracSetAns: 18,
+          impText: '9/4', impAns: '2 1/4',
+          mixText: '2 1/3', mixAns: '7/3',
+          unlikeAddText: '1/2 + 1/3', unlikeAddAns: '5/6',
+          ribbonWhole: 2, ribbonCut: '3/4', ribbonAns: '1 1/4', ribbonAccept: ['1 1/4', '5/4', '1.25'],
+          coloredFaces: 2, coloredFacesSimp: '1/3',
+          paintedEdges: 3, paintedEdgesSimp: '1/4',
+          robotFrac: '3/8', robotDeg: 135, robotType: 'obtuse',
+          multiTurn1: '1/4', multiTurn2: '1/3', multiTotalDeg: 210, multiSmallestDeg: 150
+        },
+
+        practice_set_1: {
+          numJoinedCubes: 2, prismName: 'Pentagonal', prismN: 5,
+          pyrBase: 4, pyrSlant: 5,
+          netBase: 'B', netLid: 'D', netColored: 'E', netColoredOpp: 'F',
+          cubL: 6, cubW: 4, cubH: 2,
+          angAcute: 35, angObtuse: 125, angReflex: 245,
+          orderScrambled: [110, 25, 90, 175, 60], orderSorted: [25, 60, 90, 110, 175],
+          protP: 40, protQ: 130, protR: 150,
+          compassStart: 'North', compassStepText: '1/4 turn clockwise, then another 1/2 turn clockwise', compassEnd: 'West',
+          compGiven: 28, suppGiven: 125, algMult: 2, algConst: 30,
+          pt1: 90, pt2: 145, reflexDeg: 285, intGiven: 68,
+          tri1: 45, tri2: 65, isoApex: 40, algTriDiff: 20,
+          q1: 80, q2: 100, q3: 95, parGiven: 65, clockHour: 3,
+          barShaded: 3, barTotal: 8,
+          eq1Left: '1/2', eq1Den: 8, eq1Num: 4,
+          eq2Left: '3/4', eq2Den: 12, eq2Num: 9,
+          eq3Left: '6/10', eq3Den: 5, eq3Num: 3,
+          cmp1Text: '3/8  ___  5/8', cmp1Ans: '<',
+          cmp2Text: '1/2  ___  2/4', cmp2Ans: '=',
+          cmp3Text: '1/3  ___  1/6', cmp3Ans: '>',
+          addLikeText: '2/7 + 3/7', addLikeAns: '5/7',
+          subLikeText: '7/9 − 4/9', subLikeAns: '1/3', subLikeAccept: ['1/3', '3/9'],
+          fracSetFrac: '3/4', fracSetTotal: 24, fracSetAns: 18,
+          impText: '9/4', impAns: '2 1/4',
+          mixText: '2 1/3', mixAns: '7/3',
+          unlikeAddText: '1/2 + 1/3', unlikeAddAns: '5/6',
+          ribbonWhole: 2, ribbonCut: '3/4', ribbonAns: '1 1/4', ribbonAccept: ['1 1/4', '5/4', '1.25'],
+          coloredFaces: 2, coloredFacesSimp: '1/3',
+          paintedEdges: 3, paintedEdgesSimp: '1/4',
+          robotFrac: '3/8', robotDeg: 135, robotType: 'obtuse',
+          multiTurn1: '1/4', multiTurn2: '1/3', multiTotalDeg: 210, multiSmallestDeg: 150
+        },
+
+        practice_set_2: {
+          numJoinedCubes: 3, prismName: 'Hexagonal', prismN: 6,
+          pyrBase: 6, pyrSlant: 8,
+          netBase: 'A', netLid: 'C', netColored: 'B', netColoredOpp: 'D',
+          cubL: 8, cubW: 5, cubH: 3,
+          angAcute: 42, angObtuse: 138, angReflex: 290,
+          orderScrambled: [140, 35, 90, 165, 75], orderSorted: [35, 75, 90, 140, 165],
+          protP: 50, protQ: 115, protR: 145,
+          compassStart: 'East', compassStepText: '1/2 turn clockwise, then another 1/4 turn clockwise', compassEnd: 'North',
+          compGiven: 37, suppGiven: 118, algMult: 2, algConst: 45,
+          pt1: 110, pt2: 135, reflexDeg: 295, intGiven: 74,
+          tri1: 50, tri2: 60, isoApex: 50, algTriDiff: 12,
+          q1: 75, q2: 110, q3: 95, parGiven: 72, clockHour: 2,
+          barShaded: 5, barTotal: 8,
+          eq1Left: '1/3', eq1Den: 9, eq1Num: 3,
+          eq2Left: '2/5', eq2Den: 15, eq2Num: 6,
+          eq3Left: '8/12', eq3Den: 3, eq3Num: 2,
+          cmp1Text: '5/9  ___  2/9', cmp1Ans: '>',
+          cmp2Text: '2/3  ___  4/6', cmp2Ans: '=',
+          cmp3Text: '1/5  ___  1/2', cmp3Ans: '<',
+          addLikeText: '3/8 + 2/8', addLikeAns: '5/8',
+          subLikeText: '7/10 − 3/10', subLikeAns: '2/5', subLikeAccept: ['2/5', '4/10'],
+          fracSetFrac: '3/5', fracSetTotal: 30, fracSetAns: 18,
+          impText: '11/4', impAns: '2 3/4',
+          mixText: '3 1/2', mixAns: '7/2',
+          unlikeAddText: '1/2 + 1/4', unlikeAddAns: '3/4',
+          ribbonWhole: 3, ribbonCut: '2/5', ribbonAns: '2 3/5', ribbonAccept: ['2 3/5', '13/5', '2.6'],
+          coloredFaces: 4, coloredFacesSimp: '2/3',
+          paintedEdges: 6, paintedEdgesSimp: '1/2',
+          robotFrac: '1/6', robotDeg: 60, robotType: 'acute',
+          multiTurn1: '1/4', multiTurn2: '1/6', multiTotalDeg: 150, multiSmallestDeg: 150
+        },
+
+        practice_set_3: {
+          numJoinedCubes: 4, prismName: 'Octagonal', prismN: 8,
+          pyrBase: 5, pyrSlant: 7,
+          netBase: 'E', netLid: 'F', netColored: 'A', netColoredOpp: 'C',
+          cubL: 10, cubW: 6, cubH: 4,
+          angAcute: 28, angObtuse: 152, angReflex: 310,
+          orderScrambled: [125, 15, 90, 170, 45], orderSorted: [15, 45, 90, 125, 170],
+          protP: 65, protQ: 120, protR: 160,
+          compassStart: 'South', compassStepText: '1/4 turn clockwise, then another 1/2 turn clockwise', compassEnd: 'East',
+          compGiven: 54, suppGiven: 142, algMult: 3, algConst: 20,
+          pt1: 85, pt2: 160, reflexDeg: 250, intGiven: 52,
+          tri1: 55, tri2: 75, isoApex: 30, algTriDiff: 28,
+          q1: 85, q2: 105, q3: 92, parGiven: 58, clockHour: 4,
+          barShaded: 3, barTotal: 10,
+          eq1Left: '3/4', eq1Den: 8, eq1Num: 6,
+          eq2Left: '4/5', eq2Den: 10, eq2Num: 8,
+          eq3Left: '9/12', eq3Den: 4, eq3Num: 3,
+          cmp1Text: '4/7  ___  6/7', cmp1Ans: '<',
+          cmp2Text: '3/6  ___  1/2', cmp2Ans: '=',
+          cmp3Text: '1/4  ___  1/8', cmp3Ans: '>',
+          addLikeText: '4/9 + 4/9', addLikeAns: '8/9',
+          subLikeText: '5/6 − 3/6', subLikeAns: '1/3', subLikeAccept: ['1/3', '2/6'],
+          fracSetFrac: '2/3', fracSetTotal: 27, fracSetAns: 18,
+          impText: '13/5', impAns: '2 3/5',
+          mixText: '2 3/4', mixAns: '11/4',
+          unlikeAddText: '1/3 + 1/4', unlikeAddAns: '7/12',
+          ribbonWhole: 2, ribbonCut: '5/6', ribbonAns: '1 1/6', ribbonAccept: ['1 1/6', '7/6'],
+          coloredFaces: 3, coloredFacesSimp: '1/2',
+          paintedEdges: 4, paintedEdgesSimp: '1/3',
+          robotFrac: '5/8', robotDeg: 225, robotType: 'reflex',
+          multiTurn1: '1/2', multiTurn2: '1/6', multiTotalDeg: 240, multiSmallestDeg: 120
+        }
+      };
+
+      var QUESTION_SETS = {
+        official: buildQuestionSet(BASE_CONFIGS.official),
+        practice_set_1: buildQuestionSet(BASE_CONFIGS.practice_set_1),
+        practice_set_2: buildQuestionSet(BASE_CONFIGS.practice_set_2),
+        practice_set_3: buildQuestionSet(BASE_CONFIGS.practice_set_3)
+      };
+
+      // -------------------- APPLICATION STATE --------------------
+
+      var state = {
+        selectedModeCard: 'practice', // 'practice' | 'official'
+        selectedPracticeSet: 'practice_set_1',
+        activeSetKey: 'practice_set_1',
+        currentSlideIndex: 0,
+        answers: {
+          official: {},
+          practice_set_1: {},
+          practice_set_2: {},
+          practice_set_3: {}
+        },
+        completedScores: {
+          official: null,
+          practice_set_1: null,
+          practice_set_2: null,
+          practice_set_3: null
+        },
+        inspectorUnlocked: false,
+        activeInspectorTab: 'practice_set_1',
+        activePrintSet: 'practice_set_1',
+        retryFilterIds: null
+      };
+
+      // -------------------- SAFE LOCALSTORAGE PERSISTENCE --------------------
+
+      function loadPersistedState() {
+        try {
+          var keys = ['official', 'practice_set_1', 'practice_set_2', 'practice_set_3'];
+          for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            var rawAns = localStorage.getItem(STORAGE_PREFIX + 'ans_' + k);
+            if (rawAns) {
+              state.answers[k] = JSON.parse(rawAns) || {};
+            }
+            var rawScore = localStorage.getItem(STORAGE_PREFIX + 'score_' + k);
+            if (rawScore !== null && rawScore !== undefined && rawScore !== '') {
+              state.completedScores[k] = Number(rawScore);
+            }
+          }
+        } catch (e) {
+          // Ignore sandboxed storage restrictions
+        }
+      }
+
+      function saveSetProgress(setKey) {
+        try {
+          localStorage.setItem(STORAGE_PREFIX + 'ans_' + setKey, JSON.stringify(state.answers[setKey] || {}));
+          if (state.completedScores[setKey] !== null && state.completedScores[setKey] !== undefined) {
+            localStorage.setItem(STORAGE_PREFIX + 'score_' + setKey, String(state.completedScores[setKey]));
+          } else {
+            localStorage.removeItem(STORAGE_PREFIX + 'score_' + setKey);
+          }
+        } catch (e) {
+          // Ignore sandboxed storage restrictions
+        }
+      }
+
+      function showToast(msg) {
+        var banner = document.getElementById('toastBanner');
+        if (!banner) return;
+        banner.textContent = msg;
+        banner.classList.remove('hidden');
+        if (window._toastTimer) clearTimeout(window._toastTimer);
+        window._toastTimer = setTimeout(function () {
+          banner.classList.add('hidden');
+        }, 2800);
+      }
+
+      // -------------------- RESILIENT GRADING ENGINE --------------------
+
+      function normalizeText(str) {
+        return String(str === null || str === undefined ? '' : str)
+          .toLowerCase()
+          .replace(/°/g, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function levenshtein(a, b) {
+        if (a === b) return 0;
+        var m = a.length, n = b.length;
+        if (m === 0) return n;
+        if (n === 0) return m;
+        var dp = [];
+        for (var i = 0; i <= m; i++) {
+          dp[i] = [i];
+        }
+        for (var j = 1; j <= n; j++) {
+          dp[0][j] = j;
+        }
+        for (var r = 1; r <= m; r++) {
+          for (var c = 1; c <= n; c++) {
+            var cost = a[r - 1] === b[c - 1] ? 0 : 1;
+            dp[r][c] = Math.min(dp[r - 1][c] + 1, dp[r][c - 1] + 1, dp[r - 1][c - 1] + cost);
+          }
+        }
+        return dp[m][n];
+      }
+
+      function gradeSubItem(sub, rawUserVal) {
+        var userNorm = normalizeText(rawUserVal);
+        if (!userNorm) return false;
+
+        if (sub.type === 'ordered_list') {
+          var userParts = userNorm.split(',').map(function (s) {
+            return s.replace(/[^0-9.-]/g, '').trim();
+          }).filter(Boolean);
+          var targetParts = normalizeText(sub.answer).split(',').map(function (s) {
+            return s.replace(/[^0-9.-]/g, '').trim();
+          }).filter(Boolean);
+          if (userParts.length !== targetParts.length) return false;
+          for (var idx = 0; idx < targetParts.length; idx++) {
+            if (userParts[idx] !== targetParts[idx]) return false;
+          }
+          return true;
+        }
+
+        if (sub.type === 'number') {
+          var cleanNum = userNorm.replace(/,/g, '').replace(/\s*(cm²|cm2|cm|m|degrees|deg|pencils|faces|edges|vertices|triangles)\b/g, '').trim();
+          for (var aIdx = 0; aIdx < sub.accept.length; aIdx++) {
+            if (cleanNum === normalizeText(sub.accept[aIdx])) return true;
+          }
+          return false;
+        }
+
+        for (var k = 0; k < sub.accept.length; k++) {
+          var target = normalizeText(sub.accept[k]);
+          if (userNorm === target) return true;
+          if (target.length >= 6 && levenshtein(userNorm, target) <= 1) return true;
+        }
+        return false;
+      }
+
+      function gradeQuestion(q, setAnswers) {
+        var totalSubs = q.subItems.length;
+        var correctSubs = 0;
+        var subResults = [];
+
+        for (var i = 0; i < totalSubs; i++) {
+          var sub = q.subItems[i];
+          var rawVal = setAnswers && setAnswers[sub.id] !== undefined ? setAnswers[sub.id] : '';
+          var isOk = gradeSubItem(sub, rawVal);
+          if (isOk) correctSubs++;
+          subResults.push({
+            id: sub.id,
+            label: sub.label,
+            userVal: rawVal,
+            modelVal: sub.answer,
+            isCorrect: isOk
+          });
+        }
+
+        var earnedPts = Math.round((correctSubs / totalSubs) * q.points * 100) / 100;
+        var status = correctSubs === totalSubs ? 'correct' : (correctSubs > 0 ? 'partial' : 'incorrect');
+        return {
+          questionId: q.id,
+          earnedPts: earnedPts,
+          maxPts: q.points,
+          correctSubs: correctSubs,
+          totalSubs: totalSubs,
+          status: status,
+          subResults: subResults
+        };
+      }
+
+      function isQuestionFullyAnswered(q, setAnswers) {
+        if (!setAnswers) return false;
+        for (var i = 0; i < q.subItems.length; i++) {
+          var val = setAnswers[q.subItems[i].id];
+          if (val === undefined || val === null || String(val).trim() === '') {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function countAnsweredQuestions(setKey) {
+        var qs = QUESTION_SETS[setKey];
+        var ans = state.answers[setKey] || {};
+        var count = 0;
+        for (var i = 0; i < qs.length; i++) {
+          if (isQuestionFullyAnswered(qs[i], ans)) count++;
+        }
+        return count;
+      }
+
+      // -------------------- START SCREEN UI & CLICKABLE MODE CARDS --------------------
+
+      function getSetDisplayName(setKey) {
+        if (setKey === 'official') return 'Official Pre-Test';
+        var num = setKey.replace('practice_set_', '');
+        return 'Practice Set ' + num;
+      }
+
+      function updateStartScreenUI() {
+        var cardPractice = document.getElementById('cardPracticeMode');
+        var cardOfficial = document.getElementById('cardOfficialMode');
+        var badgePractice = document.getElementById('badgeModePractice');
+        var badgeOfficialMode = document.getElementById('badgeModeOfficial');
+
+        if (state.selectedModeCard === 'practice') {
+          cardPractice.className = 'md:col-span-7 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-indigo-600 bg-indigo-50/20 shadow-sm flex flex-col justify-between space-y-5';
+          badgePractice.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white';
+          badgePractice.textContent = '★ Selected Mode';
+
+          cardOfficial.className = 'md:col-span-5 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-slate-200 bg-white hover:border-slate-300 flex flex-col justify-between space-y-5';
+          badgeOfficialMode.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
+          badgeOfficialMode.textContent = 'Click to Select';
+        } else {
+          cardOfficial.className = 'md:col-span-5 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-emerald-600 bg-emerald-50/20 shadow-sm flex flex-col justify-between space-y-5';
+          badgeOfficialMode.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white';
+          badgeOfficialMode.textContent = '● Active Mode';
+
+          cardPractice.className = 'md:col-span-7 rounded-2xl p-5 sm:p-6 transition cursor-pointer border-2 border-slate-200 bg-white hover:border-slate-300 flex flex-col justify-between space-y-5';
+          badgePractice.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
+          badgePractice.textContent = 'Click to Select';
+        }
+
+        // Update Practice Set Pills 1..3
+        var setKeys = ['practice_set_1', 'practice_set_2', 'practice_set_3'];
+        for (var i = 0; i < setKeys.length; i++) {
+          var sk = setKeys[i];
+          var pillId = 'pillSet' + (i + 1);
+          var badgeId = 'badgeSet' + (i + 1);
+          var pillEl = document.getElementById(pillId);
+          var badgeEl = document.getElementById(badgeId);
+
+          var isSelectedSet = state.selectedPracticeSet === sk;
+          pillEl.className = isSelectedSet
+            ? 'p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition flex flex-col justify-between'
+            : 'p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-left transition flex flex-col justify-between';
+
+          var ansCount = countAnsweredQuestions(sk);
+          var compScore = state.completedScores[sk];
+          if (compScore !== null && compScore !== undefined) {
+            badgeEl.textContent = '✓ Completed: ' + Math.round(compScore) + '%';
+            badgeEl.className = 'mt-2 inline-block text-[11px] font-bold text-emerald-700';
+          } else if (ansCount > 0) {
+            badgeEl.textContent = 'In Progress (' + ansCount + '/15)';
+            badgeEl.className = 'mt-2 inline-block text-[11px] font-semibold text-amber-700';
+          } else {
+            badgeEl.textContent = 'Not Started';
+            badgeEl.className = 'mt-2 inline-block text-[11px] font-medium text-slate-500';
+          }
+        }
+
+        var setNum = state.selectedPracticeSet.replace('practice_set_', '');
+        var btnStartPrac = document.getElementById('btnStartPractice');
+        var pracAnsCount = countAnsweredQuestions(state.selectedPracticeSet);
+        btnStartPrac.textContent = pracAnsCount > 0
+          ? 'Resume Saved Session (Set ' + setNum + ')'
+          : 'Start Practice (Set ' + setNum + ')';
+
+        // Official Mode Status & Button
+        var offAnsCount = countAnsweredQuestions('official');
+        var offScore = state.completedScores.official;
+        var badgeOff = document.getElementById('badgeOfficial');
+        if (offScore !== null && offScore !== undefined) {
+          badgeOff.textContent = '✓ Completed: ' + Math.round(offScore) + '%';
+          badgeOff.className = 'text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg';
+        } else if (offAnsCount > 0) {
+          badgeOff.textContent = 'In Progress (' + offAnsCount + '/15)';
+          badgeOff.className = 'text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg';
+        } else {
+          badgeOff.textContent = 'Not Started';
+          badgeOff.className = 'text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg';
+        }
+
+        var btnStartOff = document.getElementById('btnStartOfficial');
+        btnStartOff.textContent = offAnsCount > 0
+          ? 'Resume Saved Session (Official)'
+          : 'Start Official Pre-Test';
+      }
+
+      // -------------------- VIEW SWITCHER --------------------
+
+      function switchView(viewId) {
+        var views = ['viewStart', 'viewQuiz', 'viewResults', 'viewPrint'];
+        for (var i = 0; i < views.length; i++) {
+          var el = document.getElementById(views[i]);
+          if (views[i] === viewId) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // -------------------- QUIZ SLIDE & NAVIGATOR RENDERING --------------------
+
+      function getActiveQuestionsList() {
+        var fullList = QUESTION_SETS[state.activeSetKey];
+        if (state.retryFilterIds && state.retryFilterIds.length > 0) {
+          return fullList.filter(function (q) {
+            return state.retryFilterIds.indexOf(q.id) !== -1;
+          });
+        }
+        return fullList;
+      }
+
+      function renderQuizSlide() {
+        var activeQs = getActiveQuestionsList();
+        if (state.currentSlideIndex >= activeQs.length) {
+          state.currentSlideIndex = 0;
+        }
+        var q = activeQs[state.currentSlideIndex];
+        var setAns = state.answers[state.activeSetKey] || {};
+
+        document.getElementById('quizModeBadge').textContent = getSetDisplayName(state.activeSetKey);
+        document.getElementById('quizSlideTitleTop').textContent = 'Question ' + (state.currentSlideIndex + 1) + ' of ' + activeQs.length + ' — ' + q.title;
+        document.getElementById('slideNumberBadge').textContent = 'Question ' + q.number + ' of 15';
+        document.getElementById('slideConceptBadge').textContent = q.concepts.join(', ');
+        document.getElementById('slidePointsBadge').textContent = q.points + ' pts';
+
+        var answeredTotal = 0;
+        for (var i = 0; i < activeQs.length; i++) {
+          if (isQuestionFullyAnswered(activeQs[i], setAns)) answeredTotal++;
+        }
+        var pct = Math.round((answeredTotal / activeQs.length) * 100);
+        document.getElementById('quizProgressPercent').textContent = pct + '% Answered (' + answeredTotal + '/' + activeQs.length + ')';
+        document.getElementById('quizProgressBar').style.width = Math.max(6, pct) + '%';
+
+        document.getElementById('slidePrompt').innerHTML = q.promptHtml;
+
+        // Render Sub-Item Inputs (Neutral Placeholders Only — Zero Spoilers)
+        var inputsContainer = document.getElementById('slideInputsContainer');
+        var html = '<div class="grid grid-cols-1 gap-3">';
+        for (var s = 0; s < q.subItems.length; s++) {
+          var sub = q.subItems[s];
+          var curVal = setAns[sub.id] !== undefined ? setAns[sub.id] : '';
+          var safeVal = String(curVal).replace(/"/g, '&quot;');
+
+          html += '<div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">';
+          html += '<label for="inp_' + sub.id + '" class="text-xs sm:text-sm font-medium text-slate-800 sm:flex-1">' + sub.label + '</label>';
+
+          if (sub.type === 'select') {
+            html += '<select id="inp_' + sub.id + '" data-sub-id="' + sub.id + '" class="quiz-input w-full sm:w-64 px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">';
+            html += '<option value="">Select option...</option>';
+            for (var o = 0; o < sub.options.length; o++) {
+              var opt = sub.options[o];
+              var sel = curVal === opt ? ' selected' : '';
+              html += '<option value="' + opt.replace(/"/g, '&quot;') + '"' + sel + '>' + opt + '</option>';
+            }
+            html += '</select>';
+          } else {
+            var ph = sub.placeholder || 'Write your answer...';
+            html += '<input id="inp_' + sub.id + '" data-sub-id="' + sub.id + '" type="text" value="' + safeVal + '" placeholder="' + ph + '" autocomplete="off" class="quiz-input w-full sm:w-56 px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" />';
+          }
+          html += '</div>';
+        }
+        html += '</div>';
+        inputsContainer.innerHTML = html;
+
+        // Bind Input Listeners
+        var inputEls = inputsContainer.querySelectorAll('.quiz-input');
+        for (var j = 0; j < inputEls.length; j++) {
+          inputEls[j].addEventListener('input', handleQuizInputChange);
+          inputEls[j].addEventListener('change', handleQuizInputChange);
+        }
+
+        // Update Prev / Next Buttons
+        document.getElementById('btnPrevSlide').disabled = state.currentSlideIndex === 0;
+        var btnNext = document.getElementById('btnNextSlide');
+        if (state.currentSlideIndex >= activeQs.length - 1) {
+          btnNext.classList.add('hidden');
+        } else {
+          btnNext.classList.remove('hidden');
+        }
+
+        renderNavigatorSidebar(activeQs, setAns, answeredTotal);
+      }
+
+      function handleQuizInputChange(e) {
+        var subId = e.target.getAttribute('data-sub-id');
+        if (!subId) return;
+        if (!state.answers[state.activeSetKey]) {
+          state.answers[state.activeSetKey] = {};
+        }
+        state.answers[state.activeSetKey][subId] = e.target.value;
+        saveSetProgress(state.activeSetKey);
+
+        var activeQs = getActiveQuestionsList();
+        var setAns = state.answers[state.activeSetKey];
+        var answeredTotal = 0;
+        for (var i = 0; i < activeQs.length; i++) {
+          if (isQuestionFullyAnswered(activeQs[i], setAns)) answeredTotal++;
+        }
+        var pct = Math.round((answeredTotal / activeQs.length) * 100);
+        document.getElementById('quizProgressPercent').textContent = pct + '% Answered (' + answeredTotal + '/' + activeQs.length + ')';
+        document.getElementById('quizProgressBar').style.width = Math.max(6, pct) + '%';
+        renderNavigatorSidebar(activeQs, setAns, answeredTotal);
+      }
+
+      function renderNavigatorSidebar(activeQs, setAns, answeredTotal) {
+        document.getElementById('navAnsweredCount').textContent = answeredTotal + ' / ' + activeQs.length;
+        var grid = document.getElementById('navigatorGrid');
+        var html = '';
+        for (var i = 0; i < activeQs.length; i++) {
+          var q = activeQs[i];
+          var isAns = isQuestionFullyAnswered(q, setAns);
+          var isCur = i === state.currentSlideIndex;
+          var baseCls = isAns
+            ? 'bg-emerald-500 text-white font-bold'
+            : 'bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold';
+          var ringCls = isCur ? ' ring-2 ring-offset-2 ring-indigo-600' : '';
+          html += '<button type="button" data-nav-idx="' + i + '" class="nav-pill-btn h-10 rounded-xl text-xs transition ' + baseCls + ringCls + '">' + q.number + '</button>';
+        }
+        grid.innerHTML = html;
+
+        var navBtns = grid.querySelectorAll('.nav-pill-btn');
+        for (var b = 0; b < navBtns.length; b++) {
+          navBtns[b].addEventListener('click', function (ev) {
+            var idx = Number(ev.currentTarget.getAttribute('data-nav-idx'));
+            state.currentSlideIndex = idx;
+            renderQuizSlide();
+          });
+        }
+      }
+
+      // -------------------- SUBMISSION & UNANSWERED GUARD MODAL --------------------
+
+      function attemptSubmitQuiz() {
+        var activeQs = getActiveQuestionsList();
+        var setAns = state.answers[state.activeSetKey] || {};
+        var unanswered = [];
+
+        for (var i = 0; i < activeQs.length; i++) {
+          if (!isQuestionFullyAnswered(activeQs[i], setAns)) {
+            unanswered.push({ index: i, q: activeQs[i] });
+          }
+        }
+
+        if (unanswered.length > 0) {
+          var pillsContainer = document.getElementById('modalUnansweredPills');
+          var pillsHtml = '';
+          for (var u = 0; u < unanswered.length; u++) {
+            var item = unanswered[u];
+            pillsHtml += '<button type="button" data-unans-idx="' + item.index + '" class="unans-pill px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 transition">Q' + item.q.number + ' (' + item.q.concepts.join(', ') + ')</button>';
+          }
+          pillsContainer.innerHTML = pillsHtml;
+
+          var pillBtns = pillsContainer.querySelectorAll('.unans-pill');
+          for (var p = 0; p < pillBtns.length; p++) {
+            pillBtns[p].addEventListener('click', function (ev) {
+              var targetIdx = Number(ev.currentTarget.getAttribute('data-unans-idx'));
+              document.getElementById('modalUnanswered').classList.add('hidden');
+              state.currentSlideIndex = targetIdx;
+              renderQuizSlide();
+            });
+          }
+
+          var firstUnans = unanswered[0];
+          var btnGoBack = document.getElementById('btnModalGoBack');
+          btnGoBack.textContent = 'Go Back to Question ' + firstUnans.q.number;
+          btnGoBack.onclick = function () {
+            document.getElementById('modalUnanswered').classList.add('hidden');
+            state.currentSlideIndex = firstUnans.index;
+            renderQuizSlide();
+          };
+
+          document.getElementById('modalUnanswered').classList.remove('hidden');
+          return;
+        }
+
+        finalizeAndGradeQuiz();
+      }
+
+      function finalizeAndGradeQuiz() {
+        document.getElementById('modalUnanswered').classList.add('hidden');
+        var fullQs = QUESTION_SETS[state.activeSetKey];
+        var setAns = state.answers[state.activeSetKey] || {};
+
+        var totalEarned = 0;
+        var totalMax = 0;
+        var reviewHtml = '';
+        var incorrectIds = [];
+
+        for (var i = 0; i < fullQs.length; i++) {
+          var q = fullQs[i];
+          var res = gradeQuestion(q, setAns);
+          totalEarned += res.earnedPts;
+          totalMax += res.maxPts;
+          if (res.status !== 'correct') {
+            incorrectIds.push(q.id);
+          }
+
+          var badgeHtml = '';
+          var cardBorder = '';
+          if (res.status === 'correct') {
+            badgeHtml = '<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 text-emerald-800">✓ Correct (' + res.earnedPts + ' / ' + res.maxPts + ' pts)</span>';
+            cardBorder = 'border-emerald-200';
+          } else if (res.status === 'partial') {
+            badgeHtml = '<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-800">◐ Partial (' + res.earnedPts + ' / ' + res.maxPts + ' pts)</span>';
+            cardBorder = 'border-amber-200';
+          } else {
+            badgeHtml = '<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800">✗ Incorrect (0 / ' + res.maxPts + ' pts)</span>';
+            cardBorder = 'border-rose-200';
+          }
+
+          var subRowsHtml = '<div class="grid grid-cols-1 gap-2 mt-3">';
+          for (var s = 0; s < res.subResults.length; s++) {
+            var sr = res.subResults[s];
+            var rowIcon = sr.isCorrect
+              ? '<span class="text-emerald-600 font-bold">✓</span>'
+              : '<span class="text-rose-600 font-bold">✗</span>';
+            var userDisplay = sr.userVal !== '' ? sr.userVal : '(blank)';
+            subRowsHtml +=
+              '<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs flex flex-wrap items-center justify-between gap-2">' +
+                '<div class="font-medium text-slate-700">' + rowIcon + ' ' + sr.label + '</div>' +
+                '<div class="flex flex-wrap items-center gap-3">' +
+                  '<span>Your Answer: <strong class="' + (sr.isCorrect ? 'text-emerald-700' : 'text-rose-600') + '">' + userDisplay + '</strong></span>' +
+                  '<span>Model Answer: <strong class="text-indigo-700">' + sr.modelVal + '</strong></span>' +
+                '</div>' +
+              '</div>';
+          }
+          subRowsHtml += '</div>';
+
+          reviewHtml +=
+            '<div class="bg-white rounded-2xl border-2 ' + cardBorder + ' p-5 shadow-2xs space-y-3">' +
+              '<div class="flex flex-wrap items-center justify-between gap-2">' +
+                '<div class="flex items-center gap-2">' +
+                  '<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-900 text-white">Q' + q.number + '</span>' +
+                  '<span class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">' + q.concepts.join(', ') + '</span>' +
+                  '<h3 class="text-sm font-bold text-slate-900">' + q.title + '</h3>' +
+                '</div>' +
+                badgeHtml +
+              '</div>' +
+              subRowsHtml +
+              '<div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 text-xs text-slate-700">' +
+                '<strong class="text-indigo-900">Explanation &amp; Keywords:</strong> ' + q.explanation +
+              '</div>' +
+            '</div>';
+        }
+
+        var finalScoreRounded = Math.round(totalEarned * 10) / 10;
+        var accuracyPct = Math.round((totalEarned / totalMax) * 100);
+        state.completedScores[state.activeSetKey] = accuracyPct;
+        saveSetProgress(state.activeSetKey);
+
+        document.getElementById('resultModeLabel').textContent = getSetDisplayName(state.activeSetKey);
+        document.getElementById('resultScoreBig').textContent = finalScoreRounded + ' / ' + totalMax;
+        document.getElementById('resultPercentBadge').textContent = accuracyPct + '% Accuracy across 30 Concepts (C1–C30)';
+        document.getElementById('resultsReviewList').innerHTML = reviewHtml;
+
+        var btnRetryInc = document.getElementById('btnRetryIncorrect');
+        if (incorrectIds.length > 0) {
+          btnRetryInc.classList.remove('hidden');
+          btnRetryInc.onclick = function () {
+            state.retryFilterIds = incorrectIds;
+            state.currentSlideIndex = 0;
+            switchView('viewQuiz');
+            renderQuizSlide();
+          };
+        } else {
+          btnRetryInc.classList.add('hidden');
+        }
+
+        // Configure Next Practice Set button
+        var btnNextSet = document.getElementById('btnNextPracticeSet');
+        var nextKey = state.activeSetKey === 'practice_set_1'
+          ? 'practice_set_2'
+          : (state.activeSetKey === 'practice_set_2' ? 'practice_set_3' : 'practice_set_1');
+        var nextNum = nextKey.replace('practice_set_', '');
+        btnNextSet.textContent = 'Start Next Practice Set (Set ' + nextNum + ')';
+        btnNextSet.onclick = function () {
+          state.selectedModeCard = 'practice';
+          state.selectedPracticeSet = nextKey;
+          state.activeSetKey = nextKey;
+          state.retryFilterIds = null;
+          state.currentSlideIndex = 0;
+          switchView('viewQuiz');
+          renderQuizSlide();
+        };
+
+        switchView('viewResults');
+      }
+
+      // -------------------- MATH RANDOM GENERATOR ("🎲 Fresh Random Numbers") --------------------
+
+      function randomizePracticeSet(setKey) {
+        var randChoice = function (arr) {
+          return arr[Math.floor(Math.random() * arr.length)];
+        };
+        var randInt = function (min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+
+        var baseCfg = JSON.parse(JSON.stringify(BASE_CONFIGS[setKey] || BASE_CONFIGS.practice_set_1));
+        baseCfg.numJoinedCubes = randInt(2, 5);
+        var prismPool = [
+          { name: 'Pentagonal', n: 5 },
+          { name: 'Hexagonal', n: 6 },
+          { name: 'Octagonal', n: 8 }
+        ];
+        var chosenPrism = randChoice(prismPool);
+        baseCfg.prismName = chosenPrism.name;
+        baseCfg.prismN = chosenPrism.n;
+
+        var netPairs = [
+          { b: 'B', l: 'D', col: 'E', opp: 'F' },
+          { b: 'A', l: 'C', col: 'B', opp: 'D' },
+          { b: 'E', l: 'F', col: 'A', opp: 'C' },
+          { b: 'D', l: 'B', col: 'C', opp: 'A' }
+        ];
+        var chosenNet = randChoice(netPairs);
+        baseCfg.netBase = chosenNet.b;
+        baseCfg.netLid = chosenNet.l;
+        baseCfg.netColored = chosenNet.col;
+        baseCfg.netColoredOpp = chosenNet.opp;
+
+        baseCfg.cubL = randInt(6, 12);
+        baseCfg.cubW = randInt(4, 5);
+        baseCfg.cubH = randInt(2, 3);
+
+        baseCfg.compGiven = randInt(22, 68);
+        baseCfg.suppGiven = randInt(105, 155);
+        baseCfg.algMult = randChoice([2, 3]);
+        var multSum = 1 + baseCfg.algMult;
+        var validX = randInt(25, 45);
+        baseCfg.algConst = 180 - multSum * validX;
+
+        baseCfg.pt1 = randInt(80, 120);
+        baseCfg.pt2 = randInt(110, 150);
+        baseCfg.reflexDeg = randInt(240, 315);
+        baseCfg.intGiven = randInt(48, 82);
+
+        baseCfg.tri1 = randInt(40, 65);
+        baseCfg.tri2 = randInt(50, 75);
+        baseCfg.isoApex = randChoice([30, 40, 50, 60, 70]);
+        var triX = randInt(32, 42);
+        baseCfg.algTriDiff = 180 - 4 * triX;
+
+        baseCfg.q1 = randInt(75, 95);
+        baseCfg.q2 = randInt(95, 115);
+        baseCfg.q3 = randInt(85, 100);
+        baseCfg.parGiven = randInt(52, 78);
+        baseCfg.clockHour = randChoice([1, 2, 3, 4]);
+
+        QUESTION_SETS[setKey] = buildQuestionSet(baseCfg);
+        state.answers[setKey] = {};
+        state.completedScores[setKey] = null;
+        saveSetProgress(setKey);
+        updateStartScreenUI();
+        if (state.inspectorUnlocked) {
+          renderParentInspectorTable();
+        }
+        showToast('🎲 Fresh numbers and angles generated for ' + getSetDisplayName(setKey) + '!');
+      }
+
+      // -------------------- PASSWORD-PROTECTED PARENT INSPECTOR ("nopeeking") & QA SELF-TEST --------------------
+
+      function renderParentInspectorTable() {
+        var tbody = document.getElementById('tbodyParentInspector');
+        if (!state.inspectorUnlocked) {
+          tbody.innerHTML = '';
+          return;
+        }
+        var qs = QUESTION_SETS[state.activeInspectorTab];
+        var html = '';
+        for (var i = 0; i < qs.length; i++) {
+          var q = qs[i];
+          var ansSummary = q.subItems.map(function (s, idx) {
+            return '<div><span class="font-semibold text-slate-600">(' + (idx + 1) + ')</span> <strong class="text-indigo-700">' + s.answer + '</strong></div>';
+          }).join('');
+          html +=
+            '<tr class="hover:bg-slate-50">' +
+              '<td class="py-2.5 px-3 font-bold text-slate-900">Q' + q.number + '</td>' +
+              '<td class="py-2.5 px-3 font-bold text-indigo-700">' + q.concepts.join(', ') + '</td>' +
+              '<td class="py-2.5 px-3 text-slate-700 font-medium">' + q.title + ' <span class="text-slate-400">[' + q.subItems.length + ' sub-items]</span></td>' +
+              '<td class="py-2.5 px-3 space-y-0.5">' + ansSummary + '</td>' +
+              '<td class="py-2.5 px-3 font-bold text-slate-800">' + q.points + '</td>' +
+            '</tr>';
+        }
+        tbody.innerHTML = html;
+      }
+
+      function runAutomatedQaSelfTest() {
+        var setKeys = ['practice_set_1', 'practice_set_2', 'practice_set_3', 'official'];
+        var allPassed = true;
+        var reportLines = [];
+
+        for (var s = 0; s < setKeys.length; s++) {
+          var sk = setKeys[s];
+          var qs = QUESTION_SETS[sk];
+          var modelAnsMap = {};
+          var blankAnsMap = {};
+          var coveredSet = {};
+
+          for (var i = 0; i < qs.length; i++) {
+            var q = qs[i];
+            for (var c = 0; c < q.concepts.length; c++) {
+              coveredSet[q.concepts[c]] = true;
+            }
+            for (var j = 0; j < q.subItems.length; j++) {
+              var sub = q.subItems[j];
+              modelAnsMap[sub.id] = sub.answer;
+              blankAnsMap[sub.id] = '';
+            }
+          }
+
+          var modelScore = 0;
+          var blankScore = 0;
+          var maxScore = 0;
+
+          for (var k = 0; k < qs.length; k++) {
+            var rModel = gradeQuestion(qs[k], modelAnsMap);
+            var rBlank = gradeQuestion(qs[k], blankAnsMap);
+            modelScore += rModel.earnedPts;
+            blankScore += rBlank.earnedPts;
+            maxScore += qs[k].points;
+          }
+
+          var covCount = Object.keys(coveredSet).length;
+          var setPass = (Math.round(modelScore) === 100) && (blankScore === 0) && (covCount === 30);
+          if (!setPass) allPassed = false;
+          reportLines.push(getSetDisplayName(sk) + ': Model=' + modelScore + '/' + maxScore + ', Blank=' + blankScore + '/' + maxScore + ', Concepts=' + covCount + '/30 (' + (setPass ? 'PASS' : 'FAIL') + ')');
+        }
+
+        var banner = document.getElementById('qaSelfTestBanner');
+        banner.classList.remove('hidden');
+        if (allPassed) {
+          banner.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-medium space-y-1';
+          banner.innerHTML = '<div class="font-bold">✓ QA Self-Test PASSED (100% Model Accuracy, 0% Blank Accuracy, 30/30 C1–C30 Concept Coverage)</div><div>' + reportLines.join(' • ') + '</div>';
+        } else {
+          banner.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-medium space-y-1';
+          banner.innerHTML = '<div class="font-bold">✗ QA Self-Test Alert</div><div>' + reportLines.join(' • ') + '</div>';
+        }
+      }
+
+      // -------------------- PRINTABLE PAPER WORKSHEET VIEW --------------------
+
+      function renderPrintableView() {
+        var sk = state.activePrintSet;
+        var qs = QUESTION_SETS[sk];
+        document.getElementById('printSetLabel').textContent = getSetDisplayName(sk);
+
+        var btns = document.querySelectorAll('.print-set-btn');
+        for (var b = 0; b < btns.length; b++) {
+          var btnSk = btns[b].getAttribute('data-print-set');
+          btns[b].className = btnSk === sk
+            ? 'print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm'
+            : 'print-set-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600';
+        }
+
+        var html = '';
+        for (var i = 0; i < qs.length; i++) {
+          var q = qs[i];
+          var subsHtml = '<div class="grid grid-cols-1 gap-2 mt-2">';
+          for (var s = 0; s < q.subItems.length; s++) {
+            var sub = q.subItems[s];
+            subsHtml +=
+              '<div class="flex items-baseline justify-between gap-3 text-xs border-b border-dotted border-slate-300 pb-1.5">' +
+                '<span>' + sub.label + '</span>' +
+                '<span class="font-mono text-slate-400 shrink-0">Answer: _______________________</span>' +
+              '</div>';
+          }
+          subsHtml += '</div>';
+
+          html +=
+            '<div class="p-4 rounded-xl border border-slate-300 space-y-2 print-break-avoid">' +
+              '<div class="flex items-center justify-between border-b border-slate-200 pb-1.5">' +
+                '<span class="text-xs font-extrabold text-slate-900">Question ' + q.number + ' — ' + q.title + ' (' + q.concepts.join(', ') + ')</span>' +
+                '<span class="text-xs font-bold text-slate-700">[' + q.points + ' pts]</span>' +
+              '</div>' +
+              '<div class="text-xs text-slate-800 space-y-2">' + q.promptHtml + '</div>' +
+              subsHtml +
+            '</div>';
+        }
+        document.getElementById('printQuestionsContainer').innerHTML = html;
+      }
+
+      // -------------------- EVENT BINDINGS --------------------
+
+      function initEventListeners() {
+        // Clickable Mode Cards
+        document.getElementById('cardPracticeMode').addEventListener('click', function () {
+          state.selectedModeCard = 'practice';
+          updateStartScreenUI();
+        });
+
+        document.getElementById('cardOfficialMode').addEventListener('click', function () {
+          state.selectedModeCard = 'official';
+          updateStartScreenUI();
+        });
+
+        // Practice Set Pills 1..3
+        var setMap = [
+          { id: 'pillSet1', key: 'practice_set_1' },
+          { id: 'pillSet2', key: 'practice_set_2' },
+          { id: 'pillSet3', key: 'practice_set_3' }
+        ];
+        setMap.forEach(function (item) {
+          document.getElementById(item.id).addEventListener('click', function (ev) {
+            ev.stopPropagation();
+            state.selectedModeCard = 'practice';
+            state.selectedPracticeSet = item.key;
+            updateStartScreenUI();
+          });
+        });
+
+        // Randomize Math Button
+        document.getElementById('btnRandomizeMath').addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          state.selectedModeCard = 'practice';
+          randomizePracticeSet(state.selectedPracticeSet);
+        });
+
+        // Start & Reset Buttons on Practice Card
+        document.getElementById('btnStartPractice').addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          state.selectedModeCard = 'practice';
+          state.activeSetKey = state.selectedPracticeSet;
+          state.retryFilterIds = null;
+          state.currentSlideIndex = 0;
+          switchView('viewQuiz');
+          renderQuizSlide();
+        });
+
+        document.getElementById('btnResetPractice').addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          var targetSet = state.selectedPracticeSet;
+          state.answers[targetSet] = {};
+          state.completedScores[targetSet] = null;
+          saveSetProgress(targetSet);
+          updateStartScreenUI();
+          showToast('Cleared saved progress for ' + getSetDisplayName(targetSet) + '.');
+        });
+
+        // Start & Reset Buttons on Official Card
+        document.getElementById('btnStartOfficial').addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          state.selectedModeCard = 'official';
+          state.activeSetKey = 'official';
+          state.retryFilterIds = null;
+          state.currentSlideIndex = 0;
+          switchView('viewQuiz');
+          renderQuizSlide();
+        });
+
+        document.getElementById('btnResetOfficial').addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          state.answers.official = {};
+          state.completedScores.official = null;
+          saveSetProgress('official');
+          updateStartScreenUI();
+          showToast('Cleared saved progress for Official Pre-Test Mode.');
+        });
+
+        // Slide Navigation
+        document.getElementById('btnPrevSlide').addEventListener('click', function () {
+          if (state.currentSlideIndex > 0) {
+            state.currentSlideIndex--;
+            renderQuizSlide();
+          }
+        });
+
+        document.getElementById('btnNextSlide').addEventListener('click', function () {
+          var activeQs = getActiveQuestionsList();
+          if (state.currentSlideIndex < activeQs.length - 1) {
+            state.currentSlideIndex++;
+            renderQuizSlide();
+          }
+        });
+
+        document.getElementById('btnSubmitQuiz').addEventListener('click', attemptSubmitQuiz);
+        document.getElementById('btnQuickSubmitSidebar').addEventListener('click', attemptSubmitQuiz);
+        document.getElementById('btnModalSubmitAnyway').addEventListener('click', finalizeAndGradeQuiz);
+
+        document.getElementById('btnSaveAndExit').addEventListener('click', function () {
+          updateStartScreenUI();
+          switchView('viewStart');
+        });
+
+        // Results Actions
+        document.getElementById('btnRetakeCurrent').addEventListener('click', function () {
+          state.answers[state.activeSetKey] = {};
+          state.completedScores[state.activeSetKey] = null;
+          state.retryFilterIds = null;
+          saveSetProgress(state.activeSetKey);
+          state.currentSlideIndex = 0;
+          switchView('viewQuiz');
+          renderQuizSlide();
+        });
+
+        document.getElementById('btnResultsToStart').addEventListener('click', function () {
+          updateStartScreenUI();
+          switchView('viewStart');
+        });
+
+        // Parent Inspector Toggle & Password Modal ("nopeeking")
+        document.getElementById('btnToggleParentInspector').addEventListener('click', function () {
+          var panel = document.getElementById('panelParentInspector');
+          var icon = document.getElementById('iconParentToggle');
+          if (state.inspectorUnlocked && !panel.classList.contains('hidden')) {
+            state.inspectorUnlocked = false;
+            document.getElementById('tbodyParentInspector').innerHTML = '';
+            panel.classList.add('hidden');
+            icon.textContent = 'Show Inspector ▼';
+            return;
+          }
+          document.getElementById('inputParentPassword').value = '';
+          document.getElementById('msgParentPasswordError').classList.add('hidden');
+          document.getElementById('modalParentPassword').classList.remove('hidden');
+          setTimeout(function () {
+            document.getElementById('inputParentPassword').focus();
+          }, 50);
+        });
+
+        var unlockAttempt = function () {
+          var val = document.getElementById('inputParentPassword').value.trim().toLowerCase();
+          if (val === 'nopeeking') {
+            state.inspectorUnlocked = true;
+            document.getElementById('modalParentPassword').classList.add('hidden');
+            document.getElementById('panelParentInspector').classList.remove('hidden');
+            document.getElementById('iconParentToggle').textContent = 'Hide Inspector ▲';
+            renderParentInspectorTable();
+          } else {
+            document.getElementById('msgParentPasswordError').classList.remove('hidden');
+          }
+        };
+
+        document.getElementById('btnUnlockInspector').addEventListener('click', unlockAttempt);
+        document.getElementById('inputParentPassword').addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter') unlockAttempt();
+        });
+        document.getElementById('btnCancelPassword').addEventListener('click', function () {
+          document.getElementById('modalParentPassword').classList.add('hidden');
+        });
+
+        var inspTabBtns = document.querySelectorAll('.insp-tab-btn');
+        for (var t = 0; t < inspTabBtns.length; t++) {
+          inspTabBtns[t].addEventListener('click', function (ev) {
+            var tabKey = ev.currentTarget.getAttribute('data-insp-tab');
+            state.activeInspectorTab = tabKey;
+            for (var k = 0; k < inspTabBtns.length; k++) {
+              var isAct = inspTabBtns[k].getAttribute('data-insp-tab') === tabKey;
+              inspTabBtns[k].className = isAct
+                ? 'insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white'
+                : 'insp-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200';
+            }
+            renderParentInspectorTable();
+          });
+        }
+
+        document.getElementById('btnRunQaSelfTest').addEventListener('click', runAutomatedQaSelfTest);
+
+        // Print / Paper Worksheet View
+        document.getElementById('btnHeaderPrint').addEventListener('click', function () {
+          state.activePrintSet = state.selectedModeCard === 'official' ? 'official' : state.selectedPracticeSet;
+          renderPrintableView();
+          switchView('viewPrint');
+        });
+
+        document.getElementById('btnPrintBackToQuiz').addEventListener('click', function () {
+          updateStartScreenUI();
+          switchView('viewStart');
+        });
+
+        var printSetBtns = document.querySelectorAll('.print-set-btn');
+        for (var p = 0; p < printSetBtns.length; p++) {
+          printSetBtns[p].addEventListener('click', function (ev) {
+            state.activePrintSet = ev.currentTarget.getAttribute('data-print-set');
+            renderPrintableView();
+          });
+        }
+
+        document.getElementById('btnExecutePrint').addEventListener('click', function () {
+          try {
+            window.print();
+          } catch (e) {
+            showToast('Use Download Printable HTML or Open in New Tab if browser blocks printing.');
+          }
+        });
+
+        document.getElementById('btnDownloadPrintable').addEventListener('click', function () {
+          var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Printable Worksheet</title><script src="https://cdn.tailwindcss.com/3.4.17"><\/script></head><body class="p-6">' +
+            document.getElementById('printablePaperSheet').outerHTML + '</body></html>';
+          var blob = new Blob([fullHtml], { type: 'text/html' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = 'p4-math-t2-2-worksheet-' + state.activePrintSet + '.html';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('btnOpenPrintNewTab').addEventListener('click', function () {
+          var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Printable Worksheet</title><script src="https://cdn.tailwindcss.com/3.4.17"><\/script></head><body class="p-6">' +
+            document.getElementById('printablePaperSheet').outerHTML + '</body></html>';
+          var w = window.open('', '_blank');
+          if (w) {
+            w.document.open();
+            w.document.write(fullHtml);
+            w.document.close();
+          } else {
+            showToast('Pop-up blocked — please use Download Printable HTML.');
+          }
+        });
+      }
+
+      // Initialize App
+      loadPersistedState();
+      initEventListeners();
+      updateStartScreenUI();
+    })();
+  </script>
+</body>
+</html>
