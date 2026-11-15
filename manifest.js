@@ -39,7 +39,7 @@ const PORTAL_DATA = {
       {
         id: "math-t2-2",
         title: "T2 Math II: Shapes, Nets, Angles & Fractions",
-        subtitle: "3D Shapes, Nets, Angles & Fractions (C1–C30)",
+        subtitle: "Geometric Problem-solving, Angle Measurements, and Fraction",
         subject: "math",
         subjectLabel: "Mathematics",
         status: "active",
