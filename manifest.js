@@ -39,14 +39,14 @@ const PORTAL_DATA = {
       {
         id: "math-t2-2",
         title: "T2 Math II: Shapes, Nets, Angles & Fractions",
-        subtitle: "Primary 4 Mathematics • 30 Concepts (C1–C30)",
-        subject: "Mathematics",
+        subtitle: "3D Shapes, Nets, Angles & Fractions (C1–C30)",
+        subject: "math",
         subjectLabel: "Mathematics",
         status: "active",
         folderUrl: "./math-t2-2/",
         description: "3D solid properties, composite cubes, folding Cube Net N, protractor reading, intersecting & parallel line angles, 3:30 clock angles, and fractions.",
-        questionCount: 15,
-        maxScore: 100,
+        questionCount: "15 Questions",
+        maxScore: "100 Pts",
         formats: "Quiz & Paper"
       },
       {
