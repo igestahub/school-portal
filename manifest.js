@@ -38,15 +38,15 @@ const PORTAL_DATA = {
       },
       {
         id: "math-t2-2",
-        title: "T2 Math II: Fractions, Decimals & Geometry",
-        subtitle: "Equivalent Fractions, Angles, Area & Perimeter",
-        subject: "math",
+        title: "T2 Math II: Shapes, Nets, Angles & Fractions",
+        subtitle: "Primary 4 Mathematics • 30 Concepts (C1–C30)",
+        subject: "Mathematics",
         subjectLabel: "Mathematics",
-        status: "upcoming",
+        status: "active",
         folderUrl: "./math-t2-2/",
-        description: "Master mixed numbers, decimal place values, measuring angles with protractors, 2D shape properties, and calculating perimeter and area.",
-        questionCount: "TBD",
-        maxScore: "TBD",
+        description: "3D solid properties, composite cubes, folding Cube Net N, protractor reading, intersecting & parallel line angles, 3:30 clock angles, and fractions.",
+        questionCount: 15,
+        maxScore: 100,
         formats: "Quiz & Paper"
       },
       {
