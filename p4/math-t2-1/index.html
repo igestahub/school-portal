@@ -557,17 +557,17 @@
           items: [
             {
               id: 'a',
-              label: `1. ${cfg.c1[0][0]} × ${cfg.c1[0][1]} =`,
+              label: ("1. " + (cfg.c1[0][0]) + " × " + (cfg.c1[0][1]) + " ="),
               answer: cfg.c1[0][0] * cfg.c1[0][1],
               points: 1,
-              working: `${cfg.c1[0][0]} × ${cfg.c1[0][1]} = ${cfg.c1[0][0] * cfg.c1[0][1]} (Ones: ${cfg.c1[0][0] % 10} × ${cfg.c1[0][1]} = ${(cfg.c1[0][0] % 10) * cfg.c1[0][1]}; Tens: ${Math.floor(cfg.c1[0][0] / 10)}0 × ${cfg.c1[0][1]} = ${Math.floor(cfg.c1[0][0] / 10) * 10 * cfg.c1[0][1]})`
+              working: ((cfg.c1[0][0]) + " × " + (cfg.c1[0][1]) + " = " + (cfg.c1[0][0] * cfg.c1[0][1]) + " (Ones: " + (cfg.c1[0][0] % 10) + " × " + (cfg.c1[0][1]) + " = " + ((cfg.c1[0][0] % 10) * cfg.c1[0][1]) + "; Tens: " + (Math.floor(cfg.c1[0][0] / 10)) + "0 × " + (cfg.c1[0][1]) + " = " + (Math.floor(cfg.c1[0][0] / 10) * 10 * cfg.c1[0][1]) + ")")
             },
             {
               id: 'b',
-              label: `2. ${cfg.c1[1][0]} × ${cfg.c1[1][1]} =`,
+              label: ("2. " + (cfg.c1[1][0]) + " × " + (cfg.c1[1][1]) + " ="),
               answer: cfg.c1[1][0] * cfg.c1[1][1],
               points: 1,
-              working: `${cfg.c1[1][0]} × ${cfg.c1[1][1]} = ${cfg.c1[1][0] * cfg.c1[1][1]} (Ones: ${cfg.c1[1][0] % 10} × ${cfg.c1[1][1]} = ${(cfg.c1[1][0] % 10) * cfg.c1[1][1]}; Tens: ${Math.floor(cfg.c1[1][0] / 10)}0 × ${cfg.c1[1][1]} = ${Math.floor(cfg.c1[1][0] / 10) * 10 * cfg.c1[1][1]})`
+              working: ((cfg.c1[1][0]) + " × " + (cfg.c1[1][1]) + " = " + (cfg.c1[1][0] * cfg.c1[1][1]) + " (Ones: " + (cfg.c1[1][0] % 10) + " × " + (cfg.c1[1][1]) + " = " + ((cfg.c1[1][0] % 10) * cfg.c1[1][1]) + "; Tens: " + (Math.floor(cfg.c1[1][0] / 10)) + "0 × " + (cfg.c1[1][1]) + " = " + (Math.floor(cfg.c1[1][0] / 10) * 10 * cfg.c1[1][1]) + ")")
             }
           ]
         },
@@ -585,17 +585,17 @@
           items: [
             {
               id: 'a',
-              label: `4. ${cfg.c2[0][0]} × ${cfg.c2[0][1]} =`,
+              label: ("4. " + (cfg.c2[0][0]) + " × " + (cfg.c2[0][1]) + " ="),
               answer: cfg.c2[0][0] * cfg.c2[0][1],
               points: 1,
-              working: `${cfg.c2[0][0]} × ${cfg.c2[0][1]} = ${cfg.c2[0][0] * cfg.c2[0][1]} (Ones: ${cfg.c2[0][0] % 10} × ${cfg.c2[0][1]} = ${(cfg.c2[0][0] % 10) * cfg.c2[0][1]}, carry ${Math.floor(((cfg.c2[0][0] % 10) * cfg.c2[0][1]) / 10)})`
+              working: ((cfg.c2[0][0]) + " × " + (cfg.c2[0][1]) + " = " + (cfg.c2[0][0] * cfg.c2[0][1]) + " (Ones: " + (cfg.c2[0][0] % 10) + " × " + (cfg.c2[0][1]) + " = " + ((cfg.c2[0][0] % 10) * cfg.c2[0][1]) + ", carry " + (Math.floor(((cfg.c2[0][0] % 10) * cfg.c2[0][1]) / 10)) + ")")
             },
             {
               id: 'b',
-              label: `5. ${cfg.c2[1][0]} × ${cfg.c2[1][1]} =`,
+              label: ("5. " + (cfg.c2[1][0]) + " × " + (cfg.c2[1][1]) + " ="),
               answer: cfg.c2[1][0] * cfg.c2[1][1],
               points: 1,
-              working: `${cfg.c2[1][0]} × ${cfg.c2[1][1]} = ${cfg.c2[1][0] * cfg.c2[1][1]} (Ones: ${cfg.c2[1][0] % 10} × ${cfg.c2[1][1]} = ${(cfg.c2[1][0] % 10) * cfg.c2[1][1]}, carry ${Math.floor(((cfg.c2[1][0] % 10) * cfg.c2[1][1]) / 10)})`
+              working: ((cfg.c2[1][0]) + " × " + (cfg.c2[1][1]) + " = " + (cfg.c2[1][0] * cfg.c2[1][1]) + " (Ones: " + (cfg.c2[1][0] % 10) + " × " + (cfg.c2[1][1]) + " = " + ((cfg.c2[1][0] % 10) * cfg.c2[1][1]) + ", carry " + (Math.floor(((cfg.c2[1][0] % 10) * cfg.c2[1][1]) / 10)) + ")")
             }
           ]
         },
@@ -613,10 +613,10 @@
           items: [
             {
               id: 'a',
-              label: `6. ${cfg.c3[0]} × ${cfg.c3[1]} =`,
+              label: ("6. " + (cfg.c3[0]) + " × " + (cfg.c3[1]) + " ="),
               answer: cfg.c3[0] * cfg.c3[1],
               points: 1,
-              working: `${cfg.c3[0]} × ${cfg.c3[1]} = ${cfg.c3[0] * cfg.c3[1]}`
+              working: ((cfg.c3[0]) + " × " + (cfg.c3[1]) + " = " + (cfg.c3[0] * cfg.c3[1]))
             }
           ]
         },
@@ -634,10 +634,10 @@
           items: [
             {
               id: 'a',
-              label: `3. ${cfg.c4[0]} × ${cfg.c4[1]} =`,
+              label: ("3. " + (cfg.c4[0]) + " × " + (cfg.c4[1]) + " ="),
               answer: cfg.c4[0] * cfg.c4[1],
               points: 1,
-              working: `Partial Product 1: ${cfg.c4[0]} × ${cfg.c4[1] % 10} = ${cfg.c4[0] * (cfg.c4[1] % 10)}; Partial Product 2: ${cfg.c4[0]} × ${Math.floor(cfg.c4[1] / 10) * 10} = ${cfg.c4[0] * Math.floor(cfg.c4[1] / 10) * 10}; Total = ${cfg.c4[0] * cfg.c4[1]}`
+              working: ("Partial Product 1: " + (cfg.c4[0]) + " × " + (cfg.c4[1] % 10) + " = " + (cfg.c4[0] * (cfg.c4[1] % 10)) + "; Partial Product 2: " + (cfg.c4[0]) + " × " + (Math.floor(cfg.c4[1] / 10) * 10) + " = " + (cfg.c4[0] * Math.floor(cfg.c4[1] / 10) * 10) + "; Total = " + (cfg.c4[0] * cfg.c4[1]))
             }
           ]
         },
@@ -658,7 +658,7 @@
               label: `Total amount (${cfg.c5.unit}):`,
               answer: cfg.c5.qty * cfg.c5.price,
               points: 4,
-              working: `Know: ${cfg.c5.know} | Ask: ${cfg.c5.ask} | Do: ${cfg.c5.price} × ${cfg.c5.qty} = ${cfg.c5.qty * cfg.c5.price} | Answer: ${cfg.c5.answerSentence}`
+              working: ("Know: " + (cfg.c5.know) + " | Ask: " + (cfg.c5.ask) + " | Do: " + (cfg.c5.price) + " × " + (cfg.c5.qty) + " = " + (cfg.c5.qty * cfg.c5.price) + " | Answer: " + (cfg.c5.answerSentence))
             }
           ]
         },
@@ -679,7 +679,7 @@
               label: `Total produced (${cfg.c6.unit}):`,
               answer: cfg.c6.rate * cfg.c6.days,
               points: 4,
-              working: `Know: ${cfg.c6.know} | Ask: ${cfg.c6.ask} | Do: ${cfg.c6.rate} × ${cfg.c6.days} = ${cfg.c6.rate * (cfg.c6.days % 10)} + ${cfg.c6.rate * Math.floor(cfg.c6.days / 10) * 10} = ${cfg.c6.rate * cfg.c6.days} | Answer: ${cfg.c6.answerSentence}`
+              working: ("Know: " + (cfg.c6.know) + " | Ask: " + (cfg.c6.ask) + " | Do: " + (cfg.c6.rate) + " × " + (cfg.c6.days) + " = " + (cfg.c6.rate * (cfg.c6.days % 10)) + " + " + (cfg.c6.rate * Math.floor(cfg.c6.days / 10) * 10) + " = " + (cfg.c6.rate * cfg.c6.days) + " | Answer: " + (cfg.c6.answerSentence))
             }
           ]
         },
@@ -697,17 +697,17 @@
           items: [
             {
               id: 'a',
-              label: `1. ${cfg.c7[0][0]} ÷ ${cfg.c7[0][1]} =`,
+              label: ("1. " + (cfg.c7[0][0]) + " ÷ " + (cfg.c7[0][1]) + " ="),
               answer: cfg.c7[0][0] / cfg.c7[0][1],
               points: 1,
-              working: `${cfg.c7[0][0]} ÷ ${cfg.c7[0][1]} = ${cfg.c7[0][0] / cfg.c7[0][1]} (Exact division, remainder 0)`
+              working: ((cfg.c7[0][0]) + " ÷ " + (cfg.c7[0][1]) + " = " + (cfg.c7[0][0] / cfg.c7[0][1]) + " (Exact division, remainder 0)")
             },
             {
               id: 'b',
-              label: `2. ${cfg.c7[1][0]} ÷ ${cfg.c7[1][1]} =`,
+              label: ("2. " + (cfg.c7[1][0]) + " ÷ " + (cfg.c7[1][1]) + " ="),
               answer: cfg.c7[1][0] / cfg.c7[1][1],
               points: 1,
-              working: `${cfg.c7[1][0]} ÷ ${cfg.c7[1][1]} = ${cfg.c7[1][0] / cfg.c7[1][1]} (Exact division, remainder 0)`
+              working: ((cfg.c7[1][0]) + " ÷ " + (cfg.c7[1][1]) + " = " + (cfg.c7[1][0] / cfg.c7[1][1]) + " (Exact division, remainder 0)")
             }
           ]
         },
@@ -725,10 +725,10 @@
           items: [
             {
               id: 'a',
-              label: `3. ${cfg.c8[0]} ÷ ${cfg.c8[1]} =`,
+              label: ("3. " + (cfg.c8[0]) + " ÷ " + (cfg.c8[1]) + " ="),
               answer: cfg.c8[0] / cfg.c8[1],
               points: 1,
-              working: `${cfg.c8[0]} ÷ ${cfg.c8[1]} = ${cfg.c8[0] / cfg.c8[1]} (Exact division, remainder 0)`
+              working: ((cfg.c8[0]) + " ÷ " + (cfg.c8[1]) + " = " + (cfg.c8[0] / cfg.c8[1]) + " (Exact division, remainder 0)")
             }
           ]
         },
@@ -746,19 +746,19 @@
           items: [
             {
               id: 'a',
-              label: `4. ${cfg.c9[0][0]} ÷ ${cfg.c9[0][1]} =`,
+              label: ("4. " + (cfg.c9[0][0]) + " ÷ " + (cfg.c9[0][1]) + " ="),
               q: Math.floor(cfg.c9[0][0] / cfg.c9[0][1]),
               r: cfg.c9[0][0] % cfg.c9[0][1],
               points: 1,
-              working: `${cfg.c9[0][0]} ÷ ${cfg.c9[0][1]} = ${Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} r ${cfg.c9[0][0] % cfg.c9[0][1]} (since ${cfg.c9[0][1]} × ${Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} = ${cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])}, and ${cfg.c9[0][0]} − ${cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])} = ${cfg.c9[0][0] % cfg.c9[0][1]})`
+              working: ((cfg.c9[0][0]) + " ÷ " + (cfg.c9[0][1]) + " = " + (Math.floor(cfg.c9[0][0] / cfg.c9[0][1])) + " r " + (cfg.c9[0][0] % cfg.c9[0][1]) + " (since " + (cfg.c9[0][1]) + " × " + (Math.floor(cfg.c9[0][0] / cfg.c9[0][1])) + " = " + (cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])) + ", and " + (cfg.c9[0][0]) + " − " + (cfg.c9[0][1] * Math.floor(cfg.c9[0][0] / cfg.c9[0][1])) + " = " + (cfg.c9[0][0] % cfg.c9[0][1]) + ")")
             },
             {
               id: 'b',
-              label: `5. ${cfg.c9[1][0]} ÷ ${cfg.c9[1][1]} =`,
+              label: ("5. " + (cfg.c9[1][0]) + " ÷ " + (cfg.c9[1][1]) + " ="),
               q: Math.floor(cfg.c9[1][0] / cfg.c9[1][1]),
               r: cfg.c9[1][0] % cfg.c9[1][1],
               points: 1,
-              working: `${cfg.c9[1][0]} ÷ ${cfg.c9[1][1]} = ${Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} r ${cfg.c9[1][0] % cfg.c9[1][1]} (since ${cfg.c9[1][1]} × ${Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} = ${cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])}, and ${cfg.c9[1][0]} − ${cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])} = ${cfg.c9[1][0] % cfg.c9[1][1]})`
+              working: ((cfg.c9[1][0]) + " ÷ " + (cfg.c9[1][1]) + " = " + (Math.floor(cfg.c9[1][0] / cfg.c9[1][1])) + " r " + (cfg.c9[1][0] % cfg.c9[1][1]) + " (since " + (cfg.c9[1][1]) + " × " + (Math.floor(cfg.c9[1][0] / cfg.c9[1][1])) + " = " + (cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])) + ", and " + (cfg.c9[1][0]) + " − " + (cfg.c9[1][1] * Math.floor(cfg.c9[1][0] / cfg.c9[1][1])) + " = " + (cfg.c9[1][0] % cfg.c9[1][1]) + ")")
             }
           ]
         },
@@ -776,11 +776,11 @@
           items: [
             {
               id: 'a',
-              label: `6. ${cfg.c10[0]} ÷ ${cfg.c10[1]} =`,
+              label: ("6. " + (cfg.c10[0]) + " ÷ " + (cfg.c10[1]) + " ="),
               q: Math.floor(cfg.c10[0] / cfg.c10[1]),
               r: cfg.c10[0] % cfg.c10[1],
               points: 1,
-              working: `${cfg.c10[0]} ÷ ${cfg.c10[1]} = ${Math.floor(cfg.c10[0] / cfg.c10[1])} r ${cfg.c10[0] % cfg.c10[1]} (since ${cfg.c10[1]} × ${Math.floor(cfg.c10[0] / cfg.c10[1])} = ${cfg.c10[1] * Math.floor(cfg.c10[0] / cfg.c10[1])}, remainder ${cfg.c10[0] % cfg.c10[1]})`
+              working: ((cfg.c10[0]) + " ÷ " + (cfg.c10[1]) + " = " + (Math.floor(cfg.c10[0] / cfg.c10[1])) + " r " + (cfg.c10[0] % cfg.c10[1]) + " (since " + (cfg.c10[1]) + " × " + (Math.floor(cfg.c10[0] / cfg.c10[1])) + " = " + (cfg.c10[1] * Math.floor(cfg.c10[0] / cfg.c10[1])) + ", remainder " + (cfg.c10[0] % cfg.c10[1]) + ")")
             }
           ]
         },
@@ -801,7 +801,7 @@
               label: `Number of ${cfg.c11.unit} needed:`,
               answer: cfg.c11.total / cfg.c11.perGroup,
               points: 4,
-              working: `Know: ${cfg.c11.know} | Ask: ${cfg.c11.ask} | Do: ${cfg.c11.total} ÷ ${cfg.c11.perGroup} = ${cfg.c11.total / cfg.c11.perGroup} | Answer: ${cfg.c11.answerSentence}`
+              working: ("Know: " + (cfg.c11.know) + " | Ask: " + (cfg.c11.ask) + " | Do: " + (cfg.c11.total) + " ÷ " + (cfg.c11.perGroup) + " = " + (cfg.c11.total / cfg.c11.perGroup) + " | Answer: " + (cfg.c11.answerSentence))
             }
           ]
         },
@@ -819,13 +819,13 @@
           items: [
             {
               id: 'a',
-              label: `Completed ${cfg.c12.groupUnit} (Quotient) & Leftover ${cfg.c12.itemUnit} (Remainder):`,
+              label: ("Completed " + (cfg.c12.groupUnit) + " (Quotient) & Leftover " + (cfg.c12.itemUnit) + " (Remainder):"),
               qLabel: `Completed ${cfg.c12.groupUnit}`,
               rLabel: `Remaining ${cfg.c12.itemUnit}`,
               q: Math.floor(cfg.c12.total / cfg.c12.perGroup),
               r: cfg.c12.total % cfg.c12.perGroup,
               points: 4,
-              working: `Know: ${cfg.c12.know} | Ask: ${cfg.c12.ask} | Do: ${cfg.c12.total} ÷ ${cfg.c12.perGroup} = ${Math.floor(cfg.c12.total / cfg.c12.perGroup)} r ${cfg.c12.total % cfg.c12.perGroup} | Answer: ${cfg.c12.answerSentence}`
+              working: ("Know: " + (cfg.c12.know) + " | Ask: " + (cfg.c12.ask) + " | Do: " + (cfg.c12.total) + " ÷ " + (cfg.c12.perGroup) + " = " + (Math.floor(cfg.c12.total / cfg.c12.perGroup)) + " r " + (cfg.c12.total % cfg.c12.perGroup) + " | Answer: " + (cfg.c12.answerSentence))
             }
           ]
         },
@@ -842,10 +842,10 @@
           prompt: 'List all whole-number factors for each number below (separate numbers with commas):',
           items: cfg.c13.map((num, idx) => ({
             id: String.fromCharCode(97 + idx),
-            label: `${idx + 1}. Factors of ${num} =`,
+            label: ((idx + 1) + ". Factors of " + (num) + " ="),
             answerList: getFactors(num),
             points: 1,
-            working: `Factors of ${num} = ${getFactors(num).join(', ')}`
+            working: ("Factors of " + (num) + " = " + (getFactors(num).join(', ')))
           }))
         },
         // C14: Common Factors (6 pts) & Greatest Common Factor / GCF (8 pts) - 14 pts total
@@ -865,42 +865,42 @@
               mode: 'cf_only',
               a: cfg.c14.cf[0][0],
               b: cfg.c14.cf[0][1],
-              label: `No. 2 (1) Common Factors of ${cfg.c14.cf[0][0]} and ${cfg.c14.cf[0][1]} (3 pts)`,
+              label: ("No. 2 (1) Common Factors of " + (cfg.c14.cf[0][0]) + " and " + (cfg.c14.cf[0][1]) + " (3 pts)"),
               cfList: getCommonFactors(cfg.c14.cf[0][0], cfg.c14.cf[0][1]),
               points: 3,
-              working: `${cfg.c14.cf[0][0]} = ${getFactors(cfg.c14.cf[0][0]).join(', ')} | ${cfg.c14.cf[0][1]} = ${getFactors(cfg.c14.cf[0][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.cf[0][0], cfg.c14.cf[0][1]).join(', ')}`
+              working: ((cfg.c14.cf[0][0]) + " = " + (getFactors(cfg.c14.cf[0][0]).join(', ')) + " | " + (cfg.c14.cf[0][1]) + " = " + (getFactors(cfg.c14.cf[0][1]).join(', ')) + " → Common Factors = " + (getCommonFactors(cfg.c14.cf[0][0], cfg.c14.cf[0][1]).join(', ')))
             },
             {
               id: 'cf2',
               mode: 'cf_only',
               a: cfg.c14.cf[1][0],
               b: cfg.c14.cf[1][1],
-              label: `No. 2 (2) Common Factors of ${cfg.c14.cf[1][0]} and ${cfg.c14.cf[1][1]} (3 pts)`,
+              label: ("No. 2 (2) Common Factors of " + (cfg.c14.cf[1][0]) + " and " + (cfg.c14.cf[1][1]) + " (3 pts)"),
               cfList: getCommonFactors(cfg.c14.cf[1][0], cfg.c14.cf[1][1]),
               points: 3,
-              working: `${cfg.c14.cf[1][0]} = ${getFactors(cfg.c14.cf[1][0]).join(', ')} | ${cfg.c14.cf[1][1]} = ${getFactors(cfg.c14.cf[1][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.cf[1][0], cfg.c14.cf[1][1]).join(', ')}`
+              working: ((cfg.c14.cf[1][0]) + " = " + (getFactors(cfg.c14.cf[1][0]).join(', ')) + " | " + (cfg.c14.cf[1][1]) + " = " + (getFactors(cfg.c14.cf[1][1]).join(', ')) + " → Common Factors = " + (getCommonFactors(cfg.c14.cf[1][0], cfg.c14.cf[1][1]).join(', ')))
             },
             {
               id: 'gcf1',
               mode: 'cf_and_gcf',
               a: cfg.c14.gcf[0][0],
               b: cfg.c14.gcf[0][1],
-              label: `No. 3 (1) Common Factors & GCF of ${cfg.c14.gcf[0][0]} and ${cfg.c14.gcf[0][1]} (4 pts)`,
+              label: ("No. 3 (1) Common Factors & GCF of " + (cfg.c14.gcf[0][0]) + " and " + (cfg.c14.gcf[0][1]) + " (4 pts)"),
               cfList: getCommonFactors(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]),
               gcf: getGCF(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]),
               points: 4,
-              working: `${cfg.c14.gcf[0][0]} = ${getFactors(cfg.c14.gcf[0][0]).join(', ')} | ${cfg.c14.gcf[0][1]} = ${getFactors(cfg.c14.gcf[0][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]).join(', ')} → GCF = ${getGCF(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1])}`
+              working: ((cfg.c14.gcf[0][0]) + " = " + (getFactors(cfg.c14.gcf[0][0]).join(', ')) + " | " + (cfg.c14.gcf[0][1]) + " = " + (getFactors(cfg.c14.gcf[0][1]).join(', ')) + " → Common Factors = " + (getCommonFactors(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1]).join(', ')) + " → GCF = " + (getGCF(cfg.c14.gcf[0][0], cfg.c14.gcf[0][1])))
             },
             {
               id: 'gcf2',
               mode: 'cf_and_gcf',
               a: cfg.c14.gcf[1][0],
               b: cfg.c14.gcf[1][1],
-              label: `No. 3 (2) Common Factors & GCF of ${cfg.c14.gcf[1][0]} and ${cfg.c14.gcf[1][1]} (4 pts)`,
+              label: ("No. 3 (2) Common Factors & GCF of " + (cfg.c14.gcf[1][0]) + " and " + (cfg.c14.gcf[1][1]) + " (4 pts)"),
               cfList: getCommonFactors(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]),
               gcf: getGCF(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]),
               points: 4,
-              working: `${cfg.c14.gcf[1][0]} = ${getFactors(cfg.c14.gcf[1][0]).join(', ')} | ${cfg.c14.gcf[1][1]} = ${getFactors(cfg.c14.gcf[1][1]).join(', ')} → Common Factors = ${getCommonFactors(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]).join(', ')} → GCF = ${getGCF(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1])}`
+              working: ((cfg.c14.gcf[1][0]) + " = " + (getFactors(cfg.c14.gcf[1][0]).join(', ')) + " | " + (cfg.c14.gcf[1][1]) + " = " + (getFactors(cfg.c14.gcf[1][1]).join(', ')) + " → Common Factors = " + (getCommonFactors(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1]).join(', ')) + " → GCF = " + (getGCF(cfg.c14.gcf[1][0], cfg.c14.gcf[1][1])))
             }
           ]
         },
@@ -918,17 +918,17 @@
           items: [
             {
               id: 'a',
-              label: `1. LCM of ${cfg.c15[0][0]} and ${cfg.c15[0][1]} =`,
+              label: ("1. LCM of " + (cfg.c15[0][0]) + " and " + (cfg.c15[0][1]) + " ="),
               answer: getLCM(cfg.c15[0][0], cfg.c15[0][1]),
               points: 4,
-              working: `Multiples of ${cfg.c15[0][0]} = ${getFirstMultiples(cfg.c15[0][0], 10).join(', ')}... | Multiples of ${cfg.c15[0][1]} = ${getFirstMultiples(cfg.c15[0][1], 10).join(', ')}... → LCM = ${getLCM(cfg.c15[0][0], cfg.c15[0][1])}`
+              working: ("Multiples of " + (cfg.c15[0][0]) + " = " + (getFirstMultiples(cfg.c15[0][0], 10).join(', ')) + "... | Multiples of " + (cfg.c15[0][1]) + " = " + (getFirstMultiples(cfg.c15[0][1], 10).join(', ')) + "... → LCM = " + (getLCM(cfg.c15[0][0], cfg.c15[0][1])))
             },
             {
               id: 'b',
-              label: `2. LCM of ${cfg.c15[1][0]} and ${cfg.c15[1][1]} =`,
+              label: ("2. LCM of " + (cfg.c15[1][0]) + " and " + (cfg.c15[1][1]) + " ="),
               answer: getLCM(cfg.c15[1][0], cfg.c15[1][1]),
               points: 4,
-              working: `Multiples of ${cfg.c15[1][0]} = ${getFirstMultiples(cfg.c15[1][0], 10).join(', ')}... | Multiples of ${cfg.c15[1][1]} = ${getFirstMultiples(cfg.c15[1][1], 10).join(', ')}... → LCM = ${getLCM(cfg.c15[1][0], cfg.c15[1][1])}`
+              working: ("Multiples of " + (cfg.c15[1][0]) + " = " + (getFirstMultiples(cfg.c15[1][0], 10).join(', ')) + "... | Multiples of " + (cfg.c15[1][1]) + " = " + (getFirstMultiples(cfg.c15[1][1], 10).join(', ')) + "... → LCM = " + (getLCM(cfg.c15[1][0], cfg.c15[1][1])))
             }
           ]
         }
@@ -1190,21 +1190,116 @@
     // In-memory fallback store
     const memoryStore = {};
 
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+      }
+      return copy;
+    }
+
+    function generateQuestionOrderForSet(setKey, prevOrder) {
+      const questions = QUESTION_SETS[setKey].questions;
+      const len = questions.length;
+      const naturalOrder = Array.from({ length: len }, (_, i) => i);
+      if (setKey === 'practice_set_1' || setKey === 'official' || len <= 1) {
+        return naturalOrder;
+      }
+      const blocks = [];
+      questions.forEach((q, idx) => {
+        const groupKey = String(q.sectionGroup || q.partTitle || q.goal || 'default');
+        if (blocks.length === 0 || blocks[blocks.length - 1].key !== groupKey) {
+          blocks.push({ key: groupKey, indices: [idx] });
+        } else {
+          blocks[blocks.length - 1].indices.push(idx);
+        }
+      });
+      function shuffleBlocksOnce() {
+        const result = [];
+        blocks.forEach(blk => {
+          if (blk.indices.length <= 1) {
+            result.push(blk.indices[0]);
+          } else {
+            result.push(...shuffleArray(blk.indices));
+          }
+        });
+        return result;
+      }
+      let candidate = shuffleBlocksOnce();
+      let attempts = 0;
+      while (attempts < 12 && (
+        candidate.every((val, idx) => val === idx) ||
+        (Array.isArray(prevOrder) && prevOrder.length === len && candidate.every((val, idx) => val === prevOrder[idx]))
+      )) {
+        candidate = shuffleBlocksOnce();
+        attempts++;
+      }
+      return candidate;
+    }
+
+    function generateShuffledOptionOrders(questions) {
+      const optionOrders = {};
+      questions.forEach(q => {
+        (q.items || []).forEach(item => {
+          if (item.mode === 'select' && Array.isArray(item.options) && item.options.length > 1) {
+            optionOrders[item.id] = shuffleArray(item.options);
+          }
+        });
+      });
+      return optionOrders;
+    }
+
+    function formatSubItemLabel(rawLabel, displayQNum) {
+      return String(rawLabel || '').replace(/^(?:o)?\d+([a-z]\.)/i, displayQNum + '$1');
+    }
+
     function loadSetState(setKey) {
       const fullKey = STORAGE_PREFIX + setKey;
+      const setObj = QUESTION_SETS[setKey];
+      let state = null;
       try {
         const raw = localStorage.getItem(fullKey);
-        if (raw) return JSON.parse(raw);
+        if (raw) state = JSON.parse(raw);
       } catch (e) {
-        if (memoryStore[fullKey]) return memoryStore[fullKey];
+        if (memoryStore[fullKey]) state = memoryStore[fullKey];
       }
-      return {
-        answers: {},
-        submitted: false,
-        score: null,
-        maxScore: 53,
-        lastSlide: 0
-      };
+      if (!state) {
+        const initialOrder = generateQuestionOrderForSet(setKey, null);
+        state = {
+          answers: {},
+          submitted: false,
+          score: null,
+          maxScore: 53,
+          lastSlide: initialOrder[0],
+          questionOrder: initialOrder,
+          optionOrders: generateShuffledOptionOrders(setObj.questions)
+        };
+        saveSetState(setKey, state);
+      } else {
+        if (!Array.isArray(state.questionOrder) || state.questionOrder.length !== setObj.questions.length) {
+          state.questionOrder = generateQuestionOrderForSet(setKey, null);
+        }
+        if (!state.optionOrders || typeof state.optionOrders !== 'object') {
+          state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        }
+      }
+      return state;
+    }
+
+    function randomizeSetIfNotStarted(setKey) {
+      const setObj = QUESTION_SETS[setKey];
+      const state = loadSetState(setKey);
+      const answeredCount = setObj.questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      if (!state.submitted && answeredCount === 0) {
+        state.questionOrder = generateQuestionOrderForSet(setKey, state.questionOrder);
+        state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        state.lastSlide = state.questionOrder[0];
+        saveSetState(setKey, state);
+      }
+      return state;
     }
 
     function saveSetState(setKey, stateObj) {
@@ -1333,45 +1428,45 @@
         c3: c3,
         c4: c4,
         c5: {
-          question: `Alex visits a store to buy ${qty5} flash drives. Each flash drive costs $${price5}. How much money does he need in total for this purchase?`,
+          question: ("Alex visits a store to buy " + (qty5) + " flash drives. Each flash drive costs $" + (price5) + ". How much money does he need in total for this purchase?"),
           qty: qty5,
           price: price5,
           unit: 'dollars',
-          know: `${qty5} flash drives; $${price5} each flash drive`,
+          know: ((qty5) + " flash drives; $" + (price5) + " each flash drive"),
           ask: 'How much money does he need in total for this purchase?',
-          answerSentence: `He needs ${qty5 * price5} dollars in total for his purchase of ${qty5} flash drives.`
+          answerSentence: ("He needs " + (qty5 * price5) + " dollars in total for his purchase of " + (qty5) + " flash drives.")
         },
         c6: {
-          question: `A small dairy farm produces ${rate6} gallons of milk each day. How many gallons of milk will it produce in ${days6} days?`,
+          question: ("A small dairy farm produces " + (rate6) + " gallons of milk each day. How many gallons of milk will it produce in " + (days6) + " days?"),
           rate: rate6,
           days: days6,
           unit: 'gallons',
-          know: `${rate6} gallons per day; ${days6} days`,
+          know: ((rate6) + " gallons per day; " + (days6) + " days"),
           ask: `How many gallons of milk will it produce in ${days6} days?`,
-          answerSentence: `It will produce ${(rate6 * days6).toLocaleString()} gallons in ${days6} days.`
+          answerSentence: ("It will produce " + ((rate6 * days6).toLocaleString()) + " gallons in " + (days6) + " days.")
         },
         c7: [[div1 * quot1, div1], [div2 * quot2, div2]],
         c8: [div8 * quot8, div8],
         c9: [[d9a * q9a + rem9a, d9a], [d9b * q9b + rem9b, d9b]],
         c10: [d10 * q10 + rem10, d10],
         c11: {
-          question: `Allie has ${total11} eggs and she is looking for cartons to put them. How many cartons does Allie need, if ${per11} eggs go in one carton?`,
+          question: ("Allie has " + (total11) + " eggs and she is looking for cartons to put them. How many cartons does Allie need, if " + (per11) + " eggs go in one carton?"),
           total: total11,
           perGroup: per11,
           unit: 'cartons',
-          know: `Allie has ${total11} eggs; ${per11} eggs in one carton`,
+          know: ("Allie has " + (total11) + " eggs; " + (per11) + " eggs in one carton"),
           ask: `How many cartons does Allie need if ${per11} eggs go in one carton?`,
-          answerSentence: `She needs ${boxes11} cartons for ${total11} eggs.`
+          answerSentence: ("She needs " + (boxes11) + " cartons for " + (total11) + " eggs.")
         },
         c12: {
-          question: `If a sandwich is prepared using ${per12} bread slices, how many sandwiches can be prepared using ${total12} bread slices, and how many bread slices remain?`,
+          question: ("If a sandwich is prepared using " + (per12) + " bread slices, how many sandwiches can be prepared using " + (total12) + " bread slices, and how many bread slices remain?"),
           total: total12,
           perGroup: per12,
           groupUnit: 'sandwiches',
           itemUnit: 'bread slices',
-          know: `1 sandwich = ${per12} bread slices; ${total12} bread slices available`,
+          know: ("1 sandwich = " + (per12) + " bread slices; " + (total12) + " bread slices available"),
           ask: `How many sandwiches can be prepared using ${total12} bread slices?`,
-          answerSentence: `${groups12} sandwiches can be prepared with ${rem12} bread slices remaining.`
+          answerSentence: ((groups12) + " sandwiches can be prepared with " + (rem12) + " bread slices remaining.")
         },
         c13: [pickRandom(fPool1), pickRandom(fPool2), pickRandom(fPool3)],
         c14: {
@@ -1482,8 +1577,8 @@
           earnedPoints += pts;
           subResults.push({
             label: item.label,
-            userDisplay: String(rawQ).trim() === '' ? '(Blank)' : `${numQ} r ${isNaN(numR) ? '?' : numR}`,
-            modelDisplay: `${item.q} r ${item.r}`,
+            userDisplay: String(rawQ).trim() === '' ? '(Blank)' : ((numQ) + " r " + (isNaN(numR) ? '?' : numR)),
+            modelDisplay: ((item.q) + " r " + (item.r)),
             isCorrect: ok,
             earned: pts,
             max: item.points,
@@ -1535,8 +1630,8 @@
             earnedPoints += pts;
             subResults.push({
               label: item.label,
-              userDisplay: `CF: ${userCf.length ? userCf.join(', ') : '(Blank)'} | GCF: ${String(rawGcf).trim() === '' ? '(Blank)' : rawGcf}`,
-              modelDisplay: `CF: ${item.cfList.join(', ')} | GCF: ${item.gcf}`,
+              userDisplay: ("CF: " + (userCf.length ? userCf.join(', ') : '(Blank)') + " | GCF: " + (String(rawGcf).trim() === '' ? '(Blank)' : rawGcf)),
+              modelDisplay: ("CF: " + (item.cfList.join(', ')) + " | GCF: " + (item.gcf)),
               isCorrect: cfOk && gcfOk,
               isPartial: (cfOk || gcfOk) && !(cfOk && gcfOk),
               earned: pts,
@@ -1575,7 +1670,7 @@
       if (state.submitted && state.score !== null) {
         const pct = Math.round((state.score / state.maxScore) * 100);
         return {
-          text: `✓ Completed: ${pct}% (${state.score}/${state.maxScore})`,
+          text: ("✓ Completed: " + (pct) + "% (" + (state.score) + "/" + (state.maxScore) + ")"),
           cls: 'bg-emerald-100 text-emerald-800'
         };
       }
@@ -1711,14 +1806,14 @@
         const missing = allConcepts.filter(c => !covered.has(c));
         const passSet = (modelTotal === 53) && (blankTotal === 0) && (missing.length === 0);
         if (!passSet) allPassed = false;
-        reportLines.push(`${setObj.shortTitle}: Model=${modelTotal}/53 | Blank=${blankTotal}/53 | Concepts=${covered.size}/15 ${passSet ? '✓ PASS' : '✗ FAIL'}`);
+        reportLines.push(((setObj.shortTitle) + ": Model=" + (modelTotal) + "/53 | Blank=" + (blankTotal) + "/53 | Concepts=" + (covered.size) + "/15 " + (passSet ? '✓ PASS' : '✗ FAIL')));
       });
 
       banner.classList.remove('hidden');
       banner.className = allPassed
         ? 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1'
         : 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
-      banner.innerHTML = `<div class="font-extrabold">${allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C15 Coverage)' : '✗ QA SELF-TEST FAILED'}</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+      banner.innerHTML = ("<div class=\"font-extrabold\">" + (allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C15 Coverage)' : '✗ QA SELF-TEST FAILED') + "</div><div>" + (reportLines.join(' &nbsp;•&nbsp; ')) + "</div>");
     }
 
     function renderParentInspector() {
@@ -1739,17 +1834,19 @@
 
         tr.innerHTML = `
           <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
-            Q${q.qNum} <span class="ml-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px]">${q.conceptId}</span>
+            Q${q.qNum}
+             <span class="ml-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-xs">${q.conceptId}</span>
           </td>
           <td class="py-3 px-3">
             <div class="font-semibold text-slate-800">${q.subTopic}</div>
-            <div class="text-slate-500">Goal ${q.goal} • ${q.points} pts</div>
+            <div class="text-slate-500">Goal ${q.goal}
+             • ${q.points} pts</div>
           </td>
           <td class="py-3 px-3">
             <div class="text-slate-700 mb-1.5 font-medium">${q.prompt}</div>
             ${itemsHtml}
           </td>
-          <td class="py-3 px-3 font-mono text-[11px]">
+          <td class="py-3 px-3 font-mono text-xs">
             ${workingHtml}
           </td>
         `;
@@ -1769,25 +1866,33 @@
     // 8. ACTIVE QUIZ SLIDE RENDERING & INPUT BINDING
     // =========================================================================
     function getActiveSlideList() {
-      const questions = QUESTION_SETS[currentSetKey].questions;
+      const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || QUESTION_SETS[currentSetKey].questions.map((_, i) => i);
       if (retryFilterIndices && retryFilterIndices.length > 0) {
         return retryFilterIndices;
       }
-      return questions.map((_, i) => i);
+      return order;
+    }
+
+    function getDisplayQNum(origIdx, setKey = currentSetKey) {
+      const state = loadSetState(setKey);
+      const order = state.questionOrder || QUESTION_SETS[setKey].questions.map((_, i) => i);
+      const pos = order.indexOf(origIdx);
+      return pos !== -1 ? pos + 1 : origIdx + 1;
     }
 
     function startQuiz(setKey, retryIndices = null) {
       currentSetKey = setKey;
       retryFilterIndices = retryIndices;
-      const state = loadSetState(setKey);
+      const state = retryIndices ? loadSetState(setKey) : randomizeSetIfNotStarted(setKey);
       if (state.submitted && !retryIndices) {
-        // If already submitted, show results screen directly
         renderResultsScreen();
         showView('viewResults');
         return;
       }
       const activeList = getActiveSlideList();
-      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      const answeredCount = QUESTION_SETS[setKey].questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      currentSlideIndex = (answeredCount > 0 && activeList.includes(state.lastSlide)) ? state.lastSlide : activeList[0];
       renderQuizSlide();
       showView('viewQuiz');
     }
@@ -1808,8 +1913,8 @@
         ? `${setObj.title} (Retry Incorrect)`
         : setObj.title;
       document.getElementById('quizGoalBadge').textContent = `Learning Goal ${q.goal}`;
-      document.getElementById('quizQuestionCounter').textContent = `Question ${posInActive + 1} of ${activeList.length}`;
-      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? 'pt' : 'pts'}`;
+      document.getElementById('quizQuestionCounter').textContent = ("Question " + (posInActive + 1) + " of " + (activeList.length));
+      document.getElementById('quizPointsCounter').textContent = ((q.points) + " " + (q.points === 1 ? 'pt' : 'pts'));
 
       const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
       document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
@@ -1838,7 +1943,8 @@
                 placeholder="Type number..."
                 class="slide-input w-44 px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
               />
-              <span class="text-xs text-slate-400 font-medium">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <span class="text-xs text-slate-400 font-medium">(${item.points}
+               ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
           `;
           container.appendChild(row);
@@ -1852,7 +1958,8 @@
           row.innerHTML = `
             <div class="flex items-center justify-between">
               <span class="text-sm font-bold text-slate-800">${item.label}</span>
-              <span class="text-xs text-slate-400 font-medium">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <span class="text-xs text-slate-400 font-medium">(${item.points}
+               ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
@@ -1911,7 +2018,8 @@
                 <span class="text-xs text-slate-400 font-medium">(3 pts)</span>
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a} and ${item.b}:</label>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a}
+                 and ${item.b}:</label>
                 <input
                   type="text"
                   data-field="${item.id}_cf"
@@ -1929,7 +2037,8 @@
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="sm:col-span-2">
-                  <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a} and ${item.b}:</label>
+                  <label class="block text-xs font-semibold text-slate-600 mb-1">Common Factors of ${item.a}
+                   and ${item.b}:</label>
                   <input
                     type="text"
                     data-field="${item.id}_cf"
@@ -1995,12 +2104,13 @@
       let answeredTotal = 0;
       activeList.forEach(qIdx => {
         const q = setObj.questions[qIdx];
+        const dispNum = getDisplayQNum(qIdx, currentSetKey);
         const answered = isQuestionAnswered(q, state.answers[qIdx]);
         if (answered) answeredTotal++;
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = q.qNum;
+        btn.textContent = dispNum;
         let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
         if (answered) {
           cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
@@ -2018,7 +2128,7 @@
         grid.appendChild(btn);
       });
 
-      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+      document.getElementById('navAnsweredCount').textContent = ((answeredTotal) + " / " + (activeList.length));
     }
 
     // =========================================================================
@@ -2045,7 +2155,7 @@
           const pill = document.createElement('button');
           pill.type = 'button';
           pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
-          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.textContent = ("Q" + (q.qNum) + " (" + (q.conceptId) + ")");
           pill.addEventListener('click', () => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
@@ -2121,10 +2231,10 @@
         let badgeHtml = '';
         let borderCls = 'border-slate-200';
         if (g.status === 'correct') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">✓ Correct (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800\">✓ Correct (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-emerald-200';
         } else if (g.status === 'partial') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">◐ Partial (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800\">◐ Partial (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-amber-200';
         } else {
           badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">✗ Incorrect (0/${g.maxPoints} pts)</span>`;
@@ -2136,7 +2246,9 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <span class="font-bold text-slate-800">${sr.label}</span>
               <span class="font-semibold ${sr.isCorrect ? 'text-emerald-700' : sr.isPartial ? 'text-amber-700' : 'text-rose-700'}">
-                ${sr.isCorrect ? '✓ Correct' : sr.isPartial ? '◐ Partial' : '✗ Incorrect'} (${sr.earned}/${sr.max} pts)
+                ${sr.isCorrect ? '✓ Correct' : sr.isPartial ? '◐ Partial' : '✗ Incorrect'}
+                 (${sr.earned}
+                 /${sr.max} pts)
               </span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
@@ -2249,7 +2361,7 @@
                 ${q.items.map(it => `
                   <div class="border border-slate-300 rounded-lg p-3 h-28 flex flex-col justify-between">
                     <div class="font-bold text-sm text-slate-900">${it.label} ___________</div>
-                    <div class="text-[11px] text-slate-400">Show vertical working in this box</div>
+                    <div class="text-xs text-slate-400">Show vertical working in this box</div>
                   </div>
                 `).join('')}
               </div>
@@ -2284,8 +2396,11 @@
         return `
           <div class="print-avoid-break border-b border-slate-200 pb-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase text-slate-500">${q.partTitle} • Q${q.qNum} (${q.conceptId})</span>
-              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? 'pt' : 'pts'})</span>
+              <span class="text-xs font-bold uppercase text-slate-500">${q.partTitle}
+               • Q${q.qNum}
+                (${q.conceptId})</span>
+              <span class="text-xs font-bold text-slate-700">(${q.points}
+               ${q.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
             ${workAreaHtml}
@@ -2400,6 +2515,7 @@
         e.stopPropagation();
         const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
         clearSetState(targetKey);
+        randomizeSetIfNotStarted(targetKey);
         renderStartScreen();
         showToast(`Progress cleared for ${QUESTION_SETS[targetKey].shortTitle}.`);
       });
@@ -2413,6 +2529,7 @@
       document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
         e.stopPropagation();
         clearSetState('official');
+        randomizeSetIfNotStarted('official');
         renderStartScreen();
         showToast('Progress cleared for Official Pre-Test Mode.');
       });

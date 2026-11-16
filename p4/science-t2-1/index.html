@@ -95,17 +95,17 @@
               <div class="grid grid-cols-3 gap-2.5">
                 <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
                   <div class="font-bold text-sm text-indigo-950">Set 1</div>
-                  <div class="text-[11px] text-indigo-700 font-medium">Direct &amp; Concepts</div>
+                  <div class="text-xs text-indigo-700 font-medium">Direct &amp; Concepts</div>
                   <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-1">Not Started</div>
                 </button>
                 <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 2</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Real-Life Scenarios</div>
+                  <div class="text-xs text-slate-500 font-medium">Real-Life Scenarios</div>
                   <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-1">Not Started</div>
                 </button>
                 <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 3</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Inversion &amp; Errors</div>
+                  <div class="text-xs text-slate-500 font-medium">Inversion &amp; Errors</div>
                   <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-1">Not Started</div>
                 </button>
               </div>
@@ -2460,22 +2460,127 @@
 
     const memoryStore = {};
 
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+      }
+      return copy;
+    }
+
+    function generateQuestionOrderForSet(setKey, prevOrder) {
+      const questions = QUESTION_SETS[setKey].questions;
+      const len = questions.length;
+      const naturalOrder = Array.from({ length: len }, (_, i) => i);
+      if (setKey === 'practice_set_1' || setKey === 'official' || len <= 1) {
+        return naturalOrder;
+      }
+      const blocks = [];
+      questions.forEach((q, idx) => {
+        const groupKey = String(q.sectionGroup || q.unit || 'default');
+        if (blocks.length === 0 || blocks[blocks.length - 1].key !== groupKey) {
+          blocks.push({ key: groupKey, indices: [idx] });
+        } else {
+          blocks[blocks.length - 1].indices.push(idx);
+        }
+      });
+      function shuffleBlocksOnce() {
+        const result = [];
+        blocks.forEach(blk => {
+          if (blk.indices.length <= 1) {
+            result.push(blk.indices[0]);
+          } else {
+            result.push(...shuffleArray(blk.indices));
+          }
+        });
+        return result;
+      }
+      let candidate = shuffleBlocksOnce();
+      let attempts = 0;
+      while (attempts < 12 && (
+        candidate.every((val, idx) => val === idx) ||
+        (Array.isArray(prevOrder) && prevOrder.length === len && candidate.every((val, idx) => val === prevOrder[idx]))
+      )) {
+        candidate = shuffleBlocksOnce();
+        attempts++;
+      }
+      return candidate;
+    }
+
+    function generateShuffledOptionOrders(questions) {
+      const optionOrders = {};
+      let targetPosCounter = Math.floor(Math.random() * 3);
+      questions.forEach(q => {
+        q.items.forEach(item => {
+          if (item.mode === 'select' && Array.isArray(item.options) && item.options.length > 1) {
+            let shuffled = shuffleArray(item.options);
+            const targetIdx = targetPosCounter % shuffled.length;
+            targetPosCounter += 1 + Math.floor(Math.random() * 2);
+            const curCorrectIdx = shuffled.indexOf(item.modelAnswer);
+            if (curCorrectIdx !== -1 && curCorrectIdx !== targetIdx) {
+              const tmp = shuffled[targetIdx];
+              shuffled[targetIdx] = shuffled[curCorrectIdx];
+              shuffled[curCorrectIdx] = tmp;
+            }
+            optionOrders[item.id] = shuffled;
+          }
+        });
+      });
+      return optionOrders;
+    }
+
+    function formatSubItemLabel(rawLabel, displayQNum) {
+      return String(rawLabel || '').replace(/^(?:o)?\d+([a-z]\.)/i, displayQNum + '$1');
+    }
+
     function loadSetState(setKey) {
       const fullKey = STORAGE_PREFIX + setKey;
-      const maxPts = QUESTION_SETS[setKey].maxScore;
+      const setObj = QUESTION_SETS[setKey];
+      const maxPts = setObj.maxScore;
+      let state = null;
       try {
         const raw = localStorage.getItem(fullKey);
-        if (raw) return JSON.parse(raw);
+        if (raw) state = JSON.parse(raw);
       } catch (e) {
-        if (memoryStore[fullKey]) return memoryStore[fullKey];
+        if (memoryStore[fullKey]) state = memoryStore[fullKey];
       }
-      return {
-        answers: {},
-        submitted: false,
-        score: null,
-        maxScore: maxPts,
-        lastSlide: 0
-      };
+      if (!state) {
+        const initialOrder = generateQuestionOrderForSet(setKey, null);
+        state = {
+          answers: {},
+          submitted: false,
+          score: null,
+          maxScore: maxPts,
+          lastSlide: initialOrder[0],
+          questionOrder: initialOrder,
+          optionOrders: generateShuffledOptionOrders(setObj.questions)
+        };
+        saveSetState(setKey, state);
+      } else {
+        if (!Array.isArray(state.questionOrder) || state.questionOrder.length !== setObj.questions.length) {
+          state.questionOrder = generateQuestionOrderForSet(setKey, null);
+        }
+        if (!state.optionOrders || typeof state.optionOrders !== 'object') {
+          state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        }
+      }
+      return state;
+    }
+
+    function randomizeSetIfNotStarted(setKey) {
+      const setObj = QUESTION_SETS[setKey];
+      const state = loadSetState(setKey);
+      const answeredCount = setObj.questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      if (!state.submitted && answeredCount === 0) {
+        state.questionOrder = generateQuestionOrderForSet(setKey, state.questionOrder);
+        state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        state.lastSlide = state.questionOrder[0];
+        saveSetState(setKey, state);
+      }
+      return state;
     }
 
     function saveSetState(setKey, stateObj) {
@@ -2567,14 +2672,14 @@
       if (state.submitted && state.score !== null) {
         const pct = Math.round((state.score / maxScore) * 100);
         return {
-          text: `✓ Completed: ${pct}% (${state.score}/${maxScore})`,
+          text: ("✓ Completed: " + (pct) + "% (" + (state.score) + "/" + (maxScore) + ")"),
           cls: 'bg-emerald-100 text-emerald-800'
         };
       }
       const answeredCount = questions.filter((q, idx) => isQuestionAnswered(q, state.answers[idx])).length;
       if (answeredCount > 0) {
         return {
-          text: `In Progress (${answeredCount}/${questions.length})`,
+          text: ("In Progress (" + (answeredCount) + "/" + (questions.length) + ")"),
           cls: 'bg-amber-100 text-amber-800'
         };
       }
@@ -2691,14 +2796,14 @@
         const missing = isPractice ? allConcepts.filter(c => !covered.has(c)) : [];
         const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missing.length === 0);
         if (!passSet) allPassed = false;
-        reportLines.push(`${setObj.shortTitle}: Model=${modelTotal}/${setObj.maxScore} | Blank=${blankTotal}/${setObj.maxScore}${isPractice ? ` | Concepts=${covered.size}/20` : ''} ${passSet ? '✓ PASS' : '✗ FAIL'}`);
+        reportLines.push(setObj.shortTitle + ': Model=' + modelTotal + '/' + setObj.maxScore + ' | Blank=' + blankTotal + '/' + setObj.maxScore + (isPractice ? ' | Concepts=' + covered.size + '/20' : '') + ' ' + (passSet ? '✓ PASS' : '✗ FAIL'));
       });
 
       banner.classList.remove('hidden');
       banner.className = allPassed
         ? 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1'
         : 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
-      banner.innerHTML = `<div class="font-extrabold">${allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C20 Coverage)' : '✗ QA SELF-TEST FAILED'}</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+      banner.innerHTML = ("<div class=\"font-extrabold\">" + (allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C20 Coverage)' : '✗ QA SELF-TEST FAILED') + "</div><div>" + (reportLines.join(' &nbsp;•&nbsp; ')) + "</div>");
     }
 
     function renderParentInspector() {
@@ -2718,18 +2823,19 @@
         const ansHtml = q.items.map(it => `
           <div class="mb-1.5">
             <span class="font-bold text-indigo-900">${it.modelAnswer}</span>
-            <div class="text-[11px] text-slate-500">${it.explanation}</div>
+            <div class="text-xs text-slate-500">${it.explanation}</div>
           </div>
         `).join('');
 
         tr.innerHTML = `
           <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
             Q${q.qNum}
-            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] inline-block">${q.conceptId}</div>
+            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-xs inline-block">${q.conceptId}</div>
           </td>
           <td class="py-3 px-3">
             <div class="font-semibold text-slate-800">${q.subTopic}</div>
-            <div class="text-slate-500">${q.cluster} • ${q.points} pts</div>
+            <div class="text-slate-500">${q.cluster}
+             • ${q.points} pts</div>
           </td>
           <td class="py-3 px-3">
             <div class="font-semibold text-slate-900 mb-1">${q.prompt}</div>
@@ -2755,24 +2861,33 @@
     // 6. ACTIVE QUIZ SLIDE RENDERING
     // =========================================================================
     function getActiveSlideList() {
-      const questions = QUESTION_SETS[currentSetKey].questions;
+      const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || QUESTION_SETS[currentSetKey].questions.map((_, i) => i);
       if (retryFilterIndices && retryFilterIndices.length > 0) {
         return retryFilterIndices;
       }
-      return questions.map((_, i) => i);
+      return order;
+    }
+
+    function getDisplayQNum(origIdx, setKey = currentSetKey) {
+      const state = loadSetState(setKey);
+      const order = state.questionOrder || QUESTION_SETS[setKey].questions.map((_, i) => i);
+      const pos = order.indexOf(origIdx);
+      return pos !== -1 ? pos + 1 : origIdx + 1;
     }
 
     function startQuiz(setKey, retryIndices = null) {
       currentSetKey = setKey;
       retryFilterIndices = retryIndices;
-      const state = loadSetState(setKey);
+      const state = retryIndices ? loadSetState(setKey) : randomizeSetIfNotStarted(setKey);
       if (state.submitted && !retryIndices) {
         renderResultsScreen();
         showView('viewResults');
         return;
       }
       const activeList = getActiveSlideList();
-      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      const answeredCount = QUESTION_SETS[setKey].questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      currentSlideIndex = (answeredCount > 0 && activeList.includes(state.lastSlide)) ? state.lastSlide : activeList[0];
       renderQuizSlide();
       showView('viewQuiz');
     }
@@ -2792,8 +2907,8 @@
         ? `${setObj.shortTitle} (Retry Incorrect)`
         : setObj.title;
       document.getElementById('quizClusterBadge').textContent = q.cluster;
-      document.getElementById('quizQuestionCounter').textContent = `Question ${posInActive + 1} of ${activeList.length}`;
-      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? 'pt' : 'pts'}`;
+      document.getElementById('quizQuestionCounter').textContent = ("Question " + (posInActive + 1) + " of " + (activeList.length));
+      document.getElementById('quizPointsCounter').textContent = ((q.points) + " " + (q.points === 1 ? 'pt' : 'pts'));
 
       const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
       document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
@@ -2836,20 +2951,26 @@
       const qAns = state.answers[currentSlideIndex] || {};
       lastFocusedInput = null;
 
+      const displayQNum = getDisplayQNum(currentSlideIndex, currentSetKey);
       q.items.forEach(item => {
         const block = document.createElement('div');
         block.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5';
+        const formattedLabel = formatSubItemLabel(item.label, displayQNum);
 
         if (item.mode === 'select') {
-          const optsHtml = item.options.map(opt => {
+          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
+            ? state.optionOrders[item.id]
+            : item.options;
+          const optsHtml = activeOptions.map(opt => {
             const selected = qAns[item.id] === opt ? 'selected' : '';
-            return `<option value="${opt.replace(/"/g, '&quot;')}" ${selected}>${opt}</option>`;
+            return '<option value="' + opt.replace(/"/g, '&quot;') + '" ' + selected + '>' + opt + '</option>';
           }).join('');
 
           block.innerHTML = `
             <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <label class="text-sm font-bold text-slate-800">${formattedLabel}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points}
+                ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <select
               data-field="${item.id}"
@@ -2862,8 +2983,9 @@
         } else {
           block.innerHTML = `
             <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <label class="text-sm font-bold text-slate-800">${formattedLabel}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points}
+                ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <input
               type="text"
@@ -2927,12 +3049,13 @@
       let answeredTotal = 0;
       activeList.forEach(qIdx => {
         const q = setObj.questions[qIdx];
+        const dispNum = getDisplayQNum(qIdx, currentSetKey);
         const answered = isQuestionAnswered(q, state.answers[qIdx]);
         if (answered) answeredTotal++;
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = q.qNum;
+        btn.textContent = dispNum;
         let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
         if (answered) {
           cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
@@ -2950,7 +3073,7 @@
         grid.appendChild(btn);
       });
 
-      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+      document.getElementById('navAnsweredCount').textContent = ((answeredTotal) + " / " + (activeList.length));
     }
 
     // =========================================================================
@@ -2977,7 +3100,7 @@
           const pill = document.createElement('button');
           pill.type = 'button';
           pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
-          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.textContent = ("Q" + (q.qNum) + " (" + (q.conceptId) + ")");
           pill.addEventListener('click', () => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
@@ -3058,10 +3181,10 @@
         let badgeHtml = '';
         let borderCls = 'border-slate-200';
         if (g.status === 'correct') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">✓ Correct (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800\">✓ Correct (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-emerald-200';
         } else if (g.status === 'partial') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">◐ Partial (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800\">◐ Partial (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-amber-200';
         } else {
           badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">✗ Incorrect (0/${g.maxPoints} pts)</span>`;
@@ -3073,7 +3196,9 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <span class="font-bold text-slate-800">${sr.label}</span>
               <span class="font-semibold ${sr.status === 'correct' ? 'text-emerald-700' : sr.status === 'partial' ? 'text-amber-700' : 'text-rose-700'}">
-                ${sr.status === 'correct' ? '✓ Correct' : sr.status === 'partial' ? '◐ Partial' : '✗ Incorrect'} (${sr.earned}/${sr.max} pts)
+                ${sr.status === 'correct' ? '✓ Correct' : sr.status === 'partial' ? '◐ Partial' : '✗ Incorrect'}
+                 (${sr.earned}
+                 /${sr.max} pts)
               </span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
@@ -3109,10 +3234,10 @@
 
       const pct = Math.round((totalEarned / setObj.maxScore) * 100);
       document.getElementById('resultSetBadge').textContent = setObj.title;
-      document.getElementById('resultTotalScore').textContent = `${totalEarned} / ${setObj.maxScore}`;
+      document.getElementById('resultTotalScore').textContent = ((totalEarned) + " / " + (setObj.maxScore));
       document.getElementById('resultPercentage').textContent = `${pct}%`;
-      document.getElementById('resultLightScore').textContent = `${lightEarned} / ${lightMax} pts`;
-      document.getElementById('resultSoundScore').textContent = `${soundEarned} / ${soundMax} pts`;
+      document.getElementById('resultLightScore').textContent = ((lightEarned) + " / " + (lightMax) + " pts");
+      document.getElementById('resultSoundScore').textContent = ((soundEarned) + " / " + (soundMax) + " pts");
 
       const btnRetry = document.getElementById('btnRetryIncorrect');
       if (incorrectIndices.length === 0) {
@@ -3198,8 +3323,11 @@
         return `
           <div class="print-avoid-break border-b border-slate-200 pb-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic} • Q${q.qNum} (${q.conceptId})</span>
-              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? 'pt' : 'pts'})</span>
+              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic}
+               • Q${q.qNum}
+                (${q.conceptId})</span>
+              <span class="text-xs font-bold text-slate-700">(${q.points}
+               ${q.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
             ${wbPrint}
@@ -3216,7 +3344,8 @@
               <p class="text-xs text-slate-600">Year 4 / Term 2 / Unit 18: Properties of Light &amp; Unit 21: Sound</p>
             </div>
             <div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">
-              ${setObj.title} (Total: ${setObj.maxScore} pts)
+              ${setObj.title}
+               (Total: ${setObj.maxScore} pts)
             </div>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">
@@ -3306,6 +3435,7 @@
         e.stopPropagation();
         const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
         clearSetState(targetKey);
+        randomizeSetIfNotStarted(targetKey);
         renderStartScreen();
         showToast(`Progress cleared for ${QUESTION_SETS[targetKey].shortTitle}.`);
       });
@@ -3319,6 +3449,7 @@
       document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
         e.stopPropagation();
         clearSetState('official');
+        randomizeSetIfNotStarted('official');
         renderStartScreen();
         showToast('Progress cleared for Official Pre-Test Mode.');
       });

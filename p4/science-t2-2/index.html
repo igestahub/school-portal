@@ -32,6 +32,134 @@
         page-break-inside: avoid;
       }
     }
+
+    .svg-diagram-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* =========================================================================
+       SELECTIVE, BOUNDED MICRO-ANIMATIONS (Q1, Q3, Q5, Q7, Q9 Col 3, Q10, Q12)
+       ========================================================================= */
+    @keyframes glideAway14 {
+      0%, 18% { transform: translateX(0px); }
+      65%, 85% { transform: translateX(14px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes glideTowards14 {
+      0%, 18% { transform: translateX(0px); }
+      65%, 85% { transform: translateX(14px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes spongeSpringBack {
+      0%, 20% { transform: scaleY(1); }
+      50%, 65% { transform: scaleY(0.76); }
+      85%, 100% { transform: scaleY(1); }
+    }
+    @keyframes elasticStretchBack {
+      0%, 20% { transform: scaleX(1); }
+      50%, 65% { transform: scaleX(1.18); }
+      85%, 100% { transform: scaleX(1); }
+    }
+    @keyframes fruitDrop {
+      0%, 12% { transform: translateY(0px); opacity: 1; }
+      72%, 88% { transform: translateY(16px); opacity: 1; }
+      92% { transform: translateY(16px); opacity: 0; }
+      93%, 100% { transform: translateY(0px); opacity: 1; }
+    }
+    @keyframes clipLift {
+      0%, 20% { transform: translateY(0px); }
+      55%, 85% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Q7 Stage 2 (Constant Speed Linear Glide) vs. Stage 3 (True Kinematic Deceleration v(t)=v0*(1-t/T) to a Complete Dead Stop!) */
+    @keyframes stage2ConstantSpeed {
+      0%, 6% { transform: translateX(0px); opacity: 1; }
+      88% { transform: translateX(280px); opacity: 1; }
+      91% { transform: translateX(280px); opacity: 0; }
+      92%, 100% { transform: translateX(0px); opacity: 1; }
+    }
+    @keyframes stage3TrueDeceleration {
+      0%, 6% { transform: translateX(0px); opacity: 1; }
+      16% { transform: translateX(54px); opacity: 1; }
+      26% { transform: translateX(96px); opacity: 1; }
+      36% { transform: translateX(126px); opacity: 1; }
+      46% { transform: translateX(145px); opacity: 1; }
+      56% { transform: translateX(155px); opacity: 1; }
+      64% { transform: translateX(158px); opacity: 1; }
+      /* Completely stopped from 64% to 88% while Stage 2 keeps moving! */
+      88% { transform: translateX(158px); opacity: 1; }
+      91% { transform: translateX(158px); opacity: 0; }
+      92%, 100% { transform: translateX(0px); opacity: 1; }
+    }
+
+    /* Q9 Col 3: 1 Hand (slow, short) vs. Both Hands (fast, long) */
+    @keyframes push1HandShort {
+      0%, 10% { transform: translateX(0px); opacity: 1; }
+      60%, 86% { transform: translateX(20px); opacity: 1; }
+      90% { transform: translateX(20px); opacity: 0; }
+      91%, 100% { transform: translateX(0px); opacity: 1; }
+    }
+    @keyframes push2HandsLong {
+      0%, 10% { transform: translateX(0px); opacity: 1; }
+      45%, 86% { transform: translateX(64px); opacity: 1; }
+      90% { transform: translateX(64px); opacity: 0; }
+      91%, 100% { transform: translateX(0px); opacity: 1; }
+    }
+
+    /* Q10: Point B gentle tug, Point C strong cling */
+    @keyframes tugPointB {
+      0%, 20% { transform: translateY(0px); }
+      55%, 85% { transform: translateY(-4px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes clingPointC {
+      0%, 20% { transform: translateY(0px); }
+      50%, 88% { transform: translateY(-7px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Q12: Attraction vs. Repulsion */
+    @keyframes attractInLeft {
+      0%, 20% { transform: translateX(0px); }
+      60%, 85% { transform: translateX(8px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes attractInRight {
+      0%, 20% { transform: translateX(0px); }
+      60%, 85% { transform: translateX(-8px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes repelOutLeft {
+      0%, 20% { transform: translateX(0px); }
+      60%, 85% { transform: translateX(-8px); }
+      100% { transform: translateX(0px); }
+    }
+    @keyframes repelOutRight {
+      0%, 20% { transform: translateX(0px); }
+      60%, 85% { transform: translateX(8px); }
+      100% { transform: translateX(0px); }
+    }
+
+    .anim-q1-away { animation: glideAway14 3.4s ease-in-out infinite; }
+    .anim-q1-towards { animation: glideTowards14 3.4s ease-in-out infinite; }
+    .anim-q3-sponge { animation: spongeSpringBack 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+    .anim-q3-stretch { animation: elasticStretchBack 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .anim-q5-drop { animation: fruitDrop 3.4s linear infinite; }
+    .anim-q5-lift { animation: clipLift 3s ease-in-out infinite; }
+    .anim-q7-smooth { animation: stage2ConstantSpeed 4.2s linear infinite; }
+    .anim-q7-stop { animation: stage3TrueDeceleration 4.2s linear infinite; }
+    .anim-q9-short { animation: push1HandShort 3.6s ease-out infinite; }
+    .anim-q9-long { animation: push2HandsLong 3.6s ease-out infinite; }
+    .anim-q10-b { animation: tugPointB 3s ease-in-out infinite; }
+    .anim-q10-c { animation: clingPointC 3s ease-in-out infinite; }
+    .anim-q12-att-l { animation: attractInLeft 3.2s ease-in-out infinite; }
+    .anim-q12-att-r { animation: attractInRight 3.2s ease-in-out infinite; }
+    .anim-q12-rep-l { animation: repelOutLeft 3.2s ease-in-out infinite; }
+    .anim-q12-rep-r { animation: repelOutRight 3.2s ease-in-out infinite; }
+
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
@@ -95,17 +223,17 @@
               <div class="grid grid-cols-3 gap-2.5">
                 <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
                   <div class="font-bold text-sm text-indigo-950">Set 1</div>
-                  <div class="text-[11px] text-indigo-700 font-medium">Direct &amp; Concepts</div>
+                  <div class="text-xs text-indigo-700 font-medium">Direct &amp; Concepts</div>
                   <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-1">Not Started</div>
                 </button>
                 <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 2</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Real-Life Scenarios</div>
+                  <div class="text-xs text-slate-500 font-medium">Real-Life Scenarios</div>
                   <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-1">Not Started</div>
                 </button>
                 <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 3</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Inversion &amp; Errors</div>
+                  <div class="text-xs text-slate-500 font-medium">Inversion &amp; Errors</div>
                   <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-1">Not Started</div>
                 </button>
               </div>
@@ -281,7 +409,10 @@
               </span>
             </div>
 
-            <h2 id="slidePrompt" class="text-base sm:text-lg font-bold text-slate-900 mb-4"></h2>
+            <h2 id="slidePrompt" class="text-base sm:text-lg font-bold text-slate-900 mb-3"></h2>
+
+            <!-- Question Visual Diagram Container -->
+            <div id="slideDiagramContainer" class="svg-diagram-box mb-4 space-y-3"></div>
 
             <!-- Optional Word Bank Banner -->
             <div id="slideWordBank" class="hidden mb-4 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200">
@@ -635,7 +766,7 @@
     const QUESTION_SETS = {
       "practice_set_1": {
             "id": "practice_set_1",
-            "title": "Practice Mode • Set 1 (Concept & Direct Identification)",
+            "title": "Practice Mode \u2022 Set 1 (Concept & Direct Identification)",
             "shortTitle": "Set 1",
             "maxScore": 36,
             "questions": [
@@ -677,7 +808,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Push (moves object away from you)",
-                                          "Pull (moves object towards you)"
+                                          "Pull (moves object towards you)",
+                                          "Friction (rubs against the pedals to stop them)"
                                     ],
                                     "modelAnswer": "Push (moves object away from you)",
                                     "explanation": "Pressing bicycle pedals and kicking a football apply a push away from the person (C1)."
@@ -689,12 +821,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Push (moves object away from you)",
-                                          "Pull (moves object towards you)"
+                                          "Pull (moves object towards you)",
+                                          "Gravity (pulls the drawer straight down into the floor)"
                                     ],
                                     "modelAnswer": "Pull (moves object towards you)",
                                     "explanation": "Opening a drawer and pulling a wagon move the object towards you, which is a pull (C1)."
                               }
-                        ]
+                        ],
+                        "diagramId": 1
                   },
                   {
                         "qNum": 2,
@@ -761,7 +895,8 @@
                                     ],
                                     "explanation": "Forces can make a moving object speed up, slow down, or change shape (C2)."
                               }
-                        ]
+                        ],
+                        "diagramId": 2
                   },
                   {
                         "qNum": 3,
@@ -789,10 +924,11 @@
                                     "mode": "select",
                                     "options": [
                                           "Temporary change (the shape goes back when the force stops)",
-                                          "Permanent change (the new shape stays after the force stops)"
+                                          "Permanent change (the new shape stays after the force stops)",
+                                          "Permanent change (the sponge and rubber band shatter into pieces)"
                                     ],
                                     "modelAnswer": "Temporary change (the shape goes back when the force stops)",
-                                    "explanation": "A sponge, spring, and rubber band return to their original shape when released — a temporary change (C3)."
+                                    "explanation": "A sponge, spring, and rubber band return to their original shape when released \u2014 a temporary change (C3)."
                               },
                               {
                                     "id": "3b",
@@ -801,10 +937,11 @@
                                     "mode": "select",
                                     "options": [
                                           "Temporary change (the shape goes back when the force stops)",
-                                          "Permanent change (the new shape stays after the force stops)"
+                                          "Permanent change (the new shape stays after the force stops)",
+                                          "Temporary change (all three bounce back like a rubber ball)"
                                     ],
                                     "modelAnswer": "Permanent change (the new shape stays after the force stops)",
-                                    "explanation": "Clay, crumpled aluminium foil, and folded/torn paper keep their new shape after the force stops — a permanent change (C3)."
+                                    "explanation": "Clay, crumpled aluminium foil, and folded/torn paper keep their new shape after the force stops \u2014 a permanent change (C3)."
                               },
                               {
                                     "id": "3c",
@@ -828,7 +965,8 @@
                                     ],
                                     "explanation": "Temporary changes spring back to the original shape; permanent changes stay in the new shape (C3)."
                               }
-                        ]
+                        ],
+                        "diagramId": 3
                   },
                   {
                         "qNum": 4,
@@ -858,7 +996,7 @@
                                           "force magnitude"
                                     ],
                                     "modelAnswer": "Magnitude",
-                                    "explanation": "Magnitude is the strength or size of a force — small (weak) or large (strong) (C19)."
+                                    "explanation": "Magnitude is the strength or size of a force \u2014 small (weak) or large (strong) (C19)."
                               },
                               {
                                     "id": "4b",
@@ -893,7 +1031,8 @@
                                     ],
                                     "explanation": "Direction describes the way a force acts: upwards, downwards, left, right, forwards, or backwards (C19)."
                               }
-                        ]
+                        ],
+                        "diagramId": 4
                   },
                   {
                         "qNum": 5,
@@ -919,7 +1058,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Contact forces (require physical touch between objects)",
-                                          "Non-contact forces (work from a distance without touching)"
+                                          "Non-contact forces (work from a distance without touching)",
+                                          "Non-contact forces (they only act on charged objects in space)"
                                     ],
                                     "modelAnswer": "Contact forces (require physical touch between objects)",
                                     "explanation": "Push, pull, and friction require physical touch between objects, so they are contact forces (C4)."
@@ -931,7 +1071,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Contact forces (require physical touch between objects)",
-                                          "Non-contact forces (work from a distance without touching)"
+                                          "Non-contact forces (work from a distance without touching)",
+                                          "Contact forces (they only work when rubbed with rough carpet)"
                                     ],
                                     "modelAnswer": "Non-contact forces (work from a distance without touching)",
                                     "explanation": "Gravity, magnetic force, and electrostatic force act from a distance without touching (C4, C17)."
@@ -949,7 +1090,8 @@
                                     ],
                                     "explanation": "Electrostatic force is a non-contact force that attracts or repels charged objects (C17)."
                               }
-                        ]
+                        ],
+                        "diagramId": 5
                   },
                   {
                         "qNum": 6,
@@ -985,7 +1127,7 @@
                                           "same direction as motion",
                                           "points to the right"
                                     ],
-                                    "explanation": "Friction always acts in the opposite direction to motion — if motion is right, friction points left (C5)."
+                                    "explanation": "Friction always acts in the opposite direction to motion \u2014 if motion is right, friction points left (C5)."
                               },
                               {
                                     "id": "6b",
@@ -1013,7 +1155,8 @@
                                     "modelAnswer": "Pressing harder creates GREATER friction, and rubbing hands together makes them feel WARM",
                                     "explanation": "The harder two objects press together, the greater the friction; rubbing hands together produces heat and makes them feel warm (C18)."
                               }
-                        ]
+                        ],
+                        "diagramId": 6
                   },
                   {
                         "qNum": 7,
@@ -1073,7 +1216,8 @@
                                     ],
                                     "explanation": "On an ordinary surface, opposing friction acts opposite to the car's motion and slows it to a stop (C6)."
                               }
-                        ]
+                        ],
+                        "diagramId": 7
                   },
                   {
                         "qNum": 8,
@@ -1098,10 +1242,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "No — forces ARE acting on the brick, but they balance each other",
-                                          "Yes — zero forces act on any stationary object"
+                                          "No \u2014 forces ARE acting on the brick, but they balance each other",
+                                          "Yes \u2014 zero forces act on any stationary object",
+                                          "Yes \u2014 gravity turns off whenever you hold an object in your hand"
                                     ],
-                                    "modelAnswer": "No — forces ARE acting on the brick, but they balance each other",
+                                    "modelAnswer": "No \u2014 forces ARE acting on the brick, but they balance each other",
                                     "explanation": "Even though the brick is stationary, two equal and opposite forces are acting on it (C7)."
                               },
                               {
@@ -1135,7 +1280,8 @@
                                     ],
                                     "explanation": "Downward gravity and the upward push from your palm are equal in magnitude and opposite in direction, so they balance each other (C7)."
                               }
-                        ]
+                        ],
+                        "diagramId": 8
                   },
                   {
                         "qNum": 9,
@@ -1163,7 +1309,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Heavy lorry & flat box require MORE force | Light car & round ball require LESS force",
-                                          "Heavy lorry & flat box require LESS force | Light car & round ball require MORE force"
+                                          "Heavy lorry & flat box require LESS force | Light car & round ball require MORE force",
+                                          "Mass and shape have zero effect on the amount of force needed"
                                     ],
                                     "modelAnswer": "Heavy lorry & flat box require MORE force | Light car & round ball require LESS force",
                                     "explanation": "Greater mass requires more force (C8), and a flat box requires more force than a spherical ball of the same mass (C9)."
@@ -1203,7 +1350,8 @@
                                     "modelAnswer": "FASTER and cover a LONGER distance",
                                     "explanation": "A greater applied force makes an object move faster and travel a longer distance (C10)."
                               }
-                        ]
+                        ],
+                        "diagramId": 9
                   },
                   {
                         "qNum": 10,
@@ -1243,7 +1391,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Point A: 0 clips move (force too weak) | Point B: Some clips attracted | Point C: Greatest number of clips attracted (strongest force)",
-                                          "Point A: Greatest number of clips attracted | Point B: Some clips attracted | Point C: 0 clips move"
+                                          "Point A: Greatest number of clips attracted | Point B: Some clips attracted | Point C: 0 clips move",
+                                          "Point A, Point B, and Point C all attract the exact same number of paper clips"
                                     ],
                                     "modelAnswer": "Point A: 0 clips move (force too weak) | Point B: Some clips attracted | Point C: Greatest number of clips attracted (strongest force)",
                                     "explanation": "Magnetic force is weakest at Point A (very far) and strongest at Point C (very close) (C13)."
@@ -1269,7 +1418,8 @@
                                     ],
                                     "explanation": "As distance between the magnet and object decreases, magnetic force strength increases (C13)."
                               }
-                        ]
+                        ],
+                        "diagramId": 10
                   },
                   {
                         "qNum": 11,
@@ -1332,7 +1482,7 @@
                                           "iron",
                                           "steel"
                                     ],
-                                    "explanation": "Not all metals are magnetic — aluminium and copper are non-magnetic metals (C14)."
+                                    "explanation": "Not all metals are magnetic \u2014 aluminium and copper are non-magnetic metals (C14)."
                               },
                               {
                                     "id": "11c",
@@ -1347,7 +1497,8 @@
                                     "modelAnswer": "Non-magnetic materials (none of them are attracted to a magnet)",
                                     "explanation": "Paper, wood, glass, plastic, and rubber are all non-magnetic materials (C14)."
                               }
-                        ]
+                        ],
+                        "diagramId": 11
                   },
                   {
                         "qNum": 12,
@@ -1368,7 +1519,7 @@
                         "items": [
                               {
                                     "id": "12a",
-                                    "label": "12a. What happens when UNLIKE poles (N–S or S–N) are brought close together vs. when LIKE poles (N–N or S–S) are brought close together?",
+                                    "label": "12a. What happens when UNLIKE poles (N\u2013S or S\u2013N) are brought close together vs. when LIKE poles (N\u2013N or S\u2013S) are brought close together?",
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
@@ -1377,7 +1528,7 @@
                                           "All magnetic poles attract each other"
                                     ],
                                     "modelAnswer": "Unlike poles ATTRACT (pull together) | Like poles REPEL (push apart)",
-                                    "explanation": "Unlike poles (N and S) exert a force of attraction; like poles (N–N or S–S) exert a force of repulsion (C15)."
+                                    "explanation": "Unlike poles (N and S) exert a force of attraction; like poles (N\u2013N or S\u2013S) exert a force of repulsion (C15)."
                               },
                               {
                                     "id": "12b",
@@ -1403,18 +1554,20 @@
                                     "mode": "select",
                                     "options": [
                                           "N (North) at top, E (East) at right, S (South) at bottom, W (West) at left",
-                                          "S (South) at top, W (West) at right, N (North) at bottom, E (East) at left"
+                                          "S (South) at top, W (West) at right, N (North) at bottom, E (East) at left",
+                                          "E (East) at top, W (West) at bottom, N (North) at right, S (South) at left"
                                     ],
                                     "modelAnswer": "N (North) at top, E (East) at right, S (South) at bottom, W (West) at left",
                                     "explanation": "A standard compass dial shows North (N) at top, East (E) at right, South (S) at bottom, and West (W) at left (C16)."
                               }
-                        ]
+                        ],
+                        "diagramId": 12
                   }
             ]
       },
       "practice_set_2": {
             "id": "practice_set_2",
-            "title": "Practice Mode • Set 2 (Real-Life Scenarios & Application)",
+            "title": "Practice Mode \u2022 Set 2 (Real-Life Scenarios & Application)",
             "shortTitle": "Set 2",
             "maxScore": 36,
             "questions": [
@@ -1439,10 +1592,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "Push — moves the trolley away from her",
-                                          "Pull — moves the trolley towards her"
+                                          "Push \u2014 moves the trolley away from her",
+                                          "Pull \u2014 moves the trolley towards her",
+                                          "Neither force acts on the object in this situation"
                                     ],
-                                    "modelAnswer": "Push — moves the trolley away from her",
+                                    "modelAnswer": "Push \u2014 moves the trolley away from her",
                                     "explanation": "Pushing a shopping trolley moves it away from the person (C1)."
                               },
                               {
@@ -1451,10 +1605,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "Pull — each team pulls the rope towards themselves",
-                                          "Push — each team pushes the rope away from themselves"
+                                          "Pull \u2014 each team pulls the rope towards themselves",
+                                          "Push \u2014 each team pushes the rope away from themselves",
+                                          "Friction (rubs against the pedals to stop them)"
                                     ],
-                                    "modelAnswer": "Pull — each team pulls the rope towards themselves",
+                                    "modelAnswer": "Pull \u2014 each team pulls the rope towards themselves",
                                     "explanation": "Tug-of-war is a pull because each team pulls the rope towards their body (C1)."
                               },
                               {
@@ -1473,7 +1628,8 @@
                                     ],
                                     "explanation": "Pedalling a bike is a push; opening a drawer towards your chest is a pull (C1)."
                               }
-                        ]
+                        ],
+                        "diagramId": 1
                   },
                   {
                         "qNum": 2,
@@ -1526,12 +1682,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Tailwind = Speed up (move faster) | Thick grass = Slow down (move slower)",
-                                          "Tailwind = Slow down | Thick grass = Speed up"
+                                          "Tailwind = Slow down | Thick grass = Speed up",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Tailwind = Speed up (move faster) | Thick grass = Slow down (move slower)",
                                     "explanation": "A push in the direction of motion speeds it up; grass friction slows it down (C2)."
                               }
-                        ]
+                        ],
+                        "diagramId": 2
                   },
                   {
                         "qNum": 3,
@@ -1574,10 +1732,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "Permanent change — the new shape stays",
-                                          "Temporary change — both spring back to flat sheets"
+                                          "Permanent change \u2014 the new shape stays",
+                                          "Temporary change \u2014 both spring back to flat sheets",
+                                          "Temporary change (all three bounce back like a rubber ball)"
                                     ],
-                                    "modelAnswer": "Permanent change — the new shape stays",
+                                    "modelAnswer": "Permanent change \u2014 the new shape stays",
                                     "explanation": "Crumpled aluminium foil and squashed clay keep their new shape permanently (C3)."
                               },
                               {
@@ -1587,12 +1746,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Stretched coil spring = Temporary change | Folded paper = Permanent change",
-                                          "Stretched coil spring = Permanent change | Folded paper = Temporary change"
+                                          "Stretched coil spring = Permanent change | Folded paper = Temporary change",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Stretched coil spring = Temporary change | Folded paper = Permanent change",
                                     "explanation": "A stretched spring returns to its original shape (temporary); folded paper stays folded (permanent) (C3)."
                               }
-                        ]
+                        ],
+                        "diagramId": 3
                   },
                   {
                         "qNum": 4,
@@ -1638,7 +1799,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Above box pointing up = Upwards | Below box pointing down = Downwards",
-                                          "Above box pointing up = Downwards | Below box pointing down = Upwards"
+                                          "Above box pointing up = Downwards | Below box pointing down = Upwards",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Above box pointing up = Upwards | Below box pointing down = Downwards",
                                     "explanation": "An arrow above the box pointing up acts upwards; an arrow below pointing down acts downwards (C19)."
@@ -1656,7 +1818,8 @@
                                     "modelAnswer": "Direction",
                                     "explanation": "Direction is the way a force acts (C19)."
                               }
-                        ]
+                        ],
+                        "diagramId": 4
                   },
                   {
                         "qNum": 5,
@@ -1676,13 +1839,30 @@
                         "items": [
                               {
                                     "id": "5a",
-                                    "label": "5a. After combing dry hair with a plastic comb, the comb attracts tiny pieces of tissue paper without touching them. Name this force and state whether it is contact or non-contact:",
+                                    "label": "5a. After combing dry hair with a plastic comb, the comb attracts tiny pieces of tissue paper without touching them. Which force is acting?",
+                                    "points": 1,
+                                    "mode": "select",
+                                    "options": [
+                                          "Electrostatic force (a non-contact force acting on charged objects)",
+                                          "Magnetic force (a contact force acting only on iron and steel)",
+                                          "Friction (a contact force between rubbing surfaces)"
+                                    ],
+                                    "modelAnswer": "Electrostatic force (a non-contact force acting on charged objects)",
+                                    "explanation": "A charged comb attracting tissue from a distance is electrostatic force, a non-contact force (C4, C17)."
+                              },
+                              {
+                                    "id": "5b",
+                                    "label": "5b. A ripe mango detaches from a branch and falls to the ground, while a magnet lifts steel pins through the air. Name these two forces and state whether they are contact or non-contact:",
                                     "points": 1,
                                     "mode": "keyword",
-                                    "modelAnswer": "Electrostatic force, which is a non-contact force.",
+                                    "modelAnswer": "Gravity and magnetic force, which are both non-contact forces.",
                                     "keywordGroups": [
                                           [
-                                                "electrostatic"
+                                                "gravity"
+                                          ],
+                                          [
+                                                "magnetic",
+                                                "magnet"
                                           ],
                                           [
                                                 "non contact",
@@ -1690,18 +1870,6 @@
                                                 "without touching"
                                           ]
                                     ],
-                                    "explanation": "A charged comb attracting tissue from a distance is electrostatic force, a non-contact force (C4, C17)."
-                              },
-                              {
-                                    "id": "5b",
-                                    "label": "5b. A ripe mango detaches from a high branch and falls straight to the ground, while a magnet lifts steel pins through the air:",
-                                    "points": 1,
-                                    "mode": "select",
-                                    "options": [
-                                          "Both are Non-contact forces (Gravity & Magnetic force)",
-                                          "Both are Contact forces (Push & Friction)"
-                                    ],
-                                    "modelAnswer": "Both are Non-contact forces (Gravity & Magnetic force)",
                                     "explanation": "Gravity and magnetic force both act from a distance without physical contact (C4)."
                               },
                               {
@@ -1711,12 +1879,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Both are Contact forces (the objects must touch)",
-                                          "Both are Non-contact forces (act without touching)"
+                                          "Both are Non-contact forces (act without touching)",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Both are Contact forces (the objects must touch)",
                                     "explanation": "Pushing with hands and friction between rubbing surfaces are both contact forces (C4)."
                               }
-                        ]
+                        ],
+                        "diagramId": 5
                   },
                   {
                         "qNum": 6,
@@ -1759,15 +1929,29 @@
                               },
                               {
                                     "id": "6b",
-                                    "label": "6b. Next, the student stacks three heavy books on top of a wooden block so it presses harder against the table. What happens to the friction when she pushes the block?",
+                                    "label": "6b. Next, the student stacks three heavy books on top of a wooden block so it presses harder against the table. What happens to the friction when she pushes the block, and why?",
                                     "points": 1,
-                                    "mode": "select",
-                                    "options": [
-                                          "Friction INCREASES because the surfaces press harder together",
-                                          "Friction DECREASES because the books make the block heavier",
-                                          "Friction stays the same because only surface roughness matters"
+                                    "mode": "keyword",
+                                    "modelAnswer": "Friction increases (becomes greater) because the surfaces press harder together.",
+                                    "keywordGroups": [
+                                          [
+                                                "increase",
+                                                "increases",
+                                                "greater",
+                                                "more"
+                                          ],
+                                          [
+                                                "press",
+                                                "harder",
+                                                "heavy",
+                                                "heavier",
+                                                "push"
+                                          ]
                                     ],
-                                    "modelAnswer": "Friction INCREASES because the surfaces press harder together",
+                                    "forbidWords": [
+                                          "friction decreases",
+                                          "less friction"
+                                    ],
                                     "explanation": "How hard objects press together affects friction: the harder the press, the greater the friction (C18)."
                               },
                               {
@@ -1777,12 +1961,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Brake pads rub against the wheel to create friction pointing backwards (left, opposite to motion)",
-                                          "Brake pads remove all friction so the wheel spins faster in the same direction"
+                                          "Brake pads remove all friction so the wheel spins faster in the same direction",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Brake pads rub against the wheel to create friction pointing backwards (left, opposite to motion)",
                                     "explanation": "Bicycle brakes use friction acting opposite to the wheel's motion to slow down and stop the bike (C5, C18)."
                               }
-                        ]
+                        ],
+                        "diagramId": 6
                   },
                   {
                         "qNum": 7,
@@ -1830,7 +2016,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Normal table: Opposing friction slows and stops it | Untouched car: Stays at rest because no force is applied",
-                                          "Normal table: Gravity pushes it sideways | Untouched car: Moves at constant speed"
+                                          "Normal table: Gravity pushes it sideways | Untouched car: Moves at constant speed",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Normal table: Opposing friction slows and stops it | Untouched car: Stays at rest because no force is applied",
                                     "explanation": "Friction opposes motion on a normal table; an object at rest remains at rest unless a force acts on it (C6)."
@@ -1839,17 +2026,17 @@
                                     "id": "7c",
                                     "label": "7c. If the toy car rolls off the edge of the table, which force pulls it straight down to the floor?",
                                     "points": 1,
-                                    "mode": "exact",
-                                    "accepted": [
-                                          "gravity",
-                                          "force of gravity",
-                                          "earth's gravity",
-                                          "gravitational force"
+                                    "mode": "select",
+                                    "options": [
+                                          "Gravity (a non-contact force pulling downward toward Earth)",
+                                          "Friction (a contact force pushing upward from the floor)",
+                                          "Magnetic force (attracting the plastic wheels to the wooden floor)"
                                     ],
-                                    "modelAnswer": "Gravity",
+                                    "modelAnswer": "Gravity (a non-contact force pulling downward toward Earth)",
                                     "explanation": "Gravity pulls falling objects downward toward the Earth (C11)."
                               }
-                        ]
+                        ],
+                        "diagramId": 7
                   },
                   {
                         "qNum": 8,
@@ -1904,12 +2091,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Unbalanced gravity would pull the dictionary downward so it falls to the ground",
-                                          "The dictionary would float in mid-air because no forces act on it"
+                                          "The dictionary would float in mid-air because no forces act on it",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Unbalanced gravity would pull the dictionary downward so it falls to the ground",
                                     "explanation": "Without the upward push of your palm to balance gravity, gravity pulls the book down to the floor (C7, C11)."
                               }
-                        ]
+                        ],
+                        "diagramId": 8
                   },
                   {
                         "qNum": 9,
@@ -1954,31 +2143,45 @@
                                     "mode": "select",
                                     "options": [
                                           "The 5 kg round ball needs LESS force because its spherical shape rolls with less friction than a flat box",
-                                          "The 5 kg flat box needs LESS force because its flat bottom slides with zero friction"
+                                          "The 5 kg flat box needs LESS force because its flat bottom slides with zero friction",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "The 5 kg round ball needs LESS force because its spherical shape rolls with less friction than a flat box",
                                     "explanation": "Object shape affects movement: a spherical ball requires less force than a flat-sided box of equal mass (C9)."
                               },
                               {
                                     "id": "9c",
-                                    "label": "9c. In a hallway test, Crate A is shoved firmly with both hands while identical Crate B is nudged gently with one hand:",
+                                    "label": "9c. In a hallway test, Crate A is shoved firmly with both hands while identical Crate B is nudged gently with one hand. How do the speed and distance of Crate A compare to Crate B?",
                                     "points": 1,
-                                    "mode": "select",
-                                    "options": [
-                                          "Crate A moves FASTER and covers a LONGER distance than Crate B",
-                                          "Crate B moves FASTER and covers a LONGER distance than Crate A"
+                                    "mode": "keyword",
+                                    "modelAnswer": "Crate A moves faster and covers a longer distance than Crate B.",
+                                    "keywordGroups": [
+                                          [
+                                                "faster",
+                                                "speed"
+                                          ],
+                                          [
+                                                "longer",
+                                                "further",
+                                                "farther",
+                                                "more distance"
+                                          ]
                                     ],
-                                    "modelAnswer": "Crate A moves FASTER and covers a LONGER distance than Crate B",
+                                    "forbidWords": [
+                                          "slower",
+                                          "shorter distance"
+                                    ],
                                     "explanation": "Greater force (both hands) makes an object move faster and travel a longer distance than less force (one hand) (C10)."
                               }
-                        ]
+                        ],
+                        "diagramId": 9
                   },
                   {
                         "qNum": 10,
                         "unit": "magnets",
                         "cluster": "Cluster E",
                         "conceptId": "C12, C13",
-                        "subTopic": "Unit 16: Lab Data Analysis — Magnet Distance (Points A, B, C)",
+                        "subTopic": "Unit 16: Lab Data Analysis \u2014 Magnet Distance (Points A, B, C)",
                         "points": 3,
                         "wordBank": [
                               "Point C",
@@ -2036,12 +2239,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Magnetic force is a non-contact force that acts through air and paper without touching",
-                                          "Paper turns into a permanent iron magnet when touched"
+                                          "Paper turns into a permanent iron magnet when touched",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Magnetic force is a non-contact force that acts through air and paper without touching",
                                     "explanation": "Magnets can attract magnetic materials from a distance through air and paper (C12)."
                               }
-                        ]
+                        ],
+                        "diagramId": 10
                   },
                   {
                         "qNum": 11,
@@ -2095,12 +2300,14 @@
                                     "mode": "select",
                                     "options": [
                                           "None of them move because non-metals (plastic, glass, wood, paper, rubber) are non-magnetic materials",
-                                          "They are repelled and fly away from the magnet"
+                                          "They are repelled and fly away from the magnet",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "None of them move because non-metals (plastic, glass, wood, paper, rubber) are non-magnetic materials",
                                     "explanation": "Non-magnetic materials are neither attracted nor repelled by a magnet (C14)."
                               }
-                        ]
+                        ],
+                        "diagramId": 11
                   },
                   {
                         "qNum": 12,
@@ -2143,31 +2350,37 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "A magnetic compass — it works because the Earth behaves like a giant magnet",
-                                          "A thermometer — it works because the Earth's air has friction"
+                                          "A magnetic compass \u2014 it works because the Earth behaves like a giant magnet",
+                                          "A thermometer \u2014 it works because the Earth's air has friction",
+                                          "Neither force acts on the object in this situation"
                                     ],
-                                    "modelAnswer": "A magnetic compass — it works because the Earth behaves like a giant magnet",
+                                    "modelAnswer": "A magnetic compass \u2014 it works because the Earth behaves like a giant magnet",
                                     "explanation": "A magnetic compass aligns with Earth because the Earth behaves like a giant magnet (C16)."
                               },
                               {
                                     "id": "12c",
-                                    "label": "12c. If North (N) is at the top of the compass dial and South (S) is at the bottom, which direction is on the RIGHT and which is on the LEFT?",
+                                    "label": "12c. On the compass dial, North (N) is at the top and South (S) is at the bottom. Which direction is on the RIGHT and which is on the LEFT?",
                                     "points": 1,
-                                    "mode": "select",
-                                    "options": [
-                                          "East (E) is on the right, and West (W) is on the left",
-                                          "West (W) is on the right, and East (E) is on the left"
+                                    "mode": "keyword",
+                                    "modelAnswer": "East (E) is on the right, and West (W) is on the left.",
+                                    "keywordGroups": [
+                                          [
+                                                "east"
+                                          ],
+                                          [
+                                                "west"
+                                          ]
                                     ],
-                                    "modelAnswer": "East (E) is on the right, and West (W) is on the left",
                                     "explanation": "On the compass dial, N is top, E is right, S is bottom, and W is left (C16)."
                               }
-                        ]
+                        ],
+                        "diagramId": 12
                   }
             ]
       },
       "practice_set_3": {
             "id": "practice_set_3",
-            "title": "Practice Mode • Set 3 (Cause-Effect Inversion & Error Spotting)",
+            "title": "Practice Mode \u2022 Set 3 (Cause-Effect Inversion & Error Spotting)",
             "shortTitle": "Set 3",
             "maxScore": 36,
             "questions": [
@@ -2176,7 +2389,7 @@
                         "unit": "forces",
                         "cluster": "Cluster A",
                         "conceptId": "C1",
-                        "subTopic": "Unit 16: Error Spotting — Push & Pull Misconceptions",
+                        "subTopic": "Unit 16: Error Spotting \u2014 Push & Pull Misconceptions",
                         "points": 3,
                         "wordBank": [
                               "Push",
@@ -2208,10 +2421,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "Incorrect — tug-of-war is a PULL because each team pulls the rope towards themselves",
-                                          "Correct — tug-of-war is a push away from your body"
+                                          "Incorrect \u2014 tug-of-war is a PULL because each team pulls the rope towards themselves",
+                                          "Correct \u2014 tug-of-war is a push away from your body",
+                                          "Friction (rubs against the pedals to stop them)"
                                     ],
-                                    "modelAnswer": "Incorrect — tug-of-war is a PULL because each team pulls the rope towards themselves",
+                                    "modelAnswer": "Incorrect \u2014 tug-of-war is a PULL because each team pulls the rope towards themselves",
                                     "explanation": "Tug-of-war is a pulling force towards each team (C1)."
                               },
                               {
@@ -2221,12 +2435,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Pushing moves the trolley AWAY from you, whereas pulling moves the wagon TOWARDS you",
-                                          "Both pushing and pulling move the object away from you"
+                                          "Both pushing and pulling move the object away from you",
+                                          "Gravity (pulls the drawer straight down into the floor)"
                                     ],
                                     "modelAnswer": "Pushing moves the trolley AWAY from you, whereas pulling moves the wagon TOWARDS you",
                                     "explanation": "A push moves objects away; a pull moves objects towards you (C1)."
                               }
-                        ]
+                        ],
+                        "diagramId": 1
                   },
                   {
                         "qNum": 2,
@@ -2252,7 +2468,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Kick from behind = Speed up (move faster) | Kick from the side = Change direction",
-                                          "Kick from behind = Stop moving | Kick from the side = Change shape"
+                                          "Kick from behind = Stop moving | Kick from the side = Change shape",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Kick from behind = Speed up (move faster) | Kick from the side = Change direction",
                                     "explanation": "A force in the same direction makes a moving object speed up; a sideways force changes its direction (C2)."
@@ -2264,7 +2481,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Rough mud = Slow down (move slower) | Goalkeeper catch = Stop moving completely",
-                                          "Rough mud = Speed up | Goalkeeper catch = Change direction"
+                                          "Rough mud = Speed up | Goalkeeper catch = Change direction",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Rough mud = Slow down (move slower) | Goalkeeper catch = Stop moving completely",
                                     "explanation": "Opposing mud friction slows the ball down; the goalkeeper's catch stops it completely (C2)."
@@ -2286,14 +2504,15 @@
                                     ],
                                     "explanation": "A force can make a stationary object start moving and can change an object's shape (C2)."
                               }
-                        ]
+                        ],
+                        "diagramId": 2
                   },
                   {
                         "qNum": 3,
                         "unit": "forces",
                         "cluster": "Cluster A",
                         "conceptId": "C3",
-                        "subTopic": "Unit 16: Error Spotting — Temporary vs. Permanent Shape Changes",
+                        "subTopic": "Unit 16: Error Spotting \u2014 Temporary vs. Permanent Shape Changes",
                         "points": 3,
                         "wordBank": [
                               "temporary",
@@ -2333,7 +2552,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Sponge (squeezed), Spring (stretched), and Rubber band (stretched)",
-                                          "Clay (squashed), Aluminium foil (crumpled), and Paper (folded or torn)"
+                                          "Clay (squashed), Aluminium foil (crumpled), and Paper (folded or torn)",
+                                          "Temporary change (all three bounce back like a rubber ball)"
                                     ],
                                     "modelAnswer": "Sponge (squeezed), Spring (stretched), and Rubber band (stretched)",
                                     "explanation": "Sponge, spring, and rubber band all return to their original shape after the force is removed (C3)."
@@ -2345,19 +2565,21 @@
                                     "mode": "select",
                                     "options": [
                                           "Clay (squashed), Aluminium foil (crumpled), and Paper (folded or torn)",
-                                          "Sponge (squeezed), Spring (stretched), and Rubber band (stretched)"
+                                          "Sponge (squeezed), Spring (stretched), and Rubber band (stretched)",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Clay (squashed), Aluminium foil (crumpled), and Paper (folded or torn)",
                                     "explanation": "Clay, aluminium foil, and paper keep their new shape permanently after the force stops (C3)."
                               }
-                        ]
+                        ],
+                        "diagramId": 3
                   },
                   {
                         "qNum": 4,
                         "unit": "forces",
                         "cluster": "Cluster A",
                         "conceptId": "C19",
-                        "subTopic": "Unit 16: Error Spotting — Force Magnitude vs. Direction",
+                        "subTopic": "Unit 16: Error Spotting \u2014 Force Magnitude vs. Direction",
                         "points": 3,
                         "wordBank": [
                               "magnitude",
@@ -2392,7 +2614,8 @@
                                     "mode": "select",
                                     "options": [
                                           "The magnitude of the force DECREASES (from a large/strong force to a small/weak force), while direction stays right",
-                                          "The direction reverses from right to left, while magnitude stays large"
+                                          "The direction reverses from right to left, while magnitude stays large",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "The magnitude of the force DECREASES (from a large/strong force to a small/weak force), while direction stays right",
                                     "explanation": "Changing from 3 arrows to 1 arrow pointing the same way reduces the force magnitude from large to small (C19)."
@@ -2404,19 +2627,21 @@
                                     "mode": "select",
                                     "options": [
                                           "The force direction reverses from UPWARDS to DOWNWARDS",
-                                          "The force direction changes from LEFT to RIGHT"
+                                          "The force direction changes from LEFT to RIGHT",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "The force direction reverses from UPWARDS to DOWNWARDS",
                                     "explanation": "Above pointing up = upwards; below pointing down = downwards (C19)."
                               }
-                        ]
+                        ],
+                        "diagramId": 4
                   },
                   {
                         "qNum": 5,
                         "unit": "forces",
                         "cluster": "Cluster B",
                         "conceptId": "C4, C17",
-                        "subTopic": "Unit 16: Misconception Audit — Contact, Non-Contact & Electrostatic Forces",
+                        "subTopic": "Unit 16: Misconception Audit \u2014 Contact, Non-Contact & Electrostatic Forces",
                         "points": 3,
                         "wordBank": [
                               "contact",
@@ -2434,10 +2659,11 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "False — friction is a CONTACT force because two surfaces must physically touch and rub together",
-                                          "True — friction works from a distance through empty space"
+                                          "False \u2014 friction is a CONTACT force because two surfaces must physically touch and rub together",
+                                          "True \u2014 friction works from a distance through empty space",
+                                          "Non-contact forces (they only act on charged objects in space)"
                                     ],
-                                    "modelAnswer": "False — friction is a CONTACT force because two surfaces must physically touch and rub together",
+                                    "modelAnswer": "False \u2014 friction is a CONTACT force because two surfaces must physically touch and rub together",
                                     "explanation": "Friction only occurs when two surfaces touch and rub against each other, so it is a contact force (C4, C5)."
                               },
                               {
@@ -2465,19 +2691,21 @@
                                     "mode": "select",
                                     "options": [
                                           "Contact: Push, Pull, Friction | Non-Contact: Gravity, Magnetic force, Electrostatic force",
-                                          "Contact: Gravity, Friction, Push | Non-Contact: Pull, Magnetic force, Electrostatic force"
+                                          "Contact: Gravity, Friction, Push | Non-Contact: Pull, Magnetic force, Electrostatic force",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Contact: Push, Pull, Friction | Non-Contact: Gravity, Magnetic force, Electrostatic force",
                                     "explanation": "Push, pull, and friction are contact forces; gravity, magnetic force, and electrostatic force are non-contact forces (C4, C17)."
                               }
-                        ]
+                        ],
+                        "diagramId": 5
                   },
                   {
                         "qNum": 6,
                         "unit": "forces",
                         "cluster": "Cluster B",
                         "conceptId": "C5, C18",
-                        "subTopic": "Unit 16: What-If & Error Spotting — Friction Arrows & Factors",
+                        "subTopic": "Unit 16: What-If & Error Spotting \u2014 Friction Arrows & Factors",
                         "points": 3,
                         "wordBank": [
                               "opposite",
@@ -2514,7 +2742,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Friction DECREASES and the box slides FURTHER because tile is smoother than carpet",
-                                          "Friction INCREASES and the box stops immediately because tile is smoother"
+                                          "Friction INCREASES and the box stops immediately because tile is smoother",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Friction DECREASES and the box slides FURTHER because tile is smoother than carpet",
                                     "explanation": "Smooth surfaces like tile create less friction than rough carpet (C5, C18)."
@@ -2525,20 +2754,22 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "Wrong — how hard objects press together IS a factor: the harder the push/press, the greater the friction",
-                                          "Wrong — pressing objects harder together makes friction disappear completely"
+                                          "Wrong \u2014 how hard objects press together IS a factor: the harder the push/press, the greater the friction",
+                                          "Wrong \u2014 pressing objects harder together makes friction disappear completely",
+                                          "Neither force acts on the object in this situation"
                                     ],
-                                    "modelAnswer": "Wrong — how hard objects press together IS a factor: the harder the push/press, the greater the friction",
+                                    "modelAnswer": "Wrong \u2014 how hard objects press together IS a factor: the harder the push/press, the greater the friction",
                                     "explanation": "Two factors affect friction: surface roughness (smooth vs. rough) and how hard the surfaces press together (C18)."
                               }
-                        ]
+                        ],
+                        "diagramId": 6
                   },
                   {
                         "qNum": 7,
                         "unit": "forces",
                         "cluster": "Cluster C",
                         "conceptId": "C6, C11",
-                        "subTopic": "Unit 16: Inversion Check — Frictionless Track & Gravity in Mid-Air",
+                        "subTopic": "Unit 16: Inversion Check \u2014 Frictionless Track & Gravity in Mid-Air",
                         "points": 3,
                         "wordBank": [
                               "same speed",
@@ -2574,31 +2805,42 @@
                                     "mode": "select",
                                     "options": [
                                           "Opposing friction brings a moving car to rest; a stationary car only moves when a force (push/pull) is applied",
-                                          "Gravity stops a car on a flat table; a stationary car starts moving with zero force"
+                                          "Gravity stops a car on a flat table; a stationary car starts moving with zero force",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Opposing friction brings a moving car to rest; a stationary car only moves when a force (push/pull) is applied",
                                     "explanation": "A stationary car stays at rest until a force acts on it; friction opposes motion on a normal surface (C6)."
                               },
                               {
                                     "id": "7c",
-                                    "label": "7c. Misconception 2: 'Once a ball leaves your hand in the air, no force acts on it until it touches the floor.'",
+                                    "label": "7c. Misconception 2: 'Once a ball leaves your hand in the air, no force acts on it until it touches the floor.' Explain why this is false:",
                                     "points": 1,
-                                    "mode": "select",
-                                    "options": [
-                                          "False — Gravity is a non-contact force that continuously pulls the ball downward toward the Earth even in mid-air",
-                                          "True — Gravity only works when the ball touches the ground"
+                                    "mode": "keyword",
+                                    "modelAnswer": "False because gravity is a non-contact force that continuously pulls the ball downward toward the Earth even in mid-air.",
+                                    "keywordGroups": [
+                                          [
+                                                "gravity"
+                                          ],
+                                          [
+                                                "downward",
+                                                "down",
+                                                "earth",
+                                                "non contact",
+                                                "distance",
+                                                "without touching"
+                                          ]
                                     ],
-                                    "modelAnswer": "False — Gravity is a non-contact force that continuously pulls the ball downward toward the Earth even in mid-air",
-                                    "explanation": "Gravity is a non-contact force that pulls objects toward Earth at all times (C4, C11)."
+                                    "explanation": "Gravity is a non-contact force that pulls objects toward Earth at all times, even in mid-air (C4, C11)."
                               }
-                        ]
+                        ],
+                        "diagramId": 7
                   },
                   {
                         "qNum": 8,
                         "unit": "forces",
                         "cluster": "Cluster C",
                         "conceptId": "C7",
-                        "subTopic": "Unit 16: Error Spotting — 'Zero Forces Act on a Stationary Brick'",
+                        "subTopic": "Unit 16: Error Spotting \u2014 'Zero Forces Act on a Stationary Brick'",
                         "points": 3,
                         "wordBank": [
                               "wrong",
@@ -2649,19 +2891,21 @@
                                     "mode": "select",
                                     "options": [
                                           "Equal in magnitude (strength) and opposite in direction (downward vs. upward)",
-                                          "Gravity is much stronger than the upward push of the hand"
+                                          "Gravity is much stronger than the upward push of the hand",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Equal in magnitude (strength) and opposite in direction (downward vs. upward)",
                                     "explanation": "Because the upward push equals the downward pull of gravity, the forces balance and the brick does not move (C7)."
                               }
-                        ]
+                        ],
+                        "diagramId": 8
                   },
                   {
                         "qNum": 9,
                         "unit": "forces",
                         "cluster": "Cluster D",
                         "conceptId": "C8, C9, C10",
-                        "subTopic": "Unit 16: Experimental Deductions — Mass, Shape & Force Strength",
+                        "subTopic": "Unit 16: Experimental Deductions \u2014 Mass, Shape & Force Strength",
                         "points": 3,
                         "wordBank": [
                               "greater mass",
@@ -2680,7 +2924,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Box X has a GREATER mass (is heavier, like a lorry vs. a car) than Box Y",
-                                          "Box X has a SMALLER mass (is lighter) than Box Y"
+                                          "Box X has a SMALLER mass (is lighter) than Box Y",
+                                          "Mass and shape have zero effect on the amount of force needed"
                                     ],
                                     "modelAnswer": "Box X has a GREATER mass (is heavier, like a lorry vs. a car) than Box Y",
                                     "explanation": "Heavier objects with greater mass require more force to move (C8)."
@@ -2714,19 +2959,21 @@
                                     "mode": "select",
                                     "options": [
                                           "Car 1 was pushed with a GREATER force (like using both hands) than Car 2 (like using one hand)",
-                                          "Car 1 was pushed with LESS force than Car 2"
+                                          "Car 1 was pushed with LESS force than Car 2",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Car 1 was pushed with a GREATER force (like using both hands) than Car 2 (like using one hand)",
                                     "explanation": "Greater applied force makes an object move faster and travel a longer distance (C10)."
                               }
-                        ]
+                        ],
+                        "diagramId": 9
                   },
                   {
                         "qNum": 10,
                         "unit": "magnets",
                         "cluster": "Cluster E",
                         "conceptId": "C12, C13",
-                        "subTopic": "Unit 16: Inversion Analysis — Moving a Magnet FURTHER Away (Point C to Point A)",
+                        "subTopic": "Unit 16: Inversion Analysis \u2014 Moving a Magnet FURTHER Away (Point C to Point A)",
                         "points": 3,
                         "wordBank": [
                               "decreases",
@@ -2792,20 +3039,22 @@
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
-                                          "False — magnetic force is a non-contact force that acts from a distance through air and paper",
-                                          "True — magnetic force is a contact force"
+                                          "False \u2014 magnetic force is a non-contact force that acts from a distance through air and paper",
+                                          "True \u2014 magnetic force is a contact force",
+                                          "Neither force acts on the object in this situation"
                                     ],
-                                    "modelAnswer": "False — magnetic force is a non-contact force that acts from a distance through air and paper",
+                                    "modelAnswer": "False \u2014 magnetic force is a non-contact force that acts from a distance through air and paper",
                                     "explanation": "Magnets exert a non-contact force through air and paper without touching (C12)."
                               }
-                        ]
+                        ],
+                        "diagramId": 10
                   },
                   {
                         "qNum": 11,
                         "unit": "magnets",
                         "cluster": "Cluster E",
                         "conceptId": "C14",
-                        "subTopic": "Unit 16: The Metal Trap — 'Are All Metals Magnetic?'",
+                        "subTopic": "Unit 16: The Metal Trap \u2014 'Are All Metals Magnetic?'",
                         "points": 3,
                         "wordBank": [
                               "False",
@@ -2858,7 +3107,8 @@
                                     "modelAnswer": "Aluminium, copper, paper, wood, glass, plastic, and rubber",
                                     "explanation": "Aluminium, copper, paper, wood, glass, plastic, and rubber are all non-magnetic materials (C14)."
                               }
-                        ]
+                        ],
+                        "diagramId": 11
                   },
                   {
                         "qNum": 12,
@@ -2896,7 +3146,7 @@
                                                 "attract"
                                           ]
                                     ],
-                                    "explanation": "Like poles (N–N) repel each other; unlike poles (S–N) attract each other (C15)."
+                                    "explanation": "Like poles (N\u2013N) repel each other; unlike poles (S\u2013N) attract each other (C15)."
                               },
                               {
                                     "id": "12b",
@@ -2905,7 +3155,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Pole X & N = Force of repulsion (push apart) | Pole Y & N = Force of attraction (pull together)",
-                                          "Pole X & N = Force of attraction | Pole Y & N = Force of repulsion"
+                                          "Pole X & N = Force of attraction | Pole Y & N = Force of repulsion",
+                                          "Neither force acts on the object in this situation"
                                     ],
                                     "modelAnswer": "Pole X & N = Force of repulsion (push apart) | Pole Y & N = Force of attraction (pull together)",
                                     "explanation": "Like poles exert a force of repulsion; unlike poles exert a force of attraction (C15)."
@@ -2917,12 +3168,14 @@
                                     "mode": "select",
                                     "options": [
                                           "Earth behaves like a giant magnet; a nearby bar magnet pulls/deflects the compass needle away from true North",
-                                          "Earth has no magnetism; a nearby bar magnet makes the plastic compass case melt"
+                                          "Earth has no magnetism; a nearby bar magnet makes the plastic compass case melt",
+                                          "E (East) at top, W (West) at bottom, N (North) at right, S (South) at left"
                                     ],
                                     "modelAnswer": "Earth behaves like a giant magnet; a nearby bar magnet pulls/deflects the compass needle away from true North",
                                     "explanation": "Earth acts as a giant magnet to align a compass needle (N, E, S, W), which can be deflected by a nearby magnet (C16)."
                               }
-                        ]
+                        ],
+                        "diagramId": 12
                   }
             ]
       },
@@ -2937,7 +3190,7 @@
                         "unit": "forces",
                         "cluster": "Cluster A",
                         "conceptId": "C1, C2",
-                        "subTopic": "Slide Panels 3–4 & Page 33: Push, Pull & Effects of a Force",
+                        "subTopic": "Slide Panels 3\u20134 & Page 33: Push, Pull & Effects of a Force",
                         "points": 2,
                         "wordBank": [
                               "Push",
@@ -2947,7 +3200,7 @@
                               "change direction",
                               "change shape"
                         ],
-                        "prompt": "[Slide Panels 3–4 & Page 33] Classify the source activities and identify what a force can do:",
+                        "prompt": "[Slide Panels 3\u20134 & Page 33] Classify the source activities and identify what a force can do:",
                         "items": [
                               {
                                     "id": "o1a",
@@ -2956,7 +3209,8 @@
                                     "mode": "select",
                                     "options": [
                                           "(i) Push (moves object away) | (ii) Pull (moves object towards you)",
-                                          "(i) Pull (moves object towards you) | (ii) Push (moves object away)"
+                                          "(i) Pull (moves object towards you) | (ii) Push (moves object away)",
+                                          "Both groups are non-contact magnetic forces"
                                     ],
                                     "modelAnswer": "(i) Push (moves object away) | (ii) Pull (moves object towards you)",
                                     "explanation": "Kicking, closing a door away, and pedalling are pushes; opening a drawer, pulling a wagon, and tug-of-war are pulls (C1)."
@@ -2984,7 +3238,8 @@
                                     ],
                                     "explanation": "A force can make an object start moving, stop moving, speed up, slow down, change direction, or change shape (C2)."
                               }
-                        ]
+                        ],
+                        "diagramId": 1
                   },
                   {
                         "qNum": 2,
@@ -3010,7 +3265,8 @@
                                     "mode": "select",
                                     "options": [
                                           "(i) Temporary change (shape goes back) | (ii) Permanent change (new shape stays)",
-                                          "(i) Permanent change (new shape stays) | (ii) Temporary change (shape goes back)"
+                                          "(i) Permanent change (new shape stays) | (ii) Temporary change (shape goes back)",
+                                          "Both groups undergo permanent magnetic changes"
                                     ],
                                     "modelAnswer": "(i) Temporary change (shape goes back) | (ii) Permanent change (new shape stays)",
                                     "explanation": "Sponge, spring, and rubber band undergo temporary shape changes; clay, foil, and paper undergo permanent changes (C3)."
@@ -3031,7 +3287,8 @@
                                     ],
                                     "explanation": "Magnitude is force strength/size; direction is the way the force acts (C19)."
                               }
-                        ]
+                        ],
+                        "diagramId": 2
                   },
                   {
                         "qNum": 3,
@@ -3057,7 +3314,8 @@
                                     "mode": "select",
                                     "options": [
                                           "(i) Contact forces (objects touch) | (ii) Non-contact forces (work from a distance)",
-                                          "(i) Non-contact forces | (ii) Contact forces"
+                                          "(i) Non-contact forces | (ii) Contact forces",
+                                          "All six forces require physical rubbing between rough surfaces"
                                     ],
                                     "modelAnswer": "(i) Contact forces (objects touch) | (ii) Non-contact forces (work from a distance)",
                                     "explanation": "Push, pull, and friction require contact; gravity, magnetic, and electrostatic forces work from a distance (C4, C17)."
@@ -3075,7 +3333,8 @@
                                     ],
                                     "explanation": "Electrostatic force attracts or repels charged objects from a distance (C17)."
                               }
-                        ]
+                        ],
+                        "diagramId": 3
                   },
                   {
                         "qNum": 4,
@@ -3101,7 +3360,8 @@
                                     "mode": "select",
                                     "options": [
                                           "Acts in the OPPOSITE direction to motion; brakes stop a bicycle and rubbing hands makes them feel warm",
-                                          "Acts in the SAME direction as motion; brakes speed up a bicycle"
+                                          "Acts in the SAME direction as motion; brakes speed up a bicycle",
+                                          "Friction acts upwards and makes rubbed hands freeze"
                                     ],
                                     "modelAnswer": "Acts in the OPPOSITE direction to motion; brakes stop a bicycle and rubbing hands makes them feel warm",
                                     "explanation": "Friction acts opposite to motion, helps brakes stop a bike, and warms rubbed hands (C5, C18)."
@@ -3129,14 +3389,15 @@
                                     ],
                                     "explanation": "Friction depends on surface type (rough vs. smooth) and how hard the surfaces press together (C5, C18)."
                               }
-                        ]
+                        ],
+                        "diagramId": 4
                   },
                   {
                         "qNum": 5,
                         "unit": "forces",
                         "cluster": "Cluster C",
                         "conceptId": "C6, C11",
-                        "subTopic": "Slide Panel 8 & Textbook Pages 34–35: Gravity & Toy Car Sequence",
+                        "subTopic": "Slide Panel 8 & Textbook Pages 34\u201335: Gravity & Toy Car Sequence",
                         "points": 2,
                         "wordBank": [
                               "gravity",
@@ -3145,7 +3406,7 @@
                               "straight line",
                               "friction"
                         ],
-                        "prompt": "[Slide Panel 8 & Pages 34–35] Complete the statements on gravity and the toy car motion sequence:",
+                        "prompt": "[Slide Panel 8 & Pages 34\u201335] Complete the statements on gravity and the toy car motion sequence:",
                         "items": [
                               {
                                     "id": "o5a",
@@ -3162,17 +3423,19 @@
                               },
                               {
                                     "id": "o5b",
-                                    "label": "5b. Pages 34–35: Match the three toy car stages: (1) untouched on table, (2) pushed on a VERY SMOOTH surface with no opposing force, (3) pushed on a normal table:",
+                                    "label": "5b. Pages 34\u201335: Match the three toy car stages: (1) untouched on table, (2) pushed on a VERY SMOOTH surface with no opposing force, (3) pushed on a normal table:",
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
                                           "(1) At rest | (2) Moves at the same speed in a straight line | (3) Slows down and stops due to opposing friction",
-                                          "(1) Moves by itself | (2) Stops immediately | (3) Speeds up forever"
+                                          "(1) Moves by itself | (2) Stops immediately | (3) Speeds up forever",
+                                          "(1) Speeds up | (2) Slows down on smooth track | (3) Floats upward"
                                     ],
                                     "modelAnswer": "(1) At rest | (2) Moves at the same speed in a straight line | (3) Slows down and stops due to opposing friction",
                                     "explanation": "A stationary car stays at rest; on a very smooth surface it keeps moving at the same speed in a straight line; on a normal surface friction stops it (C6)."
                               }
-                        ]
+                        ],
+                        "diagramId": 5
                   },
                   {
                         "qNum": 6,
@@ -3189,7 +3452,7 @@
                               "upward push",
                               "balance"
                         ],
-                        "prompt": "[Textbook Page 35 Explore — Analyse, Evaluate] 'When we hold a brick in the palm of our hand, the brick does not move. Does this mean there is no force acting on the brick? Explain your answer.'",
+                        "prompt": "[Textbook Page 35 Explore \u2014 Analyse, Evaluate] 'When we hold a brick in the palm of our hand, the brick does not move. Does this mean there is no force acting on the brick? Explain your answer.'",
                         "items": [
                               {
                                     "id": "o6a",
@@ -3220,14 +3483,15 @@
                                     ],
                                     "explanation": "Downward gravity and the equal upward push of the palm balance each other so the brick stays still (C7)."
                               }
-                        ]
+                        ],
+                        "diagramId": 6
                   },
                   {
                         "qNum": 7,
                         "unit": "forces",
                         "cluster": "Cluster D",
                         "conceptId": "C8, C9, C10",
-                        "subTopic": "Textbook Pages 36–37: Factors Affecting the Movement of an Object",
+                        "subTopic": "Textbook Pages 36\u201337: Factors Affecting the Movement of an Object",
                         "points": 2,
                         "wordBank": [
                               "mass",
@@ -3238,16 +3502,17 @@
                               "faster",
                               "longer"
                         ],
-                        "prompt": "[Textbook Pages 36–37] Complete the rules on how mass, shape/wheels, and force strength affect movement:",
+                        "prompt": "[Textbook Pages 36\u201337] Complete the rules on how mass, shape/wheels, and force strength affect movement:",
                         "items": [
                               {
                                     "id": "o7a",
-                                    "label": "7a. Page 36–37: Compare (i) pushing a heavy lorry vs. a light car (Mass, C8) and (ii) pushing a flat box/car without wheels vs. a round ball/car with wheels (Shape, C9):",
+                                    "label": "7a. Page 36\u201337: Compare (i) pushing a heavy lorry vs. a light car (Mass, C8) and (ii) pushing a flat box/car without wheels vs. a round ball/car with wheels (Shape, C9):",
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
                                           "Heavier lorry (greater mass) & flat box/no wheels need MORE force | Lighter car & round ball/wheels need LESS force",
-                                          "Heavier lorry & flat box need LESS force | Lighter car & round ball need MORE force"
+                                          "Heavier lorry & flat box need LESS force | Lighter car & round ball need MORE force",
+                                          "Mass and wheels do not affect the force required to move an object"
                                     ],
                                     "modelAnswer": "Heavier lorry (greater mass) & flat box/no wheels need MORE force | Lighter car & round ball/wheels need LESS force",
                                     "explanation": "Greater mass requires more force (C8), and flat surfaces without wheels slide with higher friction than rolling spheres/wheels (C9)."
@@ -3272,14 +3537,15 @@
                                     ],
                                     "explanation": "Greater force makes an object move faster and cover a longer distance (C10)."
                               }
-                        ]
+                        ],
+                        "diagramId": 7
                   },
                   {
                         "qNum": 8,
                         "unit": "magnets",
                         "cluster": "Cluster E",
                         "conceptId": "C12, C13",
-                        "subTopic": "Textbook Pages 45–47 (Activity 16.4): Magnets & Distance (Points A, B, C)",
+                        "subTopic": "Textbook Pages 45\u201347 (Activity 16.4): Magnets & Distance (Points A, B, C)",
                         "points": 2,
                         "wordBank": [
                               "bar",
@@ -3290,16 +3556,17 @@
                               "increases",
                               "Point C"
                         ],
-                        "prompt": "[Textbook Pages 45–47] Complete the findings on magnets and Activity 16.4 (Points A, B, and C):",
+                        "prompt": "[Textbook Pages 45\u201347] Complete the findings on magnets and Activity 16.4 (Points A, B, and C):",
                         "items": [
                               {
                                     "id": "o8a",
-                                    "label": "8a. Pages 45–47: Select the correct magnet shapes, mediums, and observations at Point A (very far), Point B (closer), and Point C (very close):",
+                                    "label": "8a. Pages 45\u201347: Select the correct magnet shapes, mediums, and observations at Point A (very far), Point B (closer), and Point C (very close):",
                                     "points": 1,
                                     "mode": "select",
                                     "options": [
                                           "Bar & horseshoe magnets act through air/paper | Point A: 0 clips move, Point B: some clips move, Point C: greatest number of clips stuck",
-                                          "Magnets require direct touch | Point A: greatest number of clips stuck, Point C: 0 clips move"
+                                          "Magnets require direct touch | Point A: greatest number of clips stuck, Point C: 0 clips move",
+                                          "Magnets only work underwater and Point A has the strongest force"
                                     ],
                                     "modelAnswer": "Bar & horseshoe magnets act through air/paper | Point A: 0 clips move, Point B: some clips move, Point C: greatest number of clips stuck",
                                     "explanation": "Bar/horseshoe magnets act through air and paper (C12); magnetic force is weakest at Point A and strongest at Point C (C13)."
@@ -3324,7 +3591,8 @@
                                     ],
                                     "explanation": "As distance decreases, the strength of the magnetic force increases (C13)."
                               }
-                        ]
+                        ],
+                        "diagramId": 8
                   },
                   {
                         "qNum": 9,
@@ -3375,19 +3643,21 @@
                                     "mode": "select",
                                     "options": [
                                           "All 7 are Non-magnetic materials (not attracted by magnets, including aluminium and copper)",
-                                          "Aluminium and copper are magnetic, while the other 5 are non-magnetic"
+                                          "Aluminium and copper are magnetic, while the other 5 are non-magnetic",
+                                          "Paper, wood, and plastic are strongly magnetic materials"
                                     ],
                                     "modelAnswer": "All 7 are Non-magnetic materials (not attracted by magnets, including aluminium and copper)",
                                     "explanation": "Paper, wood, glass, plastic, rubber, aluminium, and copper are all non-magnetic materials (C14)."
                               }
-                        ]
+                        ],
+                        "diagramId": 9
                   },
                   {
                         "qNum": 10,
                         "unit": "magnets",
                         "cluster": "Cluster E",
                         "conceptId": "C15, C16",
-                        "subTopic": "Textbook Pages 48–49 & Handout S01: Magnetic Poles & Earth's Compass",
+                        "subTopic": "Textbook Pages 48\u201349 & Handout S01: Magnetic Poles & Earth's Compass",
                         "points": 2,
                         "wordBank": [
                               "North",
@@ -3397,11 +3667,11 @@
                               "giant magnet",
                               "compass"
                         ],
-                        "prompt": "[Textbook Pages 48–49 & Handout S01] Complete the checkpoints on magnetic poles and Earth's compass:",
+                        "prompt": "[Textbook Pages 48\u201349 & Handout S01] Complete the checkpoints on magnetic poles and Earth's compass:",
                         "items": [
                               {
                                     "id": "o10a",
-                                    "label": "10a. Every magnet has a North pole (N) and a South pole (S). State what happens when unlike poles (N–S) face each other vs. when like poles (N–N or S–S) face each other:",
+                                    "label": "10a. Every magnet has a North pole (N) and a South pole (S). State what happens when unlike poles (N\u2013S) face each other vs. when like poles (N\u2013N or S\u2013S) face each other:",
                                     "points": 1,
                                     "mode": "keyword",
                                     "modelAnswer": "Unlike poles attract each other (pull together), while like poles repel each other (push apart).",
@@ -3424,18 +3694,20 @@
                                     "mode": "select",
                                     "options": [
                                           "Because the Earth behaves like a giant magnet",
-                                          "Because the Earth's air pushes the compass needle with friction"
+                                          "Because the Earth's air pushes the compass needle with friction",
+                                          "Because Earth's gravity pushes the compass needle sideways"
                                     ],
                                     "modelAnswer": "Because the Earth behaves like a giant magnet",
                                     "explanation": "The Earth behaves like a giant magnet, aligning the needle of a magnetic compass (C16)."
                               }
-                        ]
+                        ],
+                        "diagramId": 10
                   }
             ]
       }
 };
 
-    const STORAGE_PREFIX = 'p4_science_t2_2_forces_v2_';
+    const STORAGE_PREFIX = 'p4_science_t2_2_forces_v4_';
     let currentSetKey = 'practice_set_1';
     let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
@@ -3446,22 +3718,141 @@
 
     const memoryStore = {};
 
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+      }
+      return copy;
+    }
+
+    // Supports:
+    // 1) Set 1 & Official default to material order [0, 1, 2, ..., N-1] (unshuffled question sequence, while MCQ options still shuffle)
+    // 2) Set 2 & Set 3 shuffle question order strictly within contiguous sub-sections (q.sectionGroup / q.showPassage) when "Not Started"
+    function generateQuestionOrderForSet(setKey, prevOrder) {
+      const questions = QUESTION_SETS[setKey].questions;
+      const len = questions.length;
+      const naturalOrder = Array.from({ length: len }, (_, i) => i);
+      if (setKey === 'practice_set_1' || setKey === 'official' || len <= 1) {
+        return naturalOrder;
+      }
+
+      // Partition into contiguous sub-section blocks (e.g., Bahasa Indonesia Q1-5 reading passage vs. Q7-12 grammar/civics)
+      const blocks = [];
+      questions.forEach((q, idx) => {
+        const groupKey = q.sectionGroup !== undefined
+          ? String(q.sectionGroup)
+          : (q.showPassage !== undefined ? `passage_${Boolean(q.showPassage)}` : 'default');
+        if (blocks.length === 0 || blocks[blocks.length - 1].key !== groupKey) {
+          blocks.push({ key: groupKey, indices: [idx] });
+        } else {
+          blocks[blocks.length - 1].indices.push(idx);
+        }
+      });
+
+      function shuffleBlocksOnce() {
+        const result = [];
+        blocks.forEach(blk => {
+          if (blk.indices.length <= 1) {
+            result.push(blk.indices[0]);
+          } else {
+            result.push(...shuffleArray(blk.indices));
+          }
+        });
+        return result;
+      }
+
+      let candidate = shuffleBlocksOnce();
+      let attempts = 0;
+      while (attempts < 12 && (
+        candidate.every((val, idx) => val === idx) ||
+        (Array.isArray(prevOrder) && prevOrder.length === len && candidate.every((val, idx) => val === prevOrder[idx]))
+      )) {
+        candidate = shuffleBlocksOnce();
+        attempts++;
+      }
+      return candidate;
+    }
+
+    function generateShuffledOptionOrders(questions) {
+      const optionOrders = {};
+      let targetPosCounter = Math.floor(Math.random() * 3);
+      questions.forEach(q => {
+        q.items.forEach(item => {
+          if (item.mode === 'select' && Array.isArray(item.options) && item.options.length > 1) {
+            let shuffled = shuffleArray(item.options);
+            // Distribute the correct answer across different option indices so it is genuinely randomized
+            const targetIdx = targetPosCounter % shuffled.length;
+            targetPosCounter += 1 + Math.floor(Math.random() * 2);
+            const curCorrectIdx = shuffled.indexOf(item.modelAnswer);
+            if (curCorrectIdx !== -1 && curCorrectIdx !== targetIdx) {
+              const tmp = shuffled[targetIdx];
+              shuffled[targetIdx] = shuffled[curCorrectIdx];
+              shuffled[curCorrectIdx] = tmp;
+            }
+            optionOrders[item.id] = shuffled;
+          }
+        });
+      });
+      return optionOrders;
+    }
+
+    function formatSubItemLabel(rawLabel, displayQNum) {
+      return String(rawLabel || '').replace(/^(?:o)?\d+([a-z]\.)/i, `${displayQNum}$1`);
+    }
+
     function loadSetState(setKey) {
       const fullKey = STORAGE_PREFIX + setKey;
-      const maxPts = QUESTION_SETS[setKey].maxScore;
+      const setObj = QUESTION_SETS[setKey];
+      const maxPts = setObj.maxScore;
+      let state = null;
       try {
         const raw = localStorage.getItem(fullKey);
-        if (raw) return JSON.parse(raw);
+        if (raw) state = JSON.parse(raw);
       } catch (e) {
-        if (memoryStore[fullKey]) return memoryStore[fullKey];
+        if (memoryStore[fullKey]) state = memoryStore[fullKey];
       }
-      return {
-        answers: {},
-        submitted: false,
-        score: null,
-        maxScore: maxPts,
-        lastSlide: 0
-      };
+      if (!state) {
+        const initialOrder = generateQuestionOrderForSet(setKey, null);
+        state = {
+          answers: {},
+          submitted: false,
+          score: null,
+          maxScore: maxPts,
+          lastSlide: initialOrder[0],
+          questionOrder: initialOrder,
+          optionOrders: generateShuffledOptionOrders(setObj.questions)
+        };
+        saveSetState(setKey, state);
+      } else {
+        if (!Array.isArray(state.questionOrder) || state.questionOrder.length !== setObj.questions.length) {
+          state.questionOrder = generateQuestionOrderForSet(setKey, null);
+        }
+        if (!state.optionOrders || typeof state.optionOrders !== 'object') {
+          state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        }
+      }
+      return state;
+    }
+
+    function randomizeSetIfNotStarted(setKey) {
+      const setObj = QUESTION_SETS[setKey];
+      const state = loadSetState(setKey);
+      const answeredCount = setObj.questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      // As long as the status is "Not Started" (!state.submitted && answeredCount === 0):
+      // - Set 1 & Official keep natural question order [0..N-1] while randomizing MCQ option positions
+      // - Set 2 & Set 3 randomize both sub-section question order AND MCQ option positions
+      // - Always set state.lastSlide = state.questionOrder[0] so the quiz opens at Question 1 of 12!
+      if (!state.submitted && answeredCount === 0) {
+        state.questionOrder = generateQuestionOrderForSet(setKey, state.questionOrder);
+        state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        state.lastSlide = state.questionOrder[0];
+        saveSetState(setKey, state);
+      }
+      return state;
     }
 
     function saveSetState(setKey, stateObj) {
@@ -3492,6 +3883,790 @@
       window.__toastTimer = setTimeout(() => {
         toast.classList.add('hidden');
       }, 3000);
+    }
+
+    
+    // =========================================================================
+    // SELF-CONTAINED QUESTION DIAGRAM ENGINE (C1..C19 — 100% DIRECT HEX SVG)
+    // =========================================================================
+    function getSingleDiagramSvg(diagNum, setKey) {
+      const setMode = setKey === 'practice_set_2' ? 'set2' : setKey === 'practice_set_3' ? 'set3' : setKey === 'official' ? 'official' : 'set1';
+      switch (diagNum) {
+        case 1:
+          return `
+            <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-gradient-to-b from-sky-50/60 to-white">
+              <line x1="320" y1="14" x2="320" y2="200" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+              <!-- LEFT PANEL: PUSH -->
+              <rect x="14" y="12" width="292" height="26" rx="6" fill="#e0e7ff"/>
+              <text x="160" y="29" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3730a3">ACTION GROUP A (Moves Object Away)</text>
+
+              <rect x="85" y="46" width="150" height="24" rx="12" fill="#4f46e5"/>
+              <text x="150" y="62" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Away from actor</text>
+              <polygon points="222,58 212,53 212,63" fill="#ffffff"/>
+
+              <line x1="22" y1="168" x2="300" y2="168" stroke="#94a3b8" stroke-width="3"/>
+
+              <rect x="20" y="102" width="66" height="46" rx="6" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+              <text x="53" y="123" text-anchor="middle" font-size="10.5" font-weight="800" fill="#312e81">Shopper</text>
+              <text x="53" y="137" text-anchor="middle" font-size="10" font-weight="600" fill="#4338ca">(Pushes)</text>
+
+              <g class="anim-q1-away">
+                <line x1="88" y1="120" x2="110" y2="120" stroke="#4f46e5" stroke-width="3.5"/>
+                <polygon points="116,120 107,115 107,125" fill="#4f46e5"/>
+                <line x1="118" y1="96" x2="128" y2="148" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="116" cy="96" r="3.5" fill="#dc2626"/>
+                <rect x="136" y="96" width="16" height="18" rx="2" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+                <circle cx="164" cy="105" r="8" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+                <rect x="176" y="94" width="14" height="20" rx="2" fill="#34d399" stroke="#059669" stroke-width="1.5"/>
+                <polygon points="122,108 200,108 190,146 128,146" fill="#dbeafe" fill-opacity="0.65" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+                <line x1="142" y1="108" x2="144" y2="146" stroke="#60a5fa" stroke-width="1.5"/>
+                <line x1="162" y1="108" x2="162" y2="146" stroke="#60a5fa" stroke-width="1.5"/>
+                <line x1="182" y1="108" x2="178" y2="146" stroke="#60a5fa" stroke-width="1.5"/>
+                <line x1="125" y1="127" x2="195" y2="127" stroke="#60a5fa" stroke-width="1.5"/>
+                <circle cx="136" cy="158" r="8" fill="#1e293b"/>
+                <circle cx="136" cy="158" r="3" fill="#cbd5e1"/>
+                <circle cx="182" cy="158" r="8" fill="#1e293b"/>
+                <circle cx="182" cy="158" r="3" fill="#cbd5e1"/>
+              </g>
+
+              <circle cx="262" cy="152" r="14" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+              <polygon points="262,144 268,149 265,156 259,156 256,149" fill="#0f172a"/>
+              <line x1="222" y1="152" x2="242" y2="152" stroke="#4f46e5" stroke-width="3"/>
+              <polygon points="246,152 238,147 238,157" fill="#4f46e5"/>
+
+              <text x="160" y="192" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Shopping trolley • Kicking a ball • Pedalling</text>
+
+              <!-- RIGHT PANEL: PULL -->
+              <rect x="334" y="12" width="292" height="26" rx="6" fill="#d1fae5"/>
+              <text x="480" y="29" text-anchor="middle" font-size="11.5" font-weight="800" fill="#065f46">ACTION GROUP B (Moves Object Towards)</text>
+
+              <rect x="405" y="46" width="150" height="24" rx="12" fill="#059669"/>
+              <text x="470" y="62" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Towards actor</text>
+              <polygon points="542,58 532,53 532,63" fill="#ffffff"/>
+
+              <line x1="340" y1="168" x2="618" y2="168" stroke="#94a3b8" stroke-width="3"/>
+
+              <g class="anim-q1-towards">
+                <rect x="356" y="100" width="26" height="22" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+                <rect x="386" y="104" width="24" height="18" rx="3" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+                <rect x="344" y="122" width="78" height="26" rx="5" fill="#fecdd3" stroke="#e11d48" stroke-width="2.5"/>
+                <circle cx="362" cy="158" r="8" fill="#1e293b"/>
+                <circle cx="362" cy="158" r="3" fill="#cbd5e1"/>
+                <circle cx="404" cy="158" r="8" fill="#1e293b"/>
+                <circle cx="404" cy="158" r="3" fill="#cbd5e1"/>
+                <line x1="422" y1="132" x2="456" y2="118" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="434" y1="112" x2="458" y2="112" stroke="#059669" stroke-width="3.5"/>
+                <polygon points="464,112 455,107 455,117" fill="#059669"/>
+              </g>
+
+              <rect x="480" y="102" width="66" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+              <text x="513" y="123" text-anchor="middle" font-size="10.5" font-weight="800" fill="#064e3b">Child B</text>
+              <text x="513" y="137" text-anchor="middle" font-size="10" font-weight="600" fill="#047857">(Pulls)</text>
+
+              <rect x="562" y="110" width="46" height="46" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+              <rect x="554" y="118" width="38" height="16" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="2"/>
+              <circle cx="572" cy="126" r="2.5" fill="#0f172a"/>
+
+              <text x="480" y="192" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Loaded wagon • Opening drawer • Tug-of-war</text>
+            </svg>
+          `;
+
+        case 2:
+          return `
+            <svg viewBox="0 0 640 224" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-slate-50">
+              <rect x="12" y="12" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="22" y="30" font-size="11" font-weight="800" fill="#4f46e5">① Stationary Ball Kicked</text>
+              <line x1="22" y1="90" x2="196" y2="90" stroke="#86efac" stroke-width="3"/>
+              <rect x="24" y="60" width="44" height="22" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+              <text x="46" y="75" text-anchor="middle" font-size="10" font-weight="800" fill="#312e81">Foot</text>
+              <circle cx="92" cy="74" r="12" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+              <polygon points="92,67 97,71 95,77 89,77 87,71" fill="#0f172a"/>
+              <line x1="110" y1="74" x2="168" y2="74" stroke="#4f46e5" stroke-width="3" stroke-dasharray="4,3"/>
+              <polygon points="176,74 166,68 166,80" fill="#4f46e5"/>
+              <text x="148" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#4338ca">At rest → Rolls</text>
+
+              <rect x="222" y="12" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="232" y="30" font-size="11" font-weight="800" fill="#e11d48">② Goalkeeper Catch</text>
+              <line x1="234" y1="70" x2="282" y2="70" stroke="#f43f5e" stroke-width="3"/>
+              <polygon points="290,70 280,64 280,76" fill="#f43f5e"/>
+              <circle cx="308" cy="70" r="12" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+              <polygon points="308,63 313,67 311,73 305,73 303,67" fill="#0f172a"/>
+              <rect x="324" y="50" width="86" height="38" rx="6" fill="#ffe4e6" stroke="#e11d48" stroke-width="2"/>
+              <text x="367" y="68" text-anchor="middle" font-size="10" font-weight="800" fill="#9f1239">Goalkeeper</text>
+              <text x="367" y="81" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">(Held Still)</text>
+
+              <rect x="432" y="12" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="442" y="30" font-size="11" font-weight="800" fill="#d97706">③ Bat / Racket Hit</text>
+              <line x1="446" y1="54" x2="508" y2="70" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="3,3"/>
+              <line x1="524" y1="46" x2="508" y2="90" stroke="#b45309" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="516" cy="70" r="8.5" fill="#fde047" stroke="#ca8a04" stroke-width="2"/>
+              <line x1="526" y1="66" x2="590" y2="46" stroke="#d97706" stroke-width="3"/>
+              <polygon points="598,44 586,42 590,52" fill="#d97706"/>
+              <text x="574" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">Sent other way</text>
+
+              <rect x="12" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="22" y="136" font-size="11" font-weight="800" fill="#059669">④ Push From Behind</text>
+              <line x1="22" y1="194" x2="196" y2="194" stroke="#94a3b8" stroke-width="2.5"/>
+              <line x1="22" y1="172" x2="58" y2="172" stroke="#059669" stroke-width="3.5"/>
+              <polygon points="66,172 56,166 56,178" fill="#059669"/>
+              <path d="M 72 170 L 80 158 L 108 158 L 116 170 L 126 170 L 126 184 L 72 184 Z" fill="#10b981" stroke="#047857" stroke-width="1.5"/>
+              <circle cx="84" cy="186" r="6" fill="#1e293b"/>
+              <circle cx="114" cy="186" r="6" fill="#1e293b"/>
+              <rect x="136" y="160" width="64" height="22" rx="5" fill="#d1fae5" stroke="#34d399"/>
+              <text x="168" y="175" text-anchor="middle" font-size="10" font-weight="800" fill="#065f46">FASTER ⏩</text>
+
+              <rect x="222" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="232" y="136" font-size="11" font-weight="800" fill="#0284c7">⑤ Brakes / Rough Grass</text>
+              <circle cx="282" cy="174" r="20" fill="none" stroke="#334155" stroke-width="4"/>
+              <line x1="262" y1="174" x2="302" y2="174" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="282" y1="154" x2="282" y2="194" stroke="#94a3b8" stroke-width="1.5"/>
+              <rect x="254" y="158" width="8" height="18" rx="2" fill="#ef4444" stroke="#b91c1c" stroke-width="1"/>
+              <rect x="322" y="160" width="76" height="24" rx="5" fill="#e0f2fe" stroke="#7dd3fc"/>
+              <text x="360" y="176" text-anchor="middle" font-size="10" font-weight="800" fill="#0369a1">SLOWER ⏪</text>
+
+              <rect x="432" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="442" y="136" font-size="11" font-weight="800" fill="#7c3aed">⑥ Squeezing Clay / Dough</text>
+              <line x1="530" y1="142" x2="530" y2="158" stroke="#7c3aed" stroke-width="3.5"/>
+              <polygon points="530,164 524,155 536,155" fill="#7c3aed"/>
+              <ellipse cx="530" cy="176" rx="38" ry="11" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2.5"/>
+              <text x="530" y="202" text-anchor="middle" font-size="10" font-weight="700" fill="#6d28d9">Flattened / Moulded</text>
+            </svg>
+          `;
+
+        case 3:
+          return `
+            <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <line x1="320" y1="14" x2="320" y2="200" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+              <rect x="14" y="12" width="292" height="28" rx="7" fill="#ecfdf5" stroke="#a7f3d0"/>
+              <text x="160" y="30" text-anchor="middle" font-size="11.5" font-weight="800" fill="#065f46">GROUP A: After Force Stops → Springs Back</text>
+
+              <g class="anim-q3-sponge">
+                <rect x="30" y="60" width="72" height="10" rx="3" fill="#16a34a"/>
+                <rect x="30" y="68" width="72" height="38" rx="5" fill="#fef08a" stroke="#ca8a04" stroke-width="2.2"/>
+                <circle cx="46" cy="82" r="3" fill="#ca8a04"/>
+                <circle cx="66" cy="92" r="3.5" fill="#ca8a04"/>
+                <circle cx="84" cy="80" r="2.5" fill="#ca8a04"/>
+              </g>
+              <text x="66" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Sponge</text>
+              <text x="66" y="144" text-anchor="middle" font-size="10" fill="#059669">(Squeezed)</text>
+
+              <g class="anim-q3-stretch">
+                <path d="M 132 86 C 139 62, 146 62, 150 86 C 154 108, 161 108, 165 86 C 169 62, 176 62, 180 86 C 184 108, 191 108, 196 86" fill="none" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <text x="164" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Coil Spring</text>
+              <text x="164" y="144" text-anchor="middle" font-size="10" fill="#059669">(Stretched)</text>
+
+              <g class="anim-q3-stretch">
+                <ellipse cx="256" cy="86" rx="30" ry="15" fill="none" stroke="#e11d48" stroke-width="4.5"/>
+              </g>
+              <text x="256" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Rubber Band</text>
+              <text x="256" y="144" text-anchor="middle" font-size="10" fill="#059669">(Stretched)</text>
+
+              <rect x="44" y="164" width="232" height="28" rx="14" fill="#d1fae5"/>
+              <text x="160" y="182" text-anchor="middle" font-size="11" font-weight="800" fill="#065f46">↻ Springs back to original shape</text>
+
+              <rect x="334" y="12" width="292" height="28" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+              <text x="480" y="30" text-anchor="middle" font-size="11.5" font-weight="800" fill="#9f1239">GROUP B: After Force Stops → New Shape Stays</text>
+
+              <path d="M 352 98 Q 365 70 385 82 Q 402 90 414 76 Q 424 96 412 106 L 355 106 Z" fill="#fdba74" stroke="#c2410c" stroke-width="2.5"/>
+              <text x="384" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Modelling Clay</text>
+              <text x="384" y="144" text-anchor="middle" font-size="10" fill="#e11d48">(Squashed)</text>
+
+              <polygon points="480,64 498,72 504,90 490,106 468,104 458,86 466,70" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/>
+              <polyline points="468,76 484,86 496,74 482,100" fill="none" stroke="#94a3b8" stroke-width="2"/>
+              <text x="482" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Aluminium Foil</text>
+              <text x="482" y="144" text-anchor="middle" font-size="10" fill="#e11d48">(Crumpled)</text>
+
+              <polygon points="552,66 602,66 594,106 544,106" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+              <polyline points="574,66 568,86 576,94 570,106" fill="none" stroke="#e11d48" stroke-width="2" stroke-dasharray="3,2"/>
+              <text x="576" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Paper</text>
+              <text x="576" y="144" text-anchor="middle" font-size="10" fill="#e11d48">(Folded / Torn)</text>
+
+              <rect x="364" y="164" width="232" height="28" rx="14" fill="#ffe4e6"/>
+              <text x="480" y="182" text-anchor="middle" font-size="11" font-weight="800" fill="#9f1239">■ Keeps the new shape permanently</text>
+            </svg>
+          `;
+
+        case 4:
+          return `
+            <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <line x1="340" y1="14" x2="340" y2="206" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+              <rect x="14" y="12" width="312" height="26" rx="6" fill="#eef2ff"/>
+              <text x="170" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">DIAGRAM 1: Force Strength (1 Arrow vs. 3 Arrows)</text>
+
+              <rect x="26" y="56" width="72" height="48" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+              <text x="62" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">${setMode === 'set2' ? 'Box Y' : 'Child A'}</text>
+              <line x1="108" y1="80" x2="196" y2="80" stroke="#4f46e5" stroke-width="4"/>
+              <polygon points="206,80 192,72 192,88" fill="#4f46e5"/>
+              <rect x="218" y="67" width="96" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+              <text x="266" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">1 Force Arrow</text>
+
+              <rect x="26" y="132" width="72" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+              <text x="62" y="163" text-anchor="middle" font-size="11" font-weight="800" fill="#1e40af">${setMode === 'set2' ? 'Box X' : 'Child B'}</text>
+              <line x1="108" y1="143" x2="196" y2="143" stroke="#4f46e5" stroke-width="4"/>
+              <polygon points="206,143 192,136 192,150" fill="#4f46e5"/>
+              <line x1="108" y1="159" x2="196" y2="159" stroke="#4f46e5" stroke-width="4"/>
+              <polygon points="206,159 192,152 192,166" fill="#4f46e5"/>
+              <line x1="108" y1="175" x2="196" y2="175" stroke="#4f46e5" stroke-width="4"/>
+              <polygon points="206,175 192,168 192,182" fill="#4f46e5"/>
+              <rect x="218" y="146" width="96" height="26" rx="6" fill="#e0e7ff" stroke="#a5b4fc"/>
+              <text x="266" y="163" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">3 Force Arrows</text>
+
+              <rect x="354" y="12" width="272" height="26" rx="6" fill="#ecfdf5"/>
+              <text x="490" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#065f46">DIAGRAM 2: Force Arrows Around a Box</text>
+
+              <rect x="454" y="96" width="72" height="52" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+              <text x="490" y="126" text-anchor="middle" font-size="12" font-weight="800" fill="#0f172a">BOX</text>
+
+              <line x1="490" y1="92" x2="490" y2="56" stroke="#059669" stroke-width="4"/>
+              <polygon points="490,46 482,58 498,58" fill="#059669"/>
+              <rect x="504" y="48" width="64" height="20" rx="4" fill="#d1fae5"/>
+              <text x="536" y="62" text-anchor="middle" font-size="10" font-weight="800" fill="#065f46">Above: ?</text>
+
+              <line x1="490" y1="152" x2="490" y2="188" stroke="#e11d48" stroke-width="4"/>
+              <polygon points="490,198 482,186 498,186" fill="#e11d48"/>
+              <rect x="504" y="176" width="64" height="20" rx="4" fill="#ffe4e6"/>
+              <text x="536" y="190" text-anchor="middle" font-size="10" font-weight="800" fill="#9f1239">Below: ?</text>
+
+              <line x1="448" y1="122" x2="404" y2="122" stroke="#0284c7" stroke-width="4"/>
+              <polygon points="394,122 406,114 406,130" fill="#0284c7"/>
+              <text x="376" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">Left</text>
+
+              <line x1="532" y1="122" x2="576" y2="122" stroke="#0284c7" stroke-width="4"/>
+              <polygon points="586,122 574,114 574,130" fill="#0284c7"/>
+              <text x="606" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">Right</text>
+            </svg>
+          `;
+
+        case 5:
+          return `
+            <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <line x1="306" y1="14" x2="306" y2="200" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+              <rect x="14" y="12" width="278" height="26" rx="6" fill="#fef3c7"/>
+              <text x="153" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">GROUP 1: Objects Touch Physically</text>
+
+              <rect x="26" y="76" width="84" height="50" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+              <text x="68" y="99" text-anchor="middle" font-size="10.5" font-weight="800" fill="#92400e">Person A</text>
+              <text x="68" y="114" text-anchor="middle" font-size="10" font-weight="600" fill="#b45309">(Hands Touch)</text>
+
+              <line x1="110" y1="98" x2="132" y2="98" stroke="#d97706" stroke-width="4"/>
+              <polygon points="138,98 128,92 128,104" fill="#d97706"/>
+
+              <rect x="140" y="72" width="74" height="54" rx="6" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+              <text x="177" y="103" text-anchor="middle" font-size="11" font-weight="800" fill="#9a3412">CRATE</text>
+              <line x1="26" y1="128" x2="280" y2="128" stroke="#94a3b8" stroke-width="3"/>
+
+              <line x1="205" y1="138" x2="148" y2="138" stroke="#e11d48" stroke-width="3"/>
+              <polygon points="140,138 150,133 150,143" fill="#e11d48"/>
+              <text x="175" y="154" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Surfaces rubbing together</text>
+              <text x="153" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Pushing a box • Pulling a rope • Friction</text>
+
+              <rect x="320" y="12" width="306" height="26" rx="6" fill="#e0e7ff"/>
+              <text x="473" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">GROUP 2: Act Across a Gap (Zero Touch)</text>
+
+              <g class="anim-q5-drop">
+                <circle cx="372" cy="74" r="14" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+                <path d="M 372 60 Q 376 52 383 56" fill="none" stroke="#15803d" stroke-width="2.5"/>
+              </g>
+              <line x1="372" y1="104" x2="372" y2="132" stroke="#ef4444" stroke-width="3" stroke-dasharray="3,2"/>
+              <polygon points="372,138 366,128 378,128" fill="#ef4444"/>
+              <line x1="342" y1="144" x2="402" y2="144" stroke="#64748b" stroke-width="2.5"/>
+              <text x="372" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1e293b">1. Falling Fruit</text>
+
+              <path d="M 454 92 L 454 62 Q 474 46 494 62 L 494 92" fill="none" stroke="#2563eb" stroke-width="9" stroke-linecap="round"/>
+              <line x1="454" y1="82" x2="454" y2="94" stroke="#dc2626" stroke-width="9"/>
+              <line x1="494" y1="82" x2="494" y2="94" stroke="#dc2626" stroke-width="9"/>
+              <g class="anim-q5-lift">
+                <ellipse cx="462" cy="128" rx="8" ry="4" fill="none" stroke="#334155" stroke-width="2.2"/>
+                <ellipse cx="486" cy="124" rx="8" ry="4" fill="none" stroke="#334155" stroke-width="2.2"/>
+              </g>
+              <text x="474" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1e293b">2. Magnet &amp; Clips</text>
+
+              <rect x="540" y="58" width="66" height="10" rx="4" fill="#7c3aed"/>
+              <line x1="546" y1="68" x2="546" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="554" y1="68" x2="554" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="562" y1="68" x2="562" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="570" y1="68" x2="570" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="578" y1="68" x2="578" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="586" y1="68" x2="586" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <line x1="594" y1="68" x2="594" y2="82" stroke="#7c3aed" stroke-width="2.5"/>
+              <text x="573" y="52" text-anchor="middle" font-size="10" font-weight="800" fill="#6d28d9">+ − + − Charged</text>
+              <g class="anim-q5-lift">
+                <polygon points="552,124 560,120 558,130" fill="#38bdf8" stroke="#0284c7" stroke-width="1"/>
+                <polygon points="574,116 582,114 579,124" fill="#38bdf8" stroke="#0284c7" stroke-width="1"/>
+                <polygon points="590,126 598,122 595,132" fill="#38bdf8" stroke="#0284c7" stroke-width="1"/>
+              </g>
+              <text x="573" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6d28d9">3. Charged Comb</text>
+
+              <text x="473" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#4338ca">All 3 act across empty air without physical contact</text>
+            </svg>
+          `;
+
+        case 6:
+          if (setMode === 'set3') {
+            return `
+              <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-rose-200 bg-rose-50/30">
+                <rect x="14" y="12" width="612" height="26" rx="6" fill="#ffe4e6"/>
+                <text x="320" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#9f1239">SET 3 ERROR-SPOTTING: Student's Faulty Friction Diagram &amp; Surface Comparison</text>
+
+                <rect x="18" y="48" width="290" height="156" rx="10" fill="#ffffff" stroke="#fda4af" stroke-width="1.5"/>
+                <text x="163" y="68" text-anchor="middle" font-size="11" font-weight="800" fill="#be123c">⚠️ Student's Drawing (Find the Mistake!)</text>
+                <rect x="56" y="96" width="88" height="48" rx="6" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+                <text x="100" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#9a3412">BOX</text>
+                <line x1="154" y1="108" x2="250" y2="108" stroke="#2563eb" stroke-width="4"/>
+                <polygon points="260,108 248,101 248,115" fill="#2563eb"/>
+                <text x="206" y="98" text-anchor="middle" font-size="10" font-weight="800" fill="#1d4ed8">Motion → (Right)</text>
+                <line x1="154" y1="136" x2="250" y2="136" stroke="#e11d48" stroke-width="4" stroke-dasharray="4,2"/>
+                <polygon points="260,136 248,129 248,143" fill="#e11d48"/>
+                <line x1="34" y1="145" x2="288" y2="145" stroke="#64748b" stroke-width="3"/>
+                <text x="163" y="168" text-anchor="middle" font-size="10" font-weight="800" fill="#be123c">Student drew Friction → (?)</text>
+
+                <rect x="322" y="48" width="300" height="156" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+                <text x="472" y="68" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">Carpet → Smooth Tile &amp; Pressing Force</text>
+                <path d="M 338 112 L 344 104 L 350 112 L 356 104 L 362 112 L 368 104 L 374 112 L 380 104 L 386 112 L 392 104 L 398 112 L 404 104 L 410 112 L 416 104 L 422 112 L 428 104 L 434 112" fill="none" stroke="#b45309" stroke-width="2.5"/>
+                <text x="386" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">Rough Carpet</text>
+                <line x1="436" y1="110" x2="540" y2="110" stroke="#0284c7" stroke-width="3.5"/>
+                <text x="488" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#0369a1">Smooth Tile</text>
+
+                <line x1="435" y1="146" x2="435" y2="162" stroke="#7c3aed" stroke-width="3"/>
+                <line x1="465" y1="146" x2="465" y2="162" stroke="#7c3aed" stroke-width="3"/>
+                <line x1="495" y1="146" x2="495" y2="162" stroke="#7c3aed" stroke-width="3"/>
+                <rect x="415" y="164" width="100" height="16" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+                <rect x="405" y="180" width="120" height="12" rx="2" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+              </svg>
+            `;
+          }
+          return `
+            <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <rect x="12" y="12" width="200" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="112" y="32" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">1. Sliding Box on Floor</text>
+              <rect x="52" y="82" width="84" height="52" rx="6" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+              <text x="94" y="112" text-anchor="middle" font-size="12" font-weight="800" fill="#9a3412">BOX</text>
+              <line x1="142" y1="98" x2="192" y2="98" stroke="#2563eb" stroke-width="4"/>
+              <polygon points="200,98 188,91 188,105" fill="#2563eb"/>
+              <text x="170" y="86" text-anchor="middle" font-size="10" font-weight="800" fill="#1d4ed8">Motion →</text>
+              <line x1="24" y1="136" x2="200" y2="136" stroke="#475569" stroke-width="3.5"/>
+              <rect x="34" y="148" width="156" height="24" rx="6" fill="#ffe4e6"/>
+              <text x="112" y="164" text-anchor="middle" font-size="10" font-weight="800" fill="#be123c">Friction Direction = ?</text>
+
+              <rect x="222" y="12" width="200" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="322" y="32" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">2. Factor 1: Surface Type</text>
+              <text x="240" y="64" font-size="10" font-weight="800" fill="#92400e">Rough Carpet (Textured):</text>
+              <path d="M 238 92 L 246 80 L 254 92 L 262 80 L 270 92 L 278 80 L 286 92 L 294 80 L 302 92 L 310 80 L 318 92 L 326 80 L 334 92 L 342 80 L 350 92 L 358 80 L 366 92 L 374 80 L 382 92 L 390 80 L 398 92" fill="none" stroke="#d97706" stroke-width="3"/>
+              <text x="240" y="138" font-size="10" font-weight="800" fill="#0369a1">Smooth Floor Tile (Flat):</text>
+              <line x1="238" y1="160" x2="402" y2="160" stroke="#0284c7" stroke-width="4"/>
+              <line x1="238" y1="166" x2="402" y2="166" stroke="#bae6fd" stroke-width="2"/>
+
+              <rect x="432" y="12" width="196" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="530" y="32" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">3. Factor 2: Pressing Hard</text>
+              <line x1="495" y1="48" x2="495" y2="74" stroke="#7c3aed" stroke-width="3.5"/>
+              <polygon points="495,80 489,70 501,70" fill="#7c3aed"/>
+              <line x1="530" y1="48" x2="530" y2="74" stroke="#7c3aed" stroke-width="3.5"/>
+              <polygon points="530,80 524,70 536,70" fill="#7c3aed"/>
+              <line x1="565" y1="48" x2="565" y2="74" stroke="#7c3aed" stroke-width="3.5"/>
+              <polygon points="565,80 559,70 571,70" fill="#7c3aed"/>
+              <rect x="475" y="82" width="110" height="22" rx="4" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+              <rect x="460" y="104" width="140" height="18" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+              <text x="530" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#6d28d9">Harder press between surfaces</text>
+              <rect x="452" y="156" width="156" height="36" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+              <text x="530" y="172" text-anchor="middle" font-size="10" font-weight="800" fill="#b45309">Rubbing Hands + Brakes</text>
+              <text x="530" y="185" text-anchor="middle" font-size="10" fill="#92400e">Everyday examples of friction</text>
+            </svg>
+          `;
+
+        case 7:
+          // Q7: Gravity & The 3-Stage Toy Car Sequence (FIXED Stage 3 True Deceleration to a Complete Stop!)
+          return `
+            <svg viewBox="0 0 640 232" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <rect x="12" y="12" width="165" height="208" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+              <text x="94" y="32" text-anchor="middle" font-size="11" font-weight="800" fill="#166534">Dropped Object</text>
+              <g class="anim-q5-drop">
+                <circle cx="94" cy="68" r="15" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+              </g>
+              <line x1="94" y1="100" x2="94" y2="152" stroke="#15803d" stroke-width="4"/>
+              <polygon points="94,162 86,148 102,148" fill="#15803d"/>
+              <rect x="26" y="172" width="136" height="26" rx="5" fill="#dcfce7" stroke="#86efac"/>
+              <text x="94" y="189" text-anchor="middle" font-size="11" font-weight="800" fill="#14532d">EARTH / GROUND</text>
+
+              <rect x="188" y="12" width="440" height="208" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="408" y="30" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">Textbook Toy Car Investigation (Stages 1, 2 &amp; 3)</text>
+
+              <!-- Stage 1: Untouched (100% Stationary at starting line x=220) -->
+              <rect x="200" y="40" width="416" height="54" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+              <text x="212" y="55" font-size="10" font-weight="800" fill="#475569">STAGE 1 (No Force Applied):</text>
+              <rect x="220" y="64" width="46" height="14" rx="4" fill="#6366f1"/>
+              <circle cx="230" cy="82" r="5" fill="#0f172a"/>
+              <circle cx="256" cy="82" r="5" fill="#0f172a"/>
+              <line x1="212" y1="88" x2="604" y2="88" stroke="#94a3b8" stroke-width="2.5"/>
+              <text x="515" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">At rest (Stationary)</text>
+
+              <!-- Stage 2: Very Smooth Track (Starts at x=220 and glides at constant speed across the entire track!) -->
+              <rect x="200" y="100" width="416" height="54" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+              <text x="212" y="115" font-size="10" font-weight="800" fill="#1d4ed8">STAGE 2 (Very Smooth Track • Zero Opposing Force):</text>
+              <g class="anim-q7-smooth">
+                <rect x="220" y="124" width="46" height="14" rx="4" fill="#2563eb"/>
+                <circle cx="230" cy="142" r="5" fill="#0f172a"/>
+                <circle cx="256" cy="142" r="5" fill="#0f172a"/>
+              </g>
+              <line x1="518" y1="131" x2="588" y2="131" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="4,3"/>
+              <polygon points="596,131 586,126 586,136" fill="#2563eb"/>
+              <line x1="212" y1="148" x2="604" y2="148" stroke="#38bdf8" stroke-width="3"/>
+
+              <!-- Stage 3: Normal Table Surface (Starts at x=220, decelerates step-by-step, and stops dead at x=378!) -->
+              <rect x="200" y="160" width="416" height="54" rx="6" fill="#fff1f2" stroke="#fecdd3"/>
+              <text x="212" y="175" font-size="10" font-weight="800" fill="#be123c">STAGE 3 (Normal Table Surface):</text>
+              <g class="anim-q7-stop">
+                <rect x="220" y="182" width="46" height="14" rx="4" fill="#e11d48"/>
+                <circle cx="230" cy="200" r="5" fill="#0f172a"/>
+                <circle cx="256" cy="200" r="5" fill="#0f172a"/>
+              </g>
+              <!-- Opposing force arrow placed ahead of the stopping point (x=495 -> 435) pointing LEFT against the car -->
+              <line x1="495" y1="191" x2="438" y2="191" stroke="#be123c" stroke-width="3.5"/>
+              <polygon points="428,191 440,185 440,197" fill="#be123c"/>
+              <text x="552" y="194" text-anchor="middle" font-size="10" font-weight="800" fill="#9f1239">Slows &amp; Stops</text>
+              <line x1="212" y1="206" x2="604" y2="206" stroke="#64748b" stroke-width="2.5"/>
+            </svg>
+          `;
+
+        case 8:
+          const objLabel = setMode === 'set2' ? 'HEAVY DICTIONARY' : 'STATIONARY BRICK';
+          return `
+            <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white">
+              <rect x="14" y="12" width="612" height="26" rx="6" fill="#e0e7ff"/>
+              <text x="320" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">TEXTBOOK PAGE 35 EXPLORE: Holding a ${objLabel} Still on Open Palm</text>
+
+              <line x1="250" y1="46" x2="250" y2="86" stroke="#e11d48" stroke-width="5"/>
+              <polygon points="250,96 240,82 260,82" fill="#e11d48"/>
+              <rect x="55" y="54" width="175" height="28" rx="6" fill="#ffe4e6" stroke="#fda4af"/>
+              <text x="142" y="72" text-anchor="middle" font-size="10.5" font-weight="800" fill="#9f1239">Downward Pull (Force 1 = ?)</text>
+
+              <rect x="175" y="98" width="150" height="40" rx="5" fill="${setMode === 'set2' ? '#2563eb' : '#dc2626'}"
+               stroke="${setMode === 'set2' ? '#1e3a8a' : '#991b1b'}" stroke-width="2.5"/>
+              <text x="250" y="122" text-anchor="middle" font-size="11.5" font-weight="800" fill="#ffffff">${objLabel}</text>
+
+              <rect x="155" y="140" width="190" height="22" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+              <text x="250" y="155" text-anchor="middle" font-size="10" font-weight="800" fill="#92400e">SUPPORT: OPEN PALM OF HAND</text>
+
+              <line x1="250" y1="202" x2="250" y2="168" stroke="#059669" stroke-width="5"/>
+              <polygon points="250,162 240,174 260,174" fill="#059669"/>
+              <rect x="55" y="170" width="175" height="28" rx="6" fill="#d1fae5" stroke="#6ee7b7"/>
+              <text x="142" y="188" text-anchor="middle" font-size="10.5" font-weight="800" fill="#065f46">Upward Push (Force 2 = ?)</text>
+
+              <rect x="380" y="64" width="236" height="116" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="498" y="90" text-anchor="middle" font-size="12" font-weight="800" fill="#0f172a">Observation:</text>
+              <text x="498" y="112" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">The object is completely AT REST</text>
+              <text x="498" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">(not moving up or down).</text>
+              <rect x="400" y="142" width="196" height="26" rx="6" fill="#fef3c7"/>
+              <text x="498" y="159" text-anchor="middle" font-size="10.5" font-weight="800" fill="#92400e">Are zero forces acting on it?</text>
+            </svg>
+          `;
+
+        case 9:
+          return `
+            <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <rect x="12" y="12" width="198" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="111" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">1. Mass of Object (C8)</text>
+
+              <path d="M 28 70 L 36 58 L 62 58 L 70 70 L 82 70 L 82 84 L 28 84 Z" fill="#60a5fa" stroke="#1d4ed8" stroke-width="1.5"/>
+              <circle cx="40" cy="86" r="6" fill="#1e293b"/>
+              <circle cx="70" cy="86" r="6" fill="#1e293b"/>
+              <text x="146" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="#0369a1">Light Car / Empty</text>
+
+              <rect x="24" y="120" width="70" height="36" rx="4" fill="#4f46e5" stroke="#312e81" stroke-width="1.5"/>
+              <path d="M 96 128 L 112 128 L 118 138 L 118 156 L 96 156 Z" fill="#3730a3" stroke="#312e81" stroke-width="1.5"/>
+              <text x="59" y="142" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">LORRY</text>
+              <circle cx="40" cy="160" r="7" fill="#1e293b"/>
+              <circle cx="74" cy="160" r="7" fill="#1e293b"/>
+              <circle cx="106" cy="160" r="7" fill="#1e293b"/>
+              <text x="164" y="144" text-anchor="middle" font-size="10" font-weight="700" fill="#3730a3">Heavy Lorry</text>
+
+              <rect x="221" y="12" width="198" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="320" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#065f46">2. Shape &amp; Wheels (C9)</text>
+
+              <rect x="242" y="56" width="44" height="36" rx="3" fill="#fca5a5" stroke="#dc2626" stroke-width="2"/>
+              <text x="264" y="78" text-anchor="middle" font-size="10" font-weight="800" fill="#991b1b">5 kg</text>
+              <text x="352" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Flat Box /</text>
+              <text x="352" y="84" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">No Wheels</text>
+
+              <circle cx="264" cy="144" r="20" fill="#6ee7b7" stroke="#059669" stroke-width="2"/>
+              <text x="264" y="148" text-anchor="middle" font-size="10" font-weight="800" fill="#065f46">5 kg</text>
+              <text x="352" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">Round Ball /</text>
+              <text x="352" y="154" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">With Wheels</text>
+
+              <rect x="430" y="12" width="198" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="529" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">3. Force Strength (C10)</text>
+
+              <text x="529" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">1 Hand (Slower • 30 cm)</text>
+              <line x1="444" y1="92" x2="612" y2="92" stroke="#cbd5e1" stroke-width="2.5"/>
+              <g class="anim-q9-short">
+                <rect x="446" y="62" width="32" height="26" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+                <line x1="482" y1="75" x2="512" y2="75" stroke="#d97706" stroke-width="3" stroke-dasharray="3,2"/>
+                <polygon points="520,75 510,70 510,80" fill="#d97706"/>
+              </g>
+
+              <text x="529" y="124" text-anchor="middle" font-size="10" font-weight="800" fill="#c2410c">Both Hands (Faster • 90 cm)</text>
+              <line x1="444" y1="168" x2="612" y2="168" stroke="#cbd5e1" stroke-width="2.5"/>
+              <g class="anim-q9-long">
+                <rect x="446" y="136" width="32" height="26" rx="4" fill="#fcd34d" stroke="#b45309" stroke-width="2"/>
+                <line x1="482" y1="143" x2="536" y2="143" stroke="#ea580c" stroke-width="3.5"/>
+                <polygon points="544,143 534,138 534,148" fill="#ea580c"/>
+                <line x1="482" y1="155" x2="536" y2="155" stroke="#ea580c" stroke-width="3.5"/>
+                <polygon points="544,155 534,150 534,160" fill="#ea580c"/>
+              </g>
+            </svg>
+          `;
+
+        case 10:
+          return `
+            <svg viewBox="0 0 640 225" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <rect x="12" y="12" width="195" height="201" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="109" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">Magnet Shapes &amp; Medium</text>
+              <rect x="36" y="46" width="72" height="22" rx="3" fill="#ef4444"/>
+              <rect x="108" y="46" width="72" height="22" rx="3" fill="#2563eb"/>
+              <text x="72" y="61" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+              <text x="144" y="61" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+              <text x="109" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">Bar Magnet</text>
+
+              <path d="M 82 135 L 82 104 Q 109 86 136 104 L 136 135" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round"/>
+              <line x1="82" y1="125" x2="82" y2="138" stroke="#ef4444" stroke-width="10"/>
+              <text x="82" y="135" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">N</text>
+              <text x="136" y="135" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">S</text>
+              <line x1="48" y1="154" x2="170" y2="154" stroke="#94a3b8" stroke-width="3"/>
+              <text x="109" y="168" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">Sheet of Paper / Air Gap</text>
+              <ellipse cx="109" cy="182" rx="12" ry="4" fill="none" stroke="#334155" stroke-width="2.5"/>
+
+              <rect x="218" y="12" width="410" height="201" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+              <text x="423" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#1e3a8a">Activity 16.4: Magnet Held at Point A, Point B &amp; Point C</text>
+
+              <rect x="262" y="42" width="28" height="18" fill="#ef4444"/>
+              <rect x="262" y="60" width="28" height="26" fill="#2563eb"/>
+              <text x="276" y="55" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">N</text>
+              <text x="276" y="78" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">S</text>
+              <text x="276" y="102" text-anchor="middle" font-size="11" font-weight="800" fill="#1e40af">Point A</text>
+              <text x="276" y="116" text-anchor="middle" font-size="10" fill="#475569">(Very far • 12 cm)</text>
+              <line x1="276" y1="122" x2="276" y2="174" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+              <rect x="410" y="84" width="28" height="18" fill="#ef4444"/>
+              <rect x="410" y="102" width="28" height="26" fill="#2563eb"/>
+              <text x="424" y="97" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">N</text>
+              <text x="424" y="120" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">S</text>
+              <text x="424" y="76" text-anchor="middle" font-size="11" font-weight="800" fill="#1e40af">Point B (5 cm)</text>
+              <g class="anim-q10-b">
+                <ellipse cx="418" cy="136" rx="7" ry="3.5" fill="none" stroke="#334155" stroke-width="2"/>
+                <ellipse cx="430" cy="140" rx="7" ry="3.5" fill="none" stroke="#334155" stroke-width="2"/>
+                <ellipse cx="424" cy="147" rx="7" ry="3.5" fill="none" stroke="#334155" stroke-width="2"/>
+              </g>
+
+              <rect x="548" y="116" width="28" height="18" fill="#ef4444"/>
+              <rect x="548" y="134" width="28" height="26" fill="#2563eb"/>
+              <text x="562" y="129" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">N</text>
+              <text x="562" y="152" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">S</text>
+              <text x="562" y="108" text-anchor="middle" font-size="11" font-weight="800" fill="#1e40af">Point C (1 cm)</text>
+              <g class="anim-q10-c">
+                <ellipse cx="552" cy="168" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+                <ellipse cx="562" cy="170" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+                <ellipse cx="572" cy="168" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+                <ellipse cx="556" cy="176" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+                <ellipse cx="568" cy="176" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+                <ellipse cx="562" cy="181" rx="7" ry="3.5" fill="none" stroke="#1e293b" stroke-width="2.2"/>
+              </g>
+
+              <line x1="234" y1="188" x2="612" y2="188" stroke="#475569" stroke-width="3"/>
+              <ellipse cx="268" cy="183" rx="7" ry="3" fill="none" stroke="#64748b" stroke-width="2"/>
+              <ellipse cx="284" cy="183" rx="7" ry="3" fill="none" stroke="#64748b" stroke-width="2"/>
+              <text x="423" y="204" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Tray of Steel Paper Clips</text>
+            </svg>
+          `;
+
+        case 11:
+          return `
+            <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <rect x="12" y="12" width="616" height="26" rx="6" fill="#fef3c7"/>
+              <text x="320" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">ACTIVITY 16.5 SPECIMEN TRAY: Testing 4 Metals &amp; 5 Non-Metals with a Magnet</text>
+
+              <rect x="16" y="48" width="296" height="154" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+              <text x="164" y="68" text-anchor="middle" font-size="11" font-weight="800" fill="#1e40af">GROUP 1: Four Metal Specimens</text>
+
+              <rect x="30" y="82" width="120" height="46" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+              <line x1="56" y1="98" x2="118" y2="98" stroke="#334155" stroke-width="4"/>
+              <line x1="56" y1="92" x2="56" y2="104" stroke="#334155" stroke-width="3"/>
+              <text x="90" y="118" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0f172a">Iron Nail / Filings</text>
+
+              <rect x="164" y="82" width="134" height="46" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+              <ellipse cx="231" cy="96" rx="18" ry="6" fill="none" stroke="#475569" stroke-width="2.5"/>
+              <text x="231" y="118" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0f172a">Steel Paper Clip</text>
+
+              <rect x="30" y="138" width="120" height="50" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <rect x="74" y="146" width="32" height="18" rx="3" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+              <text x="90" y="180" text-anchor="middle" font-size="10.5" font-weight="800" fill="#334155">Aluminium Can/Foil</text>
+
+              <rect x="164" y="138" width="134" height="50" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <path d="M 205 156 Q 218 144 231 156 Q 244 168 257 156" fill="none" stroke="#d97706" stroke-width="3.5"/>
+              <text x="231" y="180" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b45309">Copper Wire</text>
+
+              <rect x="328" y="48" width="296" height="154" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="476" y="68" text-anchor="middle" font-size="11" font-weight="800" fill="#334155">GROUP 2: Five Non-Metal Specimens</text>
+
+              <rect x="342" y="84" width="80" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="382" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">📄 Paper</text>
+
+              <rect x="436" y="84" width="80" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="476" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">🪵 Wood</text>
+
+              <rect x="530" y="84" width="80" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="570" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">🔮 Glass</text>
+
+              <rect x="378" y="140" width="92" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="424" y="167" text-anchor="middle" font-size="11" font-weight="700" fill="#4f46e5">📏 Plastic</text>
+
+              <rect x="484" y="140" width="92" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="530" y="167" text-anchor="middle" font-size="11" font-weight="700" fill="#e11d48">🧽 Rubber</text>
+            </svg>
+          `;
+
+        case 12:
+          if (setMode === 'set3') {
+            return `
+              <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-indigo-200 bg-white">
+                <line x1="380" y1="14" x2="380" y2="206" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <rect x="14" y="12" width="352" height="26" rx="6" fill="#e0e7ff"/>
+                <text x="190" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">SET 3 MYSTERY MAGNET TEST (Identify Pole X &amp; Pole Y)</text>
+
+                <text x="24" y="58" font-size="10.5" font-weight="800" fill="#be123c">Test 1: Mystery Pole X pushes away (REPELS) North (N)</text>
+                <g class="anim-q12-rep-l">
+                  <rect x="28" y="68" width="56" height="26" rx="3" fill="#2563eb"/>
+                  <rect x="84" y="68" width="56" height="26" rx="3" fill="#ef4444"/>
+                  <text x="56" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+                  <text x="112" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+                </g>
+                <line x1="168" y1="81" x2="148" y2="81" stroke="#e11d48" stroke-width="3.5"/>
+                <polygon points="142,81 150,76 150,86" fill="#e11d48"/>
+                <line x1="182" y1="81" x2="202" y2="81" stroke="#e11d48" stroke-width="3.5"/>
+                <polygon points="208,81 200,76 200,86" fill="#e11d48"/>
+                <g class="anim-q12-rep-r">
+                  <rect x="214" y="68" width="66" height="26" rx="3" fill="#64748b"/>
+                  <rect x="280" y="68" width="66" height="26" rx="3" fill="#94a3b8"/>
+                  <text x="247" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">Pole X (?)</text>
+                </g>
+
+                <text x="24" y="132" font-size="10.5" font-weight="800" fill="#047857">Test 2: Mystery Pole Y pulls together (ATTRACTS) North (N)</text>
+                <g class="anim-q12-att-l">
+                  <rect x="28" y="142" width="56" height="26" rx="3" fill="#2563eb"/>
+                  <rect x="84" y="142" width="56" height="26" rx="3" fill="#ef4444"/>
+                  <text x="56" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+                  <text x="112" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+                </g>
+                <line x1="146" y1="155" x2="168" y2="155" stroke="#059669" stroke-width="3.5"/>
+                <polygon points="174,155 166,150 166,160" fill="#059669"/>
+                <line x1="204" y1="155" x2="182" y2="155" stroke="#059669" stroke-width="3.5"/>
+                <polygon points="176,155 184,150 184,160" fill="#059669"/>
+                <g class="anim-q12-att-r">
+                  <rect x="214" y="142" width="66" height="26" rx="3" fill="#475569"/>
+                  <rect x="280" y="142" width="66" height="26" rx="3" fill="#94a3b8"/>
+                  <text x="247" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">Pole Y (?)</text>
+                </g>
+
+                <rect x="394" y="12" width="232" height="26" rx="6" fill="#fef3c7"/>
+                <text x="510" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">Compass Near a Strong Magnet</text>
+                <circle cx="485" cy="122" r="52" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+                <text x="485" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#dc2626">N</text>
+                <text x="485" y="166" text-anchor="middle" font-size="11" font-weight="800" fill="#2563eb">S</text>
+                <polygon points="485,92 492,122 478,122" fill="#ef4444"/>
+                <polygon points="485,152 492,122 478,122" fill="#2563eb"/>
+                <rect x="556" y="110" width="32" height="22" rx="2" fill="#ef4444"/>
+                <rect x="588" y="110" width="28" height="22" rx="2" fill="#2563eb"/>
+                <text x="572" y="125" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">N</text>
+              </svg>
+            `;
+          }
+          return `
+            <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" class="rounded-xl border border-slate-200 bg-white">
+              <line x1="365" y1="14" x2="365" y2="206" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+
+              <rect x="14" y="12" width="338" height="26" rx="6" fill="#e0e7ff"/>
+              <text x="183" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">1. Magnetic Pole Pairings (Activity 16.6)</text>
+
+              <text x="26" y="58" font-size="10" font-weight="800" fill="#065f46">Pairing A — Unlike (Opposite) Poles Facing (N and S):</text>
+              <g class="anim-q12-att-l">
+                <rect x="28" y="68" width="58" height="26" rx="3" fill="#2563eb"/>
+                <rect x="86" y="68" width="58" height="26" rx="3" fill="#ef4444"/>
+                <text x="57" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+                <text x="115" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+              </g>
+
+              <line x1="152" y1="81" x2="174" y2="81" stroke="#059669" stroke-width="3.5"/>
+              <polygon points="180,81 172,76 172,86" fill="#059669"/>
+              <line x1="210" y1="81" x2="188" y2="81" stroke="#059669" stroke-width="3.5"/>
+              <polygon points="182,81 190,76 190,86" fill="#059669"/>
+
+              <g class="anim-q12-att-r">
+                <rect x="218" y="68" width="58" height="26" rx="3" fill="#2563eb"/>
+                <rect x="276" y="68" width="58" height="26" rx="3" fill="#ef4444"/>
+                <text x="247" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+                <text x="305" y="85" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+              </g>
+
+              <text x="26" y="132" font-size="10" font-weight="800" fill="#9f1239">Pairing B — Like (Same) Poles Facing (N and N):</text>
+              <g class="anim-q12-rep-l">
+                <rect x="28" y="142" width="58" height="26" rx="3" fill="#2563eb"/>
+                <rect x="86" y="142" width="58" height="26" rx="3" fill="#ef4444"/>
+                <text x="57" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+                <text x="115" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+              </g>
+
+              <line x1="174" y1="155" x2="152" y2="155" stroke="#e11d48" stroke-width="3.5"/>
+              <polygon points="146,155 154,150 154,160" fill="#e11d48"/>
+              <line x1="188" y1="155" x2="210" y2="155" stroke="#e11d48" stroke-width="3.5"/>
+              <polygon points="216,155 208,150 208,160" fill="#e11d48"/>
+
+              <g class="anim-q12-rep-r">
+                <rect x="218" y="142" width="58" height="26" rx="3" fill="#ef4444"/>
+                <rect x="276" y="142" width="58" height="26" rx="3" fill="#2563eb"/>
+                <text x="247" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">N</text>
+                <text x="305" y="159" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">S</text>
+              </g>
+
+              <rect x="378" y="12" width="248" height="26" rx="6" fill="#ecfdf5"/>
+              <text x="502" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#065f46">2. Magnetic Compass Dial</text>
+
+              <circle cx="502" cy="118" r="60" fill="#f8fafc" stroke="#334155" stroke-width="3.5"/>
+              <circle cx="502" cy="118" r="52" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+
+              <text x="502" y="76" text-anchor="middle" font-size="13" font-weight="800" fill="#dc2626">N</text>
+              <text x="502" y="168" text-anchor="middle" font-size="13" font-weight="800" fill="#2563eb">S</text>
+              <rect x="448" y="108" width="22" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+              <text x="459" y="122" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">?</text>
+              <rect x="534" y="108" width="22" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+              <text x="545" y="122" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">?</text>
+
+              <polygon points="502,84 510,118 494,118" fill="#ef4444"/>
+              <polygon points="502,152 510,118 494,118" fill="#2563eb"/>
+              <circle cx="502" cy="118" r="4" fill="#0f172a"/>
+
+              <text x="502" y="198" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">Aligns with Earth's magnetic pull</text>
+            </svg>
+          `;
+      }
+      return '';
+    }
+
+    function getQuestionVisualHtml(q, setKey) {
+      const dId = q.diagramId || q.qNum;
+      if (setKey === 'official') {
+        if (dId === 1) {
+          return getSingleDiagramSvg(1, setKey) + getSingleDiagramSvg(2, setKey);
+        }
+        if (dId === 2) {
+          return getSingleDiagramSvg(3, setKey) + getSingleDiagramSvg(4, setKey);
+        }
+        return getSingleDiagramSvg(dId + 2, setKey);
+      }
+      return getSingleDiagramSvg(dId, setKey);
     }
 
     // =========================================================================
@@ -3553,14 +4728,14 @@
       if (state.submitted && state.score !== null) {
         const pct = Math.round((state.score / maxScore) * 100);
         return {
-          text: `✓ Completed: ${pct}% (${state.score}/${maxScore})`,
+          text: ("✓ Completed: " + (pct) + "% (" + (state.score) + "/" + (maxScore) + ")"),
           cls: 'bg-emerald-100 text-emerald-800'
         };
       }
       const answeredCount = questions.filter((q, idx) => isQuestionAnswered(q, state.answers[idx])).length;
       if (answeredCount > 0) {
         return {
-          text: `In Progress (${answeredCount}/${questions.length})`,
+          text: ("In Progress (" + (answeredCount) + "/" + (questions.length) + ")"),
           cls: 'bg-amber-100 text-amber-800'
         };
       }
@@ -3676,14 +4851,14 @@
         const missing = allConcepts.filter(c => !covered.has(c));
         const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missing.length === 0);
         if (!passSet) allPassed = false;
-        reportLines.push(`${setObj.shortTitle}: Model=${modelTotal}/${setObj.maxScore} | Blank=${blankTotal}/${setObj.maxScore} | Concepts=${covered.size}/19 ${passSet ? '✓ PASS' : '✗ FAIL'}`);
+        reportLines.push(((setObj.shortTitle) + ": Model=" + (modelTotal) + "/" + (setObj.maxScore) + " | Blank=" + (blankTotal) + "/" + (setObj.maxScore) + " | Concepts=" + (covered.size) + "/19 " + (passSet ? '✓ PASS' : '✗ FAIL')));
       });
 
       banner.classList.remove('hidden');
       banner.className = allPassed
         ? 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1'
         : 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
-      banner.innerHTML = `<div class="font-extrabold">${allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C19 Coverage Across All 4 Sets)' : '✗ QA SELF-TEST FAILED'}</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+      banner.innerHTML = ("<div class=\"font-extrabold\">" + (allPassed ? '✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% C1..C19 Coverage Across All 4 Sets)' : '✗ QA SELF-TEST FAILED') + "</div><div>" + (reportLines.join(' &nbsp;•&nbsp; ')) + "</div>");
     }
 
     function renderParentInspector() {
@@ -3693,28 +4868,33 @@
         return;
       }
       const setObj = QUESTION_SETS[activeParentTab];
+      const state = loadSetState(activeParentTab);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
       tbody.innerHTML = '';
 
-      setObj.questions.forEach(q => {
+      order.forEach((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50 align-top';
 
-        const subItemsHtml = q.items.map(it => `<div class="mb-1 text-slate-700">• ${it.label}</div>`).join('');
+        const subItemsHtml = q.items.map(it => `<div class="mb-1 text-slate-700">• ${formatSubItemLabel(it.label, dispNum)}</div>`).join('');
         const ansHtml = q.items.map(it => `
           <div class="mb-1.5">
             <span class="font-bold text-indigo-900">${it.modelAnswer}</span>
-            <div class="text-[11px] text-slate-500">${it.explanation}</div>
+            <div class="text-xs text-slate-500">${it.explanation}</div>
           </div>
         `).join('');
 
         tr.innerHTML = `
           <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
-            Q${q.qNum}
-            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] inline-block">${q.conceptId}</div>
+            Q${dispNum}
+            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-xs inline-block">${q.conceptId}</div>
           </td>
           <td class="py-3 px-3">
             <div class="font-semibold text-slate-800">${q.subTopic}</div>
-            <div class="text-slate-500">${q.cluster} • ${q.points} pts</div>
+            <div class="text-slate-500">${q.cluster}
+             • ${q.points} pts</div>
           </td>
           <td class="py-3 px-3">
             <div class="font-semibold text-slate-900 mb-1">${q.prompt}</div>
@@ -3737,27 +4917,37 @@
     }
 
     // =========================================================================
-    // 6. ACTIVE QUIZ SLIDE RENDERING
+    // 6. ACTIVE QUIZ SLIDE RENDERING (WITH SHUFFLED QUESTION & OPTION ORDERS)
     // =========================================================================
     function getActiveSlideList() {
-      const questions = QUESTION_SETS[currentSetKey].questions;
+      const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || QUESTION_SETS[currentSetKey].questions.map((_, i) => i);
       if (retryFilterIndices && retryFilterIndices.length > 0) {
         return retryFilterIndices;
       }
-      return questions.map((_, i) => i);
+      return order;
+    }
+
+    function getDisplayQNum(origIdx, setKey = currentSetKey) {
+      const state = loadSetState(setKey);
+      const order = state.questionOrder || QUESTION_SETS[setKey].questions.map((_, i) => i);
+      const pos = order.indexOf(origIdx);
+      return pos !== -1 ? pos + 1 : origIdx + 1;
     }
 
     function startQuiz(setKey, retryIndices = null) {
       currentSetKey = setKey;
       retryFilterIndices = retryIndices;
-      const state = loadSetState(setKey);
+      // If not retrying incorrect items, randomize whenever status is "Not Started"
+      const state = retryIndices ? loadSetState(setKey) : randomizeSetIfNotStarted(setKey);
       if (state.submitted && !retryIndices) {
         renderResultsScreen();
         showView('viewResults');
         return;
       }
       const activeList = getActiveSlideList();
-      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      const answeredCount = QUESTION_SETS[setKey].questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      currentSlideIndex = (answeredCount > 0 && activeList.includes(state.lastSlide)) ? state.lastSlide : activeList[0];
       renderQuizSlide();
       showView('viewQuiz');
     }
@@ -3769,6 +4959,7 @@
       const activeList = getActiveSlideList();
       const q = questions[currentSlideIndex];
       const posInActive = activeList.indexOf(currentSlideIndex);
+      const displayQNum = getDisplayQNum(currentSlideIndex, currentSetKey);
 
       state.lastSlide = currentSlideIndex;
       saveSetState(currentSetKey, state);
@@ -3777,8 +4968,8 @@
         ? `${setObj.shortTitle} (Retry Incorrect)`
         : setObj.title;
       document.getElementById('quizClusterBadge').textContent = q.cluster;
-      document.getElementById('quizQuestionCounter').textContent = `Question ${posInActive + 1} of ${activeList.length}`;
-      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? 'pt' : 'pts'}`;
+      document.getElementById('quizQuestionCounter').textContent = ("Question " + (posInActive + 1) + " of " + (activeList.length));
+      document.getElementById('quizPointsCounter').textContent = ((q.points) + " " + (q.points === 1 ? 'pt' : 'pts'));
 
       const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
       document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
@@ -3786,6 +4977,10 @@
       document.getElementById('slideSubTopic').textContent = q.subTopic;
       document.getElementById('slideConceptBadge').textContent = q.conceptId;
       document.getElementById('slidePrompt').textContent = q.prompt;
+      const diagBox = document.getElementById('slideDiagramContainer');
+      if (diagBox) {
+        diagBox.innerHTML = getQuestionVisualHtml(q, currentSetKey);
+      }
 
       // Word Bank handling
       const wbBanner = document.getElementById('slideWordBank');
@@ -3824,17 +5019,22 @@
       q.items.forEach(item => {
         const block = document.createElement('div');
         block.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5';
+        const formattedLabel = formatSubItemLabel(item.label, displayQNum);
 
         if (item.mode === 'select') {
-          const optsHtml = item.options.map(opt => {
+          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
+            ? state.optionOrders[item.id]
+            : item.options;
+          const optsHtml = activeOptions.map(opt => {
             const selected = qAns[item.id] === opt ? 'selected' : '';
-            return `<option value="${opt.replace(/"/g, '&quot;')}" ${selected}>${opt}</option>`;
+            return ("<option value=\"" + (opt.replace(/"/g, '&quot;')) + "\" " + (selected) + ">" + (opt) + "</option>");
           }).join('');
 
           block.innerHTML = `
             <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <label class="text-sm font-bold text-slate-800">${formattedLabel}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points}
+               ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <select
               data-field="${item.id}"
@@ -3847,8 +5047,9 @@
         } else {
           block.innerHTML = `
             <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? 'pt' : 'pts'})</span>
+              <label class="text-sm font-bold text-slate-800">${formattedLabel}</label>
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points}
+               ${item.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <input
               type="text"
@@ -3912,12 +5113,13 @@
       let answeredTotal = 0;
       activeList.forEach(qIdx => {
         const q = setObj.questions[qIdx];
+        const displayQNum = getDisplayQNum(qIdx, currentSetKey);
         const answered = isQuestionAnswered(q, state.answers[qIdx]);
         if (answered) answeredTotal++;
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = q.qNum;
+        btn.textContent = displayQNum;
         let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
         if (answered) {
           cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
@@ -3935,7 +5137,7 @@
         grid.appendChild(btn);
       });
 
-      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+      document.getElementById('navAnsweredCount').textContent = ((answeredTotal) + " / " + (activeList.length));
     }
 
     // =========================================================================
@@ -3959,10 +5161,11 @@
 
         unansweredIndices.forEach(qIdx => {
           const q = setObj.questions[qIdx];
+          const dispNum = getDisplayQNum(qIdx, currentSetKey);
           const pill = document.createElement('button');
           pill.type = 'button';
           pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
-          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.textContent = ("Q" + (dispNum) + " (" + (q.conceptId) + ")");
           pill.addEventListener('click', () => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
@@ -3972,8 +5175,8 @@
           pills.appendChild(pill);
         });
 
-        const firstMissingQ = setObj.questions[unansweredIndices[0]];
-        btnGoBack.textContent = `Go Back to Question ${firstMissingQ.qNum}`;
+        const firstMissingDispNum = getDisplayQNum(unansweredIndices[0], currentSetKey);
+        btnGoBack.textContent = `Go Back to Question ${firstMissingDispNum}`;
         btnGoBack.onclick = () => {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
@@ -4016,6 +5219,7 @@
     function renderResultsScreen() {
       const setObj = QUESTION_SETS[currentSetKey];
       const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
 
       let totalEarned = 0;
       let lightEarned = 0, lightMax = 0;
@@ -4025,8 +5229,10 @@
       const reviewList = document.getElementById('resultsReviewList');
       reviewList.innerHTML = '';
 
-      setObj.questions.forEach((q, idx) => {
-        const g = gradeQuestion(q, state.answers[idx]);
+      order.forEach((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
+        const g = gradeQuestion(q, state.answers[origIdx]);
         totalEarned += g.earnedPoints;
         if (q.unit === 'forces') {
           lightEarned += g.earnedPoints;
@@ -4037,16 +5243,16 @@
         }
 
         if (g.status !== 'correct') {
-          incorrectIndices.push(idx);
+          incorrectIndices.push(origIdx);
         }
 
         let badgeHtml = '';
         let borderCls = 'border-slate-200';
         if (g.status === 'correct') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">✓ Correct (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800\">✓ Correct (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-emerald-200';
         } else if (g.status === 'partial') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">◐ Partial (${g.earnedPoints}/${g.maxPoints} pts)</span>`;
+          badgeHtml = ("<span class=\"px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800\">◐ Partial (" + (g.earnedPoints) + "/" + (g.maxPoints) + " pts)</span>");
           borderCls = 'border-amber-200';
         } else {
           badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">✗ Incorrect (0/${g.maxPoints} pts)</span>`;
@@ -4056,9 +5262,11 @@
         const subRowsHtml = g.subResults.map(sr => `
           <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="font-bold text-slate-800">${sr.label}</span>
+              <span class="font-bold text-slate-800">${formatSubItemLabel(sr.label, dispNum)}</span>
               <span class="font-semibold ${sr.status === 'correct' ? 'text-emerald-700' : sr.status === 'partial' ? 'text-amber-700' : 'text-rose-700'}">
-                ${sr.status === 'correct' ? '✓ Correct' : sr.status === 'partial' ? '◐ Partial' : '✗ Incorrect'} (${sr.earned}/${sr.max} pts)
+                ${sr.status === 'correct' ? '✓ Correct' : sr.status === 'partial' ? '◐ Partial' : '✗ Incorrect'}
+                 (${sr.earned}
+                 /${sr.max} pts)
               </span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
@@ -4080,13 +5288,14 @@
         card.innerHTML = `
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-2">
-              <span class="text-sm font-extrabold text-slate-900">Question ${q.qNum}</span>
+              <span class="text-sm font-extrabold text-slate-900">Question ${dispNum}</span>
               <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">${q.conceptId}</span>
               <span class="text-xs font-semibold text-slate-500">• ${q.subTopic}</span>
             </div>
             ${badgeHtml}
           </div>
           <p class="text-sm font-medium text-slate-800">${q.prompt}</p>
+          <div class="svg-diagram-box space-y-2">${getQuestionVisualHtml(q, currentSetKey)}</div>
           <div class="space-y-2">${subRowsHtml}</div>
         `;
         reviewList.appendChild(card);
@@ -4094,10 +5303,10 @@
 
       const pct = Math.round((totalEarned / setObj.maxScore) * 100);
       document.getElementById('resultSetBadge').textContent = setObj.title;
-      document.getElementById('resultTotalScore').textContent = `${totalEarned} / ${setObj.maxScore}`;
+      document.getElementById('resultTotalScore').textContent = ((totalEarned) + " / " + (setObj.maxScore));
       document.getElementById('resultPercentage').textContent = `${pct}%`;
-      document.getElementById('resultLightScore').textContent = `${lightEarned} / ${lightMax} pts`;
-      document.getElementById('resultSoundScore').textContent = `${soundEarned} / ${soundMax} pts`;
+      document.getElementById('resultLightScore').textContent = ((lightEarned) + " / " + (lightMax) + " pts");
+      document.getElementById('resultSoundScore').textContent = ((soundEarned) + " / " + (soundMax) + " pts");
 
       const btnRetry = document.getElementById('btnRetryIncorrect');
       if (incorrectIndices.length === 0) {
@@ -4132,6 +5341,8 @@
     // =========================================================================
     function renderPrintView() {
       const setObj = QUESTION_SETS[activePrintSet];
+      const state = randomizeSetIfNotStarted(activePrintSet);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
       const container = document.getElementById('printableSheetContainer');
 
       document.querySelectorAll('.print-set-btn').forEach(btn => {
@@ -4142,12 +5353,14 @@
         }
       });
 
-      const qBlocksHtml = setObj.questions.map(q => {
+      const qBlocksHtml = order.map((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
         let itemsPrintHtml = '';
         if (q.isDrawingQuestion) {
           itemsPrintHtml = `
             <div class="border-2 border-slate-400 rounded-xl h-40 mt-2 p-3 flex flex-col justify-between">
-              <div class="text-xs text-slate-500 italic">Draw your diagram of the plucked rubber band and its vibrations inside this box:</div>
+              <div class="text-xs text-slate-500 italic">Draw your diagram inside this box:</div>
               <div class="text-xs text-slate-600">Written description: ____________________________________________________________________</div>
             </div>
           `;
@@ -4155,19 +5368,23 @@
           itemsPrintHtml = `
             <div class="space-y-2.5 mt-2">
               ${q.items.map(it => {
+                const formattedLabel = formatSubItemLabel(it.label, dispNum);
                 if (it.mode === 'select' && it.options) {
+                  const activeOptions = (state.optionOrders && state.optionOrders[it.id])
+                    ? state.optionOrders[it.id]
+                    : it.options;
                   return `
                     <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">
-                      <div class="font-semibold text-slate-900">${it.label}</div>
+                      <div class="font-semibold text-slate-900">${formattedLabel}</div>
                       <div class="flex flex-wrap gap-3 pt-1 text-slate-700">
-                        ${it.options.map(o => `<span>[ &nbsp; ] ${o}</span>`).join('')}
+                        ${activeOptions.map(o => `<span>[ &nbsp; ] ${o}</span>`).join('')}
                       </div>
                     </div>
                   `;
                 }
                 return `
                   <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-2">
-                    <div class="font-semibold text-slate-900">${it.label}</div>
+                    <div class="font-semibold text-slate-900">${formattedLabel}</div>
                     <div class="border-b border-dotted border-slate-400 h-5"></div>
                   </div>
                 `;
@@ -4183,10 +5400,14 @@
         return `
           <div class="print-avoid-break border-b border-slate-200 pb-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic} • Q${q.qNum} (${q.conceptId})</span>
-              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? 'pt' : 'pts'})</span>
+              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic}
+               • Q${dispNum}
+                (${q.conceptId})</span>
+              <span class="text-xs font-bold text-slate-700">(${q.points}
+               ${q.points === 1 ? 'pt' : 'pts'})</span>
             </div>
             <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
+            <div class="svg-diagram-box my-2 space-y-2">${getQuestionVisualHtml(q, activePrintSet)}</div>
             ${wbPrint}
             ${itemsPrintHtml}
           </div>
@@ -4201,7 +5422,8 @@
               <p class="text-xs text-slate-600">Year 4 / Term 2 / Unit 16: Forces &amp; Types of Force (C1..C19)</p>
             </div>
             <div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">
-              ${setObj.title} (Total: ${setObj.maxScore} pts)
+              ${setObj.title}
+               (Total: ${setObj.maxScore} pts)
             </div>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">
@@ -4230,6 +5452,7 @@
   <style>
     body { font-family: sans-serif; padding: 24px; color: #0f172a; }
     .print-avoid-break { break-inside: avoid; page-break-inside: avoid; }
+    .svg-diagram-box svg { width: 100%; height: auto; display: block; }
   </style>
 </head>
 <body>
@@ -4239,7 +5462,6 @@
 </body>
 </html>`;
     }
-
     // =========================================================================
     // 9. EVENT LISTENERS INITIALIZATION
     // =========================================================================

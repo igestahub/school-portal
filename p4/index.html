@@ -82,30 +82,20 @@
         document.getElementById('p4ScopeBadge').textContent = `Class 4C • ${p4Data.curriculumScope}`;
       }
 
-      // Group categories by the visible label, not the internal subject ID.
-      // Different IDs can share one label (e.g. two Mathematics modules).
-      const getSubjectLabel = mod =>
-        String(mod.subjectLabel || mod.subject || 'Other').trim().replace(/\s+/g, ' ');
-      const getCategoryKey = mod => getSubjectLabel(mod).toLocaleLowerCase('en');
-      const categories = new Map();
-      modules.forEach(mod => {
-        const key = getCategoryKey(mod);
-        if (!categories.has(key)) {
-          categories.set(key, { label: getSubjectLabel(mod), count: 0 });
-        }
-        categories.get(key).count += 1;
-      });
-
+      // Build Category Tabs Dynamically
+      const subjects = [...new Set(modules.map(m => m.subject))];
       const tabsContainer = document.getElementById('tabsContainer');
       tabsContainer.innerHTML = `
         <button type="button" class="tab-btn px-4 py-2 rounded-xl bg-indigo-600 text-white shadow-xs transition" data-filter="all">All Modules (${modules.length})</button>
       `;
 
-      categories.forEach(({ label, count }, key) => {
+      subjects.forEach(sub => {
+        const count = modules.filter(m => m.subject === sub).length;
+        const label = modules.find(m => m.subject === sub).subjectLabel || sub;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'tab-btn px-4 py-2 rounded-xl bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition';
-        btn.setAttribute('data-filter', key);
+        btn.setAttribute('data-filter', sub);
         btn.textContent = `${label} (${count})`;
         tabsContainer.appendChild(btn);
       });
@@ -120,8 +110,8 @@
         card.className = `card-item bg-white rounded-2xl p-5 shadow-xs transition flex flex-col justify-between ${
           isActive ? 'border-2 border-emerald-500/80 hover:shadow-md' : 'border border-slate-200 opacity-90 hover:border-slate-300'
         }`;
-        card.setAttribute('data-category', getCategoryKey(mod));
-        card.setAttribute('data-title', `${mod.title} ${mod.subtitle} ${mod.subject} ${getSubjectLabel(mod)}`.toLowerCase());
+        card.setAttribute('data-category', mod.subject);
+        card.setAttribute('data-title', `${mod.title} ${mod.subtitle} ${mod.subject}`.toLowerCase());
 
         const badgeHtml = isActive
           ? `<span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">✓ Ready to Practice</span>`

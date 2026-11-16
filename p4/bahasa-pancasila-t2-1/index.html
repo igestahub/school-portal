@@ -97,17 +97,17 @@
               <div class="grid grid-cols-3 gap-2.5">
                 <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
                   <div class="font-bold text-sm text-indigo-950">Set 1</div>
-                  <div class="text-[11px] text-indigo-700 font-medium">Konsep & Identifikasi</div>
+                  <div class="text-xs text-indigo-700 font-medium">Konsep & Identifikasi</div>
                   <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-1">Belum Mulai</div>
                 </button>
                 <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 2</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Skenario Kontekstual</div>
+                  <div class="text-xs text-slate-500 font-medium">Skenario Kontekstual</div>
                   <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-1">Belum Mulai</div>
                 </button>
                 <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 3</div>
-                  <div class="text-[11px] text-slate-500 font-medium">Inversi & Koreksi</div>
+                  <div class="text-xs text-slate-500 font-medium">Inversi & Koreksi</div>
                   <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-1">Belum Mulai</div>
                 </button>
               </div>
@@ -283,7 +283,7 @@
                 <span id="slidePassageTitle">📖 Baca Teks Narasi Bacaan</span>
                 <span id="slidePassageIcon">▼</span>
               </button>
-              <div id="slidePassageBody" class="p-4 text-xs sm:text-sm text-slate-800 leading-relaxed space-y-2.5 max-h-64 overflow-y-auto border-t border-amber-200"></div>
+              <div id="slidePassageBody" class="p-4 text-xs sm:text-sm text-slate-800 leading-relaxed border-t border-amber-200"></div>
             </div>
 
             <div class="flex items-center justify-between gap-2 mb-2">
@@ -516,7 +516,7 @@
     // =========================================================================
     // 1. UI DICTIONARY & RESILIENT GRADING ENGINE
     // =========================================================================
-    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Hub K4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Pra-Ujian Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Tampilkan Kunci ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian."};
+    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Hub K4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Pra-Ujian Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Tampilkan Kunci ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_show": "Tampilkan Kunci ▼", "parent_hide": "Sembunyikan Kunci ▲", "toast_reset": "Progres dihapus & urutan soal diacak ulang", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian."};
     const ALL_CONCEPTS = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16"];
     const STORAGE_PREFIX = "p4_bahasa_pancasila_t2_1_v1";
 
@@ -721,7 +721,9 @@
             "explanation": "Paragraf 4: Surat-suratnya diterbitkan menjadi buku 'Habis Gelap Terbitlah Terang' dan 21 April diperingati sebagai Hari Kartini."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 1,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 2,
@@ -782,7 +784,9 @@
             "explanation": "Kamus Kosakata No. 10: Tradisi adalah adat kebiasaan turun-temurun yang berlaku di dalam masyarakat."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 2,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 3,
@@ -849,7 +853,9 @@
             "explanation": "Kamus Kosakata No. 7: Menginspirasi berarti menumbuhkan ide, ilham, atau semangat pada orang lain."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 3,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 4,
@@ -903,7 +909,9 @@
             "explanation": "Catatan Guru No. 9: Gunakan pasangan kata hubung baku 'antara ... dan ...' (bukan 'sama') serta kata kerja 'memakai kacamata' (bukan 'mempunyai')."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 4,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 5,
@@ -966,7 +974,9 @@
             "explanation": "Kamus Kosakata No. 15: Memperingati berarti mengenang atau merayakan peristiwa penting (sedangkan memperingatkan berarti memberi teguran/nasihat)."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 5,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 6,
@@ -1037,7 +1047,9 @@
             "explanation": "Kaidah C.2: Kalimat berita/pernyataan dalam kalimat tidak langsung menggunakan kata hubung 'bahwa'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 6,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 7,
@@ -1102,14 +1114,17 @@
             "mode": "select",
             "options": [
               "'di sini' menjadi 'di sana / di situ'; 'besok' menjadi 'keesokan harinya'",
-              "'di sini' tetap 'di sini'; 'besok' menjadi 'kemarin lusa'"
+              "'di sini' tetap 'di sini'; 'besok' menjadi 'kemarin lusa'",
+              "'di sini' menjadi 'kemarin'; 'besok' tetap 'besok'"
             ],
             "points": 1,
             "modelAnswer": "'di sini' menjadi 'di sana / di situ'; 'besok' menjadi 'keesokan harinya'",
             "explanation": "Tabel Kaidah C.2.4: 'di sini' -> 'di sana / di situ'; 'besok' -> 'keesokan harinya'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 7,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 8,
@@ -1187,7 +1202,9 @@
             "explanation": "Kaidah C.2.1: Semua kalimat tidak langsung diakhiri dengan tanda titik (.) tanpa tanda tanya dan tanpa tanda petik."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 8,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 9,
@@ -1264,7 +1281,9 @@
             "explanation": "Kaidah C.2.2: Gunakan pola 'meminta/menyuruh [lawan bicara] untuk/agar [kata kerja aktif]'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 9,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 10,
@@ -1346,7 +1365,9 @@
             "explanation": "Dokumen 2 Soal 10: Gendhis berkata, \"Saya/Aku kurang sehat hari ini.\""
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 10,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 11,
@@ -1406,7 +1427,9 @@
             "explanation": "Kaidah C14: 'keesokan harinya' dikembalikan menjadi 'besok' dan 'ia' menjadi 'aku/saya'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 11,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 12,
@@ -1471,7 +1494,9 @@
             "explanation": "Dokumen 3 Bagian 2 No. 4 & 5: Berhak berpendapat dengan sopan (hak) dan harus menghargai pendapat orang lain (kewajiban)."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 12,
+        "sectionGroup": "standalone"
       }
     ]
   },
@@ -1551,7 +1576,9 @@
             "explanation": "Paragraf 3 & 5: Mendirikan Perguruan Taman Siswa (3 Juli 1922) dan tanggal 2 Mei diperingati sebagai Hari Pendidikan Nasional."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 1,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 2,
@@ -1613,7 +1640,9 @@
             "explanation": "Kamus Kosakata No. 10: Tradisi = adat kebiasaan turun-temurun dalam masyarakat."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 2,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 3,
@@ -1669,7 +1698,9 @@
             "explanation": "Kamus Kosakata No. 5: Cerdas berarti tajam pikiran dan cepat mengerti."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 3,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 4,
@@ -1732,7 +1763,9 @@
             "explanation": "Koreksi Guru No. 9: Untuk kacamata atau pakaian yang dikenakan di tubuh, gunakan kata kerja 'memakai' (bukan 'mempunyai')."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 4,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 5,
@@ -1803,7 +1836,9 @@
             "explanation": "Paragraf 5: Setiap tanggal 2 Mei, bangsa Indonesia memperingati Hari Pendidikan Nasional."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 5,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 6,
@@ -1873,7 +1908,9 @@
             "explanation": "Tabel Pronomina C.2.3: Kata ganti jamak 'kami / kita' berubah menjadi 'mereka' dalam kalimat tidak langsung."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 6,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 7,
@@ -1954,7 +1991,9 @@
             "explanation": "Tabel Kaidah C.2.4: 'kemarin' berubah menjadi 'sehari sebelumnya' dalam pelaporan kalimat tidak langsung."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 7,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 8,
@@ -2023,14 +2062,17 @@
             "mode": "select",
             "options": [
               "di mana, di sekolah, ke rumah (ditulis terpisah)",
-              "dimana, disekolah, kerumah (ditulis serangkai)"
+              "dimana, disekolah, kerumah (ditulis serangkai)",
+              "di-mana, di-sekolah, ke-rumah (ditulis memakai tanda hubung)"
             ],
             "points": 1,
             "modelAnswer": "di mana, di sekolah, ke rumah (ditulis terpisah)",
             "explanation": "Kaidah C.1.5: Kata depan penunjuk tempat ('di mana', 'di sekolah', 'ke rumah') wajib ditulis terpisah."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 8,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 9,
@@ -2113,7 +2155,9 @@
             "explanation": "Kaidah C.2.2: Kalimat perintah menggunakan 'meminta/menyuruh ... untuk/agar ...', bukan 'bahwa' atau menyatakan tindakan sudah selesai."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 9,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 10,
@@ -2175,14 +2219,17 @@
             "mode": "select",
             "options": [
               "Di dalam tanda petik penutup (sebelum tanda petik kedua)",
-              "Di luar tanda petik penutup (sesudah tanda petik kedua)"
+              "Di luar tanda petik penutup (sesudah tanda petik kedua)",
+              "Dihilangkan sama sekali apabila kalimat menggunakan kata berkata"
             ],
             "points": 1,
             "modelAnswer": "Di dalam tanda petik penutup (sebelum tanda petik kedua)",
             "explanation": "Kaidah C.1.3: Tanda baca penutup ucapan wajib diletakkan di dalam tanda petik penutup."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 10,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 11,
@@ -2262,7 +2309,9 @@
             "explanation": "Kaidah C14: Kalimat permintaan tidak langsung ('meminta ... untuk membantunya') dikembalikan menjadi petikan langsung dengan kata 'Tolong bantu aku...'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 11,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 12,
@@ -2279,7 +2328,8 @@
             "mode": "select",
             "options": [
               "Hak siswa di sekolah",
-              "Bukan hak siswa (Pelanggaran aturan)"
+              "Bukan hak siswa (Pelanggaran aturan)",
+              "Kewajiban khusus kepala sekolah saja"
             ],
             "points": 1,
             "modelAnswer": "Hak siswa di sekolah",
@@ -2318,7 +2368,9 @@
             "explanation": "Tabel D.2 No. 3: Mengambil barang teman tanpa izin adalah pelanggaran aturan; siswa wajib meminta izin."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 12,
+        "sectionGroup": "standalone"
       }
     ]
   },
@@ -2402,7 +2454,9 @@
             "explanation": "Paragraf 3: Tut Wuri Handayani = di belakang memberikan dorongan; menuntun murid dengan kasih sayang."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 1,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 2,
@@ -2461,7 +2515,9 @@
             "explanation": "Kamus Kosakata No. 10: Tradisi adalah adat kebiasaan turun-temurun dalam masyarakat."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 2,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 3,
@@ -2532,7 +2588,9 @@
             "explanation": "Kamus Kosakata No. 7: Menginspirasi = menumbuhkan ide/semangat pada orang lain untuk melakukan kebaikan (seperti gagasan Ki Hajar Dewantara yang menginspirasi sekolah-sekolah di Indonesia)."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 3,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 4,
@@ -2599,7 +2657,9 @@
             "explanation": "Kamus Kosakata No. 8: Definisi kamus harus objektif ('manusia berjenis kelamin wanita/putri')."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 4,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 5,
@@ -2667,7 +2727,9 @@
             "explanation": "Kamus Kosakata No. 13 & 14: Pendidik membimbing murid dan memberi teladan (contoh baik yang patut ditiru)."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 5,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 6,
@@ -2734,7 +2796,9 @@
             "explanation": "Kaidah C.2.1: Kalimat tidak langsung tidak memakai tanda petik dua dan tidak menggabungkan 'bahwa' dengan tanda petik."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 6,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 7,
@@ -2818,7 +2882,9 @@
             "explanation": "Kaidah C10: 'ini' -> 'itu' dan 'di sini' -> 'di sana / di situ'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 7,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 8,
@@ -2876,14 +2942,17 @@
             "mode": "select",
             "options": [
               "Kata depan tempat dipisah (di mana, di rumah); awalan kata kerja pasif digabung (diizinkan, diterbitkan)",
-              "Kata depan tempat digabung (dimana, dirumah); awalan kata kerja pasif dipisah (di izinkan, di terbitkan)"
+              "Kata depan tempat digabung (dimana, dirumah); awalan kata kerja pasif dipisah (di izinkan, di terbitkan)",
+              "Keduanya selalu ditulis terpisah dalam semua jenis kalimat"
             ],
             "points": 1,
             "modelAnswer": "Kata depan tempat dipisah (di mana, di rumah); awalan kata kerja pasif digabung (diizinkan, diterbitkan)",
             "explanation": "Kaidah C.1.5: Kata depan tempat ditulis terpisah ('di mana'), sedangkan awalan pasif ditulis serangkai ('diizinkan', 'diterbitkan')."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 8,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 9,
@@ -2956,14 +3025,17 @@
             "mode": "select",
             "options": [
               "murid-murid (Pak Budi menyuruh murid-murid untuk membuka halaman sepuluh.)",
-              "halaman sepuluh (Pak Budi menyuruh halaman sepuluh untuk membuka murid-murid.)"
+              "halaman sepuluh (Pak Budi menyuruh halaman sepuluh untuk membuka murid-murid.)",
+              "Pak Budi sendiri (Pak Budi menyuruh dirinya sendiri membuka halaman sepuluh.)"
             ],
             "points": 1,
             "modelAnswer": "murid-murid (Pak Budi menyuruh murid-murid untuk membuka halaman sepuluh.)",
             "explanation": "Kaidah C.2.2: Pola bakunya adalah '[Pembicara] menyuruh/meminta [lawan bicara] untuk [kata kerja aktif]'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 9,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 10,
@@ -3026,7 +3098,9 @@
             "explanation": "Kaidah C13: Tanda koma setelah 'berkata', huruf kapital 'Saya', dan tanda titik di dalam tanda petik penutup."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 10,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 11,
@@ -3081,14 +3155,17 @@
             "mode": "select",
             "options": [
               "'keesokan harinya' menjadi 'besok'; 'sehari sebelumnya' menjadi 'kemarin'",
-              "'keesokan harinya' menjadi 'kemarin'; 'sehari sebelumnya' menjadi 'besok'"
+              "'keesokan harinya' menjadi 'kemarin'; 'sehari sebelumnya' menjadi 'besok'",
+              "'keesokan harinya' menjadi 'lusa'; 'sehari sebelumnya' menjadi 'hari ini'"
             ],
             "points": 1,
             "modelAnswer": "'keesokan harinya' menjadi 'besok'; 'sehari sebelumnya' menjadi 'kemarin'",
             "explanation": "Kaidah C14: 'keesokan harinya' <-> 'besok'; 'sehari sebelumnya' <-> 'kemarin'."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 11,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 12,
@@ -3150,7 +3227,9 @@
             "explanation": "Dokumen 3 Bagian 2 No. 4 & 5: 'berhak berpendapat dengan sopan' (Hak) berpasangan dengan 'harus menghargai pendapat orang lain' (Kewajiban)."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 12,
+        "sectionGroup": "standalone"
       }
     ]
   },
@@ -3265,7 +3344,9 @@
             "explanation": "Dokumen 1 No. 5: Cerdas = tajam pikiran / cepat mengerti / pandai."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 1,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 2,
@@ -3363,7 +3444,9 @@
             "explanation": "Dokumen 1 No. 10: Tradisi = adat kebiasaan turun-temurun yang berlaku di masyarakat."
           }
         ],
-        "showPassage": true
+        "showPassage": true,
+        "diagramId": 2,
+        "sectionGroup": "passage"
       },
       {
         "qNum": 3,
@@ -3494,7 +3577,9 @@
             "explanation": "Kunci Soal 5: Ayah menyuruh/meminta Loli untuk mengambilkan obeng itu."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 3,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 4,
@@ -3610,7 +3695,9 @@
             "explanation": "Kunci Soal 10: Gendhis berkata, \"Saya kurang sehat hari ini.\""
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 4,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 5,
@@ -3627,7 +3714,8 @@
             "mode": "select",
             "options": [
               "Hak",
-              "Bukan"
+              "Bukan",
+              "Kewajiban Guru"
             ],
             "points": 1,
             "modelAnswer": "Hak",
@@ -3639,7 +3727,8 @@
             "mode": "select",
             "options": [
               "Hak",
-              "Bukan"
+              "Bukan",
+              "Kewajiban Guru"
             ],
             "points": 1,
             "modelAnswer": "Hak",
@@ -3651,7 +3740,8 @@
             "mode": "select",
             "options": [
               "Hak",
-              "Bukan"
+              "Bukan",
+              "Kewajiban Guru"
             ],
             "points": 1,
             "modelAnswer": "Bukan",
@@ -3663,7 +3753,8 @@
             "mode": "select",
             "options": [
               "Hak",
-              "Bukan"
+              "Bukan",
+              "Kewajiban Guru"
             ],
             "points": 1,
             "modelAnswer": "Hak",
@@ -3675,14 +3766,17 @@
             "mode": "select",
             "options": [
               "Hak",
-              "Bukan"
+              "Bukan",
+              "Kewajiban Guru"
             ],
             "points": 1,
             "modelAnswer": "Hak",
             "explanation": "Bagian 1 No. 5 (Koreksi Merah): Menyampaikan pendapat saat diskusi adalah Hak siswa di sekolah."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 5,
+        "sectionGroup": "standalone"
       },
       {
         "qNum": 6,
@@ -3756,7 +3850,9 @@
             "explanation": "Bagian 2 No. 5: Dalam setiap diskusi, aku harus menghargai pendapat orang lain."
           }
         ],
-        "showPassage": false
+        "showPassage": false,
+        "diagramId": 6,
+        "sectionGroup": "standalone"
       }
     ]
   }
@@ -3770,31 +3866,159 @@
     let activePrintSet = 'practice_set_1';
     let parentUnlocked = false;
     let lastFocusedInput = null;
+    const memoryStore = {};
 
     function getStorageKey(setKey) {
-      return `${STORAGE_PREFIX}_${setKey}`;
+      return STORAGE_PREFIX + '_' + setKey;
+    }
+
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+      }
+      return copy;
+    }
+
+    // Sub-Section Randomization:
+    // - Set 1 & Official keep natural sequence [0..N-1]
+    // - Set 2 & Set 3 shuffle strictly within contiguous sub-sections (showPassage: true Q1-Q5 vs showPassage: false Q6-Q12)
+    function generateQuestionOrderForSet(setKey, prevOrder) {
+      const questions = QUESTION_SETS[setKey].questions;
+      const len = questions.length;
+      const naturalOrder = Array.from({ length: len }, (_, i) => i);
+      if (setKey === 'practice_set_1' || setKey === 'official' || len <= 1) {
+        return naturalOrder;
+      }
+
+      const blocks = [];
+      questions.forEach((q, idx) => {
+        const groupKey = q.sectionGroup !== undefined
+          ? String(q.sectionGroup)
+          : (q.showPassage === false ? 'standalone' : 'passage');
+        if (blocks.length === 0 || blocks[blocks.length - 1].key !== groupKey) {
+          blocks.push({ key: groupKey, indices: [idx] });
+        } else {
+          blocks[blocks.length - 1].indices.push(idx);
+        }
+      });
+
+      function shuffleBlocksOnce() {
+        const result = [];
+        blocks.forEach(blk => {
+          if (blk.indices.length <= 1) {
+            result.push(blk.indices[0]);
+          } else {
+            result.push(...shuffleArray(blk.indices));
+          }
+        });
+        return result;
+      }
+
+      let candidate = shuffleBlocksOnce();
+      let attempts = 0;
+      while (attempts < 12 && (
+        candidate.every((val, idx) => val === idx) ||
+        (Array.isArray(prevOrder) && prevOrder.length === len && candidate.every((val, idx) => val === prevOrder[idx]))
+      )) {
+        candidate = shuffleBlocksOnce();
+        attempts++;
+      }
+      return candidate;
+    }
+
+    function generateShuffledOptionOrders(questions) {
+      const optionOrders = {};
+      let targetPosCounter = Math.floor(Math.random() * 3);
+      questions.forEach(q => {
+        q.items.forEach(item => {
+          if (item.mode === 'select' && Array.isArray(item.options) && item.options.length > 1) {
+            const shuffled = shuffleArray(item.options);
+            const targetIdx = targetPosCounter % shuffled.length;
+            targetPosCounter += 1 + Math.floor(Math.random() * 2);
+            const curCorrectIdx = shuffled.indexOf(item.modelAnswer);
+            if (curCorrectIdx !== -1 && curCorrectIdx !== targetIdx) {
+              const tmp = shuffled[targetIdx];
+              shuffled[targetIdx] = shuffled[curCorrectIdx];
+              shuffled[curCorrectIdx] = tmp;
+            }
+            optionOrders[item.id] = shuffled;
+          }
+        });
+      });
+      return optionOrders;
+    }
+
+    function formatSubItemLabel(rawLabel, displayQNum) {
+      return String(rawLabel || '').replace(/^(?:o)?\d+([a-z]\.)/i, String(displayQNum) + '$1');
     }
 
     function loadSetState(setKey) {
+      const fullKey = getStorageKey(setKey);
+      const setObj = QUESTION_SETS[setKey];
+      const maxPts = setObj.maxScore;
+      let state = null;
       try {
-        const raw = localStorage.getItem(getStorageKey(setKey));
+        const raw = localStorage.getItem(fullKey);
         if (raw) {
           const parsed = JSON.parse(raw);
-          if (parsed && typeof parsed === 'object') return parsed;
+          if (parsed && typeof parsed === 'object') state = parsed;
         }
-      } catch (e) {}
-      return { answers: {}, submitted: false, score: 0, maxScore: QUESTION_SETS[setKey].maxScore, lastSlide: 0 };
+      } catch (e) {
+        if (memoryStore[fullKey]) state = memoryStore[fullKey];
+      }
+      if (!state) {
+        const initialOrder = generateQuestionOrderForSet(setKey, null);
+        state = {
+          answers: {},
+          submitted: false,
+          score: 0,
+          maxScore: maxPts,
+          lastSlide: initialOrder[0],
+          questionOrder: initialOrder,
+          optionOrders: generateShuffledOptionOrders(setObj.questions)
+        };
+        saveSetState(setKey, state);
+      } else {
+        if (!Array.isArray(state.questionOrder) || state.questionOrder.length !== setObj.questions.length) {
+          state.questionOrder = generateQuestionOrderForSet(setKey, null);
+        }
+        if (!state.optionOrders || typeof state.optionOrders !== 'object') {
+          state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        }
+      }
+      return state;
+    }
+
+    function randomizeSetIfNotStarted(setKey) {
+      const setObj = QUESTION_SETS[setKey];
+      const state = loadSetState(setKey);
+      const answeredCount = setObj.questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      if (!state.submitted && answeredCount === 0) {
+        state.questionOrder = generateQuestionOrderForSet(setKey, state.questionOrder);
+        state.optionOrders = generateShuffledOptionOrders(setObj.questions);
+        state.lastSlide = state.questionOrder[0];
+        saveSetState(setKey, state);
+      }
+      return state;
     }
 
     function saveSetState(setKey, state) {
+      const fullKey = getStorageKey(setKey);
+      memoryStore[fullKey] = state;
       try {
-        localStorage.setItem(getStorageKey(setKey), JSON.stringify(state));
+        localStorage.setItem(fullKey, JSON.stringify(state));
       } catch (e) {}
     }
 
     function clearSetState(setKey) {
+      const fullKey = getStorageKey(setKey);
+      delete memoryStore[fullKey];
       try {
-        localStorage.removeItem(getStorageKey(setKey));
+        localStorage.removeItem(fullKey);
       } catch (e) {}
     }
 
@@ -3849,11 +4073,17 @@
     function formatBadgeStatus(state, questions, maxScore) {
       if (state.submitted) {
         const pct = Math.round((state.score / maxScore) * 100);
-        return { text: `${UI.completed_prefix}: ${state.score}/${maxScore} (${pct}%)`, cls: 'bg-emerald-100 text-emerald-800' };
+        return {
+          text: UI.completed_prefix + ': ' + state.score + '/' + maxScore + ' (' + pct + '%)',
+          cls: 'bg-emerald-100 text-emerald-800'
+        };
       }
       const answered = questions.filter((q, i) => isQuestionAnswered(q, state.answers[i])).length;
       if (answered > 0) {
-        return { text: `${UI.in_progress} (${answered}/${questions.length})`, cls: 'bg-amber-100 text-amber-800' };
+        return {
+          text: UI.in_progress + ' (' + answered + '/' + questions.length + ')',
+          cls: 'bg-amber-100 text-amber-800'
+        };
       }
       return { text: UI.not_started, cls: 'bg-slate-100 text-slate-700' };
     }
@@ -3896,8 +4126,8 @@
 
       ['practice_set_1', 'practice_set_2', 'practice_set_3'].forEach((sKey, idx) => {
         const num = idx + 1;
-        const pill = document.getElementById(`pillSet${num}`);
-        const badge = document.getElementById(`pillBadgeSet${num}`);
+        const pill = document.getElementById('pillSet' + num);
+        const badge = document.getElementById('pillBadgeSet' + num);
         const st = loadSetState(sKey);
         const info = formatBadgeStatus(st, QUESTION_SETS[sKey].questions, QUESTION_SETS[sKey].maxScore);
         badge.textContent = info.text;
@@ -3915,25 +4145,25 @@
       const pInfo = formatBadgeStatus(pState, pSet.questions, pSet.maxScore);
       const badgePractice = document.getElementById('badgePracticeStatus');
       badgePractice.textContent = pInfo.text;
-      badgePractice.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${pInfo.cls}`;
+      badgePractice.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ' + pInfo.cls;
 
       const btnStartPractice = document.getElementById('btnStartPractice');
       const pAnswered = pSet.questions.filter((q, i) => isQuestionAnswered(q, pState.answers[i])).length;
       btnStartPractice.textContent = pAnswered > 0 && !pState.submitted
-        ? `${UI.resume_practice} (${pSet.shortTitle})`
-        : `${UI.start_practice} (${pSet.shortTitle})`;
+        ? UI.resume_practice + ' (' + pSet.shortTitle + ')'
+        : UI.start_practice + ' (' + pSet.shortTitle + ')';
 
       const oSet = QUESTION_SETS.official;
       const oState = loadSetState('official');
       const oInfo = formatBadgeStatus(oState, oSet.questions, oSet.maxScore);
       const badgeOfficial = document.getElementById('badgeOfficialStatus');
       badgeOfficial.textContent = oInfo.text;
-      badgeOfficial.className = `inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${oInfo.cls}`;
+      badgeOfficial.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ' + oInfo.cls;
 
       const btnStartOfficial = document.getElementById('btnStartOfficial');
       const oAnswered = oSet.questions.filter((q, i) => isQuestionAnswered(q, oState.answers[i])).length;
       btnStartOfficial.textContent = oAnswered > 0 && !oState.submitted
-        ? `${UI.resume_practice} (${oSet.shortTitle})`
+        ? UI.resume_practice + ' (' + oSet.shortTitle + ')'
         : UI.start_official;
     }
 
@@ -3944,37 +4174,40 @@
         return;
       }
       const setObj = QUESTION_SETS[activeParentTab];
+      const state = loadSetState(activeParentTab);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
       tbody.innerHTML = '';
 
-      setObj.questions.forEach(q => {
+      order.forEach((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50 align-top';
 
-        const subItemsHtml = q.items.map(it => `<div class="mb-1 text-slate-700">• ${it.label}</div>`).join('');
-        const ansHtml = q.items.map(it => `
-          <div class="mb-1.5">
-            <span class="font-bold text-indigo-900">${it.modelAnswer}</span>
-            <div class="text-[11px] text-slate-500">${it.explanation}</div>
-          </div>
-        `).join('');
+        const subItemsHtml = q.items.map(it => '<div class="mb-1 text-slate-700">• ' + formatSubItemLabel(it.label, dispNum) + '</div>').join('');
+        const ansHtml = q.items.map(it =>
+          '<div class="mb-1.5">' +
+            '<span class="font-bold text-indigo-900">' + it.modelAnswer + '</span>' +
+            '<div class="text-xs text-slate-500">' + it.explanation + '</div>' +
+          '</div>'
+        ).join('');
 
-        tr.innerHTML = `
-          <td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">
-            Q${q.qNum}
-            <div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] inline-block">${q.conceptId}</div>
-          </td>
-          <td class="py-3 px-3">
-            <div class="font-semibold text-slate-800">${q.subTopic}</div>
-            <div class="text-slate-500">${q.cluster} • ${q.points} ${UI.pt_plural}</div>
-          </td>
-          <td class="py-3 px-3">
-            <div class="font-semibold text-slate-900 mb-1">${q.prompt}</div>
-            ${subItemsHtml}
-          </td>
-          <td class="py-3 px-3">
-            ${ansHtml}
-          </td>
-        `;
+        tr.innerHTML =
+          '<td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">' +
+            'Q' + dispNum +
+            '<div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-xs inline-block">' + q.conceptId + '</div>' +
+          '</td>' +
+          '<td class="py-3 px-3">' +
+            '<div class="font-semibold text-slate-800">' + q.subTopic + '</div>' +
+            '<div class="text-slate-500">' + q.cluster + ' • ' + q.points + ' ' + UI.pt_plural + '</div>' +
+          '</td>' +
+          '<td class="py-3 px-3">' +
+            '<div class="font-semibold text-slate-900 mb-1">' + q.prompt + '</div>' +
+            subItemsHtml +
+          '</td>' +
+          '<td class="py-3 px-3">' +
+            ansHtml +
+          '</td>';
         tbody.appendChild(tr);
       });
 
@@ -4014,43 +4247,55 @@
         const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missingConcepts.length === 0);
         if (!passSet) allPassed = false;
 
+        const conceptStr = isPractice ? (' | Concepts=' + coveredConcepts.size + '/' + ALL_CONCEPTS.length) : '';
         reportLines.push(
-          `${setObj.shortTitle}: Model=${modelTotal}/${setObj.maxScore} | Blank=${blankTotal}/${setObj.maxScore}${isPractice ? ` | Concepts=${coveredConcepts.size}/${ALL_CONCEPTS.length}` : ''} ${passSet ? '✓ PASS' : '✗ FAIL'}`
+          setObj.shortTitle + ': Model=' + modelTotal + '/' + setObj.maxScore +
+          ' | Blank=' + blankTotal + '/' + setObj.maxScore +
+          conceptStr + ' ' + (passSet ? '✓ PASS' : '✗ FAIL')
         );
       });
 
       banner.classList.remove('hidden');
       if (allPassed) {
         banner.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1';
-        banner.innerHTML = `<div class="font-extrabold">✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% Concept Coverage)</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+        banner.innerHTML = '<div class="font-extrabold">✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% Concept Coverage)</div><div>' + reportLines.join(' &nbsp;•&nbsp; ') + '</div>';
       } else {
         banner.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
-        banner.innerHTML = `<div class="font-extrabold">✗ QA SELF-TEST FAILED</div><div>${reportLines.join(' &nbsp;•&nbsp; ')}</div>`;
+        banner.innerHTML = '<div class="font-extrabold">✗ QA SELF-TEST FAILED</div><div>' + reportLines.join(' &nbsp;•&nbsp; ') + '</div>';
       }
     }
 
     // =========================================================================
-    // 5. ACTIVE QUIZ SLIDE RENDERING
+    // 5. ACTIVE QUIZ SLIDE RENDERING (WITH SHUFFLED QUESTION & OPTION ORDERS)
     // =========================================================================
     function getActiveSlideList() {
-      const questions = QUESTION_SETS[currentSetKey].questions;
+      const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || QUESTION_SETS[currentSetKey].questions.map((_, i) => i);
       if (retryFilterIndices && retryFilterIndices.length > 0) {
         return retryFilterIndices;
       }
-      return questions.map((_, i) => i);
+      return order;
+    }
+
+    function getDisplayQNum(origIdx, setKey = currentSetKey) {
+      const state = loadSetState(setKey);
+      const order = state.questionOrder || QUESTION_SETS[setKey].questions.map((_, i) => i);
+      const pos = order.indexOf(origIdx);
+      return pos !== -1 ? pos + 1 : origIdx + 1;
     }
 
     function startQuiz(setKey, retryIndices = null) {
       currentSetKey = setKey;
       retryFilterIndices = retryIndices;
-      const state = loadSetState(setKey);
+      const state = retryIndices ? loadSetState(setKey) : randomizeSetIfNotStarted(setKey);
       if (state.submitted && !retryIndices) {
         renderResultsScreen();
         showView('viewResults');
         return;
       }
       const activeList = getActiveSlideList();
-      currentSlideIndex = activeList.includes(state.lastSlide) ? state.lastSlide : activeList[0];
+      const answeredCount = QUESTION_SETS[setKey].questions.filter((q, origIdx) => isQuestionAnswered(q, state.answers[origIdx])).length;
+      currentSlideIndex = (answeredCount > 0 && activeList.includes(state.lastSlide)) ? state.lastSlide : activeList[0];
       renderQuizSlide();
       showView('viewQuiz');
     }
@@ -4062,19 +4307,20 @@
       const activeList = getActiveSlideList();
       const q = questions[currentSlideIndex];
       const posInActive = activeList.indexOf(currentSlideIndex);
+      const displayQNum = getDisplayQNum(currentSlideIndex, currentSetKey);
 
       state.lastSlide = currentSlideIndex;
       saveSetState(currentSetKey, state);
 
       document.getElementById('quizModeBadge').textContent = retryFilterIndices
-        ? `${setObj.shortTitle} (${UI.retry_incorrect_btn})`
+        ? setObj.shortTitle + ' (' + UI.retry_incorrect_btn + ')'
         : setObj.title;
       document.getElementById('quizClusterBadge').textContent = q.cluster;
-      document.getElementById('quizQuestionCounter').textContent = `${UI.q_word} ${posInActive + 1} ${UI.of_word} ${activeList.length}`;
-      document.getElementById('quizPointsCounter').textContent = `${q.points} ${q.points === 1 ? UI.pt_singular : UI.pt_plural}`;
+      document.getElementById('quizQuestionCounter').textContent = UI.q_word + ' ' + (posInActive + 1) + ' ' + UI.of_word + ' ' + activeList.length;
+      document.getElementById('quizPointsCounter').textContent = q.points + ' ' + (q.points === 1 ? UI.pt_singular : UI.pt_plural);
 
       const progressPct = Math.round(((posInActive + 1) / activeList.length) * 100);
-      document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
+      document.getElementById('quizProgressBar').style.width = progressPct + '%';
 
       // Optional Reading Passage (with Character Portrait Support)
       const passageWrap = document.getElementById('slidePassageWrapper');
@@ -4083,22 +4329,22 @@
       const activePassage = (q.showPassage === false) ? null : (q.passage || setObj.passage);
       if (activePassage && activePassage.paragraphs) {
         passageWrap.classList.remove('hidden');
-        passageTitle.textContent = `📖 ${activePassage.title}`;
-        const paragraphsHtml = activePassage.paragraphs.map(p => `<p>${p}</p>`).join('');
+        passageTitle.textContent = '📖 ' + activePassage.title;
+        const paragraphsHtml = activePassage.paragraphs.map(p => '<p>' + p + '</p>').join('');
         const fallbackSrc = (activePassage.imageKey && CHARACTER_IMAGE_FALLBACKS[activePassage.imageKey]) || '';
         const imgCaptionText = activePassage.imageCaption || activePassage.title;
         const imgCaptionNode = activePassage.imageCaption
-          ? `<figcaption class="mt-1.5 text-[11px] font-semibold text-amber-950 leading-tight">${activePassage.imageCaption}</figcaption>`
+          ? '<figcaption class="mt-1.5 text-xs font-semibold text-amber-950 leading-tight">' + activePassage.imageCaption + '</figcaption>'
           : '';
         const imgHtml = activePassage.image
-          ? `<figure class="shrink-0 w-24 sm:w-28 mx-auto sm:mx-0 text-center">
-               <img src="${activePassage.image}" data-fallback="${fallbackSrc}" onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) this.src = this.dataset.fallback;" alt="${imgCaptionText}" class="w-24 h-32 sm:w-28 sm:h-36 object-cover object-top rounded-xl border border-amber-300 shadow-2xs bg-white mx-auto" />
-               ${imgCaptionNode}
-             </figure>`
+          ? '<figure class="shrink-0 w-24 sm:w-28 mx-auto sm:mx-0 text-center sm:sticky sm:top-0 self-start">' +
+              '<img src="' + activePassage.image + '" data-fallback="' + fallbackSrc + '" onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) this.src = this.dataset.fallback;" alt="' + imgCaptionText + '" class="w-24 h-32 sm:w-28 sm:h-36 object-cover object-top rounded-xl border border-amber-300 shadow-2xs bg-white mx-auto" />' +
+              imgCaptionNode +
+            '</figure>'
           : '';
         passageBody.innerHTML = imgHtml
-          ? `<div class="flex flex-col sm:flex-row items-start gap-4">${imgHtml}<div class="space-y-2.5 flex-1">${paragraphsHtml}</div></div>`
-          : paragraphsHtml;
+          ? '<div class="flex flex-col sm:flex-row items-start gap-4">' + imgHtml + '<div class="space-y-2.5 flex-1 max-h-60 overflow-y-auto pr-2">' + paragraphsHtml + '</div></div>'
+          : '<div class="space-y-2.5 max-h-60 overflow-y-auto pr-2">' + paragraphsHtml + '</div>';
       } else {
         passageWrap.classList.add('hidden');
       }
@@ -4145,41 +4391,36 @@
       q.items.forEach(item => {
         const block = document.createElement('div');
         block.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5';
+        const formattedLabel = formatSubItemLabel(item.label, displayQNum);
+        const ptsText = '(' + item.points + ' ' + (item.points === 1 ? UI.pt_singular : UI.pt_plural) + ')';
 
         if (item.mode === 'select') {
-          const optsHtml = item.options.map(opt => {
-            const selected = qAns[item.id] === opt ? 'selected' : '';
-            return `<option value="${opt.replace(/"/g, '&quot;')}" ${selected}>${opt}</option>`;
+          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
+            ? state.optionOrders[item.id]
+            : item.options;
+          const optsHtml = activeOptions.map(opt => {
+            const selected = qAns[item.id] === opt ? ' selected' : '';
+            return '<option value="' + opt.replace(/"/g, '&quot;') + '"' + selected + '>' + opt + '</option>';
           }).join('');
 
-          block.innerHTML = `
-            <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
-            </div>
-            <select
-              data-field="${item.id}"
-              class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
-            >
-              <option value="">${UI.select_placeholder}</option>
-              ${optsHtml}
-            </select>
-          `;
+          block.innerHTML =
+            '<div class="flex items-center justify-between gap-2">' +
+              '<label class="text-sm font-bold text-slate-800">' + formattedLabel + '</label>' +
+              '<span class="text-xs text-slate-400 font-medium whitespace-nowrap">' + ptsText + '</span>' +
+            '</div>' +
+            '<select data-field="' + item.id + '" class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600">' +
+              '<option value="">' + UI.select_placeholder + '</option>' +
+              optsHtml +
+            '</select>';
         } else {
           const ph = item.mode === 'unordered_list' || item.mode === 'ordered_sequence' ? UI.list_placeholder : UI.text_placeholder;
-          block.innerHTML = `
-            <div class="flex items-center justify-between gap-2">
-              <label class="text-sm font-bold text-slate-800">${item.label}</label>
-              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">(${item.points} ${item.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
-            </div>
-            <input
-              type="text"
-              data-field="${item.id}"
-              value="${(qAns[item.id] ?? '').replace(/"/g, '&quot;')}"
-              placeholder="${ph}"
-              class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600"
-            />
-          `;
+          const curValSafe = String(qAns[item.id] ?? '').replace(/"/g, '&quot;');
+          block.innerHTML =
+            '<div class="flex items-center justify-between gap-2">' +
+              '<label class="text-sm font-bold text-slate-800">' + formattedLabel + '</label>' +
+              '<span class="text-xs text-slate-400 font-medium whitespace-nowrap">' + ptsText + '</span>' +
+            '</div>' +
+            '<input type="text" data-field="' + item.id + '" value="' + curValSafe + '" placeholder="' + ph + '" class="slide-input w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600" />';
         }
         container.appendChild(block);
       });
@@ -4226,12 +4467,13 @@
       let answeredTotal = 0;
       activeList.forEach(qIdx => {
         const q = setObj.questions[qIdx];
+        const displayQNum = getDisplayQNum(qIdx, currentSetKey);
         const answered = isQuestionAnswered(q, state.answers[qIdx]);
         if (answered) answeredTotal++;
 
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = q.qNum;
+        btn.textContent = displayQNum;
         let cls = 'h-10 rounded-xl font-bold text-xs transition flex items-center justify-center ';
         if (answered) cls += 'bg-emerald-500 text-white hover:bg-emerald-600 ';
         else cls += 'bg-slate-100 text-slate-700 hover:bg-slate-200 ';
@@ -4244,7 +4486,7 @@
         grid.appendChild(btn);
       });
 
-      document.getElementById('navAnsweredCount').textContent = `${answeredTotal} / ${activeList.length}`;
+      document.getElementById('navAnsweredCount').textContent = answeredTotal + ' / ' + activeList.length;
     }
 
     // =========================================================================
@@ -4264,16 +4506,17 @@
         const btnGoBack = document.getElementById('btnModalGoBack');
 
         text.textContent = UI.lang_attr === 'id'
-          ? `Masih ada ${unansweredIndices.length} soal yang belum selesai dijawab. Apakah kamu ingin melengkapinya terlebih dahulu?`
-          : `You have ${unansweredIndices.length} unanswered question(s). Would you like to complete them before submitting?`;
+          ? 'Masih ada ' + unansweredIndices.length + ' soal yang belum selesai dijawab. Apakah kamu ingin melengkapinya terlebih dahulu?'
+          : 'You have ' + unansweredIndices.length + ' unanswered question(s). Would you like to complete them before submitting?';
         pills.innerHTML = '';
 
         unansweredIndices.forEach(qIdx => {
           const q = setObj.questions[qIdx];
+          const dispNum = getDisplayQNum(qIdx, currentSetKey);
           const pill = document.createElement('button');
           pill.type = 'button';
           pill.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 hover:bg-amber-200 transition';
-          pill.textContent = `Q${q.qNum} (${q.conceptId})`;
+          pill.textContent = 'Q' + dispNum + ' (' + q.conceptId + ')';
           pill.addEventListener('click', () => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
@@ -4283,10 +4526,10 @@
           pills.appendChild(pill);
         });
 
-        const firstMissingQ = setObj.questions[unansweredIndices[0]];
+        const firstMissingDispNum = getDisplayQNum(unansweredIndices[0], currentSetKey);
         btnGoBack.textContent = UI.lang_attr === 'id'
-          ? `Kembali ke Soal ${firstMissingQ.qNum}`
-          : `Go Back to Question ${firstMissingQ.qNum}`;
+          ? 'Kembali ke Soal ' + firstMissingDispNum
+          : 'Go Back to Question ' + firstMissingDispNum;
         btnGoBack.onclick = () => {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
@@ -4329,6 +4572,7 @@
     function renderResultsScreen() {
       const setObj = QUESTION_SETS[currentSetKey];
       const state = loadSetState(currentSetKey);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
 
       let totalEarned = 0;
       let u1Earned = 0, u1Max = 0;
@@ -4338,8 +4582,10 @@
       const reviewList = document.getElementById('resultsReviewList');
       reviewList.innerHTML = '';
 
-      setObj.questions.forEach((q, idx) => {
-        const g = gradeQuestion(q, state.answers[idx]);
+      order.forEach((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
+        const g = gradeQuestion(q, state.answers[origIdx]);
         totalEarned += g.earnedPoints;
         if (q.unit === 'unit1') {
           u1Earned += g.earnedPoints;
@@ -4349,73 +4595,77 @@
           u2Max += q.points;
         }
 
-        if (g.status !== 'correct') incorrectIndices.push(idx);
+        if (g.status !== 'correct') incorrectIndices.push(origIdx);
 
         let badgeHtml = '';
         let borderCls = 'border-slate-200';
         if (g.status === 'correct') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">${UI.correct_badge} (${g.earnedPoints}/${g.maxPoints} ${UI.pt_plural})</span>`;
+          badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">' + UI.correct_badge + ' (' + g.earnedPoints + '/' + g.maxPoints + ' ' + UI.pt_plural + ')</span>';
           borderCls = 'border-emerald-200';
         } else if (g.status === 'partial') {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">${UI.partial_badge} (${g.earnedPoints}/${g.maxPoints} ${UI.pt_plural})</span>`;
+          badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">' + UI.partial_badge + ' (' + g.earnedPoints + '/' + g.maxPoints + ' ' + UI.pt_plural + ')</span>';
           borderCls = 'border-amber-200';
         } else {
-          badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">${UI.incorrect_badge} (0/${g.maxPoints} ${UI.pt_plural})</span>`;
+          badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">' + UI.incorrect_badge + ' (0/' + g.maxPoints + ' ' + UI.pt_plural + ')</span>';
           borderCls = 'border-rose-200';
         }
 
-        const subRowsHtml = g.subResults.map(sr => `
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="font-bold text-slate-800">${sr.label}</span>
-              <span class="font-semibold ${sr.status === 'correct' ? 'text-emerald-700' : sr.status === 'partial' ? 'text-amber-700' : 'text-rose-700'}">
-                ${sr.status === 'correct' ? UI.correct_badge : sr.status === 'partial' ? UI.partial_badge : UI.incorrect_badge} (${sr.earned}/${sr.max} ${UI.pt_plural})
-              </span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-              <div class="p-2 rounded-lg ${sr.status === 'correct' ? 'bg-emerald-50 text-emerald-900' : sr.status === 'partial' ? 'bg-amber-50 text-amber-900' : 'bg-rose-50 text-rose-900'}">
-                <span class="font-semibold">${UI.your_ans_label}</span> ${sr.userDisplay}
-              </div>
-              <div class="p-2 rounded-lg bg-indigo-50 text-indigo-900">
-                <span class="font-semibold">${UI.model_ans_label}</span> ${sr.modelDisplay}
-              </div>
-            </div>
-            <div class="pt-1 text-slate-600">
-              <span class="font-semibold text-slate-800">${UI.expl_label}</span> ${sr.explanation}
-            </div>
-          </div>
-        `).join('');
+        const subRowsHtml = g.subResults.map(sr => {
+          const stTextCls = sr.status === 'correct' ? 'text-emerald-700' : sr.status === 'partial' ? 'text-amber-700' : 'text-rose-700';
+          const stBadgeText = sr.status === 'correct' ? UI.correct_badge : sr.status === 'partial' ? UI.partial_badge : UI.incorrect_badge;
+          const stBoxCls = sr.status === 'correct' ? 'bg-emerald-50 text-emerald-900' : sr.status === 'partial' ? 'bg-amber-50 text-amber-900' : 'bg-rose-50 text-rose-900';
+          return (
+            '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5">' +
+              '<div class="flex flex-wrap items-center justify-between gap-2">' +
+                '<span class="font-bold text-slate-800">' + formatSubItemLabel(sr.label, dispNum) + '</span>' +
+                '<span class="font-semibold ' + stTextCls + '">' +
+                  stBadgeText + ' (' + sr.earned + '/' + sr.max + ' ' + UI.pt_plural + ')' +
+                '</span>' +
+              '</div>' +
+              '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">' +
+                '<div class="p-2 rounded-lg ' + stBoxCls + '">' +
+                  '<span class="font-semibold">' + UI.your_ans_label + '</span> ' + sr.userDisplay +
+                '</div>' +
+                '<div class="p-2 rounded-lg bg-indigo-50 text-indigo-900">' +
+                  '<span class="font-semibold">' + UI.model_ans_label + '</span> ' + sr.modelDisplay +
+                '</div>' +
+              '</div>' +
+              '<div class="pt-1 text-slate-600">' +
+                '<span class="font-semibold text-slate-800">' + UI.expl_label + '</span> ' + sr.explanation +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
 
         const card = document.createElement('div');
-        card.className = `bg-white rounded-2xl border ${borderCls} p-5 shadow-sm space-y-3`;
-        card.innerHTML = `
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-extrabold text-slate-900">${UI.q_word} ${q.qNum}</span>
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">${q.conceptId}</span>
-              <span class="text-xs font-semibold text-slate-500">• ${q.subTopic}</span>
-            </div>
-            ${badgeHtml}
-          </div>
-          <p class="text-sm font-medium text-slate-800">${q.prompt}</p>
-          <div class="space-y-2">${subRowsHtml}</div>
-        `;
+        card.className = 'bg-white rounded-2xl border ' + borderCls + ' p-5 shadow-sm space-y-3';
+        card.innerHTML =
+          '<div class="flex flex-wrap items-center justify-between gap-2">' +
+            '<div class="flex items-center gap-2">' +
+              '<span class="text-sm font-extrabold text-slate-900">' + UI.q_word + ' ' + dispNum + '</span>' +
+              '<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">' + q.conceptId + '</span>' +
+              '<span class="text-xs font-semibold text-slate-500">• ' + q.subTopic + '</span>' +
+            '</div>' +
+            badgeHtml +
+          '</div>' +
+          '<p class="text-sm font-medium text-slate-800">' + q.prompt + '</p>' +
+          '<div class="space-y-2">' + subRowsHtml + '</div>';
         reviewList.appendChild(card);
       });
 
       const pct = Math.round((totalEarned / setObj.maxScore) * 100);
       document.getElementById('resultSetBadge').textContent = setObj.title;
-      document.getElementById('resultTotalScore').textContent = `${totalEarned} / ${setObj.maxScore}`;
-      document.getElementById('resultPercentage').textContent = `${pct}%`;
-      document.getElementById('resultUnit1Score').textContent = `${u1Earned} / ${u1Max} ${UI.pt_plural}`;
-      document.getElementById('resultUnit2Score').textContent = `${u2Earned} / ${u2Max} ${UI.pt_plural}`;
+      document.getElementById('resultTotalScore').textContent = totalEarned + ' / ' + setObj.maxScore;
+      document.getElementById('resultPercentage').textContent = pct + '%';
+      document.getElementById('resultUnit1Score').textContent = u1Earned + ' / ' + u1Max + ' ' + UI.pt_plural;
+      document.getElementById('resultUnit2Score').textContent = u2Earned + ' / ' + u2Max + ' ' + UI.pt_plural;
 
       const btnRetry = document.getElementById('btnRetryIncorrect');
       if (incorrectIndices.length === 0) {
         btnRetry.classList.add('hidden');
       } else {
         btnRetry.classList.remove('hidden');
-        btnRetry.textContent = `${UI.retry_incorrect_btn} (${incorrectIndices.length})`;
+        btnRetry.textContent = UI.retry_incorrect_btn + ' (' + incorrectIndices.length + ')';
         btnRetry.onclick = () => {
           state.submitted = false;
           saveSetState(currentSetKey, state);
@@ -4431,7 +4681,7 @@
       };
       const nextKey = nextMap[currentSetKey];
       const btnNextSet = document.getElementById('btnStartNextSet');
-      btnNextSet.textContent = `${UI.next_set_prefix} (${QUESTION_SETS[nextKey].shortTitle})`;
+      btnNextSet.textContent = UI.next_set_prefix + ' (' + QUESTION_SETS[nextKey].shortTitle + ')';
       btnNextSet.onclick = () => {
         currentSetKey = nextKey;
         startQuiz(nextKey);
@@ -4443,6 +4693,8 @@
     // =========================================================================
     function renderPrintView() {
       const setObj = QUESTION_SETS[activePrintSet];
+      const state = randomizeSetIfNotStarted(activePrintSet);
+      const order = state.questionOrder || setObj.questions.map((_, i) => i);
       const container = document.getElementById('printableSheetContainer');
 
       document.querySelectorAll('.print-set-btn').forEach(btn => {
@@ -4457,83 +4709,87 @@
       const printImgSrc = (setObj.passage && setObj.passage.image) ? setObj.passage.image : printFallbackSrc;
       const printCapText = (setObj.passage && setObj.passage.imageCaption) || '';
       const printParagraphsHtml = (setObj.passage && setObj.passage.paragraphs)
-        ? setObj.passage.paragraphs.map(p => `<p>${p}</p>`).join('')
+        ? setObj.passage.paragraphs.map(p => '<p>' + p + '</p>').join('')
         : '';
       const printFigureHtml = printImgSrc
-        ? `<figure class="shrink-0 w-24 text-center"><img src="${printImgSrc}" data-fallback="${printFallbackSrc}" onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) this.src = this.dataset.fallback;" alt="${printCapText}" class="w-24 h-32 object-cover object-top rounded-lg border border-slate-300 bg-white mx-auto" /><figcaption class="mt-1 text-[10px] font-semibold text-slate-700 leading-tight">${printCapText}</figcaption></figure>`
+        ? '<figure class="shrink-0 w-24 text-center"><img src="' + printImgSrc + '" data-fallback="' + printFallbackSrc + '" onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) this.src = this.dataset.fallback;" alt="' + printCapText + '" class="w-24 h-32 object-cover object-top rounded-lg border border-slate-300 bg-white mx-auto" /><figcaption class="mt-1 text-xs font-semibold text-slate-700 leading-tight">' + printCapText + '</figcaption></figure>'
         : '';
       const setPassageHtml = setObj.passage && setObj.passage.paragraphs
-        ? `<div class="p-4 rounded-xl border border-slate-300 bg-slate-50 text-xs leading-relaxed">
-             <div class="font-bold text-sm text-slate-900 mb-2.5">${setObj.passage.title}</div>
-             <div class="flex items-start gap-4">${printFigureHtml}<div class="space-y-2 flex-1">${printParagraphsHtml}</div></div>
-           </div>`
+        ? '<div class="p-4 rounded-xl border border-slate-300 bg-slate-50 text-xs leading-relaxed">' +
+            '<div class="font-bold text-sm text-slate-900 mb-2.5">' + setObj.passage.title + '</div>' +
+            '<div class="flex items-start gap-4">' + printFigureHtml + '<div class="space-y-2 flex-1">' + printParagraphsHtml + '</div></div>' +
+          '</div>'
         : '';
 
-      const qBlocksHtml = setObj.questions.map(q => {
-        const itemsPrintHtml = `
-          <div class="space-y-2.5 mt-2">
-            ${q.items.map(it => {
+      const qBlocksHtml = order.map((origIdx, dispPos) => {
+        const q = setObj.questions[origIdx];
+        const dispNum = dispPos + 1;
+        const itemsPrintHtml =
+          '<div class="space-y-2.5 mt-2">' +
+            q.items.map(it => {
+              const formattedLabel = formatSubItemLabel(it.label, dispNum);
               if (it.mode === 'select' && it.options) {
-                return `
-                  <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">
-                    <div class="font-semibold text-slate-900">${it.label}</div>
-                    <div class="flex flex-wrap gap-3 pt-1 text-slate-700">
-                      ${it.options.map(o => `<span>[ &nbsp; ] ${o}</span>`).join('')}
-                    </div>
-                  </div>
-                `;
+                const activeOptions = (state.optionOrders && state.optionOrders[it.id])
+                  ? state.optionOrders[it.id]
+                  : it.options;
+                return (
+                  '<div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">' +
+                    '<div class="font-semibold text-slate-900">' + formattedLabel + '</div>' +
+                    '<div class="flex flex-wrap gap-3 pt-1 text-slate-700">' +
+                      activeOptions.map(o => '<span>[ &nbsp; ] ' + o + '</span>').join('') +
+                    '</div>' +
+                  '</div>'
+                );
               }
-              return `
-                <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-2">
-                  <div class="font-semibold text-slate-900">${it.label}</div>
-                  <div class="border-b border-dotted border-slate-400 h-5"></div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        `;
+              return (
+                '<div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-2">' +
+                  '<div class="font-semibold text-slate-900">' + formattedLabel + '</div>' +
+                  '<div class="border-b border-dotted border-slate-400 h-5"></div>' +
+                '</div>'
+              );
+            }).join('') +
+          '</div>';
 
         const wbPrint = q.wordBank
-          ? `<div class="mt-1.5 inline-block px-3 py-1 rounded border border-slate-300 bg-slate-50 text-xs font-semibold">${UI.word_bank_label} ${q.wordBank.join('  |  ')}</div>`
+          ? '<div class="mt-1.5 inline-block px-3 py-1 rounded border border-slate-300 bg-slate-50 text-xs font-semibold">' + UI.word_bank_label + ' ' + q.wordBank.join('  |  ') + '</div>'
           : '';
 
-        return `
-          <div class="print-avoid-break border-b border-slate-200 pb-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase text-slate-500">${q.subTopic} • Q${q.qNum} (${q.conceptId})</span>
-              <span class="text-xs font-bold text-slate-700">(${q.points} ${q.points === 1 ? UI.pt_singular : UI.pt_plural})</span>
-            </div>
-            <div class="text-sm font-semibold text-slate-900 mt-1">${q.prompt}</div>
-            ${wbPrint}
-            ${itemsPrintHtml}
-          </div>
-        `;
+        return (
+          '<div class="print-avoid-break border-b border-slate-200 pb-4">' +
+            '<div class="flex items-center justify-between">' +
+              '<span class="text-xs font-bold uppercase text-slate-500">' + q.subTopic + ' • Q' + dispNum + ' (' + q.conceptId + ')</span>' +
+              '<span class="text-xs font-bold text-slate-700">(' + q.points + ' ' + (q.points === 1 ? UI.pt_singular : UI.pt_plural) + ')</span>' +
+            '</div>' +
+            '<div class="text-sm font-semibold text-slate-900 mt-1">' + q.prompt + '</div>' +
+            wbPrint +
+            itemsPrintHtml +
+          '</div>'
+        );
       }).join('');
 
-      container.innerHTML = `
-        <div class="border-2 border-slate-800 rounded-xl p-4 space-y-3">
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-300 pb-3">
-            <div>
-              <h2 class="text-lg font-extrabold text-slate-900">Latihan Soal Bahasa Indonesia & Pendidikan Pancasila Kelas 4</h2>
-              <p class="text-xs text-slate-600">Term 2 • Tokoh Pendidikan, Kosakata Baru, Kalimat Langsung/Tidak Langsung & Hak Siswa (C1..C16)</p>
-            </div>
-            <div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">
-              ${setObj.title} (Total: ${setObj.maxScore} ${UI.pt_plural})
-            </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">
-            <div>${UI.paper_name}</div>
-            <div>${UI.paper_date}</div>
-            <div>${UI.paper_set} <span class="underline">${setObj.shortTitle}</span></div>
-            <div>${UI.paper_score} ________ / ${setObj.maxScore}</div>
-          </div>
-        </div>
-        <div class="text-xs italic text-slate-600">
-          ${UI.paper_instruction}
-        </div>
-        ${setPassageHtml}
-        <div class="space-y-5">${qBlocksHtml}</div>
-      `;
+      container.innerHTML =
+        '<div class="border-2 border-slate-800 rounded-xl p-4 space-y-3">' +
+          '<div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-300 pb-3">' +
+            '<div>' +
+              '<h2 class="text-lg font-extrabold text-slate-900">Latihan Soal Bahasa Indonesia &amp; Pendidikan Pancasila Kelas 4</h2>' +
+              '<p class="text-xs text-slate-600">Term 2 • Tokoh Pendidikan, Kosakata Baru, Kalimat Langsung/Tidak Langsung &amp; Hak Siswa (C1..C16)</p>' +
+            '</div>' +
+            '<div class="text-xs font-bold px-3 py-1 rounded border border-slate-400">' +
+              setObj.title + ' (Total: ' + setObj.maxScore + ' ' + UI.pt_plural + ')' +
+            '</div>' +
+          '</div>' +
+          '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold pt-1">' +
+            '<div>' + UI.paper_name + '</div>' +
+            '<div>' + UI.paper_date + '</div>' +
+            '<div>' + UI.paper_set + ' <span class="underline">' + setObj.shortTitle + '</span></div>' +
+            '<div>' + UI.paper_score + ' ________ / ' + setObj.maxScore + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="text-xs italic text-slate-600">' +
+          UI.paper_instruction +
+        '</div>' +
+        setPassageHtml +
+        '<div class="space-y-5">' + qBlocksHtml + '</div>';
     }
 
     function buildStandalonePrintableHtml() {
@@ -4543,23 +4799,23 @@
       });
       const sheetContent = clone.innerHTML;
       const setObj = QUESTION_SETS[activePrintSet];
-      return `<!DOCTYPE html>
-<html lang="${UI.lang_attr}">
-<head>
-  <meta charset="UTF-8" />
-  <title>Latihan Soal Bahasa Indonesia & Pendidikan Pancasila Kelas 4 - ${setObj.shortTitle}</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"><\/script>
-  <style>
-    body { font-family: sans-serif; padding: 24px; color: #0f172a; }
-    .print-avoid-break { break-inside: avoid; page-break-inside: avoid; }
-  </style>
-</head>
-<body>
-  <div class="max-w-4xl mx-auto space-y-6">
-    ${sheetContent}
-  </div>
-</body>
-</html>`;
+      return '<!DOCTYPE html>\n' +
+        '<html lang="' + UI.lang_attr + '">\n' +
+        '<head>\n' +
+        '  <meta charset="UTF-8" />\n' +
+        '  <title>Latihan Soal Bahasa Indonesia & Pendidikan Pancasila Kelas 4 - ' + setObj.shortTitle + '</title>\n' +
+        '  <script src="https://cdn.tailwindcss.com/3.4.17"><\/script>\n' +
+        '  <style>\n' +
+        '    body { font-family: sans-serif; padding: 24px; color: #0f172a; }\n' +
+        '    .print-avoid-break { break-inside: avoid; page-break-inside: avoid; }\n' +
+        '  </style>\n' +
+        '</head>\n' +
+        '<body>\n' +
+        '  <div class="max-w-4xl mx-auto space-y-6">\n' +
+        '    ' + sheetContent + '\n' +
+        '  </div>\n' +
+        '</body>\n' +
+        '</html>';
     }
 
     // =========================================================================
@@ -4605,81 +4861,75 @@
 
       document.getElementById('btnStartPractice').addEventListener('click', (e) => {
         e.stopPropagation();
-        if (currentSetKey === 'official') currentSetKey = lastPracticeSetKey || 'practice_set_1';
-        startQuiz(currentSetKey);
+        const target = currentSetKey === 'official' ? lastPracticeSetKey : currentSetKey;
+        startQuiz(target);
       });
-
       document.getElementById('btnResetPractice').addEventListener('click', (e) => {
         e.stopPropagation();
-        const targetKey = currentSetKey === 'official' ? (lastPracticeSetKey || 'practice_set_1') : currentSetKey;
-        clearSetState(targetKey);
+        const target = currentSetKey === 'official' ? lastPracticeSetKey : currentSetKey;
+        clearSetState(target);
+        randomizeSetIfNotStarted(target);
         renderStartScreen();
-        showToast(`${UI.reset_btn}: ${QUESTION_SETS[targetKey].shortTitle}`);
+        if (parentUnlocked) renderParentInspector();
+        showToast(UI.toast_reset + ' (' + QUESTION_SETS[target].shortTitle + ')');
       });
 
       document.getElementById('btnStartOfficial').addEventListener('click', (e) => {
         e.stopPropagation();
-        currentSetKey = 'official';
         startQuiz('official');
       });
-
       document.getElementById('btnResetOfficial').addEventListener('click', (e) => {
         e.stopPropagation();
         clearSetState('official');
+        randomizeSetIfNotStarted('official');
         renderStartScreen();
-        showToast(`${UI.reset_btn}: ${QUESTION_SETS.official.shortTitle}`);
+        if (parentUnlocked) renderParentInspector();
+        showToast(UI.toast_reset + ' (Soal Asli)');
       });
 
-      // Password-Protected Parent Inspector ("nopeeking")
+      // Parent Inspector Modal ("nopeeking")
+      const modalPw = document.getElementById('modalParentPassword');
+      const inputPw = document.getElementById('inputParentPassword');
+      const errPw = document.getElementById('errorParentPassword');
+
       document.getElementById('btnToggleParentInspector').addEventListener('click', () => {
         const panel = document.getElementById('panelParentInspector');
         const icon = document.getElementById('iconParentToggle');
-        const isHidden = panel.classList.contains('hidden');
-        if (!isHidden) {
-          panel.classList.add('hidden');
+        if (parentUnlocked) {
           parentUnlocked = false;
           document.getElementById('tbodyParentInspector').innerHTML = '';
-          document.getElementById('qaSelfTestBanner').classList.add('hidden');
-          icon.textContent = UI.show_inspector;
-          return;
+          panel.classList.add('hidden');
+          icon.textContent = UI.parent_show;
+        } else {
+          inputPw.value = '';
+          errPw.classList.add('hidden');
+          modalPw.classList.remove('hidden');
+          modalPw.classList.add('flex');
+          setTimeout(() => inputPw.focus(), 50);
         }
-        const pwModal = document.getElementById('modalParentPassword');
-        const pwInput = document.getElementById('inputParentPassword');
-        const pwErr = document.getElementById('errorParentPassword');
-        pwInput.value = '';
-        pwErr.classList.add('hidden');
-        pwModal.classList.remove('hidden');
-        pwModal.classList.add('flex');
-        setTimeout(() => pwInput.focus(), 50);
       });
 
       function verifyParentPassword() {
-        const pwInput = document.getElementById('inputParentPassword');
-        const pwErr = document.getElementById('errorParentPassword');
-        if (pwInput.value.trim().toLowerCase() === 'nopeeking') {
+        if (inputPw.value.trim().toLowerCase() === 'nopeeking') {
           parentUnlocked = true;
-          const pwModal = document.getElementById('modalParentPassword');
-          pwModal.classList.add('hidden');
-          pwModal.classList.remove('flex');
+          modalPw.classList.add('hidden');
+          modalPw.classList.remove('flex');
           document.getElementById('panelParentInspector').classList.remove('hidden');
-          document.getElementById('iconParentToggle').textContent = UI.hide_inspector;
+          document.getElementById('iconParentToggle').textContent = UI.parent_hide;
           renderParentInspector();
         } else {
-          pwErr.classList.remove('hidden');
+          errPw.classList.remove('hidden');
         }
       }
 
       document.getElementById('btnConfirmParentPassword').addEventListener('click', verifyParentPassword);
-      document.getElementById('inputParentPassword').addEventListener('keydown', e => {
+      inputPw.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') verifyParentPassword();
       });
       document.getElementById('btnCancelParentPassword').addEventListener('click', () => {
-        const pwModal = document.getElementById('modalParentPassword');
-        pwModal.classList.add('hidden');
-        pwModal.classList.remove('flex');
+        modalPw.classList.add('hidden');
+        modalPw.classList.remove('flex');
       });
-
-      document.getElementById('btnRunQaSelfTest').addEventListener('click', runQaSelfTest);
 
       document.querySelectorAll('.parent-tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -4688,18 +4938,9 @@
         });
       });
 
-      document.getElementById('btnTogglePassage').addEventListener('click', () => {
-        const body = document.getElementById('slidePassageBody');
-        const icon = document.getElementById('slidePassageIcon');
-        if (body.classList.contains('hidden')) {
-          body.classList.remove('hidden');
-          icon.textContent = '▼';
-        } else {
-          body.classList.add('hidden');
-          icon.textContent = '▲';
-        }
-      });
+      document.getElementById('btnRunQaSelfTest').addEventListener('click', runQaSelfTest);
 
+      // Quiz Slide Controls
       document.getElementById('btnPrevSlide').addEventListener('click', () => {
         const activeList = getActiveSlideList();
         const pos = activeList.indexOf(currentSlideIndex);
@@ -4720,29 +4961,25 @@
 
       document.getElementById('btnSubmitQuiz').addEventListener('click', attemptSubmitQuiz);
       document.getElementById('btnQuickSubmitSidebar').addEventListener('click', attemptSubmitQuiz);
+      document.getElementById('btnModalSubmitAnyway').addEventListener('click', finalizeSubmission);
 
       document.getElementById('btnSaveAndExit').addEventListener('click', () => {
+        retryFilterIndices = null;
         renderStartScreen();
         showView('viewStart');
       });
 
-      document.getElementById('btnModalSubmitAnyway').addEventListener('click', finalizeSubmission);
-
+      // Results Screen Controls
       document.getElementById('btnRetakeCurrent').addEventListener('click', () => {
         clearSetState(currentSetKey);
         startQuiz(currentSetKey);
       });
-
       document.getElementById('btnResultsBackHome').addEventListener('click', () => {
         renderStartScreen();
         showView('viewStart');
       });
 
-      document.getElementById('btnBackFromPrint').addEventListener('click', () => {
-        renderStartScreen();
-        showView('viewStart');
-      });
-
+      // Print View Controls
       document.querySelectorAll('.print-set-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           activePrintSet = btn.getAttribute('data-print-set');
@@ -4750,30 +4987,35 @@
         });
       });
 
+      document.getElementById('btnBackFromPrint').addEventListener('click', () => {
+        renderStartScreen();
+        showView('viewStart');
+      });
+
       document.getElementById('btnPrintNow').addEventListener('click', () => {
         try {
           window.print();
         } catch (e) {
-          showToast(UI.download_html_btn);
+          showToast('Gunakan tombol Unduh HTML Siap Cetak jika jendela cetak diblokir.');
         }
       });
 
       document.getElementById('btnDownloadPrintableHtml').addEventListener('click', () => {
         const htmlStr = buildStandalonePrintableHtml();
-        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const blob = new Blob([htmlStr], { type: 'text/html;charset=utf-8' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `kelas4-bahasa-pancasila-t2-1-${activePrintSet}.html`;
+        a.download = 'Latihan-Bahasa-Pancasila-K4-' + activePrintSet + '.html';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
       });
 
       document.getElementById('btnOpenNewTabPrint').addEventListener('click', () => {
         const htmlStr = buildStandalonePrintableHtml();
-        const blob = new Blob([htmlStr], { type: 'text/html' });
+        const blob = new Blob([htmlStr], { type: 'text/html;charset=utf-8' });
         const url = URL.createObjectURL(blob);
         window.open(url, '_blank');
       });

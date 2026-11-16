@@ -19,7 +19,7 @@ const PORTAL_DATA = {
         status: "active",
         folderUrl: "./bahasa-pancasila-t2-1/",
         description: "Latihan terpadu memahami teks biografi R.A. Kartini & Ki Hajar Dewantara, 15 kosakata kontekstual, transformasi kalimat langsung dan tidak langsung sesuai PUEBI, serta klasifikasi hak dan kewajiban siswa di sekolah.",
-        questionCount: "36 Questions",
+        questionCount: "12 Questions / Set",
         maxScore: "36 / 30 Pts",
         formats: "Quiz & Paper"
       },
@@ -29,23 +29,23 @@ const PORTAL_DATA = {
         subtitle: "Multiplication, Division, Factors & Word Problems",
         subject: "math",
         subjectLabel: "Mathematics",
-        status: "active", // Switched from "upcoming" to "active"
+        status: "active",
         folderUrl: "./math-t2-1/",
-        description: "Practice foundational arithmetic skills, multi-digit division with remainders, factor pairs, multiples, and multi-step real-world problem solving.",
-        questionCount: "15 Questions",
+        description: "Practice foundational arithmetic skills, multi-digit division with remainders, factor pairs, common factors, GCF, LCM, and multi-step real-world problem solving.",
+        questionCount: "15 Questions / Set",
         maxScore: "53 Pts",
         formats: "Quiz & Paper"
       },
       {
         id: "math-t2-2",
-        title: "T2 Math II: Shapes, Nets, Angles & Fractions",
-        subtitle: "3D Shapes, Angle Measurements, and Fractions",
+        title: "T2 Math II: 3D Shapes, Nets, Angles & Fractions",
+        subtitle: "3D Polyhedra, Spatial Nets, Angle Rules, Parallel Lines & Fractions (C1–C30)",
         subject: "math",
         subjectLabel: "Mathematics",
         status: "active",
         folderUrl: "./math-t2-2/",
-        description: "3D solid properties, composite cubes, folding Cube Net N, protractor reading, intersecting & parallel line angles, 3:30 clock angles, and fractions.",
-        questionCount: "15 Questions",
+        description: "Master 3D polyhedra and curved solids, cube and pyramid nets, protractor reading, compass turns, complementary/supplementary/reflex angles, triangles, quadrilaterals, parallel lines, clock angles, and fractions.",
+        questionCount: "15 Questions / Set",
         maxScore: "100 Pts",
         formats: "Quiz & Paper"
       },
@@ -55,10 +55,10 @@ const PORTAL_DATA = {
         subtitle: "Properties of Light (Unit 18) & Sound (Unit 21)",
         subject: "science",
         subjectLabel: "Science",
-        status: "active", // Active ready-to-use worksheet
+        status: "active",
         folderUrl: "./science-t2-1/",
         description: "Master light rays, periscopes, transparent/translucent/opaque materials, shadow formation, pitch vs. vibration speed, decibel dB scale, and ear protection rules.",
-        questionCount: "36 Questions",
+        questionCount: "12 Questions / Set",
         maxScore: "36 / 20 Pts",
         formats: "Quiz & Paper"
       },
@@ -68,10 +68,10 @@ const PORTAL_DATA = {
         subtitle: "Push/Pull, Friction, Gravity & Magnetism (Unit 16)",
         subject: "science",
         subjectLabel: "Science",
-        status: "active", // Switched from "upcoming" to "active"
+        status: "active",
         folderUrl: "./science-t2-2/",
         description: "Master push vs. pull forces, temporary vs. permanent shape changes, contact vs. non-contact forces, friction, gravity, mass/shape/force factors, magnetic materials (Iron/Steel vs. Aluminium/Copper), pole interactions, and Earth's compass.",
-        questionCount: "36 Questions",
+        questionCount: "12 Questions / Set",
         maxScore: "36 / 20 Pts",
         formats: "Quiz & Paper"
       },
@@ -83,8 +83,8 @@ const PORTAL_DATA = {
         subjectLabel: "Social Science",
         status: "active",
         folderUrl: "./social-science-t2-1/",
-        description: "Explore the historical timelines of light and sound, the 1879 electric bulb, 2014 blue LED, traditional Indonesian kentongan, biographies of Ibn al-Haytham, Edison, Bell, Marconi, Hertz, and Cooper, plus modern community applications.",
-        questionCount: "36 Questions",
+        description: "Explore the historical timelines of light and sound, the 1879 electric bulb, 2014 blue LED, traditional Indonesian kentongan, biographies of Ibn al-Haytham, Edison, Latimer, Bell, Marconi, Hertz, Morse, and Cooper, plus modern community applications.",
+        questionCount: "12 Questions / Set",
         maxScore: "36 / 20 Pts",
         formats: "Quiz & Paper"
       }
