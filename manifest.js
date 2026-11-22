@@ -66,7 +66,7 @@ const PORTAL_DATA = {
         id: "science-t2-2",
         title: "Primary 4 Science — Forces & Types of Force",
         subtitle: "Unit 16 + Official Pre-Test (C1..C19)",
-        subject: "Science",
+        subject: "science",
         subjectLabel: "Science",
         status: "active",
         folderUrl: "./science-t2-2/",
