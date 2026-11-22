@@ -39,7 +39,7 @@ const PORTAL_DATA = {
       {
         id: "math-t2-2",
         title: "T2 Math II: 3D Shapes, Nets, Angles & Fractions",
-        subtitle: "3D Polyhedra, Spatial Nets, Angle Rules, Parallel Lines & Fractions (C1–C30)",
+        subtitle: "3D Polyhedra, Spatial Nets, Angle Rules, Parallel Lines & Fractions",
         subject: "math",
         subjectLabel: "Mathematics",
         status: "active",
@@ -64,15 +64,15 @@ const PORTAL_DATA = {
       },
       {
         id: "science-t2-2",
-        title: "Primary 4 Science — Forces & Types of Force",
-        subtitle: "Unit 16 + Official Pre-Test (C1..C19)",
+        title: "T2 Science II: Forces & Types of Force",
+        subtitle: "Push/Pull, Friction, Gravity, Magnetism (Unit 16) & Official Pre-Test",
         subject: "science",
         subjectLabel: "Science",
         status: "active",
         folderUrl: "./science-t2-2/",
-        description: "Push/pull, 6 effects of force, temporary vs. permanent shape changes, friction factors, gravity, electrostatic force, magnets, and the 15-question (38-pt) Official Pre-Test.",
-        questionCount: "12 / 15",
-        maxScore: "36 / 38 pts",
+        description: "Master push vs. pull forces, shape changes, magnitude & direction, contact vs. non-contact forces (gravity, magnetism, electrostatic), friction factors, magnetic materials (Iron/Steel vs. Aluminium/Copper), poles, Earth's compass, and the Official Pre-Test.",
+        questionCount: "12 Questions / Set",
+        maxScore: "36 / 38 Pts",
         formats: "Quiz & Paper"
       },
       {
