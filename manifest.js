@@ -64,15 +64,15 @@ const PORTAL_DATA = {
       },
       {
         id: "science-t2-2",
-        title: "T2 Science II: Forces & Types of Force",
-        subtitle: "Push/Pull, Friction, Gravity & Magnetism (Unit 16)",
-        subject: "science",
+        title: "Primary 4 Science — Forces & Types of Force",
+        subtitle: "Unit 16 + Official Pre-Test (C1..C19)",
+        subject: "Science",
         subjectLabel: "Science",
         status: "active",
         folderUrl: "./science-t2-2/",
-        description: "Master push vs. pull forces, temporary vs. permanent shape changes, contact vs. non-contact forces, friction, gravity, mass/shape/force factors, magnetic materials (Iron/Steel vs. Aluminium/Copper), pole interactions, and Earth's compass.",
-        questionCount: "12 Questions / Set",
-        maxScore: "36 / 20 Pts",
+        description: "Push/pull, 6 effects of force, temporary vs. permanent shape changes, friction factors, gravity, electrostatic force, magnets, and the 15-question (38-pt) Official Pre-Test.",
+        questionCount: "12 / 15",
+        maxScore: "36 / 38 pts",
         formats: "Quiz & Paper"
       },
       {
