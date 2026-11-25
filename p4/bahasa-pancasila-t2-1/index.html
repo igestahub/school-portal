@@ -97,17 +97,17 @@
               <div class="grid grid-cols-3 gap-2.5">
                 <button id="pillSet1" type="button" class="p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50/70 text-left transition">
                   <div class="font-bold text-sm text-indigo-950">Set 1</div>
-                  <div class="text-xs text-indigo-700 font-medium">Konsep & Identifikasi</div>
+                  <div class="text-[11px] text-indigo-700 font-medium">Konsep & Identifikasi</div>
                   <div id="pillBadgeSet1" class="text-xs text-slate-600 mt-1">Belum Mulai</div>
                 </button>
                 <button id="pillSet2" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 2</div>
-                  <div class="text-xs text-slate-500 font-medium">Skenario Kontekstual</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Skenario Kontekstual</div>
                   <div id="pillBadgeSet2" class="text-xs text-slate-500 mt-1">Belum Mulai</div>
                 </button>
                 <button id="pillSet3" type="button" class="p-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white text-left transition">
                   <div class="font-bold text-sm text-slate-900">Set 3</div>
-                  <div class="text-xs text-slate-500 font-medium">Inversi & Koreksi</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Inversi & Koreksi</div>
                   <div id="pillBadgeSet3" class="text-xs text-slate-500 mt-1">Belum Mulai</div>
                 </button>
               </div>
@@ -516,12 +516,15 @@
     // =========================================================================
     // 1. UI DICTIONARY & RESILIENT GRADING ENGINE
     // =========================================================================
-    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Hub K4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Pra-Ujian Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Tampilkan Kunci ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_show": "Tampilkan Kunci ▼", "parent_hide": "Sembunyikan Kunci ▲", "toast_reset": "Progres dihapus & urutan soal diacak ulang", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian."};
+    const UI = {"lang_attr": "id", "grade_badge": "K4", "hub_btn": "← Hub K4", "home_btn": "🏠 Layar Awal", "print_btn": "🖨️ Cetak / Lembar Kerja Kertas", "selected_default": "★ Pilihan Utama", "not_started": "Belum Mulai", "in_progress": "Sedang Dikerjakan", "completed_prefix": "✓ Selesai", "practice_mode_title": "Mode Latihan (Set 1 | Set 2 | Set 3)", "select_set_label": "Pilih Set Latihan (12 Soal • 36 Poin per Set)", "set1_sub": "Konsep & Identifikasi", "set2_sub": "Skenario Kontekstual", "set3_sub": "Inversi & Koreksi", "start_practice": "Mulai Latihan", "resume_practice": "Lanjutkan Sesi Tersimpan", "reset_btn": "Hapus / Ulangi Progres", "official_badge": "Soal Asli Prates (30 Poin)", "official_title": "Mode Pra-Ujian / Soal Asli", "start_official": "Mulai Pra-Ujian Asli", "guidelines_title": "Panduan Pengerjaan & Aturan Penilaian", "g1_title": "1. Tanpa Bocoran Saat Ujian Aktif", "g1_desc": "Kolom jawaban menggunakan teks netral tanpa petunjuk atau indikator benar/salah selama latihan berlangsung. Kunci jawaban dan pembahasan lengkap terbuka setelah dikumpulkan.", "g2_title": "2. Penilaian Kata Kunci & Toleransi Ejaan", "g2_desc": "Jawaban uraian singkat dinilai berdasarkan kelompok kata kunci dan sinonim (dengan toleransi salah ketik 1 huruf untuk kata >= 6 huruf) serta membedakan urutan kronologis vs daftar bebas.", "g3_title": "3. Tabel Interaktif & Lembar Cetak A4", "g3_desc": "Tabel klasifikasi memberikan nilai proporsional per baris. Beralih ke 🖨️ Cetak / Lembar Kerja Kertas kapan saja untuk mencetak lembar latihan A4.", "parent_title": "Pratinjau Orang Tua & Kunci Jawaban (Cakupan Materi C1..C16)", "parent_desc": "Dilindungi kata sandi ('nopeeking') untuk memeriksa seluruh soal, pemetaan konsep (C1..C16), kunci jawaban, dan uji otomatis QA.", "show_inspector": "Tampilkan Kunci ▼", "hide_inspector": "Sembunyikan Kunci ▲", "parent_select_label": "Pilih Set untuk Memeriksa Soal, Pemetaan Konsep & Kunci Jawaban:", "qa_btn": "🧪 Jalankan Uji Otomatis QA", "th_q": "No & Konsep", "th_sub": "Subtopik & Poin", "th_prompt": "Pertanyaan & Sub-Butir", "th_ans": "Kunci Jawaban & Kata Kunci", "word_bank_label": "Pilihan Kata (Klik atau ketik kata):", "passage_toggle": "📖 Baca Teks Narasi Bacaan", "prev_btn": "← Sebelumnya", "next_btn": "Berikutnya →", "submit_btn": "Selesai & Kumpulkan", "nav_title": "Navigasi Soal (Terjawab / Belum Dijawab)", "answered_label": "Terjawab", "unanswered_label": "Belum Dijawab", "current_label": "Saat Ini", "save_exit_btn": "← Simpan & Kembali ke Layar Awal", "results_title": "Nilai Akhir & Evaluasi Penguasaan Konsep", "results_sub": "Perbandingan jawaban lengkap beserta pembahasan dan kata kunci penilaian.", "final_score_label": "Nilai Akhir", "pct_label": "Persentase", "retry_incorrect_btn": "Ulangi Soal yang Salah", "retake_btn": "Ulangi Set Ini", "next_set_prefix": "Lanjut ke Set Berikutnya", "back_home_btn": "🏠 Kembali ke Layar Awal", "back_quiz_btn": "← Kembali ke Kuis Interaktif", "paper_set_label": "Set Lembar Kerja:", "print_now_btn": "🖨️ Cetak Sekarang", "download_html_btn": "⬇ Unduh HTML Siap Cetak", "open_tab_btn": "↗ Buka di Tab Baru untuk Cetak", "unanswered_modal_title": "Soal Belum Dijawab", "submit_anyway_btn": "Tetap Kumpulkan", "pw_modal_title": "Masukkan Kata Sandi Orang Tua", "pw_modal_desc": "Pratinjau Orang Tua & Kunci Jawaban dilindungi kata sandi agar siswa menyelesaikan latihan secara mandiri.", "pw_placeholder": "Ketik kata sandi...", "pw_unlock_btn": "Buka Kunci Jawaban", "pw_cancel_btn": "Batal", "pw_error_msg": "Kata sandi salah — dilarang mengintip! 🙈", "select_placeholder": "Pilih jawaban...", "text_placeholder": "Tulis jawabanmu...", "list_placeholder": "Pisahkan dengan koma...", "q_word": "Soal", "of_word": "dari", "pt_singular": "poin", "pt_plural": "poin", "correct_badge": "✓ Benar", "partial_badge": "◐ Sebagian", "incorrect_badge": "✗ Kurang Tepat", "your_ans_label": "Jawabanmu:", "model_ans_label": "Kunci Jawaban:", "expl_label": "Pembahasan & Kata Kunci:", "no_answer_text": "(Belum dijawab)", "paper_name": "Nama: _______________________", "paper_date": "Tanggal: _______________________", "paper_set": "Set:", "paper_score": "Nilai:", "paper_instruction": "Petunjuk: Kerjakan seluruh soal di bawah ini dengan cermat dan lengkap sesuai instruksi pada setiap bagian.", "toast_reset": "Progres berhasil dihapus & diacak ulang"};
     const ALL_CONCEPTS = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16"];
-    const STORAGE_PREFIX = "p4_bahasa_pancasila_t2_1_v1";
+    const STORAGE_PREFIX = "p4_bahasa_pancasila_t2_1_v2";
 
     function levenshtein(a, b) {
+      if (a === b) return 0;
       const m = a.length, n = b.length;
+      if (!m) return n;
+      if (!n) return m;
       const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
       for (let i = 0; i <= m; i++) dp[i][0] = i;
       for (let j = 0; j <= n; j++) dp[0][j] = j;
@@ -534,17 +537,40 @@
       return dp[m][n];
     }
 
-    function normalizeText(str) {
-      return String(str || '')
-        .toLowerCase()
-        .replace(/[^a-z0-9\s]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+    function normalizeText(str, allowDigits = false) {
+      let s = String(str || '').toLowerCase().trim();
+      // Tier 1: Strip trailing punctuation + Shift-key typo '1' bursts (e.g., "belajar!!!!!!!1")
+      s = s.replace(/[!?.,;:'"]+[1!?\s]*$/g, '');
+      s = s.replace(/[^a-z0-9\s]/g, ' ');
+      if (!allowDigits) {
+        s = s.replace(/\b1\b/g, ' ');
+      }
+      return s.replace(/\s+/g, ' ').trim();
     }
 
-    function matchesKeyword(userNorm, kw) {
-      const kwNorm = normalizeText(kw);
+    function hasNegatedKeyword(userNorm, kwNorm) {
+      if (!kwNorm || /^(?:not|never|no|without|bukan|tidak|jangan|tanpa|belum)\b/i.test(kwNorm)) return false;
+      const esc = kwNorm.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        '\\$&'
+      );
+      const negRe = new RegExp('\\b(?:not|never|no|without|neither|bukan|tidak|jangan|tanpa|belum)\\s+(?:a\\s+|an\\s+|the\\s+|very\\s+|too\\s+|kata\\s+)?' + esc + '\\b', 'i');
+      if (negRe.test(userNorm)) return true;
+      const tokens = userNorm.split(' ');
+      const negSet = new Set(['not', 'never', 'no', 'without', 'neither', 'bukan', 'tidak', 'jangan', 'tanpa', 'belum']);
+      for (let i = 0; i < tokens.length - 1; i++) {
+        if (negSet.has(tokens[i])) {
+          const nextTok = tokens[i + 1];
+          if (kwNorm.length >= 6 && nextTok.length >= 6 && levenshtein(nextTok, kwNorm) <= 1) return true;
+        }
+      }
+      return false;
+    }
+
+    function matchesKeyword(userNorm, kw, allowDigits = false) {
+      const kwNorm = normalizeText(kw, allowDigits);
       if (!kwNorm) return false;
+      if (hasNegatedKeyword(userNorm, kwNorm)) return false;
       if (userNorm.includes(kwNorm)) return true;
       const userWords = userNorm.split(' ').filter(Boolean);
       const kwWords = kwNorm.split(' ').filter(Boolean);
@@ -564,14 +590,19 @@
     }
 
     function evaluateItem(userRaw, itemSpec) {
-      const userNorm = normalizeText(userRaw);
+      const hasDigitsInSpec = /\d/.test(String(itemSpec.modelAnswer || '')) ||
+        (itemSpec.keywordGroups || []).some(g => g.some(s => /\d/.test(String(s || ''))));
+      const userNorm = normalizeText(userRaw, hasDigitsInSpec);
       if (!userNorm) {
         return { earned: 0, max: itemSpec.points, status: 'incorrect' };
       }
 
       if (itemSpec.mode === 'select' || itemSpec.mode === 'exact') {
-        const accepted = (itemSpec.accepted || [itemSpec.modelAnswer]).map(normalizeText);
-        const ok = accepted.some(ans => ans === userNorm || (ans.length >= 6 && levenshtein(ans, userNorm) <= 1));
+        const accepted = (itemSpec.accepted || [itemSpec.modelAnswer]).map(a => normalizeText(a, hasDigitsInSpec));
+        const ok = accepted.some(ans =>
+          !hasNegatedKeyword(userNorm, ans) &&
+          (ans === userNorm || (ans.length >= 6 && levenshtein(ans, userNorm) <= 1))
+        );
         return {
           earned: ok ? itemSpec.points : 0,
           max: itemSpec.points,
@@ -580,11 +611,11 @@
       }
 
       if (itemSpec.mode === 'unordered_list') {
-        const userParts = String(userRaw || '').split(/[,;/]+/).map(normalizeText).filter(Boolean);
+        const userParts = String(userRaw || '').split(/[,;/]+/).map(p => normalizeText(p, hasDigitsInSpec)).filter(Boolean);
         const targetGroups = itemSpec.listGroups || (itemSpec.accepted || [itemSpec.modelAnswer]).map(x => [x]);
         let hit = 0;
         targetGroups.forEach(grp => {
-          if (grp.some(syn => userParts.some(up => matchesKeyword(up, syn)))) {
+          if (grp.some(syn => userParts.some(up => matchesKeyword(up, syn, hasDigitsInSpec)))) {
             hit++;
           }
         });
@@ -598,10 +629,10 @@
       }
 
       if (itemSpec.mode === 'ordered_sequence') {
-        const userParts = String(userRaw || '').split(/(?:->|→|,|;|\/)+/).map(normalizeText).filter(Boolean);
+        const userParts = String(userRaw || '').split(/(?:->|→|,|;|\/)+/).map(p => normalizeText(p, hasDigitsInSpec)).filter(Boolean);
         const seqGroups = itemSpec.sequenceGroups || [];
         if (seqGroups.length > 0 && userParts.length === seqGroups.length) {
-          const allInOrder = seqGroups.every((grp, idx) => grp.some(syn => matchesKeyword(userParts[idx], syn)));
+          const allInOrder = seqGroups.every((grp, idx) => grp.some(syn => matchesKeyword(userParts[idx], syn, hasDigitsInSpec)));
           if (allInOrder) {
             return { earned: itemSpec.points, max: itemSpec.points, status: 'correct' };
           }
@@ -609,9 +640,17 @@
         return { earned: 0, max: itemSpec.points, status: 'incorrect' };
       }
 
-      // Default: keyword_groups
-      if (itemSpec.forbidWords && itemSpec.forbidWords.some(fw => { const fNorm = normalizeText(fw); return fNorm && userNorm.includes(fNorm); })) {
+      // Default: keyword / keyword_groups
+      if (itemSpec.forbidWords && itemSpec.forbidWords.some(fw => { const fNorm = normalizeText(fw, hasDigitsInSpec); return fNorm && userNorm.includes(fNorm); })) {
         return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+      }
+      // Reject direct leading negation of the entire model answer (e.g., "bukan <modelAnswer>")
+      const modelNorm = normalizeText(itemSpec.modelAnswer, hasDigitsInSpec);
+      if (modelNorm && /^(?:bukan|tidak|not)\s+/i.test(userNorm) && !/^(?:bukan|tidak|not)\b/i.test(modelNorm)) {
+        const strippedNeg = userNorm.replace(/^(?:bukan|tidak|not)\s+/i, '');
+        if (strippedNeg === modelNorm) {
+          return { earned: 0, max: itemSpec.points, status: 'incorrect' };
+        }
       }
 
       const groups = itemSpec.keywordGroups || [];
@@ -621,7 +660,7 @@
 
       let matchedCount = 0;
       groups.forEach(grp => {
-        if (grp.some(syn => matchesKeyword(userNorm, syn))) {
+        if (grp.some(syn => matchesKeyword(userNorm, syn, hasDigitsInSpec))) {
           matchedCount++;
         }
       });
@@ -670,7 +709,7 @@
         "items": [
           {
             "id": "a",
-            "label": "1a. Kapan dan di kota manakah Raden Ajeng Kartini dilahirkan? (1 poin)",
+            "label": "1a. Kapan dan di kota manakah Raden Ajeng Kartini dilahirkan?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pada tanggal 21 April 1879 di Jepara.",
@@ -687,7 +726,7 @@
           },
           {
             "id": "b",
-            "label": "1b. Di sekolah manakah Kartini bersekolah hingga usia 12 tahun, dan apa yang berhasil ia dirikan pada tahun 1903? (1 poin)",
+            "label": "1b. Di sekolah manakah Kartini bersekolah hingga usia 12 tahun, dan apa yang berhasil ia dirikan pada tahun 1903?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ia bersekolah di Europeesche Lagere School (ELS) dan pada tahun 1903 mendirikan sekolah untuk anak-anak perempuan.",
@@ -706,7 +745,7 @@
           },
           {
             "id": "c",
-            "label": "1c. Apa judul buku kumpulan surat-surat Kartini, dan diperingati sebagai hari apakah setiap tanggal 21 April? (1 poin)",
+            "label": "1c. Apa judul buku kumpulan surat-surat Kartini, dan diperingati sebagai hari apakah setiap tanggal 21 April?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Buku berjudul Habis Gelap Terbitlah Terang, dan setiap tanggal 21 April diperingati sebagai Hari Kartini.",
@@ -736,7 +775,7 @@
         "items": [
           {
             "id": "a",
-            "label": "2a. Apa arti kata 'beruntung' dalam kalimat 'Ia beruntung bisa bersekolah di ELS'? (1 poin)",
+            "label": "2a. Apa arti kata 'beruntung' dalam kalimat 'Ia beruntung bisa bersekolah di ELS'?",
             "mode": "select",
             "options": [
               "Mendapat keberuntungan, bernasib baik, atau memperoleh kesempatan yang baik",
@@ -749,7 +788,7 @@
           },
           {
             "id": "b",
-            "label": "2b. Jelaskan arti kata 'jarang' dan kata 'masa' menurut konteks bacaan! (1 poin)",
+            "label": "2b. Jelaskan arti kata 'jarang' dan kata 'masa' menurut konteks bacaan!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Jarang berarti tidak sering terjadi atau langka; masa berarti waktu, zaman, atau kurun waktu tertentu.",
@@ -769,7 +808,7 @@
           },
           {
             "id": "c",
-            "label": "2c. Apa arti kata 'tradisi' dalam bacaan? (1 poin)",
+            "label": "2c. Apa arti kata 'tradisi' dalam bacaan?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Adat kebiasaan turun-temurun dari nenek moyang yang masih dijalankan dalam masyarakat.",
@@ -799,7 +838,7 @@
         "items": [
           {
             "id": "a",
-            "label": "3a. Apa arti kata 'mandiri' dan kata 'cerdas'? (1 poin)",
+            "label": "3a. Apa arti kata 'mandiri' dan kata 'cerdas'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Mandiri berarti mampu melakukan sesuatu sendiri tanpa bergantung pada orang lain; cerdas berarti tajam pikiran dan cepat mengerti.",
@@ -819,7 +858,7 @@
           },
           {
             "id": "b",
-            "label": "3b. Apa arti kata 'pendidikan' secara lengkap (bukan sekadar daftar nama pelajaran)? (1 poin)",
+            "label": "3b. Apa arti kata 'pendidikan' secara lengkap (bukan sekadar daftar nama pelajaran)?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Proses belajar dan pembimbingan untuk mengembangkan pengetahuan, keterampilan, serta sikap.",
@@ -838,7 +877,7 @@
           },
           {
             "id": "c",
-            "label": "3c. Apa arti kata 'menginspirasi' dalam kalimat 'Buku ini menginspirasi banyak perempuan Indonesia'? (1 poin)",
+            "label": "3c. Apa arti kata 'menginspirasi' dalam kalimat 'Buku ini menginspirasi banyak perempuan Indonesia'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Menumbuhkan ide, ilham, atau memberi semangat/dorongan kepada orang lain untuk melakukan sesuatu yang baik.",
@@ -868,7 +907,7 @@
         "items": [
           {
             "id": "a",
-            "label": "4a. Manakah arti objektif yang tepat untuk kata 'perempuan' menurut kamus? (1 poin)",
+            "label": "4a. Manakah arti objektif yang tepat untuk kata 'perempuan' menurut kamus?",
             "mode": "select",
             "options": [
               "Manusia yang memiliki jenis kelamin wanita atau putri",
@@ -881,7 +920,7 @@
           },
           {
             "id": "b",
-            "label": "4b. Apa arti kata 'perbedaan'? (1 poin)",
+            "label": "4b. Apa arti kata 'perbedaan'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ketidaksamaan, selisih, atau hal yang membuat dua sesuatu tidak sama.",
@@ -897,7 +936,7 @@
           },
           {
             "id": "c",
-            "label": "4c. Manakah kalimat perbandingan di bawah ini yang menggunakan kata hubung dan kata kerja paling BAKU sesuai PUEBI? (1 poin)",
+            "label": "4c. Manakah kalimat perbandingan di bawah ini yang menggunakan kata hubung dan kata kerja paling BAKU sesuai PUEBI?",
             "mode": "select",
             "options": [
               "Perbedaan antara Heima dan Kenes adalah Heima memakai kacamata.",
@@ -924,7 +963,7 @@
         "items": [
           {
             "id": "a",
-            "label": "5a. Dalam kalimat 'Buku Kartini menginspirasi para wartawan dan tokoh pergerakan kemerdekaan', apa arti kata 'wartawan' dan kata 'kemerdekaan'? (1 poin)",
+            "label": "5a. Dalam kalimat 'Buku Kartini menginspirasi para wartawan dan tokoh pergerakan kemerdekaan', apa arti kata 'wartawan' dan kata 'kemerdekaan'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Wartawan adalah orang yang mencari, menulis, dan melaporkan berita; kemerdekaan adalah keadaan bebas dari penjajahan.",
@@ -942,7 +981,7 @@
           },
           {
             "id": "b",
-            "label": "5b. Saat mendirikan sekolah perempuan pada tahun 1903, R.A. Kartini berperan sebagai 'pendidik' dan memberi 'teladan'. Apa arti kata 'pendidik' dan 'teladan'? (1 poin)",
+            "label": "5b. Saat mendirikan sekolah perempuan pada tahun 1903, R.A. Kartini berperan sebagai 'pendidik' dan memberi 'teladan'. Apa arti kata 'pendidik' dan 'teladan'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pendidik adalah orang yang mendidik dan membimbing murid; teladan adalah contoh perbuatan atau sikap baik yang patut ditiru.",
@@ -962,7 +1001,7 @@
           },
           {
             "id": "c",
-            "label": "5c. Dalam kalimat 'Setiap tanggal 21 April, bangsa Indonesia memperingati jasanya sebagai Hari Kartini', apa arti kata 'memperingati' (jangan tertukar dengan 'memperingatkan')? (1 poin)",
+            "label": "5c. Dalam kalimat 'Setiap tanggal 21 April, bangsa Indonesia memperingati jasanya sebagai Hari Kartini', apa arti kata 'memperingati' (jangan tertukar dengan 'memperingatkan')?",
             "mode": "select",
             "options": [
               "Mengenang atau merayakan suatu peristiwa penting dalam sejarah",
@@ -989,7 +1028,7 @@
         "items": [
           {
             "id": "a",
-            "label": "6a. Ubahlah menjadi kalimat tidak langsung: “Wah, ceritanya seru sekali!” kata Astika. (1 poin)",
+            "label": "6a. Ubahlah menjadi kalimat tidak langsung: “Wah, ceritanya seru sekali!” kata Astika.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Astika mengatakan bahwa ceritanya seru sekali.",
@@ -1009,7 +1048,7 @@
           },
           {
             "id": "b",
-            "label": "6b. Ubahlah menjadi kalimat tidak langsung: Sekar berkata, “Nanti sore aku ingin makan bakpau daging.” (1 poin)",
+            "label": "6b. Ubahlah menjadi kalimat tidak langsung: Sekar berkata, “Nanti sore aku ingin makan bakpau daging.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sekar mengatakan bahwa nanti sore dia ingin makan bakpau daging.",
@@ -1035,7 +1074,7 @@
           },
           {
             "id": "c",
-            "label": "6c. Kata hubung apakah yang digunakan untuk melaporkan kalimat berita/pernyataan dalam kalimat tidak langsung? (1 poin)",
+            "label": "6c. Kata hubung apakah yang digunakan untuk melaporkan kalimat berita/pernyataan dalam kalimat tidak langsung?",
             "mode": "select",
             "options": [
               "bahwa",
@@ -1062,7 +1101,7 @@
         "items": [
           {
             "id": "a",
-            "label": "7a. Ubahlah menjadi kalimat tidak langsung: “Kamar ini berantakan sekali,” keluh Sinta. (1 poin)",
+            "label": "7a. Ubahlah menjadi kalimat tidak langsung: “Kamar ini berantakan sekali,” keluh Sinta.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sinta mengeluh bahwa kamar itu berantakan sekali.",
@@ -1085,7 +1124,7 @@
           },
           {
             "id": "b",
-            "label": "7b. Ubahlah menjadi kalimat tidak langsung: “Buku ini menarik sekali!” seru Dita. (1 poin)",
+            "label": "7b. Ubahlah menjadi kalimat tidak langsung: “Buku ini menarik sekali!” seru Dita.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dita berseru bahwa buku itu menarik sekali.",
@@ -1110,7 +1149,7 @@
           },
           {
             "id": "c",
-            "label": "7c. Dalam kalimat tidak langsung yang dilaporkan dari tempat dan hari berbeda, kata 'di sini' dan 'besok' berubah menjadi apa? (1 poin)",
+            "label": "7c. Dalam kalimat tidak langsung yang dilaporkan dari tempat dan hari berbeda, kata 'di sini' dan 'besok' berubah menjadi apa?",
             "mode": "select",
             "options": [
               "'di sini' menjadi 'di sana / di situ'; 'besok' menjadi 'keesokan harinya'",
@@ -1137,7 +1176,7 @@
         "items": [
           {
             "id": "a",
-            "label": "8a. Ubahlah menjadi kalimat tidak langsung (perhatikan ejaan 'di mana' dan perubahan 'baju ini'): Liora bertanya, “Di mana kamu membeli baju ini, Pukka?” (1 poin)",
+            "label": "8a. Ubahlah menjadi kalimat tidak langsung (perhatikan ejaan 'di mana' dan perubahan 'baju ini'): Liora bertanya, “Di mana kamu membeli baju ini, Pukka?”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Liora bertanya kepada Pukka di mana dia membeli baju itu.",
@@ -1163,7 +1202,7 @@
           },
           {
             "id": "b",
-            "label": "8b. Ubahlah menjadi kalimat tidak langsung: Bima bertanya kepada Sinta, “Apakah kamu sudah menyelesaikan tugasmu?” (1 poin)",
+            "label": "8b. Ubahlah menjadi kalimat tidak langsung: Bima bertanya kepada Sinta, “Apakah kamu sudah menyelesaikan tugasmu?”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Bima bertanya kepada Sinta apakah ia sudah menyelesaikan tugasnya.",
@@ -1190,7 +1229,7 @@
           },
           {
             "id": "c",
-            "label": "8c. Tanda baca apakah yang diletakkan di akhir kalimat tanya tidak langsung? (1 poin)",
+            "label": "8c. Tanda baca apakah yang diletakkan di akhir kalimat tanya tidak langsung?",
             "mode": "select",
             "options": [
               "Tanda titik (.) tanpa tanda petik dan tanpa tanda tanya",
@@ -1217,7 +1256,7 @@
         "items": [
           {
             "id": "a",
-            "label": "9a. Ubahlah menjadi kalimat tidak langsung: “Tolong ambilkan obeng itu,” suruh ayah kepada Loli. (1 poin)",
+            "label": "9a. Ubahlah menjadi kalimat tidak langsung: “Tolong ambilkan obeng itu,” suruh ayah kepada Loli.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ayah menyuruh Loli untuk mengambilkan obeng itu.",
@@ -1242,7 +1281,7 @@
           },
           {
             "id": "b",
-            "label": "9b. Ubahlah menjadi kalimat tidak langsung: Bu Mira berkata kepada Dita, “Tolong tutup pintu ini.” (1 poin)",
+            "label": "9b. Ubahlah menjadi kalimat tidak langsung: Bu Mira berkata kepada Dita, “Tolong tutup pintu ini.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Bu Mira meminta Dita untuk menutup pintu itu.",
@@ -1269,7 +1308,7 @@
           },
           {
             "id": "c",
-            "label": "9c. Pola kata kerja manakah yang paling tepat untuk mengubah kalimat perintah langsung ('Tolong...') menjadi kalimat tidak langsung? (1 poin)",
+            "label": "9c. Pola kata kerja manakah yang paling tepat untuk mengubah kalimat perintah langsung ('Tolong...') menjadi kalimat tidak langsung?",
             "mode": "select",
             "options": [
               "meminta / menyuruh [lawan bicara] untuk [kata kerja aktif]",
@@ -1296,7 +1335,7 @@
         "items": [
           {
             "id": "a",
-            "label": "10a. Ubahlah menjadi kalimat langsung (perhatikan penulisan kata depan 'ke rumah'): Tata berkata bahwa ia akan ke rumah Anya nanti malam. (1 poin)",
+            "label": "10a. Ubahlah menjadi kalimat langsung (perhatikan penulisan kata depan 'ke rumah'): Tata berkata bahwa ia akan ke rumah Anya nanti malam.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tata berkata, \"Saya akan ke rumah Anya nanti malam.\"",
@@ -1320,7 +1359,7 @@
           },
           {
             "id": "b",
-            "label": "10b. Ubahlah menjadi kalimat langsung: Dewi berseru bahwa ia melihat burung yang sangat besar di langit. (1 poin)",
+            "label": "10b. Ubahlah menjadi kalimat langsung: Dewi berseru bahwa ia melihat burung yang sangat besar di langit.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dewi berseru, \"Saya melihat burung yang sangat besar di langit!\"",
@@ -1343,7 +1382,7 @@
           },
           {
             "id": "c",
-            "label": "10c. Ubahlah menjadi kalimat langsung: Gendhis berkata bahwa ia kurang sehat hari ini. (1 poin)",
+            "label": "10c. Ubahlah menjadi kalimat langsung: Gendhis berkata bahwa ia kurang sehat hari ini.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Gendhis berkata, \"Saya kurang sehat hari ini.\"",
@@ -1380,7 +1419,7 @@
         "items": [
           {
             "id": "a",
-            "label": "11a. Ubahlah menjadi kalimat langsung (gunakan kata ganti 'kamu', jangan mengulang nama Daffi dua kali): Pak Budi bertanya kepada Daffi apakah dia sudah mengerjakan PR matematika. (1 poin)",
+            "label": "11a. Ubahlah menjadi kalimat langsung (gunakan kata ganti 'kamu', jangan mengulang nama Daffi dua kali): Pak Budi bertanya kepada Daffi apakah dia sudah mengerjakan PR matematika.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pak Budi bertanya kepada Daffi, \"Apakah kamu sudah mengerjakan PR matematika?\"",
@@ -1399,7 +1438,7 @@
           },
           {
             "id": "b",
-            "label": "11b. Ubahlah menjadi kalimat langsung: Alesha bertanya kepada Kashira apakah ia sudah menonton kartun yang lucu itu kemarin malam. (1 poin)",
+            "label": "11b. Ubahlah menjadi kalimat langsung: Alesha bertanya kepada Kashira apakah ia sudah menonton kartun yang lucu itu kemarin malam.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Alesha bertanya kepada Kashira, \"Apakah kamu sudah menonton kartun yang lucu itu kemarin malam?\"",
@@ -1415,7 +1454,7 @@
           },
           {
             "id": "c",
-            "label": "11c. Jika kalimat tidak langsung berbunyi: 'Bima berkata bahwa keesokan harinya ia akan mengunjungi perpustakaan', bagaimanakah bunyi kalimat langsungnya? (1 poin)",
+            "label": "11c. Jika kalimat tidak langsung berbunyi: 'Bima berkata bahwa keesokan harinya ia akan mengunjungi perpustakaan', bagaimanakah bunyi kalimat langsungnya?",
             "mode": "select",
             "options": [
               "Bima berkata, \"Besok aku akan mengunjungi perpustakaan.\"",
@@ -1439,7 +1478,6 @@
         "subTopic": "Klasifikasi Hak Siswa vs. Bukan Hak & Penerapan Kontekstual di Sekolah",
         "points": 3,
         "prompt": "Klasifikasikan pernyataan tentang hak siswa di sekolah dan lengkapi kalimat penerapannya (C15 & C16):",
-        "weights": 3,
         "wordBank": [
           "belajar",
           "bermain",
@@ -1450,7 +1488,7 @@
         "items": [
           {
             "id": "a",
-            "label": "12a. Manakah klasifikasi yang TEPAT untuk: (1) Merasa aman dari gangguan teman, (2) Menyampaikan pendapat saat diskusi, dan (3) Mengambil barang milik teman tanpa izin? (1 poin)",
+            "label": "12a. Manakah klasifikasi yang TEPAT untuk: (1) Merasa aman dari gangguan teman, (2) Menyampaikan pendapat saat diskusi, dan (3) Mengambil barang milik teman tanpa izin?",
             "mode": "select",
             "options": [
               "(1) Hak, (2) Hak, (3) Bukan (Pelanggaran aturan)",
@@ -1463,7 +1501,7 @@
           },
           {
             "id": "b",
-            "label": "12b. Lengkapi kalimat hak siswa berikut: 'Di dalam kelas, aku berhak ________ bersama guru dan teman-teman, dan saat istirahat aku berhak ________ di halaman sekolah.' (1 poin)",
+            "label": "12b. Lengkapi kalimat hak siswa berikut: 'Di dalam kelas, aku berhak ________ bersama guru dan teman-teman, dan saat istirahat aku berhak ________ di halaman sekolah.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "belajar, bermain",
@@ -1479,7 +1517,7 @@
           },
           {
             "id": "c",
-            "label": "12c. Lengkapi pasangan hak dan kewajiban dalam diskusi: 'Dalam diskusi, aku berhak ________ dengan sopan, dan aku harus ________ pendapat orang lain.' (1 poin)",
+            "label": "12c. Lengkapi pasangan hak dan kewajiban dalam diskusi: 'Dalam diskusi, aku berhak ________ dengan sopan, dan aku harus ________ pendapat orang lain.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "berpendapat, menghargai",
@@ -1529,7 +1567,7 @@
         "items": [
           {
             "id": "a",
-            "label": "1a. Kapan dan di manakah Ki Hajar Dewantara lahir, serta siapakah nama kecil beliau? (1 poin)",
+            "label": "1a. Kapan dan di manakah Ki Hajar Dewantara lahir, serta siapakah nama kecil beliau?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Lahir pada tanggal 2 Mei 1889 di Yogyakarta; nama kecilnya adalah Raden Mas Soewardi Soerjaningrat.",
@@ -1547,7 +1585,7 @@
           },
           {
             "id": "b",
-            "label": "1b. Setelah berhenti dari sekolah kedokteran karena sakit, profesi apakah yang dijalani Ki Hajar Dewantara untuk menyampaikan pemikiran kepada masyarakat? (1 poin)",
+            "label": "1b. Setelah berhenti dari sekolah kedokteran karena sakit, profesi apakah yang dijalani Ki Hajar Dewantara untuk menyampaikan pemikiran kepada masyarakat?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Beliau bekerja menjadi seorang wartawan melalui surat kabar.",
@@ -1561,7 +1599,7 @@
           },
           {
             "id": "c",
-            "label": "1c. Apa nama perguruan yang didirikan Ki Hajar Dewantara pada tanggal 3 Juli 1922 di Yogyakarta, dan diperingati sebagai hari apakah setiap tanggal 2 Mei? (1 poin)",
+            "label": "1c. Apa nama perguruan yang didirikan Ki Hajar Dewantara pada tanggal 3 Juli 1922 di Yogyakarta, dan diperingati sebagai hari apakah setiap tanggal 2 Mei?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Perguruan Taman Siswa; setiap tanggal 2 Mei diperingati sebagai Hari Pendidikan Nasional.",
@@ -1573,7 +1611,7 @@
                 "hari pendidikan nasional"
               ]
             ],
-            "explanation": "Paragraf 3 & 5: Mendirikan Perguruan Taman Siswa (3 Juli 1922) dan tanggal 2 Mei diperingati sebagai Hari Pendidikan Nasional."
+            "explanation": "Paragraf 3 & 4: Mendirikan Perguruan Taman Siswa (3 Juli 1922) dan tanggal 2 Mei diperingati sebagai Hari Pendidikan Nasional."
           }
         ],
         "showPassage": true,
@@ -1591,7 +1629,7 @@
         "items": [
           {
             "id": "a",
-            "label": "2a. Pada kalimat 'Ia beruntung mendapat kesempatan bersekolah pada masa penjajahan', apakah arti pasangan kata 'beruntung' dan 'masa'? (1 poin)",
+            "label": "2a. Pada kalimat 'Ia beruntung mendapat kesempatan bersekolah pada masa penjajahan', apakah arti pasangan kata 'beruntung' dan 'masa'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Beruntung berarti bernasib baik / mendapat kesempatan baik, sedangkan masa berarti waktu atau zaman.",
@@ -1611,7 +1649,7 @@
           },
           {
             "id": "b",
-            "label": "2b. Manakah kalimat di bawah ini yang menggunakan kata 'jarang' secara utuh dan tepat? (1 poin)",
+            "label": "2b. Manakah kalimat di bawah ini yang menggunakan kata 'jarang' secara utuh dan tepat?",
             "mode": "select",
             "options": [
               "Pada masa kolonial, anak-anak dari keluarga biasa sangat jarang mendapat kesempatan bersekolah.",
@@ -1624,7 +1662,7 @@
           },
           {
             "id": "c",
-            "label": "2c. Buatlah atau tuliskan arti kata 'tradisi' beserta contoh penerapannya di masyarakat! (1 poin)",
+            "label": "2c. Buatlah atau tuliskan arti kata 'tradisi' beserta contoh penerapannya di masyarakat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tradisi adalah adat kebiasaan turun-temurun yang berlaku di masyarakat, misalnya tradisi gotong royong membersihkan desa.",
@@ -1655,7 +1693,7 @@
         "items": [
           {
             "id": "a",
-            "label": "3a. Dalam Teks Set 2 disebutkan: 'Guru membantu anak tumbuh menjadi pribadi yang mandiri.' Mengapa kemampuan bekerja secara mandiri itu penting? (1 poin)",
+            "label": "3a. Dalam Teks Set 2 disebutkan: 'Guru membantu anak tumbuh menjadi pribadi yang mandiri.' Mengapa kemampuan bekerja secara mandiri itu penting?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Agar anak mampu melakukan tugasnya sendiri tanpa selalu bergantung pada bantuan orang lain.",
@@ -1670,7 +1708,7 @@
           },
           {
             "id": "b",
-            "label": "3b. Lengkapi kalimat rumpang ini dengan dua kosakata yang tepat: 'Perjuangan Ki Hajar Dewantara dalam bidang ________ terus ________ banyak sekolah di Indonesia untuk membimbing murid dengan sabar.' (1 poin)",
+            "label": "3b. Lengkapi kalimat rumpang ini dengan dua kosakata yang tepat: 'Perjuangan Ki Hajar Dewantara dalam bidang ________ terus ________ banyak sekolah di Indonesia untuk membimbing murid dengan sabar.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "pendidikan, menginspirasi",
@@ -1682,11 +1720,11 @@
                 "menginspirasi"
               ]
             ],
-            "explanation": "Paragraf 1 & 5: Perjuangan dalam bidang pendidikan terus menginspirasi dunia pendidikan Indonesia."
+            "explanation": "Paragraf 1 & 4: Perjuangan dalam bidang pendidikan terus menginspirasi dunia pendidikan Indonesia."
           },
           {
             "id": "c",
-            "label": "3c. Manakah pernyataan yang paling tepat menjelaskan arti kata 'cerdas'? (1 poin)",
+            "label": "3c. Manakah pernyataan yang paling tepat menjelaskan arti kata 'cerdas'?",
             "mode": "select",
             "options": [
               "Tajam pikiran, cepat mengerti dalam menerima pelajaran, dan pandai mencari solusi",
@@ -1713,7 +1751,7 @@
         "items": [
           {
             "id": "a",
-            "label": "4a. Apa perbedaan kesempatan belajar antara masa penjajahan dan masa sekarang menurut bacaan? (1 poin)",
+            "label": "4a. Apa perbedaan kesempatan belajar antara masa penjajahan dan masa sekarang menurut bacaan?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pada masa penjajahan kesempatan belajar belum terbuka luas bagi semua anak (terutama perempuan dan rakyat biasa), sedangkan sekarang semua anak berhak bersekolah.",
@@ -1735,7 +1773,7 @@
           },
           {
             "id": "b",
-            "label": "4b. Lengkapi kalimat baku berikut dengan kata hubung yang tepat: 'Perbedaan ________ seragam olahraga Dita ________ seragam olahraga Sinta terletak pada ukuran bajunya.' (1 poin)",
+            "label": "4b. Lengkapi kalimat baku berikut dengan kata hubung yang tepat: 'Perbedaan ________ seragam olahraga Dita ________ seragam olahraga Sinta terletak pada ukuran bajunya.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "antara, dan",
@@ -1751,7 +1789,7 @@
           },
           {
             "id": "c",
-            "label": "4c. Kata kerja manakah yang baku untuk melengkapi kalimat: 'Perbedaan antara Bima dan Raka adalah Bima ________ kacamata saat membaca.' (1 poin)",
+            "label": "4c. Kata kerja manakah yang baku untuk melengkapi kalimat: 'Perbedaan antara Bima dan Raka adalah Bima ________ kacamata saat membaca.'",
             "mode": "select",
             "options": [
               "memakai",
@@ -1785,7 +1823,7 @@
         "items": [
           {
             "id": "a",
-            "label": "5a. Bagaimana seorang 'wartawan' memperjuangkan kemajuan bangsanya, dan apa kaitan pendidikan dengan 'kemerdekaan' menurut Ki Hajar Dewantara? (1 poin)",
+            "label": "5a. Bagaimana seorang 'wartawan' memperjuangkan kemajuan bangsanya, dan apa kaitan pendidikan dengan 'kemerdekaan' menurut Ki Hajar Dewantara?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Wartawan menulis berita dan pemikiran di surat kabar, dan pendidikan membantu bangsa mencapai kemerdekaan (bebas dari penjajahan).",
@@ -1805,7 +1843,7 @@
           },
           {
             "id": "b",
-            "label": "5b. Lengkapi kalimat ini: 'Seorang ________ perlu memberikan ________ atau contoh yang baik kepada murid-muridnya.' (1 poin)",
+            "label": "5b. Lengkapi kalimat ini: 'Seorang ________ perlu memberikan ________ atau contoh yang baik kepada murid-muridnya.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "pendidik, teladan",
@@ -1821,7 +1859,7 @@
           },
           {
             "id": "c",
-            "label": "5c. Lengkapi kalimat ini: 'Setiap tanggal 2 Mei, bangsa Indonesia ________ Hari Pendidikan Nasional.' (1 poin)",
+            "label": "5c. Lengkapi kalimat ini: 'Setiap tanggal 2 Mei, bangsa Indonesia ________ Hari Pendidikan Nasional.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "memperingati",
@@ -1833,7 +1871,7 @@
             "forbidWords": [
               "memperingatkan"
             ],
-            "explanation": "Paragraf 5: Setiap tanggal 2 Mei, bangsa Indonesia memperingati Hari Pendidikan Nasional."
+            "explanation": "Paragraf 4: Setiap tanggal 2 Mei, bangsa Indonesia memperingati Hari Pendidikan Nasional."
           }
         ],
         "showPassage": true,
@@ -1851,7 +1889,7 @@
         "items": [
           {
             "id": "a",
-            "label": "6a. Ubahlah menjadi kalimat tidak langsung: Rania berkata, “Aku sedang membaca buku tentang perjuangan Ki Hajar Dewantara.” (1 poin)",
+            "label": "6a. Ubahlah menjadi kalimat tidak langsung: Rania berkata, “Aku sedang membaca buku tentang perjuangan Ki Hajar Dewantara.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Rania mengatakan bahwa ia sedang membaca buku tentang perjuangan Ki Hajar Dewantara.",
@@ -1877,7 +1915,7 @@
           },
           {
             "id": "b",
-            "label": "6b. Ubahlah menjadi kalimat tidak langsung: “Wah, kisah berdirinya Taman Siswa sangat menginspirasi!” seru Bima. (1 poin)",
+            "label": "6b. Ubahlah menjadi kalimat tidak langsung: “Wah, kisah berdirinya Taman Siswa sangat menginspirasi!” seru Bima.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Bima mengatakan bahwa kisah berdirinya Taman Siswa sangat menginspirasi.",
@@ -1896,7 +1934,7 @@
           },
           {
             "id": "c",
-            "label": "6c. Apa perubahan kata ganti untuk 'kami / kita' ketika kalimat langsung diubah menjadi kalimat tidak langsung oleh orang lain? (1 poin)",
+            "label": "6c. Apa perubahan kata ganti untuk 'kami / kita' ketika kalimat langsung diubah menjadi kalimat tidak langsung oleh orang lain?",
             "mode": "select",
             "options": [
               "mereka",
@@ -1923,7 +1961,7 @@
         "items": [
           {
             "id": "a",
-            "label": "7a. Ubahlah menjadi kalimat tidak langsung: Sinta berkata, “Aku akan belajar bersama di sini besok.” (1 poin)",
+            "label": "7a. Ubahlah menjadi kalimat tidak langsung: Sinta berkata, “Aku akan belajar bersama di sini besok.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sinta mengatakan bahwa ia akan belajar bersama di sana keesokan harinya.",
@@ -1954,7 +1992,7 @@
           },
           {
             "id": "b",
-            "label": "7b. Ubahlah menjadi kalimat tidak langsung: “Ruang kelas ini bersih dan rapi sekali,” puji Pak Guru. (1 poin)",
+            "label": "7b. Ubahlah menjadi kalimat tidak langsung: “Ruang kelas ini bersih dan rapi sekali,” puji Pak Guru.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pak Guru memuji bahwa ruang kelas itu bersih dan rapi sekali.",
@@ -1979,7 +2017,7 @@
           },
           {
             "id": "c",
-            "label": "7c. Jika kalimat langsung menggunakan keterangan waktu 'kemarin', menjadi apakah keterangan waktu tersebut dalam kalimat tidak langsung? (1 poin)",
+            "label": "7c. Jika kalimat langsung menggunakan keterangan waktu 'kemarin', menjadi apakah keterangan waktu tersebut dalam kalimat tidak langsung?",
             "mode": "select",
             "options": [
               "sehari sebelumnya / kemarin malam",
@@ -2006,7 +2044,7 @@
         "items": [
           {
             "id": "a",
-            "label": "8a. Ubahlah menjadi kalimat tidak langsung: Ibu Guru bertanya kepada Raka, “Mengapa kamu datang terlambat pagi ini?” (1 poin)",
+            "label": "8a. Ubahlah menjadi kalimat tidak langsung: Ibu Guru bertanya kepada Raka, “Mengapa kamu datang terlambat pagi ini?”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ibu Guru bertanya kepada Raka mengapa ia datang terlambat pagi itu.",
@@ -2032,7 +2070,7 @@
           },
           {
             "id": "b",
-            "label": "8b. Ubahlah menjadi kalimat tidak langsung: Dita bertanya kepada Sinta, “Apakah kamu membawa kamus Bahasa Indonesia ini?” (1 poin)",
+            "label": "8b. Ubahlah menjadi kalimat tidak langsung: Dita bertanya kepada Sinta, “Apakah kamu membawa kamus Bahasa Indonesia ini?”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dita bertanya kepada Sinta apakah ia membawa kamus Bahasa Indonesia itu.",
@@ -2058,7 +2096,7 @@
           },
           {
             "id": "c",
-            "label": "8c. Manakah penulisan kata depan tempat yang BENAR menurut PUEBI? (1 poin)",
+            "label": "8c. Manakah penulisan kata depan tempat yang BENAR menurut PUEBI?",
             "mode": "select",
             "options": [
               "di mana, di sekolah, ke rumah (ditulis terpisah)",
@@ -2085,7 +2123,7 @@
         "items": [
           {
             "id": "a",
-            "label": "9a. Ubahlah menjadi kalimat tidak langsung: “Tolong bagikan buku latihan ini kepada teman-temanmu,” pinta Pak Guru kepada Bima. (1 poin)",
+            "label": "9a. Ubahlah menjadi kalimat tidak langsung: “Tolong bagikan buku latihan ini kepada teman-temanmu,” pinta Pak Guru kepada Bima.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pak Guru meminta Bima untuk membagikan buku latihan itu kepada teman-temannya.",
@@ -2112,7 +2150,7 @@
           },
           {
             "id": "b",
-            "label": "9b. Ubahlah menjadi kalimat tidak langsung: Ibu berkata kepada Dita, “Rapikan meja belajarmu sebelum tidur.” (1 poin)",
+            "label": "9b. Ubahlah menjadi kalimat tidak langsung: Ibu berkata kepada Dita, “Rapikan meja belajarmu sebelum tidur.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ibu menyuruh Dita untuk merapikan meja belajarnya sebelum tidur.",
@@ -2139,7 +2177,7 @@
           },
           {
             "id": "c",
-            "label": "9c. Mengapa kalimat perintah tidak langsung TIDAK boleh ditulis 'Ayah menyuruh Loli bahwa Loli sudah mengambil obeng itu'? (1 poin)",
+            "label": "9c. Mengapa kalimat perintah tidak langsung TIDAK boleh ditulis 'Ayah menyuruh Loli bahwa Loli sudah mengambil obeng itu'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena kalimat perintah menggunakan kata hubung 'untuk' atau 'agar' dan menyatakan permintaan tindakan, bukan menyatakan tindakan sudah selesai.",
@@ -2170,7 +2208,7 @@
         "items": [
           {
             "id": "a",
-            "label": "10a. Ubahlah menjadi kalimat langsung: Dita mengatakan bahwa ia ingin menjadi seorang pendidik yang baik. (1 poin)",
+            "label": "10a. Ubahlah menjadi kalimat langsung: Dita mengatakan bahwa ia ingin menjadi seorang pendidik yang baik.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dita berkata, \"Aku ingin menjadi seorang pendidik yang baik.\"",
@@ -2193,7 +2231,7 @@
           },
           {
             "id": "b",
-            "label": "10b. Ubahlah menjadi kalimat langsung: Raka berseru bahwa lukisan pahlawan itu indah sekali. (1 poin)",
+            "label": "10b. Ubahlah menjadi kalimat langsung: Raka berseru bahwa lukisan pahlawan itu indah sekali.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Raka berseru, \"Lukisan pahlawan ini indah sekali!\"",
@@ -2215,7 +2253,7 @@
           },
           {
             "id": "c",
-            "label": "10c. Di manakah letak tanda titik (.), tanda tanya (?), atau tanda seru (!) pada akhir petikan kalimat langsung? (1 poin)",
+            "label": "10c. Di manakah letak tanda titik (.), tanda tanya (?), atau tanda seru (!) pada akhir petikan kalimat langsung?",
             "mode": "select",
             "options": [
               "Di dalam tanda petik penutup (sebelum tanda petik kedua)",
@@ -2242,7 +2280,7 @@
         "items": [
           {
             "id": "a",
-            "label": "11a. Ubahlah menjadi kalimat langsung: Bu Guru bertanya kepada Sinta mengapa ia tidak mengikuti kegiatan olahraga. (1 poin)",
+            "label": "11a. Ubahlah menjadi kalimat langsung: Bu Guru bertanya kepada Sinta mengapa ia tidak mengikuti kegiatan olahraga.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Bu Guru bertanya kepada Sinta, \"Mengapa kamu tidak mengikuti kegiatan olahraga?\"",
@@ -2262,7 +2300,7 @@
           },
           {
             "id": "b",
-            "label": "11b. Ubahlah menjadi kalimat langsung: Dita berkata bahwa ia telah membaca cerita itu sehari sebelumnya. (1 poin)",
+            "label": "11b. Ubahlah menjadi kalimat langsung: Dita berkata bahwa ia telah membaca cerita itu sehari sebelumnya.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dita berkata, \"Aku telah membaca cerita ini kemarin.\"",
@@ -2289,7 +2327,7 @@
           },
           {
             "id": "c",
-            "label": "11c. Ubahlah menjadi kalimat langsung: Sinta meminta Bima untuk membantunya mengangkat kotak buku itu. (1 poin)",
+            "label": "11c. Ubahlah menjadi kalimat langsung: Sinta meminta Bima untuk membantunya mengangkat kotak buku itu.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sinta berkata kepada Bima, \"Tolong bantu aku mengangkat kotak buku ini.\"",
@@ -2324,7 +2362,7 @@
         "items": [
           {
             "id": "a",
-            "label": "12a. Saat jam pelajaran berlangsung, suasana kelas tenang sehingga semua murid dapat belajar dengan nyaman. Apakah 'belajar dengan nyaman di kelas' termasuk Hak atau Bukan? (1 poin)",
+            "label": "12a. Saat jam pelajaran berlangsung, suasana kelas tenang sehingga semua murid dapat belajar dengan nyaman. Apakah 'belajar dengan nyaman di kelas' termasuk Hak atau Bukan?",
             "mode": "select",
             "options": [
               "Hak siswa di sekolah",
@@ -2337,7 +2375,7 @@
           },
           {
             "id": "b",
-            "label": "12b. Ketika jam istirahat berbunyi, murid-murid bermain di halaman sekolah, dan mereka merasa aman dari gangguan teman. Sebutkan DUA kata kunci hak siswa pada kegiatan tersebut! (1 poin)",
+            "label": "12b. Ketika jam istirahat berbunyi, murid-murid bermain di halaman sekolah, dan mereka merasa aman dari gangguan teman. Sebutkan DUA kata kunci hak siswa pada kegiatan tersebut!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "bermain dan merasa aman",
@@ -2353,7 +2391,7 @@
           },
           {
             "id": "c",
-            "label": "12c. Mengapa 'mengambil barang milik teman tanpa izin' diklasifikasikan sebagai 'Bukan' hak siswa, dan apa yang seharusnya dilakukan? (1 poin)",
+            "label": "12c. Mengapa 'mengambil barang milik teman tanpa izin' diklasifikasikan sebagai 'Bukan' hak siswa, dan apa yang seharusnya dilakukan?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena mengambil barang teman tanpa izin melanggar aturan sekolah dan merugikan hak milik teman; kita harus meminta izin terlebih dahulu.",
@@ -2403,7 +2441,7 @@
         "items": [
           {
             "id": "a",
-            "label": "1a. Mengapa Ki Hajar Dewantara memilih meninggalkan gelar kebangsawanannya menurut paragraf 2? (1 poin)",
+            "label": "1a. Mengapa Ki Hajar Dewantara memilih meninggalkan gelar kebangsawanannya menurut paragraf 2?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Agar lebih dekat dengan rakyat tanpa dibatasi tradisi feodal yang kaku.",
@@ -2418,7 +2456,7 @@
           },
           {
             "id": "b",
-            "label": "1b. Jelaskan arti semboyan 'Ing Ngarsa Sung Tuladha' dan 'Ing Madya Mangun Karsa'! (1 poin)",
+            "label": "1b. Jelaskan arti semboyan 'Ing Ngarsa Sung Tuladha' dan 'Ing Madya Mangun Karsa'!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ing Ngarsa Sung Tuladha berarti di depan memberi teladan; Ing Madya Mangun Karsa berarti di tengah membangun semangat.",
@@ -2436,7 +2474,7 @@
           },
           {
             "id": "c",
-            "label": "1c. Apa arti semboyan 'Tut Wuri Handayani', dan bagaimana cara seorang pendidik menuntun murid menurut Ki Hajar Dewantara? (1 poin)",
+            "label": "1c. Apa arti semboyan 'Tut Wuri Handayani', dan bagaimana cara seorang pendidik menuntun murid menurut Ki Hajar Dewantara?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tut Wuri Handayani berarti di belakang memberikan dorongan; pendidik menuntun murid dengan kasih sayang agar tumbuh cerdas, berbudi pekerti luhur, dan mandiri.",
@@ -2469,7 +2507,7 @@
         "items": [
           {
             "id": "a",
-            "label": "2a. Remedial Prates No. 1: Seorang siswa mengartikan kata 'beruntung' sebagai 'menghargai apa yang Tuhan telah berikan'. Mengapa jawaban itu kurang tepat, dan apa arti kata 'beruntung' yang sebenarnya? (1 poin)",
+            "label": "2a. Remedial Prates No. 1: Seorang siswa mengartikan kata 'beruntung' sebagai 'menghargai apa yang Tuhan telah berikan'. Mengapa jawaban itu kurang tepat, dan apa arti kata 'beruntung' yang sebenarnya?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena 'menghargai pemberian Tuhan' adalah arti kata bersyukur, sedangkan 'beruntung' berarti mendapat keberuntungan atau bernasib baik.",
@@ -2485,7 +2523,7 @@
           },
           {
             "id": "b",
-            "label": "2b. Remedial Prates No. 3: Apakah kata 'masa' hanya berarti 'abad-abad' (ratusan tahun)? Jelaskan arti kata 'masa' yang lebih tepat! (1 poin)",
+            "label": "2b. Remedial Prates No. 3: Apakah kata 'masa' hanya berarti 'abad-abad' (ratusan tahun)? Jelaskan arti kata 'masa' yang lebih tepat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tidak; kata 'masa' berarti waktu, zaman, atau suatu kurun waktu tertentu (seperti masa kecil atau masa sekolah, tidak harus ratusan tahun).",
@@ -2500,7 +2538,7 @@
           },
           {
             "id": "c",
-            "label": "2c. Apa perbedaan antara 'tradisi' masyarakat dan kegiatan pribadi yang dilakukan sesekali? (1 poin)",
+            "label": "2c. Apa perbedaan antara 'tradisi' masyarakat dan kegiatan pribadi yang dilakukan sesekali?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tradisi adalah adat kebiasaan turun-temurun dari nenek moyang yang dijalankan bersama dalam masyarakat.",
@@ -2530,7 +2568,7 @@
         "items": [
           {
             "id": "a",
-            "label": "3a. Remedial Prates No. 4: Mengapa kalimat 'mandiri artinya mandi sendiri' belum merupakan definisi kata 'mandiri' yang lengkap? Tuliskan definisi bakunya! (1 poin)",
+            "label": "3a. Remedial Prates No. 4: Mengapa kalimat 'mandiri artinya mandi sendiri' belum merupakan definisi kata 'mandiri' yang lengkap? Tuliskan definisi bakunya!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "'Mandi sendiri' hanya salah satu contoh tindakan; definisi baku 'mandiri' adalah mampu melakukan sesuatu sendiri tanpa bergantung pada bantuan orang lain.",
@@ -2549,7 +2587,7 @@
           },
           {
             "id": "b",
-            "label": "3b. Remedial Prates No. 6: Seorang siswa menulis arti 'pendidikan' hanya sebagai 'pelajaran subjek-subjek'. Lengkapi definisi baku kata 'pendidikan' dan buat satu kalimat utuh! (1 poin)",
+            "label": "3b. Remedial Prates No. 6: Seorang siswa menulis arti 'pendidikan' hanya sebagai 'pelajaran subjek-subjek'. Lengkapi definisi baku kata 'pendidikan' dan buat satu kalimat utuh!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pendidikan adalah proses belajar dan pembimbingan untuk mengembangkan pengetahuan, keterampilan, dan sikap; contohnya pendidikan yang baik membantu anak meraih cita-cita.",
@@ -2567,7 +2605,7 @@
           },
           {
             "id": "c",
-            "label": "3c. Remedial Prates No. 7: Pada prates awal, kolom arti dan kalimat untuk kata 'menginspirasi' sempat dikosongkan. Tuliskan arti kata 'menginspirasi' beserta contoh kalimatnya sesuai keteladanan Ki Hajar Dewantara! (1 poin)",
+            "label": "3c. Remedial Prates No. 7: Pada prates awal, kolom arti dan kalimat untuk kata 'menginspirasi' sempat dikosongkan. Tuliskan arti kata 'menginspirasi' beserta contoh kalimatnya sesuai keteladanan Ki Hajar Dewantara!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Menginspirasi berarti menumbuhkan ide, ilham, atau memberi semangat kepada orang lain; contohnya perjuangan Ki Hajar Dewantara menginspirasi kami untuk rajin belajar.",
@@ -2603,7 +2641,7 @@
         "items": [
           {
             "id": "a",
-            "label": "4a. Remedial Prates No. 9: Pada lembar prates tertulis kalimat: 'Perbedaan Heima sama Kenes adalah Heima mempunyai kacamata.' Tuliskan kembali kalimat tersebut setelah diperbaiki sesuai koreksi merah guru! (1 poin)",
+            "label": "4a. Remedial Prates No. 9: Pada lembar prates tertulis kalimat: 'Perbedaan Heima sama Kenes adalah Heima mempunyai kacamata.' Tuliskan kembali kalimat tersebut setelah diperbaiki sesuai koreksi merah guru!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Perbedaan antara Heima dan Kenes adalah Heima memakai kacamata.",
@@ -2626,7 +2664,7 @@
           },
           {
             "id": "b",
-            "label": "4b. Mengapa kata 'sama' pada kalimat perbandingan di atas harus diganti dengan pasangan kata 'antara ... dan ...'? (1 poin)",
+            "label": "4b. Mengapa kata 'sama' pada kalimat perbandingan di atas harus diganti dengan pasangan kata 'antara ... dan ...'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena kata 'sama' adalah ragam cakapan tidak baku untuk menggabungkan dua hal yang dibandingkan; kata hubung bakunya adalah 'antara ... dan ...'.",
@@ -2642,7 +2680,7 @@
           },
           {
             "id": "c",
-            "label": "4c. Mengapa mendefinisikan kata 'perempuan' sebagai 'seorang yang cantik dan berambut panjang' kurang tepat secara kamus? (1 poin)",
+            "label": "4c. Mengapa mendefinisikan kata 'perempuan' sebagai 'seorang yang cantik dan berambut panjang' kurang tepat secara kamus?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena itu hanya ciri fisik sebagian orang; definisi objektif perempuan adalah manusia yang berjenis kelamin wanita atau putri.",
@@ -2672,7 +2710,7 @@
         "items": [
           {
             "id": "a",
-            "label": "5a. Apa perbedaan makna antara kata 'memperingati' dan kata 'memperingatkan'? (1 poin)",
+            "label": "5a. Apa perbedaan makna antara kata 'memperingati' dan kata 'memperingatkan'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Memperingati berarti mengenang atau merayakan peristiwa penting (seperti Hari Pendidikan Nasional), sedangkan memperingatkan berarti memberi teguran atau nasihat akan bahaya.",
@@ -2693,7 +2731,7 @@
           },
           {
             "id": "b",
-            "label": "5b. Apa perbedaan pekerjaan seorang 'wartawan' dengan penulis cerita dongeng fiksi? (1 poin)",
+            "label": "5b. Apa perbedaan pekerjaan seorang 'wartawan' dengan penulis cerita dongeng fiksi?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Wartawan mencari, menulis, dan melaporkan berita atau kejadian nyata di media, bukan mengarang cerita dongeng khayalan.",
@@ -2709,7 +2747,7 @@
           },
           {
             "id": "c",
-            "label": "5c. Dalam semboyan 'Ing Ngarsa Sung Tuladha', siapakah yang berperan sebagai 'pendidik' di sekolah, dan mengapa ia harus menjadi 'teladan'? (1 poin)",
+            "label": "5c. Dalam semboyan 'Ing Ngarsa Sung Tuladha', siapakah yang berperan sebagai 'pendidik' di sekolah, dan mengapa ia harus menjadi 'teladan'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Guru berperan sebagai pendidik yang membimbing murid, dan ia harus menjadi teladan (contoh yang baik) agar sikap baiknya ditiru oleh murid.",
@@ -2742,7 +2780,7 @@
         "items": [
           {
             "id": "a",
-            "label": "6a. Mengapa kalimat 'Sinta mengeluh bahwa kamar itu berantakan sekali' lebih tepat sebagai kalimat tidak langsung daripada 'Sinta mengeluh karena kamar ini berantakan sekali'? (1 poin)",
+            "label": "6a. Mengapa kalimat 'Sinta mengeluh bahwa kamar itu berantakan sekali' lebih tepat sebagai kalimat tidak langsung daripada 'Sinta mengeluh karena kamar ini berantakan sekali'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena kalimat tidak langsung melaporkan isi ucapan dengan kata hubung 'bahwa' (bukan sebab-akibat 'karena') dan mengubah kata penunjuk 'ini' menjadi 'itu'.",
@@ -2758,7 +2796,7 @@
           },
           {
             "id": "b",
-            "label": "6b. Perbaiki kalimat tidak langsung yang salah ini: 'Sekar berkata bahwa nanti sore aku ingin makan bakpau daging.' (1 poin)",
+            "label": "6b. Perbaiki kalimat tidak langsung yang salah ini: 'Sekar berkata bahwa nanti sore aku ingin makan bakpau daging.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sekar mengatakan bahwa nanti sore dia ingin makan bakpau daging.",
@@ -2784,7 +2822,7 @@
           },
           {
             "id": "c",
-            "label": "6c. Manakah di bawah ini yang merupakan kalimat TIDAK langsung yang benar? (1 poin)",
+            "label": "6c. Manakah di bawah ini yang merupakan kalimat TIDAK langsung yang benar?",
             "mode": "select",
             "options": [
               "Astika mengatakan bahwa ceritanya seru sekali.",
@@ -2811,7 +2849,7 @@
         "items": [
           {
             "id": "a",
-            "label": "7a. Perbaiki kalimat siswa yang dicoret merah pada Soal 2: 'Sinta mengeluh karena kamar ini berantakan sekali.' (1 poin)",
+            "label": "7a. Perbaiki kalimat siswa yang dicoret merah pada Soal 2: 'Sinta mengeluh karena kamar ini berantakan sekali.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sinta mengeluh bahwa kamar itu berantakan sekali.",
@@ -2833,7 +2871,7 @@
           },
           {
             "id": "b",
-            "label": "7b. Perbaiki kalimat siswa yang dicoret merah pada Soal 3: 'Liora bertanya kepada Pukka dimana dia membeli baju ini.' (Perhatikan juga ejaan 'di mana'!) (1 poin)",
+            "label": "7b. Perbaiki kalimat siswa yang dicoret merah pada Soal 3: 'Liora bertanya kepada Pukka dimana dia membeli baju ini.' (Perhatikan juga ejaan 'di mana'!)",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Liora bertanya kepada Pukka di mana dia membeli baju itu.",
@@ -2859,7 +2897,7 @@
           },
           {
             "id": "c",
-            "label": "7c. Perbaiki kalimat tidak langsung ini: 'Dita mengatakan bahwa ia sangat menyukai buku cerita ini di sini.' (1 poin)",
+            "label": "7c. Perbaiki kalimat tidak langsung ini: 'Dita mengatakan bahwa ia sangat menyukai buku cerita ini di sini.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dita mengatakan bahwa ia sangat menyukai buku cerita itu di sana.",
@@ -2897,7 +2935,7 @@
         "items": [
           {
             "id": "a",
-            "label": "8a. Perbaiki kalimat tanya tidak langsung yang salah ini: 'Bima bertanya kepada Sinta apakah kamu sudah menyelesaikan tugasmu?' (1 poin)",
+            "label": "8a. Perbaiki kalimat tanya tidak langsung yang salah ini: 'Bima bertanya kepada Sinta apakah kamu sudah menyelesaikan tugasmu?'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Bima bertanya kepada Sinta apakah ia sudah menyelesaikan tugasnya.",
@@ -2921,7 +2959,7 @@
           },
           {
             "id": "b",
-            "label": "8b. Mengapa penulisan kata 'Dimana' pada cetakan soal 'Liora bertanya, “Dimana kamu membeli baju ini, Pukka?”' tidak baku menurut PUEBI? (1 poin)",
+            "label": "8b. Mengapa penulisan kata 'Dimana' pada cetakan soal 'Liora bertanya, “Dimana kamu membeli baju ini, Pukka?”' tidak baku menurut PUEBI?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena 'di' pada 'di mana' adalah kata depan penunjuk tempat sehingga wajib ditulis terpisah menjadi 'di mana'.",
@@ -2938,7 +2976,7 @@
           },
           {
             "id": "c",
-            "label": "8c. Manakah perbedaan penulisan 'di' sebagai kata depan tempat dan 'di-' sebagai awalan kata kerja pasif yang benar? (1 poin)",
+            "label": "8c. Manakah perbedaan penulisan 'di' sebagai kata depan tempat dan 'di-' sebagai awalan kata kerja pasif yang benar?",
             "mode": "select",
             "options": [
               "Kata depan tempat dipisah (di mana, di rumah); awalan kata kerja pasif digabung (diizinkan, diterbitkan)",
@@ -2965,7 +3003,7 @@
         "items": [
           {
             "id": "a",
-            "label": "9a. Remedial Soal 5: Pada prates tertulis: 'Ayah mengatakan kepada Loli untuk menolong dia mengambil obeng itu.' Ubahlah menjadi kalimat tidak langsung yang ringkas dan efektif! (1 poin)",
+            "label": "9a. Remedial Soal 5: Pada prates tertulis: 'Ayah mengatakan kepada Loli untuk menolong dia mengambil obeng itu.' Ubahlah menjadi kalimat tidak langsung yang ringkas dan efektif!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ayah menyuruh Loli untuk mengambilkan obeng itu.",
@@ -2993,7 +3031,7 @@
           },
           {
             "id": "b",
-            "label": "9b. Perbaiki kalimat tidak langsung ini agar efektif: 'Ibu Guru berkata kepada Raka untuk menolong dia menghapus papan tulis ini.' (1 poin)",
+            "label": "9b. Perbaiki kalimat tidak langsung ini agar efektif: 'Ibu Guru berkata kepada Raka untuk menolong dia menghapus papan tulis ini.'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ibu Guru meminta Raka untuk menghapus papan tulis itu.",
@@ -3021,7 +3059,7 @@
           },
           {
             "id": "c",
-            "label": "9c. Dalam kalimat perintah langsung '“Bukalah halaman sepuluh,” kata Pak Budi kepada murid-murid', siapakah yang menjadi objek setelah kata kerja 'menyuruh/meminta'? (1 poin)",
+            "label": "9c. Dalam kalimat perintah langsung '“Bukalah halaman sepuluh,” kata Pak Budi kepada murid-murid', siapakah yang menjadi objek setelah kata kerja 'menyuruh/meminta'?",
             "mode": "select",
             "options": [
               "murid-murid (Pak Budi menyuruh murid-murid untuk membuka halaman sepuluh.)",
@@ -3048,7 +3086,7 @@
         "items": [
           {
             "id": "a",
-            "label": "10a. Remedial Soal 6: Siswa menulis: Tata berkata “Saya akan kerumah Anya nanti malam”. Sebutkan TIGA perbaikan yang harus dilakukan (koma, ejaan 'ke rumah', dan posisi titik)! (1 poin)",
+            "label": "10a. Remedial Soal 6: Siswa menulis: Tata berkata “Saya akan kerumah Anya nanti malam”. Sebutkan TIGA perbaikan yang harus dilakukan (koma, ejaan 'ke rumah', dan posisi titik)!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tambahkan tanda koma setelah kata berkata, pisahkan penulisan \"ke rumah\", dan letakkan tanda titik di dalam tanda petik penutup: Tata berkata, \"Saya akan ke rumah Anya nanti malam.\"",
@@ -3073,7 +3111,7 @@
           },
           {
             "id": "b",
-            "label": "10b. Manakah penulisan kalimat langsung untuk Soal 8 yang paling tepat tanda bacanya menurut PUEBI? (1 poin)",
+            "label": "10b. Manakah penulisan kalimat langsung untuk Soal 8 yang paling tepat tanda bacanya menurut PUEBI?",
             "mode": "select",
             "options": [
               "Dewi berseru, \"Saya melihat burung yang sangat besar di langit!\"",
@@ -3086,7 +3124,7 @@
           },
           {
             "id": "c",
-            "label": "10c. Manakah penulisan kalimat langsung untuk Soal 10 yang paling tepat tanda bacanya? (1 poin)",
+            "label": "10c. Manakah penulisan kalimat langsung untuk Soal 10 yang paling tepat tanda bacanya?",
             "mode": "select",
             "options": [
               "Gendhis berkata, \"Saya kurang sehat hari ini.\"",
@@ -3113,7 +3151,7 @@
         "items": [
           {
             "id": "a",
-            "label": "11a. Remedial Soal 7: Pada prates tertulis: 'Pak Budi bertanya “Daffi apakah Daffi sudah mengerjakan PR matematika?”'. Tuliskan kalimat langsung yang baku menggunakan kata ganti 'kamu'! (1 poin)",
+            "label": "11a. Remedial Soal 7: Pada prates tertulis: 'Pak Budi bertanya “Daffi apakah Daffi sudah mengerjakan PR matematika?”'. Tuliskan kalimat langsung yang baku menggunakan kata ganti 'kamu'!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pak Budi bertanya kepada Daffi, \"Apakah kamu sudah mengerjakan PR matematika?\"",
@@ -3132,7 +3170,7 @@
           },
           {
             "id": "b",
-            "label": "11b. Perbaiki kalimat langsung yang kaku ini: 'Alesha bertanya kepada Kashira “Apakah Kashira sudah menonton kartun yang lucu itu kemarin malam?”' (1 poin)",
+            "label": "11b. Perbaiki kalimat langsung yang kaku ini: 'Alesha bertanya kepada Kashira “Apakah Kashira sudah menonton kartun yang lucu itu kemarin malam?”'",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Alesha bertanya kepada Kashira, \"Apakah kamu sudah menonton kartun yang lucu itu kemarin malam?\"",
@@ -3151,7 +3189,7 @@
           },
           {
             "id": "c",
-            "label": "11c. Ketika mengubah kalimat tidak langsung kembali menjadi kalimat langsung, keterangan waktu 'keesokan harinya' dan 'sehari sebelumnya' dikembalikan menjadi kata apa? (1 poin)",
+            "label": "11c. Ketika mengubah kalimat tidak langsung kembali menjadi kalimat langsung, keterangan waktu 'keesokan harinya' dan 'sehari sebelumnya' dikembalikan menjadi kata apa?",
             "mode": "select",
             "options": [
               "'keesokan harinya' menjadi 'besok'; 'sehari sebelumnya' menjadi 'kemarin'",
@@ -3178,7 +3216,7 @@
         "items": [
           {
             "id": "a",
-            "label": "12a. Remedial Bagian 1 No. 4: Pada prates awal, pernyataan 'Merasa aman dari gangguan teman' sempat dijawab 'Bukan keduanya'. Mengapa jawaban yang benar adalah 'Hak'? (1 poin)",
+            "label": "12a. Remedial Bagian 1 No. 4: Pada prates awal, pernyataan 'Merasa aman dari gangguan teman' sempat dijawab 'Bukan keduanya'. Mengapa jawaban yang benar adalah 'Hak'?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena setiap siswa berhak mendapatkan perlindungan dan merasa aman dari gangguan atau perundungan saat berada di sekolah.",
@@ -3196,7 +3234,7 @@
           },
           {
             "id": "b",
-            "label": "12b. Remedial Bagian 1 No. 5: Mengapa pernyataan 'Menyampaikan pendapat saat diskusi' juga merupakan 'Hak' siswa (bukan 'Bukan keduanya')? (1 poin)",
+            "label": "12b. Remedial Bagian 1 No. 5: Mengapa pernyataan 'Menyampaikan pendapat saat diskusi' juga merupakan 'Hak' siswa (bukan 'Bukan keduanya')?",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Karena dalam kegiatan diskusi di kelas, setiap siswa berhak menyampaikan pendapat atau gagasannya dengan sopan.",
@@ -3215,7 +3253,7 @@
           },
           {
             "id": "c",
-            "label": "12c. Apa perbedaan antara 'menyampaikan pendapat dengan sopan' dan 'menghargai pendapat orang lain' dalam kegiatan diskusi kelas? (1 poin)",
+            "label": "12c. Apa perbedaan antara 'menyampaikan pendapat dengan sopan' dan 'menghargai pendapat orang lain' dalam kegiatan diskusi kelas?",
             "mode": "select",
             "options": [
               "Menyampaikan pendapat adalah HAK siswa, sedangkan menghargai pendapat orang lain adalah KEWAJIBAN siswa",
@@ -3262,7 +3300,7 @@
         "items": [
           {
             "id": "k1",
-            "label": "1. Beruntung — Tuliskan arti kata 'beruntung' yang tepat! (1 poin)",
+            "label": "1. Beruntung — Tuliskan arti kata 'beruntung' yang tepat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Mendapat keberuntungan, bernasib baik, atau memperoleh kesempatan yang baik.",
@@ -3281,7 +3319,7 @@
           },
           {
             "id": "k2",
-            "label": "2. Jarang — Tuliskan arti kata 'jarang' yang tepat! (1 poin)",
+            "label": "2. Jarang — Tuliskan arti kata 'jarang' yang tepat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tidak sering terjadi, langka, atau tidak banyak jumlahnya.",
@@ -3297,7 +3335,7 @@
           },
           {
             "id": "k3",
-            "label": "3. Masa — Tuliskan arti kata 'masa' menurut konteks bacaan! (1 poin)",
+            "label": "3. Masa — Tuliskan arti kata 'masa' menurut konteks bacaan!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Waktu, zaman, atau suatu kurun waktu tertentu.",
@@ -3313,7 +3351,7 @@
           },
           {
             "id": "k4",
-            "label": "4. Mandiri — Tuliskan arti kata 'mandiri' yang tepat! (1 poin)",
+            "label": "4. Mandiri — Tuliskan arti kata 'mandiri' yang tepat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Mampu melakukan sesuatu sendiri tanpa bergantung pada orang lain.",
@@ -3328,7 +3366,7 @@
           },
           {
             "id": "k5",
-            "label": "5. Cerdas — Tuliskan arti kata 'cerdas' yang tepat! (1 poin)",
+            "label": "5. Cerdas — Tuliskan arti kata 'cerdas' yang tepat!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tajam pikiran, cepat mengerti, atau pandai.",
@@ -3359,7 +3397,7 @@
         "items": [
           {
             "id": "k6",
-            "label": "6. Pendidikan — Tuliskan arti kata 'pendidikan' dan buat satu kalimat utuh! (1 poin)",
+            "label": "6. Pendidikan — Tuliskan arti kata 'pendidikan' dan buat satu kalimat utuh!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Proses belajar dan pembimbingan untuk mengembangkan pengetahuan, keterampilan, dan sikap. Kalimat: Pendidikan membantu anak meraih cita-cita.",
@@ -3377,7 +3415,7 @@
           },
           {
             "id": "k7",
-            "label": "7. Menginspirasi — Tuliskan arti kata 'menginspirasi' dan buat satu kalimat utuh! (1 poin)",
+            "label": "7. Menginspirasi — Tuliskan arti kata 'menginspirasi' dan buat satu kalimat utuh!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Menumbuhkan ide, ilham, atau memberi semangat pada orang lain untuk melakukan sesuatu yang baik. Kalimat: Buku Kartini menginspirasi perempuan Indonesia.",
@@ -3393,7 +3431,7 @@
           },
           {
             "id": "k8",
-            "label": "8. Perempuan — Tuliskan arti kata 'perempuan'! (1 poin)",
+            "label": "8. Perempuan — Tuliskan arti kata 'perempuan'!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Manusia yang memiliki jenis kelamin wanita atau putri.",
@@ -3409,7 +3447,7 @@
           },
           {
             "id": "k9",
-            "label": "9. Perbedaan — Tuliskan arti kata 'perbedaan' dan kalimat perbandingan baku (menggunakan 'antara ... dan ...' serta 'memakai kacamata')! (1 poin)",
+            "label": "9. Perbedaan — Tuliskan arti kata 'perbedaan' dan kalimat perbandingan baku (menggunakan 'antara ... dan ...' serta 'memakai kacamata')!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ketidaksamaan atau hal yang tidak sama. Kalimat: Perbedaan antara Heima dan Kenes adalah Heima memakai kacamata.",
@@ -3429,7 +3467,7 @@
           },
           {
             "id": "k10",
-            "label": "10. Tradisi — Tuliskan arti kata 'tradisi'! (1 poin)",
+            "label": "10. Tradisi — Tuliskan arti kata 'tradisi'!",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Adat kebiasaan turun-temurun yang masih dijalankan dalam masyarakat.",
@@ -3459,7 +3497,7 @@
         "items": [
           {
             "id": "s1",
-            "label": "Soal 1: “Wah, ceritanya seru sekali!” kata Astika. (1 poin)",
+            "label": "Soal 1: “Wah, ceritanya seru sekali!” kata Astika.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Astika mengatakan bahwa ceritanya seru sekali.",
@@ -3478,7 +3516,7 @@
           },
           {
             "id": "s2",
-            "label": "Soal 2: “Kamar ini berantakan sekali.” keluh Sinta. (Ingat koreksi merah untuk kata 'ini'!) (1 poin)",
+            "label": "Soal 2: “Kamar ini berantakan sekali.” keluh Sinta. (Ingat koreksi merah untuk kata 'ini'!)",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sinta mengeluh bahwa kamar itu berantakan sekali.",
@@ -3500,7 +3538,7 @@
           },
           {
             "id": "s3",
-            "label": "Soal 3: Liora bertanya, “Dimana kamu membeli baju ini, Pukka?” (Ingat koreksi merah untuk kata 'ini' dan ejaan 'di mana'!) (1 poin)",
+            "label": "Soal 3: Liora bertanya, “Dimana kamu membeli baju ini, Pukka?” (Ingat koreksi merah untuk kata 'ini' dan ejaan 'di mana'!)",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Liora bertanya kepada Pukka di mana dia membeli baju itu.",
@@ -3527,7 +3565,7 @@
           },
           {
             "id": "s4",
-            "label": "Soal 4: Sekar berkata, “Nanti sore aku ingin makan bakpau daging.” (1 poin)",
+            "label": "Soal 4: Sekar berkata, “Nanti sore aku ingin makan bakpau daging.”",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Sekar mengatakan bahwa nanti sore dia ingin makan bakpau daging.",
@@ -3553,7 +3591,7 @@
           },
           {
             "id": "s5",
-            "label": "Soal 5: “Tolong ambilkan obeng itu.” suruh ayah kepada Loli. (1 poin)",
+            "label": "Soal 5: “Tolong ambilkan obeng itu.” suruh ayah kepada Loli.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Ayah menyuruh Loli untuk mengambilkan obeng itu.",
@@ -3592,7 +3630,7 @@
         "items": [
           {
             "id": "s6",
-            "label": "Soal 6: Tata berkata bahwa ia akan kerumah Anya nanti malam. (1 poin)",
+            "label": "Soal 6: Tata berkata bahwa ia akan kerumah Anya nanti malam.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Tata berkata, \"Saya akan ke rumah Anya nanti malam.\"",
@@ -3615,7 +3653,7 @@
           },
           {
             "id": "s7",
-            "label": "Soal 7: Pak Budi bertanya kepada Daffi apakah dia sudah mengerjakan PR matematika. (1 poin)",
+            "label": "Soal 7: Pak Budi bertanya kepada Daffi apakah dia sudah mengerjakan PR matematika.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Pak Budi bertanya kepada Daffi, \"Apakah kamu sudah mengerjakan PR matematika?\"",
@@ -3634,7 +3672,7 @@
           },
           {
             "id": "s8",
-            "label": "Soal 8: Dewi berseru bahwa ia melihat burung yang sangat besar di langit. (1 poin)",
+            "label": "Soal 8: Dewi berseru bahwa ia melihat burung yang sangat besar di langit.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Dewi berseru, \"Saya melihat burung yang sangat besar di langit!\"",
@@ -3657,7 +3695,7 @@
           },
           {
             "id": "s9",
-            "label": "Soal 9: Alesha bertanya kepada Kashira apakah ia sudah menonton kartun yang lucu itu kemarin malam. (1 poin)",
+            "label": "Soal 9: Alesha bertanya kepada Kashira apakah ia sudah menonton kartun yang lucu itu kemarin malam.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Alesha bertanya kepada Kashira, \"Apakah kamu sudah menonton kartun yang lucu itu kemarin malam?\"",
@@ -3673,7 +3711,7 @@
           },
           {
             "id": "s10",
-            "label": "Soal 10: Gendhis berkata bahwa ia kurang sehat hari ini. (1 poin)",
+            "label": "Soal 10: Gendhis berkata bahwa ia kurang sehat hari ini.",
             "mode": "keyword",
             "points": 1,
             "modelAnswer": "Gendhis berkata, \"Saya kurang sehat hari ini.\"",
@@ -3710,7 +3748,7 @@
         "items": [
           {
             "id": "p1",
-            "label": "1. Belajar dengan nyaman di kelas (1 poin)",
+            "label": "1. Belajar dengan nyaman di kelas",
             "mode": "select",
             "options": [
               "Hak",
@@ -3723,7 +3761,7 @@
           },
           {
             "id": "p2",
-            "label": "2. Bermain bersama teman saat istirahat (1 poin)",
+            "label": "2. Bermain bersama teman saat istirahat",
             "mode": "select",
             "options": [
               "Hak",
@@ -3736,7 +3774,7 @@
           },
           {
             "id": "p3",
-            "label": "3. Mengambil barang milik teman tanpa izin (1 poin)",
+            "label": "3. Mengambil barang milik teman tanpa izin",
             "mode": "select",
             "options": [
               "Hak",
@@ -3749,7 +3787,7 @@
           },
           {
             "id": "p4",
-            "label": "4. Merasa aman dari gangguan teman (Ingat koreksi merah pada prates!) (1 poin)",
+            "label": "4. Merasa aman dari gangguan teman (Ingat koreksi merah pada prates!)",
             "mode": "select",
             "options": [
               "Hak",
@@ -3762,7 +3800,7 @@
           },
           {
             "id": "p5",
-            "label": "5. Menyampaikan pendapat saat diskusi (Ingat koreksi merah pada prates!) (1 poin)",
+            "label": "5. Menyampaikan pendapat saat diskusi (Ingat koreksi merah pada prates!)",
             "mode": "select",
             "options": [
               "Hak",
@@ -3796,7 +3834,7 @@
         "items": [
           {
             "id": "m1",
-            "label": "1. Di dalam kelas, aku berhak ________ bersama guru dan teman-teman. (1 poin)",
+            "label": "1. Di dalam kelas, aku berhak ________ bersama guru dan teman-teman.",
             "mode": "exact",
             "points": 1,
             "modelAnswer": "belajar",
@@ -3807,7 +3845,7 @@
           },
           {
             "id": "m2",
-            "label": "2. Saat istirahat, aku berhak ________ di halaman sekolah. (1 poin)",
+            "label": "2. Saat istirahat, aku berhak ________ di halaman sekolah.",
             "mode": "exact",
             "points": 1,
             "modelAnswer": "bermain",
@@ -3818,7 +3856,7 @@
           },
           {
             "id": "m3",
-            "label": "3. Aku berhak merasa ________ saat berada di sekolah. (1 poin)",
+            "label": "3. Aku berhak merasa ________ saat berada di sekolah.",
             "mode": "exact",
             "points": 1,
             "modelAnswer": "aman",
@@ -3829,7 +3867,7 @@
           },
           {
             "id": "m4",
-            "label": "4. Dalam diskusi, aku berhak ________ dengan sopan. (1 poin)",
+            "label": "4. Dalam diskusi, aku berhak ________ dengan sopan.",
             "mode": "exact",
             "points": 1,
             "modelAnswer": "berpendapat",
@@ -3840,7 +3878,7 @@
           },
           {
             "id": "m5",
-            "label": "5. Dalam setiap diskusi, aku harus ________ pendapat orang lain. (1 poin)",
+            "label": "5. Dalam setiap diskusi, aku harus ________ pendapat orang lain.",
             "mode": "exact",
             "points": 1,
             "modelAnswer": "menghargai",
@@ -3945,7 +3983,7 @@
               shuffled[targetIdx] = shuffled[curCorrectIdx];
               shuffled[curCorrectIdx] = tmp;
             }
-            optionOrders[item.id] = shuffled;
+            optionOrders[q.qNum + '_' + item.id] = shuffled;
           }
         });
       });
@@ -4188,14 +4226,14 @@
         const ansHtml = q.items.map(it =>
           '<div class="mb-1.5">' +
             '<span class="font-bold text-indigo-900">' + it.modelAnswer + '</span>' +
-            '<div class="text-xs text-slate-500">' + it.explanation + '</div>' +
+            '<div class="text-[11px] text-slate-500">' + it.explanation + '</div>' +
           '</div>'
         ).join('');
 
         tr.innerHTML =
           '<td class="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">' +
             'Q' + dispNum +
-            '<div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-xs inline-block">' + q.conceptId + '</div>' +
+            '<div class="mt-1 px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] inline-block">' + q.conceptId + '</div>' +
           '</td>' +
           '<td class="py-3 px-3">' +
             '<div class="font-semibold text-slate-800">' + q.subTopic + '</div>' +
@@ -4230,12 +4268,25 @@
         const setObj = QUESTION_SETS[sKey];
         let modelTotal = 0;
         let blankTotal = 0;
+        let typoPass = true;
+        let negPass = true;
         const coveredConcepts = new Set();
 
         setObj.questions.forEach(q => {
           q.conceptId.split(',').map(s => s.trim()).filter(Boolean).forEach(cid => coveredConcepts.add(cid));
           const modelAns = {};
-          q.items.forEach(it => { modelAns[it.id] = it.modelAnswer; });
+          q.items.forEach(it => {
+            modelAns[it.id] = it.modelAnswer;
+            if (it.mode === 'keyword' || it.mode === 'exact') {
+              const typoRes = evaluateItem(it.modelAnswer + '!!!!!!!1', it);
+              if (typoRes.earned !== it.points) typoPass = false;
+              const modelLow = String(it.modelAnswer || '').trim().toLowerCase();
+              if (!/^(?:bukan|tidak|not)\b/.test(modelLow)) {
+                const negRes = evaluateItem('bukan ' + it.modelAnswer, it);
+                if (negRes.earned !== 0) negPass = false;
+              }
+            }
+          });
           const resModel = gradeQuestion(q, modelAns);
           const resBlank = gradeQuestion(q, {});
           modelTotal += resModel.earnedPoints;
@@ -4244,13 +4295,15 @@
 
         const isPractice = sKey.startsWith('practice_');
         const missingConcepts = isPractice ? ALL_CONCEPTS.filter(c => !coveredConcepts.has(c)) : [];
-        const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && (missingConcepts.length === 0);
+        const passSet = (modelTotal === setObj.maxScore) && (blankTotal === 0) && typoPass && negPass && (missingConcepts.length === 0);
         if (!passSet) allPassed = false;
 
         const conceptStr = isPractice ? (' | Concepts=' + coveredConcepts.size + '/' + ALL_CONCEPTS.length) : '';
         reportLines.push(
           setObj.shortTitle + ': Model=' + modelTotal + '/' + setObj.maxScore +
           ' | Blank=' + blankTotal + '/' + setObj.maxScore +
+          ' | Typo=' + (typoPass ? 'OK' : 'FAIL') +
+          ' | Neg=' + (negPass ? 'OK' : 'FAIL') +
           conceptStr + ' ' + (passSet ? '✓ PASS' : '✗ FAIL')
         );
       });
@@ -4258,7 +4311,7 @@
       banner.classList.remove('hidden');
       if (allPassed) {
         banner.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs font-semibold space-y-1';
-        banner.innerHTML = '<div class="font-extrabold">✓ QA SELF-TEST PASSED (100% Model Accuracy, 0% Blank Score, 100% Concept Coverage)</div><div>' + reportLines.join(' &nbsp;•&nbsp; ') + '</div>';
+        banner.innerHTML = '<div class="font-extrabold">✓ QA SELF-TEST PASSED (100% Model, 0% Blank, 100% Shift-Typo, 0% Negation, 100% Concept Coverage)</div><div>' + reportLines.join(' &nbsp;•&nbsp; ') + '</div>';
       } else {
         banner.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-900 text-xs font-semibold space-y-1';
         banner.innerHTML = '<div class="font-extrabold">✗ QA SELF-TEST FAILED</div><div>' + reportLines.join(' &nbsp;•&nbsp; ') + '</div>';
@@ -4344,7 +4397,7 @@
           : '';
         passageBody.innerHTML = imgHtml
           ? '<div class="flex flex-col sm:flex-row items-start gap-4">' + imgHtml + '<div class="space-y-2.5 flex-1 max-h-60 overflow-y-auto pr-2">' + paragraphsHtml + '</div></div>'
-          : '<div class="space-y-2.5 max-h-60 overflow-y-auto pr-2">' + paragraphsHtml + '</div>';
+          : paragraphsHtml;
       } else {
         passageWrap.classList.add('hidden');
       }
@@ -4365,17 +4418,24 @@
           pill.className = 'px-3 py-1 rounded-lg bg-white border border-indigo-200 text-xs font-bold text-indigo-800 hover:bg-indigo-600 hover:text-white transition shadow-2xs';
           pill.textContent = word;
           pill.addEventListener('click', () => {
-            if (lastFocusedInput && document.body.contains(lastFocusedInput)) {
-              lastFocusedInput.value = word;
-              lastFocusedInput.dispatchEvent(new Event('input'));
-            } else {
-              const emptyInp = Array.from(document.querySelectorAll('#slideInputsContainer input[type="text"]')).find(inp => !inp.value.trim())
-                || document.querySelector('#slideInputsContainer input[type="text"]');
-              if (emptyInp) {
-                emptyInp.value = word;
-                emptyInp.dispatchEvent(new Event('input'));
+            const targetInp = (lastFocusedInput && document.body.contains(lastFocusedInput))
+              ? lastFocusedInput
+              : (Array.from(document.querySelectorAll('#slideInputsContainer input[type="text"]')).find(inp => !inp.value.trim())
+                || document.querySelector('#slideInputsContainer input[type="text"]'));
+            if (!targetInp) return;
+            const fieldId = targetInp.getAttribute('data-field');
+            const itemObj = q.items.find(it => it.id === fieldId);
+            const expectsMultiple = itemObj && itemObj.mode === 'keyword' && (itemObj.keywordGroups || []).length >= 2;
+            const cur = targetInp.value.trim();
+            if (expectsMultiple && cur) {
+              const parts = cur.split(/,\s*/).map(p => p.toLowerCase());
+              if (!parts.includes(word.toLowerCase())) {
+                targetInp.value = cur + ', ' + word;
               }
+            } else {
+              targetInp.value = word;
             }
+            targetInp.dispatchEvent(new Event('input'));
           });
           wbPills.appendChild(pill);
         });
@@ -4395,8 +4455,9 @@
         const ptsText = '(' + item.points + ' ' + (item.points === 1 ? UI.pt_singular : UI.pt_plural) + ')';
 
         if (item.mode === 'select') {
-          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
-            ? state.optionOrders[item.id]
+          const optKey = q.qNum + '_' + item.id;
+          const activeOptions = (state.optionOrders && state.optionOrders[optKey])
+            ? state.optionOrders[optKey]
             : item.options;
           const optsHtml = activeOptions.map(opt => {
             const selected = qAns[item.id] === opt ? ' selected' : '';
@@ -4729,8 +4790,9 @@
             q.items.map(it => {
               const formattedLabel = formatSubItemLabel(it.label, dispNum);
               if (it.mode === 'select' && it.options) {
-                const activeOptions = (state.optionOrders && state.optionOrders[it.id])
-                  ? state.optionOrders[it.id]
+                const optKey = q.qNum + '_' + it.id;
+                const activeOptions = (state.optionOrders && state.optionOrders[optKey])
+                  ? state.optionOrders[optKey]
                   : it.options;
                 return (
                   '<div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">' +
@@ -4899,7 +4961,7 @@
           parentUnlocked = false;
           document.getElementById('tbodyParentInspector').innerHTML = '';
           panel.classList.add('hidden');
-          icon.textContent = UI.parent_show;
+          icon.textContent = UI.show_inspector;
         } else {
           inputPw.value = '';
           errPw.classList.add('hidden');
@@ -4915,7 +4977,7 @@
           modalPw.classList.add('hidden');
           modalPw.classList.remove('flex');
           document.getElementById('panelParentInspector').classList.remove('hidden');
-          document.getElementById('iconParentToggle').textContent = UI.parent_hide;
+          document.getElementById('iconParentToggle').textContent = UI.hide_inspector;
           renderParentInspector();
         } else {
           errPw.classList.remove('hidden');
@@ -4939,6 +5001,18 @@
       });
 
       document.getElementById('btnRunQaSelfTest').addEventListener('click', runQaSelfTest);
+
+            // Passage Collapse / Expand Toggle
+      const btnTogglePassage = document.getElementById('btnTogglePassage');
+      if (btnTogglePassage) {
+        btnTogglePassage.addEventListener('click', () => {
+          const body = document.getElementById('slidePassageBody');
+          const icon = document.getElementById('slidePassageIcon');
+          if (!body) return;
+          const isHidden = body.classList.toggle('hidden');
+          if (icon) icon.textContent = isHidden ? '▲' : '▼';
+        });
+      }
 
       // Quiz Slide Controls
       document.getElementById('btnPrevSlide').addEventListener('click', () => {
