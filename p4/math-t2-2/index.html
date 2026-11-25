@@ -405,7 +405,7 @@
     (function () {
       'use strict';
 
-      var STORAGE_PREFIX = 'p4_math_t2_2_v1_';
+      var STORAGE_PREFIX = 'p4_math_t2_2_v2_';
       var ALL_CONCEPT_IDS = [];
       for (var cIdx = 1; cIdx <= 30; cIdx++) {
         ALL_CONCEPT_IDS.push('C' + cIdx);
@@ -1420,7 +1420,7 @@
                 shuffled[targetIdx] = shuffled[curCorrectIdx];
                 shuffled[curCorrectIdx] = tmp;
               }
-              optionOrders[sub.id] = shuffled;
+              optionOrders[(q.qNum !== undefined ? q.qNum : q.id) + '_' + sub.id] = shuffled;
             }
           }
         }
@@ -1884,7 +1884,7 @@
           html += '<label for="inp_' + sub.id + '" class="text-xs sm:text-sm font-medium text-slate-800 sm:flex-1">' + formattedLabel + '</label>';
 
           if (sub.type === 'select') {
-            var activeOptions = setOptOrders[sub.id] || sub.options;
+            var activeOptions = setOptOrders[(q.qNum !== undefined ? q.qNum : q.id) + '_' + sub.id] || sub.options;
             html += '<select id="inp_' + sub.id + '" data-sub-id="' + sub.id + '" class="quiz-input w-full sm:w-64 px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">';
             html += '<option value="">Select option...</option>';
             for (var o = 0; o < activeOptions.length; o++) {
@@ -2300,7 +2300,7 @@
             var sub = q.subItems[s];
             var formattedLabel = formatSubItemLabel(sub.label, dispNum);
             if (sub.type === 'select' && sub.options) {
-              var activeOptions = setOptOrders[sub.id] || sub.options;
+              var activeOptions = setOptOrders[(q.qNum !== undefined ? q.qNum : q.id) + '_' + sub.id] || sub.options;
               var optsText = activeOptions.map(function (o) { return '[   ] ' + o; }).join('    ');
               subsHtml +=
                 '<div class="text-xs border-b border-dotted border-slate-300 pb-1.5 space-y-1">' +

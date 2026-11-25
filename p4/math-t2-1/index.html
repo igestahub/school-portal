@@ -1179,7 +1179,7 @@
     // =========================================================================
     // 3. STATE & SAFE LOCALSTORAGE PERSISTENCE
     // =========================================================================
-    const STORAGE_PREFIX = 'p4_math_t2_pretest1_';
+    const STORAGE_PREFIX = 'p4_math_t2_pretest1_v2_';
     let currentSetKey = 'practice_set_1';
     let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
@@ -1245,7 +1245,7 @@
       questions.forEach(q => {
         (q.items || []).forEach(item => {
           if (item.mode === 'select' && Array.isArray(item.options) && item.options.length > 1) {
-            optionOrders[item.id] = shuffleArray(item.options);
+            optionOrders[q.qNum + '_' + item.id] = shuffleArray(item.options);
           }
         });
       });

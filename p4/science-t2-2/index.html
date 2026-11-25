@@ -4022,7 +4022,7 @@
       }
 };
 
-    const STORAGE_PREFIX = 'p4_science_t2_2_forces_v5_';
+    const STORAGE_PREFIX = 'p4_science_t2_2_forces_v6_';
     let currentSetKey = 'practice_set_1';
     let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
@@ -4108,7 +4108,7 @@
               shuffled[targetIdx] = shuffled[curCorrectIdx];
               shuffled[curCorrectIdx] = tmp;
             }
-            optionOrders[item.id] = shuffled;
+            optionOrders[q.qNum + '_' + item.id] = shuffled;
           }
         });
       });
@@ -5342,8 +5342,8 @@
         const formattedLabel = formatSubItemLabel(item.label, displayQNum);
 
         if (item.mode === 'select') {
-          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
-            ? state.optionOrders[item.id]
+          const activeOptions = (state.optionOrders && state.optionOrders[q.qNum + '_' + item.id])
+            ? state.optionOrders[q.qNum + '_' + item.id]
             : item.options;
           const optsHtml = activeOptions.map(opt => {
             const selected = qAns[item.id] === opt ? 'selected' : '';
@@ -5690,8 +5690,8 @@
               ${q.items.map(it => {
                 const formattedLabel = formatSubItemLabel(it.label, dispNum);
                 if (it.mode === 'select' && it.options) {
-                  const activeOptions = (state.optionOrders && state.optionOrders[it.id])
-                    ? state.optionOrders[it.id]
+                  const activeOptions = (state.optionOrders && state.optionOrders[q.qNum + '_' + it.id])
+                    ? state.optionOrders[q.qNum + '_' + it.id]
                     : it.options;
                   return `
                     <div class="border border-slate-300 rounded-lg p-2.5 text-xs space-y-1">

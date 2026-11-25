@@ -1705,7 +1705,8 @@
                 mode: 'select',
                 options: [
                   'True — because light travels in a straight line through the straight hose',
-                  'False — light can only travel through curved hoses'
+                  'False — light can only travel through curved hoses',
+              'False — light can bend around any corner inside a hose'
                 ],
                 points: 1,
                 modelAnswer: 'True — because light travels in a straight line through the straight hose',
@@ -2449,7 +2450,7 @@
     // =========================================================================
     // 3. STATE & SAFE LOCALSTORAGE PERSISTENCE
     // =========================================================================
-    const STORAGE_PREFIX = 'p4_science_t2_1_';
+    const STORAGE_PREFIX = 'p4_science_t2_1_v2_';
     let currentSetKey = 'practice_set_1';
     let lastPracticeSetKey = 'practice_set_1';
     let currentSlideIndex = 0;
@@ -2525,7 +2526,7 @@
               shuffled[targetIdx] = shuffled[curCorrectIdx];
               shuffled[curCorrectIdx] = tmp;
             }
-            optionOrders[item.id] = shuffled;
+            optionOrders[q.qNum + '_' + item.id] = shuffled;
           }
         });
       });
@@ -2958,8 +2959,9 @@
         const formattedLabel = formatSubItemLabel(item.label, displayQNum);
 
         if (item.mode === 'select') {
-          const activeOptions = (state.optionOrders && state.optionOrders[item.id])
-            ? state.optionOrders[item.id]
+          const optKey = q.qNum + '_' + item.id;
+          const activeOptions = (state.optionOrders && state.optionOrders[optKey])
+            ? state.optionOrders[optKey]
             : item.options;
           const optsHtml = activeOptions.map(opt => {
             const selected = qAns[item.id] === opt ? 'selected' : '';
